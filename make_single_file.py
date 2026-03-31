@@ -47,41 +47,9 @@ for filename, ext in matches:
     else:
         print(f"  ⚠️  Image NOT FOUND (skipped): {filename}")
 
-# ── STEP 2: Replace YouTube iframes with clickable thumbnails ──
-# Matches <iframe src="https://www.youtube.com/embed/VIDEO_ID" ...></iframe>
-youtube_pattern = re.compile(
-    r'<iframe[^>]+src="https://www\.youtube\.com/embed/([a-zA-Z0-9_-]+)"[^>]*>\s*</iframe>',
-    re.DOTALL
-)
-
-def make_youtube_thumbnail(match):
-    video_id = match.group(1)
-    watch_url = f"https://www.youtube.com/watch?v={video_id}"
-    thumb_url = f"https://img.youtube.com/vi/{video_id}/maxresdefault.jpg"
-    return f'''<div style="text-align:center; margin: 10px 0; position: relative; display: inline-block; width: 100%; max-width: 700px;">
-  <a href="{watch_url}" target="_blank" rel="noopener" title="Click to watch video on YouTube"
-     style="display:block; position:relative; cursor:pointer; border-radius:8px; overflow:hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-    <img src="{thumb_url}" alt="Click to watch video" loading="lazy"
-         style="width:100%; height:auto; display:block; border-radius:8px;">
-    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-                background:rgba(255,0,0,0.88); border-radius:50%; width:72px; height:72px;
-                display:flex; align-items:center; justify-content:center;">
-      <svg viewBox="0 0 24 24" width="36" height="36" fill="white">
-        <path d="M8 5v14l11-7z"/>
-      </svg>
-    </div>
-  </a>
-  <p style="margin-top:8px; font-size:0.85em; color:#555;">
-    ▶ <a href="{watch_url}" target="_blank" style="color:#004085; font-weight:600;">Click to watch on YouTube</a>
-  </p>
-</div>'''
-
-html, count = youtube_pattern.subn(make_youtube_thumbnail, html)
-
-if count:
-    print(f"  ✅ Converted {count} YouTube iframe(s) → clickable thumbnail")
-else:
-    print(f"  ℹ️  No YouTube iframes found to convert")
+# ── STEP 2: SKIPPED (Keep YouTube iframe since we are on GitHub Pages) ──
+count = 0
+print(f"  ✅ Keeping YouTube inline players intact")
 
 # ── STEP 3: Write output ───────────────────────────────────
 output_path = os.path.join(FOLDER, OUTPUT_FILE)
@@ -89,10 +57,10 @@ with open(output_path, "w", encoding="utf-8") as f:
     f.write(html)
 
 print()
-print(f"  Done! {replaced_imgs} image(s) embedded, {count} video(s) converted.")
+print(f"  Done! {replaced_imgs} image(s) embedded.")
 print(f"  📄 Output: {OUTPUT_FILE}")
 print()
 print("  ✅ This file is 100% self-contained.")
-print("  ✅ Video thumbnail works from any file, email, WhatsApp.")
-print("  ✅ Clicking the thumbnail opens YouTube on any device.")
+print("  ✅ Images are embedded directly.")
+print("  ✅ Video plays inline (perfect for GitHub Pages hosting).")
 print("=" * 55)
