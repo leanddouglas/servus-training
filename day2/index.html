@@ -1,0 +1,2539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servus Training: Day 2 - Soil Science & Cleaning Chemistry (PREVIEW)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --servus-navy: #0a4875;
+            --servus-navy-dark: #004085;
+            --servus-blue: #005a87;
+            --servus-blue-mid: #006ba1;
+            --servus-accent: #ff9900;
+            --servus-light-blue: #D3EEF5;
+            --servus-pale-blue: #F0FCFF;
+            --servus-cloud-blue: #F2F7FC;
+            --servus-off-white: #FAFAFA;
+            --servus-dark: #313131;
+            --servus-text: #333333;
+            --servus-text-mid: #393939;
+            --servus-link: #0056b3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Myriad Variable Concept', 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--servus-text);
+            background-color: #ffffff;
+            line-height: 1.7;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* Back to Course Link */
+        .back-link {
+            background-color: var(--servus-navy);
+            padding: 12px 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header Styling — Matched to Day 1 (Antigravity) */
+        .servus-header {
+            background: hsl(211, 100%, 22%);
+            color: white;
+            padding: 40px 40px 35px;
+            text-align: center;
+            border-bottom: 6px solid var(--servus-accent);
+            position: relative;
+            page-break-inside: avoid;
+        }
+
+        .servus-header .logo-top-right {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            height: 45px;
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+
+        .servus-header h1 {
+            font-size: 2.6em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2px;
+            font-weight: 800;
+        }
+
+        .servus-header .subtitle {
+            font-size: 1.25em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.85;
+            margin-bottom: 8px;
+        }
+
+        .servus-header .tagline {
+            font-size: 1.4em;
+            font-style: italic;
+            opacity: 0.9;
+            margin: 8px 0;
+        }
+
+        .servus-header h2 {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-top: 18px;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+
+        .servus-header .module-label {
+            font-size: 1em;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+
+        /* Certification Strip — Matched to Day 1 */
+        .cert-strip {
+            background-color: var(--servus-light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 12px 20px;
+            flex-wrap: wrap;
+            page-break-inside: avoid;
+        }
+
+        .cert-strip img {
+            height: 40px;
+            opacity: 0.85;
+        }
+
+        .cert-strip span {
+            font-size: 0.85em;
+            color: var(--servus-navy);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Main Content — Matched to Day 1 */
+        .content {
+            padding: 30px 40px;
+        }
+
+        h2.section-title, h2 {
+            color: var(--servus-navy);
+            font-size: 1.5em;
+            font-weight: 700;
+            border-bottom: 3px solid var(--servus-accent);
+            padding-bottom: 8px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            page-break-inside: avoid;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3.module-title, h3 {
+            color: var(--servus-blue-mid);
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-top: 28px;
+            margin-bottom: 10px;
+            padding-left: 12px;
+            border-left: 4px solid var(--servus-accent);
+            page-break-inside: avoid;
+        }
+
+        p {
+            font-size: 0.97em;
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 14px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        strong {
+            color: var(--servus-navy);
+            font-weight: 600;
+        }
+
+        /* Callout Boxes — Matched to Day 1 (wrench with white circle) */
+        .servus-callout {
+            background: var(--servus-cloud-blue);
+            border-left: 5px solid var(--servus-navy);
+            border-radius: 0 8px 8px 0;
+            padding: 18px 20px;
+            margin: 18px 0 22px;
+            font-size: 0.93em;
+            line-height: 1.65;
+            position: relative;
+            page-break-inside: avoid;
+        }
+
+        .servus-callout::before {
+            content: "🔧";
+            position: absolute;
+            top: -10px;
+            left: -18px;
+            font-size: 1.4em;
+            background: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+        }
+
+        .servus-callout-label {
+            font-weight: 700;
+            color: var(--servus-navy);
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .servus-callout p {
+            margin-bottom: 0;
+            color: var(--servus-text-mid);
+            font-size: 0.95em;
+        }
+
+        .servus-callout strong.callout-label {
+            color: var(--servus-navy);
+            font-weight: 700;
+            display: inline;
+        }
+
+        /* Tables — Matched to Day 1 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+            page-break-inside: avoid;
+        }
+
+        table, th, td {
+            border: 1px solid #d8d8d8;
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--servus-navy) 0%, var(--servus-blue) 100%);
+            color: white;
+            padding: 12px 14px;
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        td {
+            padding: 11px 14px;
+            vertical-align: top;
+            font-size: 0.95em;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: var(--servus-pale-blue);
+        }
+
+        tbody tr:hover {
+            background-color: var(--servus-light-blue);
+        }
+
+        /* Horizontal Rule — Matched to Day 1 */
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, var(--servus-accent), var(--servus-navy), var(--servus-accent));
+            margin: 35px 0;
+            opacity: 0.5;
+            page-break-inside: avoid;
+        }
+
+        /* Flowchart Container */
+        .flowchart-container {
+            background-color: var(--servus-cloud-blue);
+            border: 2px solid var(--servus-blue);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+            page-break-inside: avoid;
+            overflow-x: auto;
+        }
+
+        .mermaid {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        /* (Interactive flowchart styles are inline below the chart) */
+
+        /* Footer — Matched to Day 1 (gradient + logo) */
+        .servus-footer {
+            background: linear-gradient(135deg, var(--servus-dark) 0%, #1a1a2e 100%);
+            color: #ccc;
+            padding: 30px 40px;
+            font-size: 0.88em;
+            text-align: center;
+            position: relative;
+            margin-top: 40px;
+            page-break-inside: avoid;
+        }
+
+        .servus-footer .logo-footer {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 25px;
+            height: 42px;
+        }
+
+        .servus-footer strong {
+            color: white;
+            font-size: 1.1em;
+        }
+
+        .servus-footer p {
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+
+        .servus-footer a {
+            color: var(--servus-accent);
+            text-decoration: none;
+        }
+
+        .servus-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-certs {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-certs img {
+            height: 35px;
+            opacity: 0.7;
+        }
+
+        .servus-footer .compliance-text {
+            margin-top: 14px;
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        /* Floating Glossary Widget */
+        .glossary-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            font-family: 'Inter', sans-serif;
+        }
+        .glossary-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--servus-navy);
+            color: white;
+            border: 3px solid var(--servus-accent);
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            margin-left: auto;
+        }
+        .glossary-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+        }
+        .glossary-btn .badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: var(--servus-accent);
+            color: white;
+            font-size: 10px;
+            font-weight: 800;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .glossary-panel {
+            display: none;
+            width: 340px;
+            max-height: 480px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+            overflow: hidden;
+            flex-direction: column;
+        }
+        .glossary-panel.open { display: flex; }
+        .glossary-panel-header {
+            background: linear-gradient(135deg, var(--servus-navy) 0%, var(--servus-blue) 100%);
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .glossary-panel-header h3 {
+            color: white;
+            font-size: 0.95em;
+            margin: 0;
+            padding: 0;
+            border: none;
+            letter-spacing: 0.5px;
+        }
+        .glossary-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.3em;
+            cursor: pointer;
+            padding: 0 4px;
+            opacity: 0.8;
+        }
+        .glossary-close:hover { opacity: 1; }
+        .glossary-search {
+            padding: 10px 14px;
+            border-bottom: 1px solid #eee;
+            flex-shrink: 0;
+        }
+        .glossary-search input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .glossary-search input:focus { border-color: var(--servus-accent); }
+        .glossary-search input::placeholder { color: #aaa; }
+        .glossary-filters {
+            padding: 8px 14px;
+            display: flex;
+            gap: 6px;
+            flex-shrink: 0;
+            border-bottom: 1px solid #eee;
+        }
+        .g-filter {
+            padding: 3px 10px;
+            border: 1.5px solid var(--servus-navy);
+            border-radius: 14px;
+            background: white;
+            color: var(--servus-navy);
+            font-size: 0.75em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .g-filter:hover, .g-filter.active {
+            background: var(--servus-navy);
+            color: white;
+        }
+        .glossary-list {
+            overflow-y: auto;
+            flex: 1;
+            padding: 6px 0;
+        }
+        .glossary-list::-webkit-scrollbar { width: 6px; }
+        .glossary-list::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+        .g-term-item {
+            padding: 10px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: default;
+            transition: background 0.15s;
+        }
+        .g-term-item:hover { background: var(--servus-pale-blue); }
+        .g-term-item:last-child { border-bottom: none; }
+        .g-term-name {
+            font-weight: 700;
+            color: var(--servus-navy);
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .g-term-pron {
+            font-size: 0.75em;
+            color: #999;
+            font-style: italic;
+            font-weight: 400;
+        }
+        .g-term-cat {
+            display: inline-block;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 0.65em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-left: auto;
+        }
+        .g-cat-chem { background: #e8f5e9; color: #2e7d32; }
+        .g-cat-tech { background: #e3f2fd; color: #1565c0; }
+        .g-cat-safe { background: #fbe9e7; color: #c62828; }
+        .g-term-def {
+            font-size: 0.85em;
+            color: var(--servus-text-mid);
+            line-height: 1.5;
+            margin-top: 4px;
+        }
+        .glossary-panel-footer {
+            padding: 8px 16px;
+            font-size: 0.75em;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid #eee;
+            flex-shrink: 0;
+            background: var(--servus-off-white);
+        }
+
+        /* Tooltip for glossary terms in text */
+        .glossary-term {
+            border-bottom: 2px dotted var(--servus-accent);
+            cursor: help;
+            position: relative;
+            font-weight: 600;
+            color: var(--servus-navy);
+        }
+        .glossary-term .tooltip {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            bottom: calc(100% + 6px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--servus-navy);
+            color: white;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: 400;
+            line-height: 1.5;
+            width: 260px;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: opacity 0.2s, visibility 0.2s;
+            pointer-events: none;
+        }
+        .glossary-term .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: var(--servus-navy);
+        }
+        .glossary-term:hover .tooltip,
+        .glossary-term:focus .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Scenario Cards and Product Steps */
+        .scenario-card {
+            background: var(--servus-cloud-blue);
+            border: 1px solid #d8d8d8;
+            border-left: 5px solid var(--servus-accent);
+            border-radius: 0 8px 8px 0;
+            margin: 18px 0;
+            page-break-inside: avoid;
+            overflow: hidden;
+        }
+
+        .scenario-header {
+            padding: 16px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, var(--servus-navy) 0%, var(--servus-blue) 100%);
+            transition: background 0.2s;
+        }
+
+        .scenario-header:hover {
+            background: linear-gradient(135deg, var(--servus-navy-dark) 0%, var(--servus-blue) 100%);
+        }
+
+        .scenario-header h4 {
+            color: white;
+            font-size: 1em;
+            font-weight: 700;
+            margin: 0;
+            flex: 1;
+        }
+
+        .scenario-toggle {
+            width: 24px;
+            height: 24px;
+            background: white;
+            color: var(--servus-navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: 700;
+            transition: transform 0.3s;
+        }
+
+        .scenario-card.open .scenario-toggle {
+            transform: rotate(180deg);
+        }
+
+        .scenario-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            padding: 0 20px;
+            background: white;
+        }
+
+        .scenario-card.open .scenario-content {
+            max-height: 2000px;
+            padding: 18px 20px;
+        }
+
+        .product-step {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: var(--servus-text-mid);
+        }
+
+        .product-step::before {
+            content: attr(data-step);
+            background: var(--servus-accent);
+            color: white;
+            min-width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85em;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .product-name {
+            font-weight: 700;
+            color: var(--servus-navy);
+        }
+
+        .tech-tip {
+            background-color: #fff3e0;
+            border-left: 4px solid var(--servus-accent);
+            padding: 12px 16px;
+            margin-top: 12px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: var(--servus-text);
+        }
+
+        /* pH Scale — Color-Coded Bar (muted tones) */
+        .ph-scale-bar {
+            display: flex;
+            height: 38px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #d8d8d8;
+            margin-bottom: 12px;
+        }
+
+        .ph-zone {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 0.3px;
+        }
+
+        .ph-zone-0-3 {
+            background: linear-gradient(90deg, #c0392b, #d4574a);
+        }
+
+        .ph-zone-3-7 {
+            background: linear-gradient(90deg, #6a9fba, #7dab8a);
+        }
+
+        .ph-zone-7-14 {
+            background: linear-gradient(90deg, #cc8822, #c0392b);
+        }
+
+
+        /* Print Optimization — Matched to Day 1 */
+        @media print {
+            body { max-width: 100%; padding: 0; }
+            .servus-header, .servus-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .mermaid, table, .servus-callout, .cheat-sheet { page-break-inside: avoid; }
+            .cert-strip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .back-link {
+                padding: 10px 20px;
+            }
+
+            .back-link a {
+                font-size: 0.9em;
+            }
+
+            .servus-header {
+                padding: 30px 20px;
+            }
+
+            .servus-header .logo-top-right {
+                position: static;
+                margin-bottom: 16px;
+                height: 40px;
+            }
+
+            .servus-header h1 {
+                font-size: 2em;
+                letter-spacing: 2px;
+            }
+
+            .cert-strip {
+                padding: 12px 20px;
+                gap: 16px;
+            }
+
+            .content {
+                padding: 24px 20px;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            h3 {
+                font-size: 1.1em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            .servus-footer {
+                padding: 20px;
+            }
+
+            .servus-footer .logo-footer {
+                position: static;
+                transform: none;
+                display: block;
+                margin: 0 auto 12px;
+            }
+
+            .glossary-panel { width: calc(100vw - 40px); max-height: 60vh; }
+            .glossary-widget { bottom: 14px; right: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Course Link -->
+    <div class="back-link">
+        <a href="course_index.html">← Back to Course Hub</a>
+    </div>
+
+    <!-- Header — Matched to Day 1 -->
+    <header class="servus-header">
+        <img src="https://servusgrouplowermainland.com/wp-content/uploads/2024/12/Servus-Colour.png" alt="Servus Logo" class="logo-top-right">
+        <h1>Servus Group</h1>
+        <div class="subtitle">Specialty Cleaning</div>
+        <div class="tagline">"At Your Service"</div>
+        <h2>Professional Carpet Care Certification</h2>
+        <div class="module-label">Day 2: Soil Science & Cleaning Chemistry</div>
+    </header>
+
+    <!-- Certification Strip — Matched to Day 1 (with COR image) -->
+    <div class="cert-strip">
+        <img src="https://servusgrouplowermainland.com/wp-content/uploads/2014/07/go2HR-CORLogo-K-300x283.png" alt="COR Certified">
+        <span>IICRC S100 Compliant</span><span>•</span>
+        <span>WorkSafeBC 2026</span><span>•</span>
+        <span>COR Certified</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>Module 1: Understanding Soil Types</h2>
+
+        <h3>Particulate Soils</h3>
+        <p><span class="glossary-term">Particulate<span class="tooltip">Tiny solid particles — sand, dust, dirt crumbs on carpet fibers.</span></span> soils are dry, <span class="glossary-term">insoluble<span class="tooltip">Cannot dissolve in water. Stays as solid particles.</span></span> particles that bond to fibers primarily through <strong>physical <span class="glossary-term">adhesion<span class="tooltip">When something sticks to something else — here, how dirt sticks to carpet fibers.</span></span></strong>:</p>
+        <ul>
+            <li><strong>Sand & grit:</strong> Large angular particles that lodge between fibers and at fiber bases</li>
+            <li><strong>Dirt & dust:</strong> Fine particles that accumulate on fiber surfaces</li>
+            <li><strong>Bonding mechanism:</strong> Gravity, <span class="glossary-term">fiber geometry<span class="tooltip">Physical shape and texture of carpet fibers. Affects how soil particles lodge and how easily they come out.</span></span>, and <span class="glossary-term">static charge<span class="tooltip">Electrical charge on synthetic fibers that makes dust and dirt particles stick. Humidity reduces it.</span></span> hold these particles</li>
+            <li><strong>Extraction method:</strong> Vacuuming removes 60-80% of particulate soil; hot water extraction flushes remaining particles</li>
+        </ul>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">The Servus Standard in Action</div>
+            <p>A customer reports heavy foot traffic soiling in their entryway. You recognize this as predominantly particulate soil (embedded sand). You don't need much chemical for this. Instead, go over the area three times with your extraction wand, using good back-and-forth movement to shake the dirt loose and suck it out of the carpet fibers. Total dry recovery time: under 2 hours.</p>
+        </div>
+
+        <h3>Water-Soluble Soils</h3>
+        <p>These soils contain compounds that dissolve in water, creating chemical bonds with fibers:</p>
+        <ul>
+            <li><strong>Sugar, salt, food residues:</strong> <span class="glossary-term">Hygroscopic<span class="tooltip">Absorbs moisture from air. Leftover soap pulls in moisture which attracts more dirt.</span></span> compounds that attract moisture</li>
+            <li><strong>Biological residues:</strong> Proteins, fats from food and skin</li>
+            <li><strong>Bonding mechanism:</strong> Water molecules form hydrogen bonds between soil and fiber</li>
+            <li><strong>Extraction method:</strong> Hot water alone partially dissolves these; <span class="glossary-term">surfactant<span class="tooltip">Surface Active Agent — one end grabs water, other grabs dirt. Bridge between water and grease.</span></span> chemistry accelerates removal</li>
+        </ul>
+
+        <h3>Oil-Based Soils</h3>
+        <p>Oil-based soils require specialized chemistry because water alone cannot dissolve <span class="glossary-term">lipophilic<span class="tooltip">Oil-loving. Some dirt and fibers naturally attract oil.</span></span> compounds:</p>
+        <ul>
+            <li><strong>Cooking grease, petroleum, wax:</strong> <span class="glossary-term">Hydrophobic<span class="tooltip">Water-fearing. The part of soap that grabs onto oil and grease.</span></span> compounds that repel water</li>
+            <li><strong>Bonding mechanism:</strong> Oil-based dirt sticks easily to synthetic fibers because both oil and synthetic fibers push water away — they "like" each other</li>
+            <li><strong>Extraction method:</strong> Alkaline <span class="glossary-term">pre-spray<span class="tooltip">Chemical sprayed on carpet BEFORE main extraction to loosen dirt.</span></span> (pH 10-12) turns grease into soap (<span class="glossary-term">saponification<span class="tooltip">When alkaline cleaner turns grease/oil into soap that dissolves in water.</span></span>); surfactants suspend the mixture for extraction</li>
+        </ul>
+
+        <hr>
+
+        <h2>Module 2: The Soil Bonding Spectrum</h2>
+
+        <h3>Physical Adhesion vs. Chemical Bonding</h3>
+        <p>Soil attaches to fibers through two distinct mechanisms:</p>
+
+        <ul>
+            <li><strong>Physical Adhesion:</strong>
+                <ul>
+                    <li>Mechanical entanglement: particles lodge in fiber geometry</li>
+                    <li><span class="glossary-term">Van der Waals forces<span class="tooltip">Very weak "stickiness" between dirt particles and fiber — like how dust sticks to a TV screen</span></span>: very weak "stickiness" between dirt particles and fiber — like how dust sticks to a TV screen</li>
+                    <li>Static charge: opposite electrical charges between soil and fiber</li>
+                    <li>Gravity and friction: particles settle and are held by weight and surface texture</li>
+                    <li>Removal method: <span class="glossary-term">agitation<span class="tooltip">Mechanical scrubbing of carpet fibers (by brush or machine) to loosen dirt for extraction.</span></span> + hot water extraction (no chemistry required)</li>
+                </ul>
+            </li>
+            <li><strong>Chemical Bonding:</strong>
+                <ul>
+                    <li>Hydrogen bonds: water-soluble soils form weak chemical linkages with fiber</li>
+                    <li>Oil attraction: oil-based dirt sticks easily to synthetic fibers because both push water away — they "like" each other</li>
+                    <li>Ionic interactions: salt and mineral deposits form ionic bonds with fiber proteins</li>
+                    <li>Removal method: chemistry breaks the bond; extraction removes dissolved/suspended soil</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">The Servus Standard in Action</div>
+            <p>A customer describes their hallway as "dingy but not stained." Visual inspection shows mostly gray film — physical adhesion of dust and skin oils. One extraction pass reveals cleaner carpet. No chemistry needed. Red wine across the hall? That requires alkaline pre-spray to break chemical bonds. Different soil, different approach.</p>
+        </div>
+
+        <h3>The Role of Static Charge</h3>
+        <p>Static electricity significantly impacts particulate soil adhesion:</p>
+        <ul>
+            <li>Synthetic fibers generate static charge more readily than natural fibers</li>
+            <li>Dry conditions amplify static attraction between soil and fibers</li>
+            <li>Humidity and moisture reduce static charge, slightly loosening soil</li>
+            <li>Pre-spraying with surfactant slightly increases moisture and reduces static bonding</li>
+        </ul>
+
+        <h3>Fiber Geometry's Impact on Soil Adhesion</h3>
+        <p>Different carpet fiber types trap and hold soil differently:</p>
+        <ul>
+            <li><strong>Nylon:</strong> Fine texture captures particulate soil easily; good chemical absorption for bond-breaking</li>
+            <li><strong>Polyester:</strong> Smoother surface; less particulate trapping; requires stronger alkaline chemistry for oils</li>
+            <li><strong>Wool:</strong> Scaled surface naturally traps soil; delicate pH window (3-10) limits aggressive chemistry</li>
+            <li><strong>Olefin:</strong> Lowest static charge; resists stain adhesion; can be stripped with harsh chemistry</li>
+        </ul>
+
+        <h3>Soil Particle Size Effect</h3>
+        <p>How soil particles bond depends on their size:</p>
+        <ul>
+            <li><strong>Large particles (100+ microns):</strong> Visible immediately; physically adhesive; easily vacuumed; extraction solves 95%</li>
+            <li><strong>Medium particles (10-100 microns):</strong> Visible but appear as discoloration; mix of physical and chemical bonding; light pre-spray helps</li>
+            <li><strong>Extremely tiny particles (invisible to the eye):</strong> These float in water and won't settle. You need soap (surfactant) to capture them. They're what make carpet look gray and dull.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Module 3: pH Scale Fundamentals</h2>
+        <p><span class="glossary-term">pH<span class="tooltip">Scale from 0-14 measuring acidity/alkalinity. 7 = neutral.</span></span> is the measure of acidity or alkalinity on a 0-14 scale. Understanding pH is essential because cleaning chemistry works within specific pH ranges, and incorrect pH can damage fibers or cause rapid <span class="glossary-term">resoiling<span class="tooltip">Carpet getting dirty again fast after cleaning — usually from soap residue.</span></span>.</p>
+
+        <h3>The pH Scale</h3>
+        <ul>
+            <li><strong>0-6:</strong> Acidic (vinegar ≈ 2.5, lemon juice ≈ 2, stomach acid ≈ 1.5)</li>
+            <li><strong>7:</strong> Neutral (pure water at 25°C)</li>
+            <li><strong>8-14:</strong> Alkaline/Basic (baking soda ≈ 9, bleach ≈ 12.5, ammonia ≈ 11.5)</li>
+        </ul>
+
+        <p>The pH scale jumps by 10 times at each number. This means pH 5 is 10 times more acidic than pH 6, and pH 4 is 100 times more acidic than pH 6. Small number changes = big difference in strength.</p>
+
+        <h3>Why pH Matters in Carpet Cleaning</h3>
+        <p>pH directly affects:</p>
+        <ul>
+            <li><strong>Fiber integrity:</strong> Extreme pH damages protein fibers (wool) and synthetic fiber dyes</li>
+            <li><strong>Soil suspension:</strong> Most soils suspend best in alkaline conditions (pH 9-10); acidic conditions can re-precipitate soil</li>
+            <li><strong>Drying time:</strong> Alkaline residues absorb moisture; proper neutralization speeds drying</li>
+        </ul>
+
+        <h3>Safe pH Ranges for Carpet Cleaning</h3>
+        <ul>
+            <li><strong>General carpet cleaning: pH 5-10</strong> (most work happens here)</li>
+            <li><strong>Pre-spray for oil/grease: pH 10-12</strong> (strong alkaline for <span class="glossary-term">saponification<span class="tooltip">When alkaline cleaner turns grease/oil into soap that dissolves in water.</span></span>)</li>
+            <li><strong>Pre-spray for mineral deposits: pH 2-5</strong> (weak acid dissolves mineral bonds)</li>
+            <li><strong>Final rinse: pH 5-7</strong> (neutral or slightly acidic to <span class="glossary-term">neutralize<span class="tooltip">Bringing pH back to neutral (~7) after cleaning.</span></span> alkaline residue)</li>
+        </ul>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">The Servus Standard in Action</div>
+            <p>A technician applies alkaline pre-spray (pH 11.5) for greasy kitchen soil but skips the acid rinse. Three weeks later — callback. The carpet re-soiled because alkaline residue attracted moisture and new dirt.</p>
+        </div>
+
+        <h3>Danger Zones</h3>
+        <ul>
+            <li><strong>Below pH 2:</strong> Extremely acidic; dissolves fiber structure; can bleach natural fibers; never use without extreme caution</li>
+            <li><strong>Above pH 12:</strong> Extremely alkaline; saponifies natural fiber fats; swells and weakens fibers; limits dwell time to 10 minutes max</li>
+        </ul>
+
+        
+
+        
+
+<hr>
+
+        <h2>Module 4: Cleaning Chemistry Basics</h2>
+        <p>Cleaning chemistry is the science of using chemical compounds to break soil bonds and suspend soil for extraction. The five primary chemical components are <span class="glossary-term">surfactants<span class="tooltip">Surface Active Agent — one end grabs water, other grabs dirt. Bridge between water and grease.</span></span>, solvents, <span class="glossary-term">emulsifiers<span class="tooltip">Keeps oil and water mixed so oil doesn't go back on carpet.</span></span>, <span class="glossary-term">enzymes<span class="tooltip">Natural chemical that breaks down specific things like blood, urine, food stains.</span></span>, and <span class="glossary-term">oxidizers<span class="tooltip">Chemical that removes color from stains by breaking color molecules.</span></span>.</p>
+
+        <h3>Surfactants: The Workhorse of Cleaning</h3>
+        <p><strong>Surfactant = Surface Active Agent</strong></p>
+        <p>Surfactants are molecules with two ends:</p>
+        <ul>
+            <li><strong><span class="glossary-term">Hydrophilic<span class="tooltip">Water-loving. The part of soap that grabs onto water.</span></span> head:</strong> Water-loving; bonds with water</li>
+            <li><strong><span class="glossary-term">Hydrophobic<span class="tooltip">Water-fearing. The part of soap that grabs onto oil and grease.</span></span> tail:</strong> Water-fearing; bonds with oils and fats</li>
+        </ul>
+
+        <p><strong>How surfactants work:</strong></p>
+        <ol>
+            <li>Surfactant molecules surround oil-based soil particles</li>
+            <li>Hydrophobic tail points toward the oil; hydrophilic head points toward water</li>
+            <li>This creates tiny bubbles called <span class="glossary-term">micelles<span class="tooltip">Tiny ball of soap molecules surrounding dirt. Inside grabs dirt, outside lets water carry it away.</span></span> — imagine a ball where the outside loves water and the inside holds the dirt. Water carries the whole ball (and the dirt inside it) away.</li>
+            <li>The micelle keeps oil suspended in water, preventing re-precipitation</li>
+            <li>Extraction removes suspended soil and surfactant together</li>
+        </ol>
+
+        <h3>Solvents: Dissolving Resistant Soils</h3>
+        <p>Solvents are substances that dissolve other compounds. In carpet cleaning:</p>
+        <ul>
+            <li><strong>Water:</strong> Universal solvent; dissolves water-soluble compounds; inexpensive</li>
+            <li><strong>Organic solvents:</strong> Petroleum distillates, alcohols; dissolve oils and waxes without water</li>
+            <li><strong>Soap/detergent solutions:</strong> Alkaline solvents that saponify fats and oils</li>
+            <li><strong>Use case:</strong> Specialized for tar, wax, dried grease where water alone fails</li>
+        </ul>
+
+        <h3>Emulsifiers: Stabilizing Suspended Soil</h3>
+        <p><span class="glossary-term">Emulsifiers<span class="tooltip">Keeps oil and water mixed so oil doesn't go back on carpet.</span></span> prevent separated oil and water from re-combining:</p>
+        <ul>
+            <li>Similar structure to surfactants but stronger stabilization</li>
+            <li>Keep oil droplets suspended indefinitely (without emulsifiers, oil separates and re-deposits)</li>
+            <li>Critical in wet-cleaning solutions to prevent rapid re-soiling post-cleaning</li>
+        </ul>
+
+        <h3>Enzymes: Breaking Biological Bonds</h3>
+        <p><span class="glossary-term">Enzymes<span class="tooltip">Natural chemical that breaks down specific things like blood, urine, food stains.</span></span> are biological catalysts — each type targets a specific bond: proteases for protein (blood, urine), amylases for starch, lipases for fat. They require warm water (not hot), <span class="glossary-term">dwell time<span class="tooltip">How long a chemical sits on the carpet before extraction — time for the product to do its work.</span></span>, and proper pH. See Module 8 for detailed enzyme protocols.</p>
+
+        <h3>Oxidizers: Breaking Color Bonds</h3>
+        <p><span class="glossary-term">Oxidizers<span class="tooltip">Chemical that removes color from stains by breaking color molecules.</span></span> destroy the color in stains. The part of the stain that has color is called a chromophore — the oxidizer breaks it apart so the color disappears:</p>
+        <ul>
+            <li><strong>Hydrogen peroxide:</strong> Mild oxidizer; safe on most fibers; breaks down <span class="glossary-term">tannin<span class="tooltip">Color compound in coffee, tea, wine, and plant matter. Oxidizers remove tannin stains.</span></span> stains (wine, coffee, tea)</li>
+            <li><strong>Sodium percarbonate:</strong> Releases hydrogen peroxide when wet; effective on plant-based stains</li>
+            <li><strong>Chlorine bleach:</strong> Aggressive oxidizer; only safe on solution-dyed fibers (olefin); dangerous on wool/natural dyes</li>
+            <li><strong>Use case:</strong> Final resort for color stains after surfactant + enzyme approach fails</li>
+        </ul>
+
+        <hr>
+
+        <h2>Module 5: Detergent Science</h2>
+        <p>Detergents are surfactant-based products (see Module 4). This module covers what happens when you use too much or too little, and why dilution ratios exist.</p>
+
+        <h3>Critical Micelle Concentration (CMC)</h3>
+        <p><span class="glossary-term">CMC<span class="tooltip">Critical Micelle Concentration is the smallest amount of soap you need in water for it to actually clean. Think of it as the "minimum dose" — below this, the soap barely works:</span></span> (Critical Micelle Concentration) is the smallest amount of soap you need in water for it to actually clean. Think of it as the "minimum dose" — below this, the soap barely works:</p>
+        <ul>
+            <li>Below CMC: detergent acts as individual molecules; poor cleaning</li>
+            <li>At/above CMC: micelles form; excellent cleaning efficiency</li>
+            <li>Typical CMC: 0.1-1% of detergent concentration</li>
+            <li><strong>Rule:</strong> Use recommended dilution rates; going above CMC provides minimal additional benefit</li>
+        </ul>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">The Servus Standard in Action</div>
+            <p>A technician doubles pre-spray concentration thinking "more = cleaner." Two weeks later, the carpet is dingy again. Excess detergent residue is <span class="glossary-term">hygroscopic<span class="tooltip">Absorbs moisture from air. Leftover soap pulls in moisture which attracts more dirt.</span></span> — it absorbs moisture from air, then that wet residue grabs new dirt. Follow manufacturer dilution ratios exactly.</p>
+        </div>
+
+        <h3>Proper Dilution Ratios</h3>
+        <p>Always follow manufacturer specifications:</p>
+        <ul>
+            <li><strong>Pre-spray:</strong> Typically 1:10 to 1:20 (product to water)</li>
+            <li><strong>Extraction tank:</strong> Typically 1:20 to 1:100 depending on product</li>
+        </ul>
+
+        <hr>
+
+        <h2>Module 6: Pre-Spray Chemistry</h2>
+
+        <h3>Alkaline Pre-Spray: For Oils & Grease</h3>
+        <p><strong>pH range: 10-12</strong></p>
+        <p><strong>How it works: The alkaline cleaner turns grease into soap (this process is called saponification). Since soap dissolves in water, you can now extract it easily:</strong></p>
+        <ul>
+            <li>Oil + alkaline base → soap (water-soluble)</li>
+            <li>Soap is easily suspended by surfactants and extracted</li>
+            <li><strong>Best for:</strong> Kitchen grease, cooking oils, petroleum residue, heavy body oils</li>
+            <li><strong>Dwell time:</strong> 5-10 minutes optimal; longer increases risk of fiber damage at pH >11</li>
+        </ul>
+
+        <h3>Acidic Pre-Spray: For Mineral Deposits</h3>
+        <p><strong>pH range: 2-5</strong></p>
+        <p><strong>Mechanism:</strong> Acid dissolves mineral bonds formed between minerals and fiber protein:</p>
+        <ul>
+            <li>Mineral (e.g., calcium) + acid → soluble salt + water</li>
+            <li>Mineral dissolves and can be rinsed away</li>
+            <li><strong>Best for:</strong> Hard water spots, rust stains, mineral deposits from water damage</li>
+            <li><strong>Caution:</strong> Never use on wool; never exceed pH 2 (too aggressive)</li>
+        </ul>
+
+        <h3>Neutral pH Pre-Spray: General Soiling</h3>
+        <p><strong>pH range: 6-8</strong></p>
+        <p><strong>Use case:</strong> Light, general soiling where soil is mostly dust and light oils</p>
+        <ul>
+            <li>Lower risk of fiber damage</li>
+            <li>Adequate for non-greasy, non-mineral soils</li>
+        </ul>
+
+        <h3>Dwell Time Science</h3>
+        <p><span class="glossary-term">Dwell time<span class="tooltip">Wait time after spraying chemical before extracting. Usually 5-10 minutes.</span></span> is the period between pre-spray application and extraction. It's critical:</p>
+        <ul>
+            <li><strong>0-2 minutes:</strong> Insufficient; surfactants haven't fully penetrated soil</li>
+            <li><strong>5-10 minutes:</strong> Optimal; bond-breaking is complete; extraction is maximized</li>
+            <li><strong>15+ minutes:</strong> Diminishing returns; risk of fiber damage (especially alkaline on delicate fibers); alkaline pre-spray dries and redeposits residue</li>
+            <li><strong>Best practice:</strong> Apply pre-spray to non-high-traffic areas first; by the time you reach high-traffic zones, dwell time is at 5-10 minutes</li>
+        </ul>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">The Servus Standard in Action</div>
+            <p>A technician arrives at a kitchen with heavy grease. Pre-spray applied, but customer calls: "Can you start working?" Technician extracts immediately (0-minute dwell). Result: incomplete cleaning; customer unsatisfied. Next visit, same room: pre-spray applied, technician applies with proper 7-minute dwell while addressing living room. Extraction on kitchen occurs at optimal dwell. Result: grease completely removed. Proper sequencing and dwell time management are hallmarks of professional cleaning.</p>
+        </div>
+
+        
+
+        <!-- Scenario 1: Commercial Hallway -->
+    <div class="scenario-card">
+        <div class="scenario-header">
+            <h4>Scenario 1: Heavy-Traffic Commercial Hallway</h4>
+            <div class="scenario-toggle">▼</div>
+        </div>
+        <div class="scenario-content">
+            <div class="product-step" data-step="1"><span class="product-name">Avenge Heavy-Duty (pH 10.0)</span> — Apply hot water prespray for heavy foot traffic soils. High pH alkalinity breaks down dirt, grease, and oxidized soils common in commercial spaces.</div>
+            <div class="product-step" data-step="2"><span class="product-name">Performance CBS Booster</span> — Add to hot water to enhance soil suspension. CBS (surfactant) maximizes grease removal and prevents re-deposition.</div>
+            <div class="product-step" data-step="3"><span class="product-name">Hot Water Extraction</span> — Use HWE to lift loosened soil. High temperature + high alkalinity = maximum soil removal.</div>
+            <div class="product-step" data-step="4"><span class="product-name">All Fiber Rinse (1:6 dilution, pH 4.0–4.5)</span> — Final acidic rinse to neutralize residual alkalinity and remove detergent buildup.</div>
+            <div class="product-step" data-step="5"><span class="product-name">Advanced Protector (pH 7.5)</span> — Apply post-cleaning to protect fibers and enhance stain resistance for future traffic.</div>
+        </div>
+    </div>
+
+    <!-- Scenario 2: Pet Urine Residential -->
+    <div class="scenario-card">
+        <div class="scenario-header">
+            <h4>Scenario 2: Pet Urine & Organic Odor (Residential)</h4>
+            <div class="scenario-toggle">▼</div>
+        </div>
+        <div class="scenario-content">
+            <div class="product-step" data-step="1"><span class="product-name">Enz-All (Enzymatic, Warm Water)</span> — Pre-treat with enzymatic action. Enzymes break down uric acid crystals that normal cleaners can't remove. Use warm (not hot) water to activate enzymes.</div>
+            <div class="product-step" data-step="2"><span class="product-name">Citrus Break (pH 12, Hot Water)</span> — Follow with hot water prespray to break down oils and urine residue. High alkalinity + citrus surfactants penetrate deep into fibers.</div>
+            <div class="product-step" data-step="3"><span class="product-name">Hot Water Extraction</span> — Extract after dwell time. HWE removes emulsified oils and broken-down uric acid.</div>
+            <div class="product-step" data-step="4"><span class="product-name">All Fiber Rinse (1:6 dilution, pH 4.0–4.5)</span> — Acidic rinse to stop alkalinity and remove detergent residue completely.</div>
+            <div class="product-step" data-step="5"><span class="product-name">Ends Odor (pH 6.5–7.5, Neutral Deodorizer)</span> — Final application to eliminate any remaining odor molecules. Neutral pH keeps fibers safe.</div>
+        </div>
+    </div>
+
+    <!-- Scenario 3: Restaurant Grease -->
+    <div class="scenario-card">
+        <div class="scenario-header">
+            <h4>Scenario 3: Restaurant Grease & Oily Buildup</h4>
+            <div class="scenario-toggle">▼</div>
+        </div>
+        <div class="scenario-content">
+            <div class="product-step" data-step="1"><span class="product-name">Benefect Atomic Degreaser (pH 9–10, Hot Water)</span> — Pre-treat with specialist degreaser. pH 9–10 alkalinity + degreasing surfactants target kitchen oils without over-alkalinity that could damage fibers.</div>
+            <div class="product-step" data-step="2"><span class="product-name">Performance CBS Booster</span> — Enhance alkalinity with CBS to maximize emulsification of grease. This keeps oils suspended so they don't re-deposit.</div>
+            <div class="product-step" data-step="3"><span class="product-name">Hot Water Extraction</span> — Extract to lift emulsified grease. Multiple passes may be needed in heavy grease areas.</div>
+            <div class="product-step" data-step="4"><span class="product-name">Fibre Rinse (pH 2.3, Final Acidic Rinse)</span> — Use low-pH acidic rinse to neutralize residual alkalinity and completely remove detergent buildup left by high-pH cleaners.</div>
+            <div class="product-step" data-step="5"><span class="product-name">Advanced Protector (pH 7.5)</span> — Seal cleaned fibers with protector to resist future grease absorption and extend carpet life.</div>
+        </div>
+    </div>
+
+    <!-- Scenario 4: Coffee Spill -->
+    <div class="scenario-card">
+        <div class="scenario-header">
+            <h4>Scenario 4: Coffee Spill on Nylon Carpet</h4>
+            <div class="scenario-toggle">▼</div>
+        </div>
+        <div class="scenario-content">
+            <div class="product-step" data-step="1"><span class="product-name">Citrus Burst (Spotter, RTU)</span> — Spot-treat the stain immediately. General-purpose spotter breaks down fresh tannin compounds before they set into fibers.</div>
+            <div class="product-step" data-step="2"><span class="product-name">Enz-All (Enzymatic, Warm Water)</span> — Apply enzymatic cleaner to break down organic coffee compounds. Enzymes target tannin proteins that regular alkaline cleaners leave behind.</div>
+            <div class="product-step" data-step="3"><span class="product-name">Avenge Heavy-Duty (pH 10.0, Hot)</span> — Prespray the full area. Alkaline chemistry emulsifies any remaining coffee oils and dissolved sugars.</div>
+            <div class="product-step" data-step="4"><span class="product-name">Hot Water Extraction</span> — Extract after 7–10 min dwell time. Multiple passes on the stain center.</div>
+            <div class="product-step" data-step="5"><span class="product-name">All Fiber Rinse (1:6, pH 4.0–4.5)</span> — Acidic rinse neutralizes alkaline residue. Tannin stains respond well to slight acidity.</div>
+        </div>
+    </div>
+
+    <!-- Scenario 5: Red Wine on Wool -->
+    <div class="scenario-card">
+        <div class="scenario-header">
+            <h4>Scenario 5: Red Wine Stain on Wool Carpet</h4>
+            <div class="scenario-toggle">▼</div>
+        </div>
+        <div class="scenario-content">
+            <div class="product-step" data-step="1"><span class="product-name">Un-Duz-It Unleashed (pH 9.0, Warm)</span> — Immediate spot treatment. Moderate alkalinity is safe for wool while breaking down wine tannins and anthocyanin dyes.</div>
+            <div class="product-step" data-step="2"><span class="product-name">Avenge Heavy-Duty Prespray (pH 10.0, Hot)</span> — Apply to the stain area. Do NOT exceed pH 10 on wool — higher alkalinity causes permanent fiber damage and yellowing.</div>
+            <div class="product-step" data-step="3"><span class="product-name">Hot Water Extraction</span> — Extract gently. Wool is sensitive — do not over-wet. Use moderate heat (not maximum).</div>
+            <div class="product-step" data-step="4"><span class="product-name">All Fiber Rinse (1:6, pH 4.0–4.5)</span> — Critical on wool. Acid rinse restores wool's natural slightly acidic pH and prevents browning.</div>
+            <div class="product-step" data-step="5"><span class="product-name">Advanced Protector (pH 7.5)</span> — Protect wool fibers from future staining. Wool is highly absorbent and benefits from protection.</div>
+            <div class="tech-tip"><strong>CAUTION:</strong> Wool fibers are damaged above pH 8.5. Never use Citrus Break (pH 12) or Liquid CBS (pH 13.5) on wool. Always check fiber type FIRST.</div>
+        </div>
+    </div>
+
+    <!-- Scenario 6: Rust Stain -->
+    <div class="scenario-card">
+        <div class="scenario-header">
+            <h4>Scenario 6: Rust Stain Near Metal Furniture</h4>
+            <div class="scenario-toggle">▼</div>
+        </div>
+        <div class="scenario-content">
+            <div class="product-step" data-step="1"><span class="product-name">Rust Remover (pH 1.0, Cold Water)</span> — Apply directly to rust stain. Strongly acidic chemistry dissolves iron oxide (rust) on contact. Use COLD water — heat sets rust stains permanently.</div>
+            <div class="product-step" data-step="2"><span class="product-name">Blot and Rinse</span> — Blot with white towel after 5–10 min dwell. Rinse with cold water to remove dissolved rust and acid.</div>
+            <div class="product-step" data-step="3"><span class="product-name">All Fiber Rinse (1:6, pH 4.0–4.5)</span> — Follow-up rinse to bring fiber pH back to safe range. Strongly acidic products must always be neutralized.</div>
+            <div class="tech-tip"><strong>NEVER use bleach or oxidizer on rust.</strong> Oxidizers make rust DARKER and permanent. Rust needs a reducing agent (acid), not an oxidizer. This is the #1 mistake new technicians make with rust stains.</div>
+        </div>
+    </div>
+
+    <!-- Scenario 7: Browning After Previous Cleaning -->
+    <div class="scenario-card">
+        <div class="scenario-header">
+            <h4>Scenario 7: Browning / Yellowing After Previous Cleaning</h4>
+            <div class="scenario-toggle">▼</div>
+        </div>
+        <div class="scenario-content">
+            <div class="product-step" data-step="1"><span class="product-name">Brown Out (pH 3.0, Cold Water)</span> — Apply acidic browning treatment to discolored areas. <span class="glossary-term">Browning<span class="tooltip">Yellowing or darkening of carpet after cleaning. Caused by alkaline residue wicking to fiber tips as carpet dries. Prevented by acid rinse.</span></span> is caused by alkaline residue left by the previous cleaner wicking to the fiber tips as carpet dries.</div>
+            <div class="product-step" data-step="2"><span class="product-name">Dwell 15–20 minutes</span> — Allow acid to neutralize alkaline residue trapped in fibers. Do not rush this step.</div>
+            <div class="product-step" data-step="3"><span class="product-name">Hot Water Extraction</span> — Extract to remove dissolved residue. Use clean water only — no additional chemicals.</div>
+            <div class="product-step" data-step="4"><span class="product-name">Fibre Rinse (pH 2.3)</span> — Final acidic rinse to ensure all alkaline residue is neutralized. This prevents browning from returning.</div>
+            <div class="tech-tip"><strong>Prevention is better than cure.</strong> Browning happens when you skip the acid rinse step. Always finish with All Fiber Rinse or Fibre Rinse after using alkaline presprays. If carpet browns = the previous cleaner did not rinse properly.</div>
+        </div>
+    </div>
+
+    <!-- Scenario 8: S-Coded Upholstery -->
+    <div class="scenario-card">
+        <div class="scenario-header">
+            <h4>Scenario 8: S-Coded Upholstery / Solvent-Only Fabric</h4>
+            <div class="scenario-toggle">▼</div>
+        </div>
+        <div class="scenario-content">
+            <div class="product-step" data-step="1"><span class="product-name">Dry Solv (pH 10.36, RTU Solvent)</span> — Apply solvent cleaner only. S-coded fabrics are DAMAGED by water. Dry Solv uses non-aqueous solvents that clean without wetting the fabric.</div>
+            <div class="product-step" data-step="2"><span class="product-name">Blot with Clean White Towel</span> — Work from outside of stain toward center to prevent spreading. Blot — never rub.</div>
+            <div class="product-step" data-step="3"><span class="product-name">Allow to Air Dry</span> — Solvents evaporate naturally. No extraction needed. No water rinse. Let fabric dry completely before use.</div>
+            <div class="tech-tip"><strong>Check the care label FIRST.</strong> S = Solvent only. W = Water safe. S/W = Either. X = Professional only. Using water on S-coded fabric causes permanent water marks, shrinkage, and color bleeding. When in doubt, test in a hidden area.</div>
+        </div>
+    </div>
+
+    <!-- Scenario 9: General Residential Maintenance -->
+    <div class="scenario-card">
+        <div class="scenario-header">
+            <h4>Scenario 9: General Residential Maintenance Clean</h4>
+            <div class="scenario-toggle">▼</div>
+        </div>
+        <div class="scenario-content">
+            <div class="product-step" data-step="1"><span class="product-name">Avenge Heavy-Duty (pH 10.0, Hot)</span> — Standard prespray for residential traffic. Moderate alkalinity handles everyday dirt, food particles, and body oils without fiber risk.</div>
+            <div class="product-step" data-step="2"><span class="product-name">Hot Water Extraction</span> — Standard HWE with 7–10 min dwell. Two extraction passes: first with solution, second with clean water.</div>
+            <div class="product-step" data-step="3"><span class="product-name">All Fiber Rinse (1:6, pH 4.0–4.5)</span> — Acidic rinse to neutralize and leave carpet residue-free. This is the step most residential cleaners skip — and why carpets resoil fast.</div>
+            <div class="product-step" data-step="4"><span class="product-name">Advanced Protector (pH 7.5)</span> — Apply to all cleaned areas. Protection extends carpet life and makes future cleaning easier.</div>
+            <div class="tech-tip"><strong>The Servus difference:</strong> Most residential cleaners skip the rinse step. Our 4-step protocol (Prespray → Extract → Rinse → Protect) is what separates Servus from competitors. The customer notices when carpet stays clean longer.</div>
+        </div>
+    </div>
+
+    <!-- Scenario 10: Interim Maintenance Between Deep Cleans -->
+    <div class="scenario-card">
+        <div class="scenario-header">
+            <h4>Scenario 10: Interim Maintenance (Between Deep Cleans)</h4>
+            <div class="scenario-toggle">▼</div>
+        </div>
+        <div class="scenario-content">
+            <div class="product-step" data-step="1"><span class="product-name">Proxi Encap (pH 4.5, Cold Water)</span> — Apply <span class="glossary-term">encapsulation<span class="tooltip">Dry-cleaning method. Polymer captures dirt in crystals that release when vacuumed. No extraction needed.</span></span> cleaner to high-traffic areas. Encapsulation surrounds soil particles in a polymer that dries to a crystal — then vacuums away. No extraction needed.</div>
+            <div class="product-step" data-step="2"><span class="product-name">Agitate with Bonnet or CRB</span> — Work the encapsulant into fibers with a counter-rotating brush or bonnet pad. This ensures polymer contacts all soil particles.</div>
+            <div class="product-step" data-step="3"><span class="product-name">Allow to Dry (30–60 min)</span> — Polymer encapsulates soil as it dries. Carpet is walkable immediately with booties.</div>
+            <div class="product-step" data-step="4"><span class="product-name">Vacuum Thoroughly</span> — Vacuum removes dried crystals containing trapped soil. Carpet appears refreshed without full HWE downtime.</div>
+            <div class="tech-tip"><strong>Interim cleaning extends the life of deep cleans.</strong> Commercial clients benefit from weekly encapsulation between quarterly HWE. Proxi Encap's acidic pH (4.5) also helps prevent browning from alkaline residue buildup.</div>
+        </div>
+    </div>
+
+    <!-- Scenario 11: Quick Spot Clean Between Appointments -->
+    <div class="scenario-card">
+        <div class="scenario-header">
+            <h4>Scenario 11: Quick Spot Clean (Between Appointments)</h4>
+            <div class="scenario-toggle">▼</div>
+        </div>
+        <div class="scenario-content">
+            <div class="product-step" data-step="1"><span class="product-name">Proxi Spray and Walk Away (pH 7.95, RTU)</span> — Spray directly on spot. Neutral pH is safe for all fibers. No rinse required — spray, walk away, vacuum when dry.</div>
+            <div class="product-step" data-step="2"><span class="product-name">Vacuum After Dry</span> — Product encapsulates and releases soil. Vacuum picks up residue.</div>
+            <div class="tech-tip"><strong>Keep a bottle in the van.</strong> Proxi Spray & Walk Away is your fastest response tool for fresh spots between scheduled jobs. Neutral pH means zero fiber risk — spray it on anything.</div>
+        </div>
+    </div>
+
+    <!-- Scenario 12: Blood / Protein Stain -->
+    <div class="scenario-card">
+        <div class="scenario-header">
+            <h4>Scenario 12: Blood or Protein Stain on Light Carpet</h4>
+            <div class="scenario-toggle">▼</div>
+        </div>
+        <div class="scenario-content">
+            <div class="product-step" data-step="1"><span class="product-name">Enz-All (Enzymatic, WARM Water Only)</span> — Apply enzymatic cleaner first. Protease enzymes break down blood proteins. Use WARM water (not hot) — heat coagulates blood proteins and sets the stain permanently.</div>
+            <div class="product-step" data-step="2"><span class="product-name">Dwell 20–30 minutes</span> — Enzymes need time to work. Keep area moist during dwell. Re-apply if drying.</div>
+            <div class="product-step" data-step="3"><span class="product-name">Un-Duz-It Unleashed (pH 9.0)</span> — Follow with stain remover for any remaining discoloration. Moderate alkalinity safe for most fibers.</div>
+            <div class="product-step" data-step="4"><span class="product-name">All Fiber Rinse (1:6, pH 4.0–4.5)</span> — Rinse to remove all chemical residue and restore pH.</div>
+            <div class="tech-tip"><strong>Temperature is critical with blood.</strong> Hot water = permanent stain. Always start with cold/warm water on protein stains (blood, egg, milk, vomit). Switch to hot only AFTER the protein has been broken down by enzymes.</div>
+        </div>
+    </div>
+
+    <!-- Scenario 13: Mold/Mildew Odor -->
+    <div class="scenario-card">
+        <div class="scenario-header">
+            <h4>Scenario 13: Mold or Mildew Odor in Carpet</h4>
+            <div class="scenario-toggle">▼</div>
+        </div>
+        <div class="scenario-content">
+            <div class="product-step" data-step="1"><span class="product-name">Benefect Decon 30 (pH 4–5, RTU)</span> — Apply botanical disinfectant to kill mold and mildew at the source. RTU — no mixing needed. Safe for occupied spaces.</div>
+            <div class="product-step" data-step="2"><span class="product-name">Enz-All (Enzymatic, Warm)</span> — Apply to break down organic matter feeding the mold. Enzymes digest the food source so mold cannot return.</div>
+            <div class="product-step" data-step="3"><span class="product-name">Hot Water Extraction</span> — Extract to remove dead mold, organic debris, and chemical residue.</div>
+            <div class="product-step" data-step="4"><span class="product-name">All Fiber Rinse (1:6, pH 4.0–4.5)</span> — Acidic rinse removes residue and restores pH balance.</div>
+            <div class="product-step" data-step="5"><span class="product-name">Ends Odor (pH 6.5–7.5)</span> — Final deodorizer eliminates remaining odor molecules. Neutral pH is fiber-safe for final application.</div>
+            <div class="tech-tip"><strong>Address the moisture source.</strong> Mold returns if the underlying moisture problem isn't fixed. Document and report water intrusion to the client. Cleaning without fixing the cause = repeat callbacks.</div>
+        </div>
+    </div>
+
+<hr>
+
+        <h2>Module 7: Rinse & Neutralization</h2>
+
+        <h3>The Rinse Sequence</h3>
+        <p>After <span class="glossary-term">extraction<span class="tooltip">Machine sprays hot water into carpet, then vacuums dirty water out.</span></span>, residue remains in the carpet. This is the step that prevents resoiling (covered in Module 5). The exact sequence:</p>
+        <ol>
+            <li>Hot water extraction removes soil and most detergent</li>
+            <li>2–3 fresh water passes (no chemistry) flush residue</li>
+            <li>Acid rinse (pH 3–5) <span class="glossary-term">neutralizes<span class="tooltip">Bringing pH back to neutral (~7) after cleaning.</span></span> remaining alkalinity</li>
+            <li>Final fresh water pass removes acid</li>
+        </ol>
+
+        <h3>The "Squeaky Clean" Test</h3>
+        <p>A simple field test confirms proper rinsing:</p>
+        <ul>
+            <li>Run a clean, dry cloth over just-extracted carpet</li>
+            <li>If cloth squeaks against fibers, residue is minimal ✓</li>
+            <li>If cloth slides smoothly without squeaking, residue remains (apply more rinses)</li>
+            <li>This tactile feedback confirms extraction adequacy</li>
+        </ul>
+
+        <h3>Fiber-Safe pH Ranges by Fiber Type</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fiber Type</th>
+                    <th>Safe pH Range</th>
+                    <th>Danger Zones</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nylon</td>
+                    <td>3-11</td>
+                    <td>Below 2, Above 12</td>
+                    <td>Synthetic; most forgiving. Handles alkaline well.</td>
+                </tr>
+                <tr>
+                    <td>Polyester</td>
+                    <td>4-10</td>
+                    <td>Below 3, Above 11</td>
+                    <td>Synthetic; slightly more delicate than nylon.</td>
+                </tr>
+                <tr>
+                    <td>Wool</td>
+                    <td>4-8</td>
+                    <td>Below 3, Above 9</td>
+                    <td>Protein fiber; very delicate. Avoid extreme pH.</td>
+                </tr>
+                <tr>
+                    <td>Olefin</td>
+                    <td>3-11</td>
+                    <td>Below 2, Above 12</td>
+                    <td>Synthetic; dye sensitive. Avoid oxygen-based cleaners on dark colors.</td>
+                </tr>
+                <tr>
+                    <td>Acrylic</td>
+                    <td>4-9</td>
+                    <td>Below 3, Above 10</td>
+                    <td>Synthetic; dye sensitive to alkaline.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Servus Standard:</strong> Always test final rinse water pH. See Flowchart Node T for the decision tree.</p>
+
+        <hr>
+
+        <h2>Module 8: Specialty Chemistry</h2>
+
+        <h3>Enzyme Cleaners: For Protein Stains</h3>
+        <p><strong>Target stains:</strong> Blood, urine, feces, food residues, sweat, saliva. Proteases break <span class="glossary-term">peptide bonds<span class="tooltip">Link holding protein chains together. Enzyme cleaners cut these to break stains apart.</span></span> — protein becomes water-soluble <span class="glossary-term">amino acids<span class="tooltip">Building blocks of proteins. Enzymes break protein stains into these — they dissolve in water.</span></span>, then extract.</p>
+        <ul>
+            <li><strong>Temperature:</strong> 40–50°C optimal. Boiling <span class="glossary-term">denatures<span class="tooltip">When heat destroys an enzyme so it stops working. Use warm water, not boiling.</span></span> enzymes (destroys them). Too cold = slow.</li>
+            <li><strong>pH range:</strong> Most active at pH 5–8</li>
+            <li><strong>Dwell:</strong> 15–30 minutes minimum. Keep area moist.</li>
+        </ul>
+
+        <h3>Oxidizers: For Color Stains</h3>
+        <p><strong>Target stains:</strong> Wine, coffee, tea, juice, berries, plant-based dyes</p>
+        <p><strong>Mechanism:</strong> Oxidizers destroy the color in stains. The part of the stain that has color is called a chromophore — the oxidizer breaks it apart so the color disappears:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Oxidizer</th>
+                    <th>Strength</th>
+                    <th>Best For</th>
+                    <th>Cautions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hydrogen Peroxide (3%)</td>
+                    <td>Mild</td>
+                    <td>Wine, coffee, tea, juice</td>
+                    <td>Safe on most fibers; can lighten dyes on repeated use</td>
+                </tr>
+                <tr>
+                    <td>Sodium Percarbonate</td>
+                    <td>Moderate</td>
+                    <td>Plant-based stains, tannins</td>
+                    <td>Releases O₂ in water; safer than H₂O₂</td>
+                </tr>
+                <tr>
+                    <td>Chlorine Bleach (0.5-1%)</td>
+                    <td>Aggressive</td>
+                    <td>Extreme stains on olefin only</td>
+                    <td>Dangerous on wool, nylon, dyed fibers; can destroy fibers</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Application:</strong></p>
+        <ol>
+            <li>Spot-test first — oxidizers can bleach fibers</li>
+            <li>Apply oxidizer solution to stain</li>
+            <li>Allow 5-15 minute dwell (monitor color change)</li>
+            <li>Extract with hot water</li>
+            <li>Repeat if needed</li>
+        </ol>
+
+        <h3>Reducing Agents: For Rust & Metallic Stains</h3>
+        <p><strong>Target stains:</strong> Rust, iron oxides, metallic discoloration</p>
+        <p><strong>Mechanism:</strong> Reducing agents change rust from a solid stain into a form that dissolves in water, so you can rinse it away:</p>
+        <ul>
+            <li><strong>Sodium thiosulfate:</strong> Converts rust to soluble iron sulfate</li>
+            <li><strong>Sodium dithionite:</strong> Powerful reducer for severe rust</li>
+            <li><strong>Application:</strong> Similar to acid rinse—apply, dwell 10-15 minutes, extract</li>
+            <li><strong>Caution:</strong> Can discolor some dyes; test first</li>
+        </ul>
+
+        <h3>Decision Tree: Which Chemistry to Use</h3>
+        <ul>
+            <li><strong>Is stain protein-based (blood, urine, food)?</strong> → Enzyme cleaner (primary), then oxidizer (if color remains)</li>
+            <li><strong>Is stain color-based (wine, coffee, plant)?</strong> → Oxidizer (hydrogen peroxide first, chlorine bleach only as last resort)</li>
+            <li><strong>Is stain oily/greasy?</strong> → Alkaline pre-spray, extraction</li>
+            <li><strong>Is stain mineral/rust?</strong> → Acid rinse or reducing agent</li>
+            <li><strong>Is stain combination (e.g., pet accident + stain)?</strong> → Enzyme first, then oxidizer, then standard extraction</li>
+        </ul>
+
+        <hr>
+
+        <h2>Module 9: Chemical Safety & WHMIS</h2>
+        <p>Cleaning chemicals can be hazardous. WorkSafeBC and WHMIS 2015 regulations ensure worker safety and liability protection.</p>
+
+        <h3>WHMIS 2015 Classification Symbols</h3>
+        <p>Products are labeled with pictograms indicating hazard class:</p>
+        <ul>
+            <li><strong>Health Hazard:</strong> Respiratory sensitizer, carcinogen, reproductive hazard</li>
+            <li><strong>Flame Over Circle:</strong> Oxidizer (accelerates fire)</li>
+            <li><strong>Flame:</strong> Flammable liquid or solid</li>
+            <li><strong>Corrosion:</strong> Causes chemical burns to skin or metal</li>
+            <li><strong>Exclamation Mark:</strong> Irritant, skin sensitizer, acute toxicity</li>
+            <li><strong>Gas Cylinder:</strong> Compressed or liquefied gas</li>
+            <li><strong>Exploding Bomb:</strong> Explosive or self-reactive substance</li>
+            <li><strong>Environmental Hazard:</strong> Aquatic toxicity</li>
+        </ul>
+
+        <h3>Safety Data Sheets (SDS)</h3>
+        <p>Every chemical product has an <span class="glossary-term">SDS<span class="tooltip">Safety Data Sheet — info on what's in a chemical and how to use it safely.</span></span> (formerly MSDS) that includes:</p>
+        <ul>
+            <li><strong>Product identification:</strong> Name, manufacturer, emergency contact</li>
+            <li><strong>Hazard identification:</strong> Classification, signal words, hazard statements</li>
+            <li><strong>Composition:</strong> Ingredients, concentration, CAS numbers</li>
+            <li><strong>First-aid measures:</strong> Actions if ingested, inhaled, or absorbed</li>
+            <li><strong>PPE requirements:</strong> Gloves, respirator, eye protection</li>
+            <li><strong>Storage & handling:</strong> Temperature, ventilation, incompatible chemicals</li>
+            <li><strong>Disposal:</strong> How to properly dispose of product and containers</li>
+        </ul>
+
+        <p><strong>Servus Standard:</strong> All employees must have access to SDS sheets for every product. Keep digital and paper copies on site and in vehicles. Review before first use of any new product.</p>
+
+        <h3>PPE (Personal Protective Equipment) Requirements</h3>
+        <p><span class="glossary-term">PPE<span class="tooltip">Personal Protective Equipment — gloves, glasses, respirator, apron.</span></span> (Personal Protective Equipment) Requirements</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Chemical Type</th>
+                    <th>Gloves</th>
+                    <th>Eye Protection</th>
+                    <th>Respiratory</th>
+                    <th>Other</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alkaline Pre-Spray (pH 10-12)</td>
+                    <td>Nitrile or rubber</td>
+                    <td>Safety glasses</td>
+                    <td>Not required</td>
+                    <td>Apron optional</td>
+                </tr>
+                <tr>
+                    <td>Acidic Rinse (pH 2-5)</td>
+                    <td>Nitrile or rubber</td>
+                    <td>Safety glasses + face shield if concentrated</td>
+                    <td>Not required</td>
+                    <td>Apron recommended</td>
+                </tr>
+                <tr>
+                    <td>Chlorine Bleach</td>
+                    <td>Rubber (nitrile is permeable)</td>
+                    <td>Safety glasses + face shield</td>
+                    <td>Respirator if spraying</td>
+                    <td>Apron, long sleeves</td>
+                </tr>
+                <tr>
+                    <td>Solvent (Organic)</td>
+                    <td>Nitrile</td>
+                    <td>Safety glasses</td>
+                    <td>Organic vapor cartridge</td>
+                    <td>Apron optional</td>
+                </tr>
+                <tr>
+                    <td>Enzyme Cleaner</td>
+                    <td>Nitrile</td>
+                    <td>Not required</td>
+                    <td>Not required</td>
+                    <td>Avoid skin contact if sensitized</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Critical Mixing Hazards</h3>
+        <p><strong>NEVER mix these chemicals:</strong></p>
+        <ul>
+            <li><strong>Bleach + Ammonia = Toxic Chloramine Gas (DEADLY)</strong>
+                <ul>
+                    <li>Some general cleaners contain ammonia</li>
+                    <li>Some urine enzymes produce ammonia as byproduct</li>
+                    <li>If bleach is applied afterward, toxic gas can form</li>
+                </ul>
+            </li>
+            <li><strong>Bleach + Acid = Chlorine Gas (DEADLY)</strong>
+                <ul>
+                    <li>Avoid applying bleach after acidic pre-spray without thorough rinse</li>
+                </ul>
+            </li>
+            <li><strong>Hydrogen Peroxide + Alkaline = Weak but Still Toxic</strong>
+                <ul>
+                    <li>Creates peroxide decomposition; avoid combining in same tank</li>
+                </ul>
+            </li>
+            <li><strong>Multiple Alkaline Products = Excessive Residue</strong>
+                <ul>
+                    <li>Results in rapid resoiling and poor drying</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">The Servus Standard in Action</div>
+            <p>A technician applies enzyme cleaner to a urine stain. After 30-minute dwell and extraction, stain color remains. Thinking quickly, the technician grabs bleach to "finish the job." Within seconds, a sickening yellow-green gas appears—chlorine gas, a deadly combination of bleach and ammonia (byproduct of enzyme action). The technician and homeowner must evacuate; emergency services called. This was entirely preventable with proper chemical knowledge. The Servus Protocol requires documented training on all mixing hazards and enforces a "single-chemistry" approach: use one system per project, rinse completely between chemistries, and never deviate.</p>
+        </div>
+
+        <h3>Storage Requirements</h3>
+        <ul>
+            <li><strong>Temperature:</strong> Most products store best at 15-25°C; avoid freezing and extreme heat</li>
+            <li><strong>Ventilation:</strong> Store in well-ventilated area; volatile solvents can accumulate in confined spaces</li>
+            <li><strong>Separation:</strong> Keep incompatible chemicals apart (oxidizers away from organic materials; acids away from bases)</li>
+            <li><strong>Containers:</strong> Original labeled containers always; never transfer to food containers or unlabeled bottles</li>
+            <li><strong>Vehicle storage:</strong> Secure bottles to prevent spills during transport; ensure vehicle ventilation</li>
+            <li><strong>Spill kit:</strong> Keep absorbent, neutralizer, and clean-up materials on hand</li>
+        </ul>
+
+        <h3>WorkSafeBC Compliance</h3>
+        <p><span class="glossary-term">WHMIS<span class="tooltip">Workplace Hazardous Materials Information System — Canada's chemical warning labels.</span></span> Compliance</p>
+        <p>Servus must maintain:</p>
+        <ul>
+            <li>Documentation of all chemical products in use</li>
+            <li>Accessible SDS sheets (digital and/or paper)</li>
+            <li>Employee training records on chemical hazards and PPE</li>
+            <li>Incident reporting for any exposure or spill</li>
+            <li>Regular refresher training (annual minimum)</li>
+            <li>Proper waste disposal (never down drains; hazardous waste contractor)</li>
+        </ul>
+
+        <hr>
+
+        <h2>Module 10: The Servus Chemistry Protocol</h2>
+        <p>The Servus Protocol is a systematic, decision-based approach to selecting and applying chemistry. Following this protocol ensures consistency, safety, and customer satisfaction.</p>
+
+        <h3>Step 1: Identify the Soil Type</h3>
+        <p>Look at and touch the dirty area to figure out what kind of soil you're dealing with:</p>
+        <ul>
+            <li>Is it dry particulate (sand, dust)? → Vacuum, light extraction</li>
+            <li>Is it oily/greasy (kitchen, grease stains)? → Alkaline pre-spray required</li>
+            <li>Is it staining (color)? → Enzyme or oxidizer strategy</li>
+            <li>Is it combination? → Multi-chemistry approach</li>
+            <li>Document observations in work notes</li>
+        </ul>
+
+        <h3>Step 2: Test the Stain pH</h3>
+        <p>Use a portable pH meter or pH test strips:</p>
+        <ul>
+            <li>If stain tests below pH 3: possible acid stain (mineral, rust) → consider reducing agent or dilute acid</li>
+            <li>If stain tests pH 4-8: neutral stain → standard alkaline pre-spray acceptable</li>
+            <li>If stain tests above pH 9: possible residual alkaline → acid rinse after standard extraction</li>
+            <li>Document pH reading (protects against "customer says we didn't clean" disputes)</li>
+        </ul>
+
+        <h3>Step 3: Select Chemistry Based on Soil Type & pH</h3>
+        <p>Use this decision matrix:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Soil Type</th>
+                    <th>Stain pH</th>
+                    <th>Primary Chemistry</th>
+                    <th>Secondary Chemistry</th>
+                    <th>Dwell Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Particulate (sand, dust)</td>
+                    <td>6-8</td>
+                    <td>None (vacuum + extraction)</td>
+                    <td>N/A</td>
+                    <td>0 min</td>
+                </tr>
+                <tr>
+                    <td>Oil/Grease</td>
+                    <td>6-8</td>
+                    <td>Alkaline pre-spray (pH 10-12)</td>
+                    <td>Acid rinse</td>
+                    <td>7 min</td>
+                </tr>
+                <tr>
+                    <td>Protein (blood, urine)</td>
+                    <td>5-7</td>
+                    <td>Enzyme cleaner</td>
+                    <td>Oxidizer if color remains</td>
+                    <td>20 min</td>
+                </tr>
+                <tr>
+                    <td>Plant Stain (wine, coffee)</td>
+                    <td>4-6</td>
+                    <td>Oxidizer (H₂O₂)</td>
+                    <td>Enzyme if protein component</td>
+                    <td>10 min</td>
+                </tr>
+                <tr>
+                    <td>Mineral/Rust</td>
+                    <td>2-4</td>
+                    <td>Acid rinse or reducing agent</td>
+                    <td>N/A</td>
+                    <td>15 min</td>
+                </tr>
+                <tr>
+                    <td>Combination (pet accident)</td>
+                    <td>5-8</td>
+                    <td>Enzyme first, then oxidizer</td>
+                    <td>Alkaline pre-spray if greasy</td>
+                    <td>20 + 10 min</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Step 4: Spot-Test, Then Apply</h3>
+        <p>Test chemistry on a hidden area first. Check for dye bleeding or damage after 30 minutes. Once cleared, apply to visible soiling.</p>
+
+        <h3>Step 5: Apply with Proper Dwell Time</h3>
+        <ul>
+            <li>Spray chemistry evenly; don't oversaturate (residue risk)</li>
+            <li>Set timer for dwell period (5-10 min for alkaline; 20 min for enzyme)</li>
+            <li>During dwell, address other areas/rooms (efficient sequencing)</li>
+            <li>Return to area at timer's end</li>
+            <li>Light agitation (brush gently) can improve bond-breaking, especially for alkaline pre-spray</li>
+        </ul>
+
+        <h3>Step 6: Extract</h3>
+        <p>Hot water (45–50°C), 3–5 overlapping passes. Keep momentum — no downtime between passes.</p>
+
+        <h3>Step 7: Rinse & Neutralize</h3>
+        <p>2–3 clean water passes (no chemistry), then acid rinse if alkaline was used (see Module 7).</p>
+
+        <h3>Step 8: Verify pH & Document</h3>
+        <p>Test final rinse water with pH meter. Target: pH 6–7. If above 7, repeat acid rinse. Record final pH, all products used, and dwell times in job notes.</p>
+
+        <h3>The Servus Chemistry Decision Flowchart</h3>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 8px;">Click any step in the flowchart to see detailed instructions below.</p>
+
+        <div class="flowchart-container" id="mermaidFlowchartWrap">
+            <div class="mermaid" id="mermaidChart">
+                flowchart TD
+                    A["Inspect Carpet Soiling"]:::start --> B{"Is soil primarily\ndry / particulate?"}:::decide
+                    B -->|Yes| C["Vacuum Thoroughly\nLight Extraction\nNo Chemistry Needed"]:::action
+                    B -->|No| D{"Is soil oily / greasy\nor combination\nwith grease?"}:::decide
+                    D -->|Yes| E["Alkaline Pre-Spray\npH 10-12\nDwell 7-10 min"]:::action
+                    D -->|No| F{"Is soil protein-based?\nblood / urine / food"}:::decide
+                    F -->|Yes| G["Enzyme Cleaner\nDwell 20-30 min\n45-50 C water"]:::action
+                    F -->|No| H{"Is soil a color stain?\nwine / coffee / juice"}:::decide
+                    H -->|Yes| I["Oxidizer\nHydrogen Peroxide First\nDwell 5-15 min"]:::action
+                    H -->|No| J{"Is soil mineral\nor rust?"}:::decide
+                    J -->|Yes| K["Acid Rinse or\nReducing Agent\nDwell 15 min"]:::action
+                    J -->|No| L["Unknown Soil\nMild Alkaline\nDwell 5 min\nObserve Results"]:::action
+                    C --> M["Extract with\nHot Water\nMultiple Passes"]:::step
+                    E --> M
+                    G --> M
+                    I --> M
+                    K --> M
+                    L --> M
+                    M --> N["2-3 Fresh Water\nRinse Passes\nRemove Residue"]:::step
+                    N --> O{"Was alkaline\npre-spray used?"}:::decide
+                    O -->|Yes| P["Apply Acid Rinse\npH 3-5"]:::action
+                    O -->|No| Q["Proceed to\nFinal Extraction"]:::action
+                    P --> Q
+                    Q --> R["Final Clean Water\nExtraction Pass"]:::step
+                    R --> S["Test Final Water pH\nwith pH Meter"]:::step
+                    S --> T{"Is final pH\n6-7?"}:::decide
+                    T -->|Yes| U["COMPLETE\nDocument Results\nWait 24h+"]:::done
+                    T -->|Too Alkaline| P
+                    T -->|Too Acidic| Q
+
+                    classDef start fill:#0a4875,stroke:#ff9900,stroke-width:3px,color:#fff,font-weight:bold
+                    classDef decide fill:#0a4875,stroke:#ff9900,stroke-width:3px,color:#fff,font-weight:bold
+                    classDef action fill:#ffffff,stroke:#0a4875,stroke-width:2px,color:#0a4875,font-weight:bold
+                    classDef step fill:#003366,stroke:#ff9900,stroke-width:3px,color:#fff,font-weight:bold
+                    classDef done fill:#0a4875,stroke:#ff9900,stroke-width:4px,color:#fff,font-weight:bold
+            </div>
+        </div>
+
+        <!-- EXPANDABLE DETAIL PANELS (appear below flowchart when nodes are clicked) -->
+        <div id="fcExpandArea" style="margin-top: 0;"></div>
+
+        <style>
+            /* Mermaid chart sizing */
+            #mermaidFlowchartWrap .mermaid svg {
+                min-width: 100%;
+                max-width: 100%;
+            }
+            #mermaidFlowchartWrap .mermaid .nodeLabel {
+                font-size: 16px !important;
+                font-weight: 700 !important;
+                line-height: 1.5 !important;
+                white-space: pre-wrap !important;
+                padding: 12px 16px !important;
+            }
+            #mermaidFlowchartWrap .mermaid .edgeLabel {
+                font-size: 14px !important;
+                font-weight: 800 !important;
+                background: white !important;
+                padding: 3px 10px !important;
+                border-radius: 4px !important;
+                color: #0a4875 !important;
+            }
+            #mermaidFlowchartWrap .mermaid .node { cursor: pointer; }
+            #mermaidFlowchartWrap .mermaid .node:hover rect,
+            #mermaidFlowchartWrap .mermaid .node:hover polygon,
+            #mermaidFlowchartWrap .mermaid .node:hover .label-container {
+                filter: brightness(1.15);
+                transition: filter 0.15s;
+            }
+
+            /* Expanded detail cards below flowchart */
+            .fc-expand-card {
+                background: white;
+                border: 2px solid var(--servus-navy);
+                border-radius: 8px;
+                margin: 10px 0;
+                overflow: hidden;
+                box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+                animation: fcSlideDown 0.25s ease-out;
+            }
+            @keyframes fcSlideDown {
+                from { opacity: 0; transform: translateY(-8px); }
+                to   { opacity: 1; transform: translateY(0); }
+            }
+            .fc-expand-header {
+                background: var(--servus-navy);
+                color: white;
+                padding: 12px 18px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+            }
+            .fc-expand-header:hover { background: hsl(211, 100%, 26%); }
+            .fc-expand-title {
+                font-weight: 700;
+                font-size: 1em;
+                letter-spacing: 0.3px;
+            }
+            .fc-expand-toggle {
+                font-size: 1.2em;
+                user-select: none;
+                color: var(--servus-accent);
+            }
+            .fc-expand-body {
+                padding: 16px 20px;
+                font-size: 0.95em;
+                line-height: 1.7;
+                color: var(--servus-text-mid);
+                border-top: 3px solid var(--servus-accent);
+            }
+            .fc-expand-body strong { color: var(--servus-navy); }
+            .fc-expand-body .fc-products {
+                margin-top: 10px;
+                padding: 10px 14px;
+                background: var(--servus-pale-blue);
+                border-radius: 6px;
+                border-left: 4px solid var(--servus-accent);
+            }
+            .fc-expand-body .fc-products strong { color: var(--servus-accent); }
+        </style>
+
+        <h3>Documentation & Quality Assurance</h3>
+        <p>For every job, record:</p>
+        <ul>
+            <li>Soil type(s) identified</li>
+            <li>Chemistry/chemicals used</li>
+            <li>Dwell times applied</li>
+            <li>Initial stain pH (if tested)</li>
+            <li>Final rinse water pH</li>
+            <li>Any areas with poor results (for follow-up)</li>
+            <li>Customer feedback</li>
+        </ul>
+
+        <p>This documentation protects Servus against liability claims. If a customer calls back, you have proof of proper procedure.</p>
+
+        
+
+        <h2 class="section-title">Module 10: Servus Product Quick Reference</h2>
+
+    <h3 class="module-title">Complete Product Selector</h3>
+    <p>Use this table to quickly find the right Servus product for any cleaning scenario. The pH scale below shows where each product falls — green is safe for most fibers, red zones require caution and limited dwell time.</p>
+
+    <!-- Visual pH Scale Bar + Product Cards -->
+    <div class="ph-scale-bar">
+        <div class="ph-zone ph-zone-0-3" style="flex: 3;">Danger Acidic (0–3)</div>
+        <div class="ph-zone ph-zone-3-7" style="flex: 4;">Acidic–Neutral (3–7)</div>
+        <div class="ph-zone" style="flex: 3; background: linear-gradient(90deg, #6a9e6a, #6a9e6a);">Safe Zone (6–8)</div>
+        <div class="ph-zone" style="flex: 4; background: linear-gradient(90deg, #cc8822, #c0392b);">Alkaline (8–14)</div>
+    </div>
+    <h3>Full Product Reference</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>pH</th>
+                <th>Dilution</th>
+                <th>Water Temp</th>
+                <th>Primary Use</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Rust Remover</strong></td>
+                <td>Stain Remover</td>
+                <td>1.0</td>
+                <td>RTU / Dilute</td>
+                <td>Varies</td>
+                <td>Rust, mineral deposits, iron oxide stains</td>
+            </tr>
+            <tr>
+                <td><strong>Fibre Rinse</strong></td>
+                <td>Rinse Agent</td>
+                <td>2.3</td>
+                <td>1:1 or 1:2</td>
+                <td>Cool to Warm</td>
+                <td>Final acidic rinse, residue removal</td>
+            </tr>
+            <tr>
+                <td><strong>Brown Out</strong></td>
+                <td>Specialty</td>
+                <td>3.0</td>
+                <td>RTU or Dilute</td>
+                <td>Warm</td>
+                <td>Prevent browning, yellowing treatment</td>
+            </tr>
+            <tr>
+                <td><strong>Benefect Daily Cleaner</strong></td>
+                <td>Daily Cleaner</td>
+                <td>4–5</td>
+                <td>RTU</td>
+                <td>Room Temp</td>
+                <td>Daily spotting, light maintenance</td>
+            </tr>
+            <tr>
+                <td><strong>Benefect Decon 30</strong></td>
+                <td>Disinfectant</td>
+                <td>4–5</td>
+                <td>RTU</td>
+                <td>Room Temp</td>
+                <td>Sanitize while cleaning, health facilities</td>
+            </tr>
+            <tr>
+                <td><strong>All Fiber Rinse</strong></td>
+                <td>Rinse Agent</td>
+                <td>4.0–4.5</td>
+                <td>1:6</td>
+                <td>Warm</td>
+                <td>Universal safe rinse, fiber protection</td>
+            </tr>
+            <tr>
+                <td><strong>Proxi Encap</strong></td>
+                <td>Interim</td>
+                <td>4.5</td>
+                <td>1:4 or RTU</td>
+                <td>Room Temp</td>
+                <td>Quick-dry encapsulation, interim cleaning</td>
+            </tr>
+            <tr>
+                <td><strong>Ends Odor</strong></td>
+                <td>Deodorizer</td>
+                <td>6.5–7.5</td>
+                <td>RTU or 1:1</td>
+                <td>Room Temp</td>
+                <td>Odor elimination, neutral pH safe</td>
+            </tr>
+            <tr>
+                <td><strong>Advanced Protector</strong></td>
+                <td>Protector</td>
+                <td>7.5</td>
+                <td>RTU or 1:1</td>
+                <td>Room Temp</td>
+                <td>Post-clean protection, stain resistance</td>
+            </tr>
+            <tr>
+                <td><strong>Proxi Spray & Walk Away</strong></td>
+                <td>Interim</td>
+                <td>7.95</td>
+                <td>RTU</td>
+                <td>Room Temp</td>
+                <td>Quick-dry, neutral encapsulation</td>
+            </tr>
+            <tr>
+                <td><strong>Un-Duz-It Unleashed</strong></td>
+                <td>Stain Remover</td>
+                <td>9.0</td>
+                <td>1:1 or RTU</td>
+                <td>Warm</td>
+                <td>Organic stains, moderate alkalinity</td>
+            </tr>
+            <tr>
+                <td><strong>Benefect Atomic Degreaser</strong></td>
+                <td>Degreaser</td>
+                <td>9–10</td>
+                <td>RTU or 1:1</td>
+                <td>Hot</td>
+                <td>Kitchen grease, oily buildup</td>
+            </tr>
+            <tr>
+                <td><strong>Avenge Heavy-Duty</strong></td>
+                <td>Prespray</td>
+                <td>10.0</td>
+                <td>1:1 to 1:3</td>
+                <td>Hot</td>
+                <td>Heavy traffic, industrial soil</td>
+            </tr>
+            <tr>
+                <td><strong>Performance CBS</strong></td>
+                <td>Booster</td>
+                <td>9.7</td>
+                <td>1:1 add</td>
+                <td>Hot</td>
+                <td>Enhance alkaline presprays, emulsify oils</td>
+            </tr>
+            <tr>
+                <td><strong>Enz-All</strong></td>
+                <td>Enzymatic</td>
+                <td>Neutral</td>
+                <td>RTU or 1:1</td>
+                <td>Warm</td>
+                <td>Organic stains, pet urine, enzyme action</td>
+            </tr>
+            <tr>
+                <td><strong>Dry Solv</strong></td>
+                <td>Specialty</td>
+                <td>Neutral</td>
+                <td>RTU</td>
+                <td>Room Temp</td>
+                <td>S-coded fabrics, solvent-based cleaning</td>
+            </tr>
+            <tr>
+                <td><strong>Citrus Break</strong></td>
+                <td>Prespray</td>
+                <td>12.0</td>
+                <td>1:1 to 1:2</td>
+                <td>Hot</td>
+                <td>Heavy oily soils, citrus surfactants</td>
+            </tr>
+            <tr>
+                <td><strong>Bridgepoint Ripsaw</strong></td>
+                <td>Hard Surface</td>
+                <td>12.6</td>
+                <td>RTU or 1:1</td>
+                <td>Hot</td>
+                <td>Tile, grout, hard-surface deep clean</td>
+            </tr>
+            <tr>
+                <td><strong>Professional Tile & Grout</strong></td>
+                <td>Hard Surface</td>
+                <td>12.8–13.2</td>
+                <td>RTU or 1:1</td>
+                <td>Hot</td>
+                <td>Heavy grout buildup, hard-surface specialist</td>
+            </tr>
+            <tr>
+                <td><strong>Liquid CBS</strong></td>
+                <td>Booster</td>
+                <td>13.5</td>
+                <td>1:1 add</td>
+                <td>Hot</td>
+                <td>Maximum emulsification, oily removal</td>
+            </tr>
+            <tr>
+                <td><strong>Citrus Burst</strong></td>
+                <td>Degreaser</td>
+                <td>Neutral</td>
+                <td>RTU or Dilute</td>
+                <td>Warm</td>
+                <td>Spot cleaning, natural citrus degreaser</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="servus-callout">
+        <div class="servus-callout-label">Quick Selector Tip</div>
+
+<hr>
+
+        <h2>Key Takeaways</h2>
+        <ul>
+            <li><strong>Identify first, then choose:</strong> Soil type → chemistry selection → pH range → product</li>
+            <li><strong>Rinse and neutralize every time:</strong> Clean water passes + acid rinse = no callbacks</li>
+            <li><strong>Safety is non-negotiable:</strong> SDS, PPE, never mix incompatible products</li>
+            <li><strong>Follow the flowchart:</strong> The decision tree covers every scenario. Use it.</li>
+        </ul>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">Certification Requirement</div>
+            <p>Day 2 practical assessment: identify soil, select chemistry, apply with correct dwell, extract, rinse to pH 6–7, and document results. Technicians who fail re-train before field deployment.</p>
+        </div>
+    </div>
+
+    </div> <!-- /.content -->
+
+    <!-- Footer — Matched to Day 1 screenshot exactly -->
+    <div class="servus-footer">
+        <img src="https://servusgrouplowermainland.com/wp-content/uploads/2024/12/Servus-Colour.png" alt="Servus Logo" class="logo-footer">
+        <p><strong>Servus Group Lower Mainland</strong></p>
+        <p style="font-style: italic; color: #ccc; margin-bottom: 16px;">Professionalism | Safety | Compliance</p>
+        <p style="color: #ccc;">Phone: <a href="tel:6044351135" style="color: var(--servus-accent);">604-435-1135</a> (24/7 Call or Text) | Email: <a href="mailto:info@servusgroup.com">info@servusgroup.com</a></p>
+        <p style="color: #ccc;">160 – 21900 Westminster Hwy, Richmond B.C. V6V 0A8</p>
+        <p><a href="https://servusgrouplowermainland.com" target="_blank">servusgrouplowermainland.com</a></p>
+        <div class="footer-certs">
+            <img src="https://servusgrouplowermainland.com/wp-content/uploads/2014/07/go2HR-CORLogo-K-300x283.png" alt="COR Certified" style="filter: brightness(0) invert(1); opacity: 0.7; height: 40px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/ISSA_logo.svg/200px-ISSA_logo.svg.png" alt="ISSA Canada" style="filter: brightness(0) invert(1); opacity: 0.7; height: 35px;">
+        </div>
+        <p class="compliance-text">Compliant with ANSI/IICRC S100 Standards & WorkSafeBC 2026 Guidelines</p>
+    </div>
+
+    <!-- Floating Glossary Widget -->
+    <div class="glossary-widget" id="glossaryWidget">
+        <!-- Expandable Panel -->
+        <div class="glossary-panel" id="glossaryPanel">
+            <div class="glossary-panel-header">
+                <h3>📖 Glossary</h3>
+                <button class="glossary-close" onclick="toggleGlossary()">✕</button>
+            </div>
+            <div class="glossary-search">
+                <input type="text" id="glossarySearch" placeholder="Search terms..." oninput="searchGlossary(this.value)">
+            </div>
+            <div class="glossary-filters">
+                <button class="g-filter active" onclick="filterG('all', this)">All</button>
+                <button class="g-filter" onclick="filterG('chem', this)">Chemistry</button>
+                <button class="g-filter" onclick="filterG('tech', this)">Technical</button>
+                <button class="g-filter" onclick="filterG('safe', this)">Safety</button>
+            </div>
+            <div class="glossary-list" id="glossaryList">
+                <!-- Chemistry Terms -->
+                <div class="g-term-item" data-cat="chem" data-search="adhesion">
+                    <div class="g-term-name">Adhesion <span class="g-term-pron">ad-HEE-zhun</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">When something sticks to something else. Here, how dirt sticks to carpet fibers.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="alkaline">
+                    <div class="g-term-name">Alkaline <span class="g-term-pron">AL-kuh-line</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Opposite of acid. Alkaline cleaners (pH above 7) cut through grease and oil.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="amino acids">
+                    <div class="g-term-name">Amino Acids <span class="g-term-pron">uh-MEE-no</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Building blocks of proteins. Enzymes break protein stains into these — they dissolve in water.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="chromophore">
+                    <div class="g-term-name">Chromophore <span class="g-term-pron">KROH-muh-for</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">The part of a stain that gives it color. Oxidizers break this — the color disappears.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="cmc critical micelle concentration">
+                    <div class="g-term-name">CMC <span class="g-term-pron">Critical Micelle Conc.</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Minimum amount of soap needed for it to actually clean. The "minimum dose."</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="coalescence">
+                    <div class="g-term-name">Coalescence <span class="g-term-pron">koh-uh-LESS-ens</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">When small oil drops join back into bigger drops. Emulsifiers prevent this.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="colloidal suspension">
+                    <div class="g-term-name">Colloidal Suspension <span class="g-term-pron">kuh-LOY-dul</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Invisible tiny particles floating in water. They make carpet look dull and gray.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="denature">
+                    <div class="g-term-name">Denature <span class="g-term-pron">dee-NAY-chur</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">When heat destroys an enzyme so it stops working. Use warm water, not boiling.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="emulsifier">
+                    <div class="g-term-name">Emulsifier <span class="g-term-pron">ee-MUL-sih-fye-er</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Keeps oil and water mixed together so oil doesn't go back on the carpet.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="enzyme">
+                    <div class="g-term-name">Enzyme <span class="g-term-pron">EN-zyme</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Natural chemical that breaks down specific things — like your stomach digests food. Used on blood, urine, food stains.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="hydrophilic">
+                    <div class="g-term-name">Hydrophilic <span class="g-term-pron">hy-droh-FIL-ik</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">"Water-loving." The part of soap that grabs water. Hydro = water, philic = loves.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="hydrophobic">
+                    <div class="g-term-name">Hydrophobic <span class="g-term-pron">hy-droh-FOH-bik</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">"Water-fearing." The part of soap that grabs oil and grease.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="hygroscopic">
+                    <div class="g-term-name">Hygroscopic <span class="g-term-pron">hy-groh-SKOP-ik</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Absorbs moisture from air. Leftover soap pulls in moisture → attracts more dirt.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="ionic interaction">
+                    <div class="g-term-name">Ionic Interaction <span class="g-term-pron">eye-ON-ik</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Bond where minerals (salt) attach to fibers using electrical charges. Acid breaks these.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="lipophilic">
+                    <div class="g-term-name">Lipophilic <span class="g-term-pron">lip-oh-FIL-ik</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">"Oil-loving." Why grease stains are hard to clean — the grease "likes" the fiber.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="logarithmic">
+                    <div class="g-term-name">Logarithmic <span class="g-term-pron">log-uh-RITH-mik</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Scale where each step = 10x bigger. pH 5 is 10x more acidic than pH 6.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="micelle">
+                    <div class="g-term-name">Micelle <span class="g-term-pron">my-SELL</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Tiny ball of soap molecules around dirt. Inside grabs dirt, outside lets water carry it away.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="neutralization neutralize">
+                    <div class="g-term-name">Neutralization <span class="g-term-pron">noo-truh-lih-ZAY-shun</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Bringing pH back to neutral (~7) after cleaning with a mild acid rinse.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="oxidizer">
+                    <div class="g-term-name">Oxidizer <span class="g-term-pron">OX-ih-dye-zer</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Chemical that removes color from stains. Hydrogen peroxide is a common one.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="particulate">
+                    <div class="g-term-name">Particulate <span class="g-term-pron">par-TIK-yoo-lit</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Tiny solid particles — sand, dust, dirt crumbs. Dry, loose dirt on carpet fibers.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="peptide bond">
+                    <div class="g-term-name">Peptide Bond <span class="g-term-pron">PEP-tide</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Link holding protein chains together. Enzyme cleaners cut these to break stains apart.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="ph scale">
+                    <div class="g-term-name">pH Scale<span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">0–14 scale. 0 = very acidic, 7 = neutral (water), 14 = very alkaline.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="precipitate re-precipitate">
+                    <div class="g-term-name">Precipitate <span class="g-term-pron">preh-SIP-ih-tate</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">When dissolved stuff turns solid again and settles back on carpet.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="reducing agent">
+                    <div class="g-term-name">Reducing Agent<span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Opposite of oxidizer. Changes rust from solid stain to dissolvable form.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="saponification">
+                    <div class="g-term-name">Saponification <span class="g-term-pron">suh-PON-ih-fih-KAY-shun</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Alkaline cleaner turns grease into soap → soap dissolves in water → extracted out.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="surfactant">
+                    <div class="g-term-name">Surfactant <span class="g-term-pron">sir-FAK-tent</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">"Surface Active Agent." One end grabs water, other grabs dirt. Bridge between water & grease.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="van der waals forces">
+                    <div class="g-term-name">Van der Waals Forces<span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Weak "stickiness" between particles — like dust on a TV screen. Not a chemical bond.</div>
+                </div>
+
+                <!-- Technical Terms -->
+                <div class="g-term-item" data-cat="tech" data-search="agitation">
+                    <div class="g-term-name">Agitation <span class="g-term-pron">aj-ih-TAY-shun</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Mechanical scrubbing of carpet fibers (by brush or machine) to loosen dirt for extraction.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="browning yellowing">
+                    <div class="g-term-name">Browning <span class="g-term-pron">BROWN-ing</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Yellowing or darkening of carpet after cleaning. Caused by alkaline residue wicking to fiber tips as carpet dries. Prevented by acid rinse.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="dwell time">
+                    <div class="g-term-name">Dwell Time<span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Wait time after spraying chemical before extracting. Usually 5–10 minutes.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="dye fastness color fast">
+                    <div class="g-term-name">Dye Fastness<span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">How well carpet dye resists bleeding or fading when hit with cleaning chemicals. Test first on hidden area.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="encapsulation encap">
+                    <div class="g-term-name">Encapsulation <span class="g-term-pron">en-KAP-soo-LAY-shun</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Dry-cleaning method. Polymer captures dirt in crystals that release when vacuumed. No extraction needed.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="extraction">
+                    <div class="g-term-name">Extraction<span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Machine sprays hot water into carpet, then vacuums dirty water out. Main cleaning step.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="fiber geometry">
+                    <div class="g-term-name">Fiber Geometry<span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Physical shape and texture of carpet fibers. Affects how soil particles lodge and how easily they come out.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="inconspicuous area">
+                    <div class="g-term-name">Inconspicuous Area<span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Hidden carpet spot (behind furniture) to test product first before using on visible areas.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="pre-spray prespray">
+                    <div class="g-term-name">Pre-spray<span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Chemical sprayed on carpet BEFORE main extraction to loosen dirt.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="resoiling">
+                    <div class="g-term-name">Resoiling<span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Carpet gets dirty again fast after cleaning — usually from leftover soap residue.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="solvent">
+                    <div class="g-term-name">Solvent <span class="g-term-pron">SOL-vent</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Liquid that dissolves oils and grease without water. Used for S-coded (solvent-only) fabrics.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="static charge">
+                    <div class="g-term-name">Static Charge<span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Electrical charge on synthetic fibers that makes dust and dirt particles stick. Humidity reduces it.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="tannin">
+                    <div class="g-term-name">Tannin <span class="g-term-pron">TAN-in</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Color compound in coffee, tea, wine, and plant matter. Oxidizers remove tannin stains.</div>
+                </div>
+
+                <!-- New Chemistry Terms -->
+                <div class="g-term-item" data-cat="chem" data-search="anthocyanin dye pigment">
+                    <div class="g-term-name">Anthocyanin <span class="g-term-pron">an-tho-SY-uh-nin</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Color compound in red wine and berries that stains carpet fibers. Oxidizers remove it.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="coagulate set protein blood">
+                    <div class="g-term-name">Coagulate <span class="g-term-pron">ko-AG-yuh-late</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">When protein (like blood) becomes solid and hard from heat. Sets the stain permanently. Use warm water, not hot.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="concentrate concentrated mix">
+                    <div class="g-term-name">Concentrate <span class="g-term-pron">KON-sen-trate</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">A strong product that must be mixed with water before use. Opposite of RTU.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="hydrogen peroxide bleach mild">
+                    <div class="g-term-name">Hydrogen Peroxide <span class="g-term-pron">hy-droh-jen per-OX-ide</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">A mild bleaching chemical that breaks down color stains like wine, coffee, and tea.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="insoluble does not dissolve">
+                    <div class="g-term-name">Insoluble <span class="g-term-pron">in-SOL-yuh-bul</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Cannot dissolve in water. Stays as solid particles. Sand and dust are insoluble.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="soluble dissolve water">
+                    <div class="g-term-name">Soluble <span class="g-term-pron">SOL-yuh-bul</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Able to dissolve in water or liquid. Sugar is soluble — it disappears in water.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="sodium percarbonate oxygen stain">
+                    <div class="g-term-name">Sodium Percarbonate <span class="g-term-pron">SO-dee-um per-KAR-bun-ate</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Oxygen-based stain remover. Releases bubbles that lift stains when mixed with water.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="sodium thiosulfate rust iron">
+                    <div class="g-term-name">Sodium Thiosulfate <span class="g-term-pron">SO-dee-um thy-oh-SUL-fate</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">A chemical that converts rust into a form that dissolves in water so it can be extracted.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="volatile evaporate fumes">
+                    <div class="g-term-name">Volatile <span class="g-term-pron">VAL-uh-til</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Evaporates quickly into the air at room temperature. Volatile solvents need good ventilation.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="protease enzyme protein">
+                    <div class="g-term-name">Protease <span class="g-term-pron">PRO-tee-ase</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Enzyme that breaks down proteins — used on blood, urine, food, and sweat stains.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="amylase enzyme starch food">
+                    <div class="g-term-name">Amylase <span class="g-term-pron">AM-uh-lase</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Enzyme that breaks down starch from dried food stains like pasta, bread, and sauces.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="lipase enzyme fat grease oil">
+                    <div class="g-term-name">Lipase <span class="g-term-pron">LIP-ase</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Enzyme that breaks down fats and oils in greasy food stains like butter or cooking oil.</div>
+                </div>
+
+                <!-- New Technical Terms -->
+                <div class="g-term-item" data-cat="tech" data-search="bonnet pad floor machine">
+                    <div class="g-term-name">Bonnet <span class="g-term-pron">BAH-nit</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">A round absorbent pad that attaches to a floor machine for low-moisture cleaning.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="crb counter rotating brush machine">
+                    <div class="g-term-name">CRB <span class="g-term-pron">"see-ar-bee"</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def"><strong>Counter-Rotating Brush</strong> — floor machine with brushes spinning opposite directions to scrub carpet.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="deodorizer odor smell">
+                    <div class="g-term-name">Deodorizer <span class="g-term-pron">dee-OH-der-eye-zer</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">A product that removes or covers up bad smells. Kills odor molecules instead of just masking.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="dilution ratio mix water">
+                    <div class="g-term-name">Dilution <span class="g-term-pron">dih-LOO-shun</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Making a product weaker by mixing with water. "1:6 dilution" = 1 part product to 6 parts water.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="interim maintenance between">
+                    <div class="g-term-name">Interim <span class="g-term-pron">IN-ter-um</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Temporary or in-between cleaning done to maintain carpet between deep cleans.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="residue leftover chemical">
+                    <div class="g-term-name">Residue <span class="g-term-pron">REZ-uh-doo</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Leftover cleaning chemical or dirt that stays in the carpet after cleaning. Causes resoiling.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="rtu ready to use no mix">
+                    <div class="g-term-name">RTU <span class="g-term-pron">"ar-tee-yoo"</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def"><strong>Ready-To-Use</strong> — product already mixed at correct strength. No dilution needed.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="wicking capillary browning">
+                    <div class="g-term-name">Wicking <span class="g-term-pron">WIK-ing</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">When liquid travels up from carpet backing to fiber tips as carpet dries. Causes browning and stain return.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="grout tile floor lines">
+                    <div class="g-term-name">Grout <span class="g-term-pron">GROWT</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">The material between tiles on hard floors. Absorbs dirt and stains easily.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="solution dyed color fiber">
+                    <div class="g-term-name">Solution-Dyed <span class="g-term-pron">suh-LOO-shun dide</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Fiber colored during manufacturing — more stain-resistant than regular dyed fiber. Hard to bleach.</div>
+                </div>
+
+                <!-- Safety Terms -->
+                <div class="g-term-item" data-cat="safe" data-search="antimicrobial bacteria kill">
+                    <div class="g-term-name">Antimicrobial <span class="g-term-pron">an-tee-my-KRO-bee-ul</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">A product that kills or stops the growth of bacteria and germs.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="botanical plant based natural">
+                    <div class="g-term-name">Botanical <span class="g-term-pron">buh-TAN-ik-ul</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Made from plants. Natural, plant-based ingredients. Example: Benefect products.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="carcinogen cancer causing">
+                    <div class="g-term-name">Carcinogen <span class="g-term-pron">kar-SIN-uh-jen</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">A substance that can cause cancer with long-term exposure. Always wear PPE.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="corrosive burn damage skin">
+                    <div class="g-term-name">Corrosive <span class="g-term-pron">kuh-RO-siv</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">A chemical that burns or damages skin, eyes, or metal on contact. Wear full PPE.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="disinfectant kill germs virus bacteria">
+                    <div class="g-term-name">Disinfectant <span class="g-term-pron">dis-IN-fek-tant</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">A chemical that kills harmful bacteria, viruses, and germs on surfaces.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="pictogram symbol warning label">
+                    <div class="g-term-name">Pictogram <span class="g-term-pron">PIK-to-gram</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Small warning symbol on chemical labels showing what type of danger the product has.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="ppe personal protective equipment">
+                    <div class="g-term-name">PPE<span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def"><strong>Personal Protective Equipment</strong> — gloves, safety glasses, respirator, apron.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="respiratory breathing lungs sensitizer">
+                    <div class="g-term-name">Respiratory <span class="g-term-pron">RES-pir-uh-tor-ee</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Related to breathing and lungs. A "respiratory sensitizer" causes breathing problems.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="sds safety data sheet">
+                    <div class="g-term-name">SDS<span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def"><strong>Safety Data Sheet</strong> — info on what's in a chemical, how to use it safely, PPE needed.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="whmis workplace hazardous">
+                    <div class="g-term-name">WHMIS<span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def"><strong>Workplace Hazardous Materials Info System</strong> — Canada's chemical warning label system.</div>
+                </div>
+            </div>
+            <div class="glossary-panel-footer" id="glossaryCount">73 terms</div>
+        </div>
+
+        <!-- Floating Button -->
+        <button class="glossary-btn" onclick="toggleGlossary()" title="Open Glossary">
+            📖
+            <span class="badge">73</span>
+        </button>
+    </div>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            securityLevel: 'loose',
+            themeVariables: {
+                primaryColor: 'hsl(211, 100%, 22%)',
+                primaryTextColor: '#ffffff',
+                primaryBorderColor: '#ff9900',
+                lineColor: '#ff9900',
+                secondaryColor: 'hsl(211, 80%, 30%)',
+                tertiaryColor: 'hsl(211, 60%, 35%)',
+                background: 'hsl(211, 100%, 22%)',
+                mainBkg: 'hsl(211, 100%, 22%)',
+                nodeBorder: '#ff9900',
+                clusterBkg: 'hsl(211, 100%, 18%)',
+                titleColor: '#ffffff',
+                edgeLabelBackground: 'hsl(211, 100%, 22%)',
+                nodeTextColor: '#ffffff',
+                fontSize: '16px'
+            },
+            flowchart: {
+                useMaxWidth: true,
+                padding: 25,
+                nodeSpacing: 60,
+                rankSpacing: 60
+            }
+        });
+
+        // After Mermaid renders, attach click event handlers to flowchart nodes
+        mermaid.run().then(() => {
+            if (typeof attachMermaidClicks === 'function') attachMermaidClicks();
+        }).catch(() => {});
+    </script>
+    <script>
+
+        let glossaryOpen = false;
+
+        function toggleGlossary() {
+            glossaryOpen = !glossaryOpen;
+            document.getElementById('glossaryPanel').classList.toggle('open', glossaryOpen);
+        }
+
+        function filterG(cat, btn) {
+            document.querySelectorAll('.g-filter').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            let count = 0;
+            document.querySelectorAll('.g-term-item').forEach(item => {
+                const show = cat === 'all' || item.dataset.cat === cat;
+                item.style.display = show ? 'block' : 'none';
+                if (show) count++;
+            });
+            document.getElementById('glossaryCount').textContent = count + ' terms';
+            document.getElementById('glossarySearch').value = '';
+        }
+
+        function searchGlossary(query) {
+            const q = query.toLowerCase().trim();
+            let count = 0;
+            document.querySelectorAll('.g-term-item').forEach(item => {
+                const match = !q || item.dataset.search.includes(q) || item.textContent.toLowerCase().includes(q);
+                item.style.display = match ? 'block' : 'none';
+                if (match) count++;
+            });
+            document.getElementById('glossaryCount').textContent = count + ' terms';
+            document.querySelectorAll('.g-filter').forEach(b => b.classList.remove('active'));
+            document.querySelector('.g-filter').classList.add('active');
+        }
+
+        // ===== SCENARIO CARD TOGGLE =====
+        function toggleScenario(header) {
+            const card = header.closest('.scenario-card');
+            if (card) {
+                card.classList.toggle('open');
+            }
+        }
+
+
+        // Attach scenario click handlers and populate pH grid when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.scenario-header').forEach(header => {
+                header.addEventListener('click', function() {
+                    toggleScenario(this);
+                });
+            });
+        });
+
+        // ===== MERMAID NODE CLICK → EXPANDABLE DETAIL =====
+        const fcNodeDetails = {
+            'A': { title: 'Inspect Carpet Soiling', body: '<strong>What to do:</strong> Kneel down and examine the carpet closely. Rub fibers between your fingers — is the soil dry and gritty, or slippery and oily? Look at the color. Smell it. Check the surrounding area for clues (near kitchen = grease, near entrance = particulate).<br><br><strong>Why it matters:</strong> This single observation determines your entire cleaning approach. Wrong chemistry = wasted time, potential fiber damage, and comeback complaints.' },
+            'B': { title: 'Decision: Is Soil Dry / Particulate?', body: '<strong>How to tell:</strong> Dry particulate soil feels gritty between fingers. It\'s visible as sand, dust, or dirt crumbs sitting on or between fibers. Run your hand across the carpet — if particles fall off easily, it\'s particulate.<br><br><strong>Common locations:</strong> Entryways, hallways, high-traffic paths, near exterior doors.' },
+            'C': { title: 'Vacuum + Light Extraction (No Chemistry)', body: '<strong>Process:</strong> Use a CRI-approved vacuum with proper agitation. Make overlapping passes. Follow with a single hot water extraction pass — no chemicals in the tank.<br><br><strong>Key fact:</strong> This handles 30-40% of all carpet cleaning jobs. Not every carpet needs chemistry!<br><br><div class="fc-products"><strong>Servus Tip:</strong> Save chemistry for when it\'s needed. Using chemicals on dry soil wastes product, wastes time, and creates unnecessary residue.</div>' },
+            'D': { title: 'Decision: Is Soil Oily / Greasy?', body: '<strong>How to tell:</strong> Rub fibers — do they feel slippery or waxy? Greasy soil darkens fibers and resists water. Often has a sheen under light.<br><br><strong>Common locations:</strong> Restaurant carpets, kitchen entries, garage entries, mechanic shops, fast-food dining areas.' },
+            'E': { title: 'Alkaline Pre-Spray', body: '<strong>Process:</strong> Apply alkaline pre-spray evenly across the soiled area. Target pH 10-12. Allow <strong>7-10 minutes dwell time</strong> — this is critical. The alkaline breaks the molecular bonds in grease so hot water can flush it away.<br><br><strong>Important:</strong> Don\'t let it dry! If it dries, re-apply. Work in sections on large areas.<br><br><div class="fc-products"><strong>Servus Products:</strong> Benefect Botanical Atomic Degreaser (pH 9-10), Citrus Break powdered prespray (pH 12.0), Liquid CBS emulsifier (pH 13.5)</div>' },
+            'F': { title: 'Decision: Is Soil Protein-Based?', body: '<strong>How to tell:</strong> Protein stains often have a biological origin and sometimes an odor. Look for: blood (dark red/brown), urine (yellow, ammonia smell), vomit, milk, eggs, food residue.<br><br><strong>Warning:</strong> NEVER use hot water first on protein stains — heat "cooks" the protein and sets the stain permanently. Use enzymes first.' },
+            'G': { title: 'Enzyme Cleaner', body: '<strong>Process:</strong> Apply enzyme cleaner to the stained area. Use <strong>warm water only (45-50 C)</strong> — NOT hot. Enzymes are biological catalysts that break protein chains into small amino acids that dissolve in water.<br><br><strong>Dwell time:</strong> 20-30 minutes minimum. Enzymes need time to work. Don\'t rush this step.<br><br><div class="fc-products"><strong>Servus Product:</strong> Enz-All Professional Enzymatic Carpet Cleaner — warm water preferred, use with extraction cleaning</div>' },
+            'H': { title: 'Decision: Is It a Color Stain?', body: '<strong>How to tell:</strong> The stain has a distinct color that wasn\'t there before — red (wine), brown (coffee/tea), purple (grape juice), blue/black (ink), yellow (turmeric/mustard).<br><br><strong>Key concept:</strong> Color stains have chromophores — the molecular part that gives them color. Oxidizers break these chromophores apart.' },
+            'I': { title: 'Oxidizer (Hydrogen Peroxide First)', body: '<strong>Process:</strong> Start with Hydrogen Peroxide — it\'s the safest oxidizer. <strong>ALWAYS spot-test in a hidden area first</strong> because oxidizers can bleach carpet fibers.<br><br><strong>Dwell time:</strong> 5-15 minutes. Watch the stain — you\'ll see the color fading as chromophores break.<br><br><strong>If H2O2 fails:</strong> Escalate to sodium percarbonate. <strong>Never use oxidizers on wool or silk.</strong>' },
+            'J': { title: 'Decision: Is It Mineral / Rust?', body: '<strong>How to tell:</strong> Rust stains are orange-brown and often near metal furniture legs or radiators. Hard water deposits look white and crusty. Copper stains are greenish. Mineral stains feel hard/crusty to the touch.<br><br><strong>Common locations:</strong> Near building entrances, under planters, areas with water damage, near sprinkler heads.' },
+            'K': { title: 'Acid Rinse or Reducing Agent', body: '<strong>Process:</strong> Acid dissolves mineral deposits. Reducing agents work opposite to oxidizers — they add electrons to break the color in rust. Apply, dwell 15 minutes, then extract.<br><br><div class="fc-products"><strong>Servus Product:</strong> Fibre Rinse (pH 2.3, strongly acidic — use diluted per label) or All Fiber Rinse (pH 4.0-4.5, milder option)</div>' },
+            'L': { title: 'Unknown Soil — Start Safe', body: '<strong>Process:</strong> When you can\'t identify the soil, start with a mild alkaline cleaner (pH 8-9). Apply a small amount, dwell 5 minutes, then observe the results.<br><br><strong>If it\'s working:</strong> Continue with full application.<br><strong>If not:</strong> Reassess — try enzyme or oxidizer next. Document everything you tried.<br><br><div class="fc-products"><strong>Servus Product:</strong> Benefect Botanical Impact Cleaner (pH 9.7) — safe general-purpose starting point</div>' },
+            'M': { title: 'Extract with Hot Water', body: '<strong>Process:</strong> Use hot water extraction (HWE) machine. Make 3-4 overlapping passes. Maintain proper wand speed (about 1 inch per second). Keep the extraction wand flat against the carpet. Overlap each pass by 50%.<br><br><strong>Temperature:</strong> 150-200 F at the wand tip (not at the machine — it cools in the hose).<br><br><strong>Key:</strong> Slow, steady, overlapping passes extract more soil than fast passes.' },
+            'N': { title: 'Fresh Water Rinse Passes', body: '<strong>Process:</strong> Switch to <strong>clean water only</strong> — absolutely NO chemistry in the tank. Make 2-3 full extraction passes to flush out ALL chemical residue.<br><br><strong>Why this matters:</strong> Chemical residue left in the carpet acts like a sticky magnet for new dirt. This is the #1 cause of "rapid resoiling" — when a carpet looks dirty again within weeks of cleaning.' },
+            'O': { title: 'Decision: Was Alkaline Pre-Spray Used?', body: '<strong>If YES:</strong> Alkaline residue remains on fibers. Proceed to Node P for acid rinse.<br><br><strong>If NO:</strong> Skip acid rinse, proceed directly to Node Q for final extraction.' },
+            'P': { title: 'Apply Acid Rinse (pH 3-5)', body: '<strong>Process:</strong> Add acid rinse to your extraction tank at the recommended dilution. Make one full pass over the entire area. This neutralizes alkaline residue and brings carpet back toward pH 7.<br><br><div class="fc-products"><strong>Servus Products:</strong> All Fiber Rinse (pH 4.0-4.5, dilute 1:6) or Fibre Rinse (pH 2.3 — follow label dilution carefully, this is strongly acidic)</div>' },
+            'Q': { title: 'Proceed to Final Extraction', body: 'Either no alkaline was used (so no acid rinse needed), or the acid rinse has been applied. Either way, proceed to the final clean water extraction pass.' },
+            'R': { title: 'Final Clean Water Extraction', body: '<strong>Process:</strong> One last pass with clean water only. Go slow, overlap passes. The water coming out of the carpet should be <strong>nearly clear</strong>.<br><br><strong>If it\'s still visibly dirty:</strong> Do another pass. Don\'t leave dirty water behind — it defeats the purpose of the entire cleaning process.' },
+            'S': { title: 'Test Final Water pH', body: '<strong>Process:</strong> Collect a sample of the final extracted water in a clean container. Dip your pH meter or pH test strip into it. Read the value and write it down.<br><br><strong>This is the most critical QC step.</strong> It proves your cleaning was done correctly and protects Servus against liability claims. If a customer calls back with resoiling, you can reference this documented pH reading.' },
+            'T': { title: 'Decision: Is Final pH 6-7?', body: '<strong>Target range:</strong> pH 6-7 (slightly acidic to neutral).<br><br><strong>pH 6-7 =</strong> All chemistry has been properly flushed and neutralized. Carpet is clean and won\'t attract new soil.<br><strong>pH above 7 =</strong> Alkaline residue remains. Will cause rapid resoiling. Need more acid rinse.<br><strong>pH below 6 =</strong> Too much acid. Need more clean water passes to dilute.' },
+            'U': { title: 'COMPLETE — Document Results', body: '<strong>Final steps:</strong><br>1. Document: final pH, all chemicals used, dwell times, number of passes<br>2. Take photos of the finished carpet<br>3. Set drying equipment if available (fans, dehumidifiers)<br>4. Advise customer: wait <strong>24+ hours</strong> before replacing furniture or allowing heavy foot traffic<br>5. Monitor for 48 hours if possible<br><br><div class="fc-products"><strong>Servus Standard:</strong> Every completed job must have documented pH readings. This protects the company and proves professional-grade service.</div>' }
+        };
+
+        // After Mermaid renders, attach click handlers to each node
+        function attachMermaidClicks() {
+            const nodes = document.querySelectorAll('#mermaidChart .node');
+            nodes.forEach(node => {
+                node.style.cursor = 'pointer';
+                node.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    // Extract node ID from the element
+                    const nodeId = this.id ? this.id.replace(/^flowchart-/, '').split('-')[0] : '';
+                    const detail = fcNodeDetails[nodeId];
+                    if (!detail) return;
+
+                    const area = document.getElementById('fcExpandArea');
+                    const existingId = 'fc-expand-' + nodeId;
+                    const existing = document.getElementById(existingId);
+
+                    // If already open, toggle closed
+                    if (existing) {
+                        existing.remove();
+                        return;
+                    }
+
+                    // Create expandable card
+                    const card = document.createElement('div');
+                    card.id = existingId;
+                    card.className = 'fc-expand-card';
+                    card.innerHTML = `
+                        <div class="fc-expand-header" onclick="this.parentElement.remove()">
+                            <span class="fc-expand-title">${detail.title}</span>
+                            <span class="fc-expand-toggle">▼</span>
+                        </div>
+                        <div class="fc-expand-body">${detail.body}</div>
+                    `;
+                    area.appendChild(card);
+
+                    // Scroll into view
+                    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
+            });
+        }
+
+        // Run after Mermaid finishes rendering
+        setTimeout(attachMermaidClicks, 1500);
+        // Backup: also try after longer delay for slow connections
+        setTimeout(attachMermaidClicks, 3000);
+    </script>
+</body>
+</html>
