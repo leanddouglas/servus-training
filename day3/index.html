@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servus Training: Day 3 - Cleaning Methods & Equipment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --servus-navy: #0a4875;
+            --servus-navy-dark: #004085;
+            --servus-blue: #005a87;
+            --servus-blue-mid: #006ba1;
+            --servus-accent: #ff9900;
+            --servus-light-blue: #D3EEF5;
+            --servus-pale-blue: #F0FCFF;
+            --servus-cloud-blue: #F2F7FC;
+            --servus-off-white: #FAFAFA;
+            --servus-dark: #313131;
+            --servus-text: #333333;
+            --servus-text-mid: #393939;
+            --servus-link: #0056b3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Myriad Variable Concept', 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--servus-text);
+            background-color: #ffffff;
+            line-height: 1.7;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0;
+            position: relative;
+        }
+
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Back to Course Link */
+        .back-link {
+            background-color: var(--servus-navy);
+            padding: 12px 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header Styling — Matched to Day 1 (Antigravity) */
+        .servus-header {
+            background: hsl(211, 100%, 22%);
+            color: white;
+            padding: 40px 40px 35px;
+            text-align: center;
+            border-bottom: 6px solid var(--servus-accent);
+            position: relative;
+            page-break-inside: avoid;
+        }
+
+        .servus-header .logo-top-right {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            height: 45px;
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+
+        .servus-header h1 {
+            font-size: 2.6em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2px;
+            font-weight: 800;
+        }
+
+        .servus-header .subtitle {
+            font-size: 1.25em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.85;
+            margin-bottom: 8px;
+        }
+
+        .servus-header .tagline {
+            font-size: 1.4em;
+            font-style: italic;
+            opacity: 0.9;
+            margin: 8px 0;
+        }
+
+        .servus-header h2 {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-top: 18px;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+
+        .servus-header .module-label {
+            font-size: 1em;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+
+        /* Certification Strip — Matched to Day 1 */
+        .cert-strip {
+            background-color: var(--servus-light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 12px 20px;
+            flex-wrap: wrap;
+            page-break-inside: avoid;
+        }
+
+        .cert-strip img {
+            height: 40px;
+            opacity: 0.85;
+        }
+
+        .cert-strip span {
+            font-size: 0.85em;
+            color: var(--servus-navy);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Main Content — Matched to Day 1 */
+        .content {
+            padding: 30px 40px;
+        }
+
+        h2.section-title, h2 {
+            color: var(--servus-navy);
+            font-size: 1.5em;
+            font-weight: 700;
+            border-bottom: 3px solid var(--servus-accent);
+            padding-bottom: 8px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            page-break-inside: avoid;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3.module-title, h3 {
+            color: var(--servus-blue-mid);
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-top: 28px;
+            margin-bottom: 10px;
+            padding-left: 12px;
+            border-left: 4px solid var(--servus-accent);
+            page-break-inside: avoid;
+        }
+
+        p {
+            font-size: 0.97em;
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 14px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        strong {
+            color: var(--servus-navy);
+            font-weight: 600;
+        }
+
+        /* Callout Boxes — Matched to Day 1 (wrench with white circle) */
+        .servus-callout {
+            background: var(--servus-cloud-blue);
+            border-left: 5px solid var(--servus-navy);
+            border-radius: 0 8px 8px 0;
+            padding: 18px 20px;
+            margin: 18px 0 22px;
+            font-size: 0.93em;
+            line-height: 1.65;
+            position: relative;
+            page-break-inside: avoid;
+        }
+
+        .servus-callout::before {
+            content: "🔧";
+            position: absolute;
+            top: -10px;
+            left: -18px;
+            font-size: 1.4em;
+            background: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+        }
+
+        .servus-callout-label {
+            font-weight: 700;
+            color: var(--servus-navy);
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .servus-callout p {
+            margin-bottom: 0;
+            color: var(--servus-text-mid);
+            font-size: 0.95em;
+        }
+
+        .servus-callout strong.callout-label {
+            color: var(--servus-navy);
+            font-weight: 700;
+            display: inline;
+        }
+
+        /* Tables — Matched to Day 1 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+            page-break-inside: avoid;
+        }
+
+        table, th, td {
+            border: 1px solid #d8d8d8;
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--servus-navy) 0%, var(--servus-blue) 100%);
+            color: white;
+            padding: 12px 14px;
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        td {
+            padding: 11px 14px;
+            vertical-align: top;
+            font-size: 0.95em;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: var(--servus-pale-blue);
+        }
+
+        tbody tr:hover {
+            background-color: var(--servus-light-blue);
+        }
+
+        /* Horizontal Rule — Matched to Day 1 */
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, var(--servus-accent), var(--servus-navy), var(--servus-accent));
+            margin: 35px 0;
+            opacity: 0.5;
+            page-break-inside: avoid;
+        }
+
+        /* Interactive Accordion Styles (Card-style, Day 2 compatible) */
+        .accordion-section {
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+
+        .accordion-item {
+            cursor: pointer;
+            margin-bottom: 12px;
+            padding: 14px 16px;
+            background: white;
+            border: 1px solid #d8d8d8;
+            border-left: 4px solid var(--servus-navy);
+            border-radius: 0 4px 4px 0;
+            transition: all 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .accordion-item:hover {
+            background: var(--servus-pale-blue);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        }
+
+        .accordion-item.open {
+            background: var(--servus-pale-blue);
+            border-left-color: var(--servus-accent);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .accordion-label {
+            font-weight: 700;
+            color: var(--servus-blue-mid);
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .accordion-toggle {
+            width: 20px;
+            height: 20px;
+            background: var(--servus-accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: 700;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-toggle {
+            transform: rotate(180deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 2000px;
+        }
+
+        .accordion-content {
+            padding: 12px 0;
+            font-size: 0.95em;
+            color: var(--servus-text-mid);
+            line-height: 1.6;
+        }
+
+        .accordion-content strong {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            color: var(--servus-navy);
+        }
+
+        .accordion-content ul {
+            margin-left: 18px;
+            margin-bottom: 8px;
+        }
+
+        .accordion-content li {
+            margin-bottom: 4px;
+        }
+
+        .accordion-content table {
+            margin: 12px 0;
+        }
+
+        /* Footer — Matched to Day 1 (gradient + logo) */
+        .servus-footer {
+            background: linear-gradient(135deg, var(--servus-dark) 0%, #1a1a2e 100%);
+            color: #ccc;
+            padding: 30px 40px;
+            font-size: 0.88em;
+            text-align: center;
+            position: relative;
+            margin-top: 40px;
+            page-break-inside: avoid;
+        }
+
+        .servus-footer .logo-footer {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 25px;
+            height: 42px;
+        }
+
+        .servus-footer strong {
+            color: white;
+            font-size: 1.1em;
+        }
+
+        .servus-footer p {
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+
+        .servus-footer a {
+            color: var(--servus-accent);
+            text-decoration: none;
+        }
+
+        .servus-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-certs {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-certs img {
+            height: 35px;
+            opacity: 0.7;
+        }
+
+        .servus-footer .compliance-text {
+            margin-top: 14px;
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        /* Floating Glossary Widget */
+        .glossary-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            font-family: 'Inter', sans-serif;
+        }
+        .glossary-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--servus-navy);
+            color: white;
+            border: 3px solid var(--servus-accent);
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            margin-left: auto;
+        }
+        .glossary-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+        }
+        .glossary-btn .badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: var(--servus-accent);
+            color: white;
+            font-size: 10px;
+            font-weight: 800;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .glossary-panel {
+            display: none;
+            width: 340px;
+            max-height: 480px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+            overflow: hidden;
+            flex-direction: column;
+        }
+        .glossary-panel.open { display: flex; }
+        .glossary-panel-header {
+            background: linear-gradient(135deg, var(--servus-navy) 0%, var(--servus-blue) 100%);
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .glossary-panel-header h3 {
+            color: white;
+            font-size: 0.95em;
+            margin: 0;
+            padding: 0;
+            border: none;
+            letter-spacing: 0.5px;
+        }
+        .glossary-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.3em;
+            cursor: pointer;
+            padding: 0 4px;
+            opacity: 0.8;
+        }
+        .glossary-close:hover { opacity: 1; }
+        .glossary-search {
+            padding: 10px 14px;
+            border-bottom: 1px solid #eee;
+            flex-shrink: 0;
+        }
+        .glossary-search input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .glossary-search input:focus { border-color: var(--servus-accent); }
+        .glossary-search input::placeholder { color: #aaa; }
+        .glossary-filters {
+            padding: 8px 14px;
+            display: flex;
+            gap: 6px;
+            flex-shrink: 0;
+            border-bottom: 1px solid #eee;
+        }
+        .g-filter {
+            padding: 3px 10px;
+            border: 1.5px solid var(--servus-navy);
+            border-radius: 14px;
+            background: white;
+            color: var(--servus-navy);
+            font-size: 0.75em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .g-filter:hover, .g-filter.active {
+            background: var(--servus-navy);
+            color: white;
+        }
+        .glossary-list {
+            overflow-y: auto;
+            flex: 1;
+            padding: 6px 0;
+        }
+        .glossary-list::-webkit-scrollbar { width: 6px; }
+        .glossary-list::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+        .g-term-item {
+            padding: 10px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: default;
+            transition: background 0.15s;
+        }
+        .g-term-item:hover { background: var(--servus-pale-blue); }
+        .g-term-item:last-child { border-bottom: none; }
+        .g-term-name {
+            font-weight: 700;
+            color: var(--servus-navy);
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .g-term-pron {
+            font-size: 0.75em;
+            color: #999;
+            font-style: italic;
+            font-weight: 400;
+        }
+        .g-term-cat {
+            display: inline-block;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 0.65em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-left: auto;
+        }
+        .g-cat-chem { background: #e8f5e9; color: #2e7d32; }
+        .g-cat-tech { background: #e3f2fd; color: #1565c0; }
+        .g-cat-safe { background: #fbe9e7; color: #c62828; }
+        .g-term-def {
+            font-size: 0.85em;
+            color: var(--servus-text-mid);
+            line-height: 1.5;
+            margin-top: 4px;
+        }
+        .glossary-panel-footer {
+            padding: 8px 16px;
+            font-size: 0.75em;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid #eee;
+            flex-shrink: 0;
+            background: var(--servus-off-white);
+        }
+
+        /* Tooltip for glossary terms in text */
+        .glossary-term {
+            border-bottom: 2px dotted var(--servus-accent);
+            cursor: help;
+            position: relative;
+            font-weight: 600;
+            color: var(--servus-navy);
+        }
+        .glossary-term .tooltip {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            bottom: calc(100% + 6px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--servus-navy);
+            color: white;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: 400;
+            line-height: 1.5;
+            width: 260px;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: opacity 0.2s, visibility 0.2s;
+            pointer-events: none;
+        }
+        .glossary-term .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: var(--servus-navy);
+        }
+        .glossary-term:hover .tooltip,
+        .glossary-term:focus .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Print Styles */
+        @media print {
+            body::before { display: none; }
+            .glossary-widget { display: none; }
+            .back-link { display: none; }
+            .accordion-item { page-break-inside: avoid; }
+            .accordion-item.open .accordion-body { max-height: none; }
+            .accordion-body { max-height: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="content-wrapper">
+    <div class="back-link">
+        <a href="course_index.html">← Back to Course</a>
+    </div>
+
+    <div class="servus-header">
+        <div class="logo-top-right">
+            <img src="Servus-Colour.png" alt="Servus Group">
+        </div>
+        <h1>Servus Group</h1>
+        <div class="subtitle">Specialty Cleaning</div>
+        <div class="tagline">"At Your Service"</div>
+        <h2>Professional Carpet Care Certification</h2>
+        <div class="module-label">Day 3 — Cleaning Methods & Equipment</div>
+        <div class="module-label">From HWE to Encapsulation: Master the Science and Equipment</div>
+    </div>
+
+    <div class="cert-strip">
+        <img src="COR-logo.png" alt="COR Certified">
+        <span>COR Certified</span>
+        <img src="ISSA-logo.png" alt="ISSA Member">
+        <span>ISSA Member</span>
+    </div>
+
+    <div class="content">
+
+        <h2>MODULE 1: Hot Water Extraction — The Gold Standard Method</h2>
+
+        <h3>How HWE Works</h3>
+        <p><span class="glossary-term">Hot water extraction<span class="tooltip">Most powerful carpet cleaning method using hot water and vacuum</span></span> (HWE) is the most powerful carpet cleaning method. It injects hot water and cleaning solution deep into carpet fibers, then vacuums everything back out — water, solution, and dissolved soil.</p>
+
+        <p>Three things make HWE work:</p>
+        <ul>
+            <li><strong>Heat:</strong> Opens fiber structure, breaks down oil and grease bonds</li>
+            <li><strong>Pressure:</strong> Drives solution into the pile</li>
+            <li><strong><span class="glossary-term">Vacuum (CFM)<span class="tooltip">Cubic feet per minute — suction strength</span></span>:</strong> Pulls out water and soil. High CFM = faster drying</li>
+        </ul>
+
+        <p>The Industry Standard: IICRC recommends HWE as the primary method for residential carpet. Servus uses HWE as the gold standard for deep cleans.</p>
+
+        <h3>Equipment: Warrior 500 PSI — Servus Preferred Portable Extractor</h3>
+        <p>The Warrior 500 is Servus's preferred portable HWE machine. It is an electric-powered carpet extractor designed for commercial use.</p>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Warrior 500 Specs &amp; Components</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <strong>Technical Specifications (Warrior 500):</strong>
+                        <ul>
+                            <li>Solution pump: 500 <span class="glossary-term">PSI<span class="tooltip">Pounds per square inch — pressure measurement</span></span></li>
+                            <li>Solution tank: 13 gallons</li>
+                            <li>Recovery tank: 11 gallons</li>
+                            <li>Power: 115V, 60Hz, 15A</li>
+                            <li>Vacuum: Dual 2-Stage (Warrior 500) or Dual 3-Stage (Warrior 500-05)</li>
+                            <li>Dimensions: 43" H × 30" L × 22" W</li>
+                        </ul>
+
+                        <strong>Front Panel Controls:</strong>
+                        <ul>
+                            <li>1. Vacuum Accessory Tool Hook-up</li>
+                            <li>2. Solution Pump Switch</li>
+                            <li>3. Vacuum 1 Switch</li>
+                            <li>4. Vacuum 2 Switch</li>
+                            <li>5. Heater Switch (Warrior 500-10 only)</li>
+                            <li>6. Pressure Gauge (1000 PSI)</li>
+                            <li>7. Adjustable Pressure Relief Valve</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Compatible Chemicals &amp; Chemical Warnings</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <strong>Safe for Warrior 500:</strong>
+                        <ul>
+                            <li>Alkalis, Detergents, Hydroxides, Soaps, Vinegar-based products</li>
+                        </ul>
+
+                        <strong>NEVER Use in Warrior 500 — Damages Pump Seals:</strong>
+                        <ul>
+                            <li>Clorox, chlorinated bleaches, hydrocarbons, perchorethylene (perc), MEK, phenolics, D-Limonene</li>
+                        </ul>
+                        <p><strong style="color: #d9534f;">WARNING:</strong> Using prohibited chemicals will void the Warrior 500 warranty and cause permanent pump damage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Pre-Run Checklist (Before Every Use)</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <ol>
+                            <li>Check all fittings and connectors for proper assembly</li>
+                            <li>Check all hoses for leaks — repair or replace damaged hoses</li>
+                            <li>Check power cord(s) for damage — replace if damaged</li>
+                            <li>Fill solution tank with clean hot water (do not exceed 130°F)</li>
+                            <li>Mix cleaning concentrate according to label — non-foaming HWE formula only</li>
+                            <li>Prime pump: connect priming hose to solution fitting, run pump 30 seconds until steady water flow</li>
+                            <li>Connect vacuum hose — slide swivel cuff over outlet on tank</li>
+                            <li>Turn on pump and vacuum switches</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Heater Operation (Warrior 500-10 Only)</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <p><strong style="color: #d9534f;">CRITICAL SEQUENCE:</strong></p>
+                        <ul>
+                            <li><strong>ALWAYS</strong> start pump FIRST, then turn on heater</li>
+                            <li><strong>ALWAYS</strong> turn heater OFF FIRST before turning off pump</li>
+                        </ul>
+                        <p>Heater draws 15 amps — use separate grounded circuit from vacuum motor. Red temperature light turns off when max temp is reached.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3>Truck-Mount vs. Portable HWE — Key Differences</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Truck-Mount</th>
+                    <th>Warrior 500 (Portable)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pressure</td>
+                    <td>300–1200 PSI</td>
+                    <td>500 PSI</td>
+                </tr>
+                <tr>
+                    <td>Water Temp</td>
+                    <td>Up to 210°F</td>
+                    <td>Up to 130°F + heater</td>
+                </tr>
+                <tr>
+                    <td>Vacuum (CFM)</td>
+                    <td>Very High</td>
+                    <td>Moderate</td>
+                </tr>
+                <tr>
+                    <td>Drying Time</td>
+                    <td>Faster</td>
+                    <td>12–24 hours</td>
+                </tr>
+                <tr>
+                    <td>Access</td>
+                    <td>Exterior only</td>
+                    <td>Any room/elevator</td>
+                </tr>
+                <tr>
+                    <td>Best For</td>
+                    <td>Heavy soil, whole-building</td>
+                    <td>High-rise, restricted access</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h3>The Wand: Your Control Tool</h3>
+        <p>The wand controls everything — pressure, spray pattern, vacuum, and pace. It is your primary tool for precise carpet cleaning.</p>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Wand Techniques &amp; Patterns</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <strong>Key Techniques:</strong>
+                        <ul>
+                            <li><strong>Push stroke:</strong> Apply solution (valve open) — solution sprays into carpet</li>
+                            <li><strong>Pull stroke:</strong> Extract (vacuum on) — pull water and soil out</li>
+                            <li><strong>Heavy soil:</strong> Apply chemical on BOTH push and pull strokes</li>
+                            <li><strong>Wand position:</strong> Keep FLAT on surface at all times while valve is open</li>
+                            <li><strong>Never leave stationary:</strong> Continuous motion prevents over-saturation</li>
+                        </ul>
+
+                        <strong>Overlap Rule:</strong>
+                        <p>Each pass should overlap the previous by 50%. This prevents streaks and ensures full coverage.</p>
+
+                        <strong>Pass Speed:</strong>
+                        <p>Slow and steady. Rushing = less extraction = wetter carpet = browning risk.</p>
+
+                        <strong>Directions:</strong>
+                        <p>For heavily soiled carpet, clean in 2 directions (North/South, then East/West) — same pattern as Whittaker TRIO.</p>
+
+                        <strong>Spray Pattern Check:</strong>
+                        <p>Before starting, hold wand 12 inches above floor and open valve. You should see a full, even fan spray from the nozzle. Adjust or replace nozzle if pattern is uneven.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>HWE Product List (Warrior 500 — Servus Products Only)</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>pH</th>
+                    <th>Use</th>
+                    <th>Dilution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Citrus Break</td>
+                    <td>12</td>
+                    <td>Pre-spray, heavy grease/oil</td>
+                    <td>Per label</td>
+                </tr>
+                <tr>
+                    <td>Avenge Heavy-Duty</td>
+                    <td>10</td>
+                    <td>Pre-spray, moderate-heavy soil</td>
+                    <td>Per label</td>
+                </tr>
+                <tr>
+                    <td>Benefect Atomic Degreaser</td>
+                    <td>9–10</td>
+                    <td>Pre-spray, grease/oil</td>
+                    <td>Per label</td>
+                </tr>
+                <tr>
+                    <td>All Fiber Rinse</td>
+                    <td>4–4.5</td>
+                    <td>Acid rinse (MANDATORY after alkaline)</td>
+                    <td>1:6</td>
+                </tr>
+                <tr>
+                    <td>Fibre Rinse</td>
+                    <td>2.3</td>
+                    <td>Acid rinse, heavy residue</td>
+                    <td>Per label</td>
+                </tr>
+                <tr>
+                    <td>Enz-All</td>
+                    <td>Neutral</td>
+                    <td>Enzyme pre-spray, organic soil</td>
+                    <td>Warm water</td>
+                </tr>
+                <tr>
+                    <td>Brown Out</td>
+                    <td>3</td>
+                    <td>Post-clean browning treatment</td>
+                    <td>Per label</td>
+                </tr>
+                <tr>
+                    <td>Ends Odor</td>
+                    <td>6.5–7.5</td>
+                    <td>Deodorizer, post-clean</td>
+                    <td>Per label</td>
+                </tr>
+                <tr>
+                    <td>Advanced Protector</td>
+                    <td>7.5</td>
+                    <td>Post-clean fiber protection</td>
+                    <td>Per label</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">Servus Standard in Action</div>
+            <p>After EVERY alkaline <span class="glossary-term">pre-spray<span class="tooltip">Cleaning chemical applied before extraction</span></span>, you MUST apply <span class="glossary-term">acid rinse<span class="tooltip">Acidic solution that neutralizes alkaline residue</span></span> (All Fiber Rinse). Skipping this step causes browning and rapid resoiling. No exceptions.</p>
+        </div>
+
+        <hr>
+
+        <h2>MODULE 2: Encapsulation — The Whittaker Smart Care TRIO</h2>
+
+        <h3>How Encapsulation Works</h3>
+        <p><span class="glossary-term">Encapsulation<span class="tooltip">Low-moisture cleaning using crystallizing polymers</span></span> is a low-moisture cleaning method. It uses a special crystallizing polymer solution that surrounds soil particles, then dries into brittle crystals. Those crystals are vacuumed away at the next scheduled vacuum — no water extraction needed.</p>
+
+        <p>Why it works:</p>
+        <ul>
+            <li>Low moisture = faster drying (as little as 30 minutes)</li>
+            <li>No re-wetting of backing or subfloor</li>
+            <li>Ideal for commercial loop pile, interim maintenance, and moisture-sensitive areas</li>
+            <li>Crystallized residue does NOT re-attract soil (unlike detergent residue)</li>
+        </ul>
+
+        <h3>Whittaker Smart Care TRIO — Machine Overview</h3>
+        <p>The Whittaker Smart Care TRIO is a Carpet Cleaner & Pile Lifter. It uses three rotating brushes to agitate encapsulation solution deep into carpet fibers.</p>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>TRIO Machine Components &amp; Specs</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <strong>Machine Components (20" model):</strong>
+                        <ol>
+                            <li>Handle Top Loop</li>
+                            <li>Handle Assembly</li>
+                            <li>Lower Handle</li>
+                            <li>Connector Handle Assembly</li>
+                            <li>Extension Cord Hooks (4)</li>
+                            <li>Nameplate (under solution tank)</li>
+                            <li>Motor Protector Breaker</li>
+                            <li>Power Cord</li>
+                            <li>Transport Wheels (2)</li>
+                            <li>Cable Retainer</li>
+                            <li>Gear Side Housing</li>
+                            <li>Idle Side Housing</li>
+                            <li>Machine Base</li>
+                            <li>Pull Handle</li>
+                            <li>Fresh Water Tank (2.5 gal / 9.5L)</li>
+                            <li>Collection Hopper</li>
+                            <li>Brush (3 brushes)</li>
+                        </ol>
+
+                        <strong>Technical Specifications (20" model):</strong>
+                        <ul>
+                            <li>Cleaning capacity: 5,597 sq ft/hr</li>
+                            <li>Cleaning width: 20.35 inches</li>
+                            <li>Power: 110V, 60Hz, 1400W</li>
+                            <li>Current: 14A (with brushes)</li>
+                            <li>Circuit Breaker: 16A</li>
+                            <li>Brush speed: 480/665 RPM (outer/center)</li>
+                            <li>Weight: 61.72 lbs (28 kg)</li>
+                            <li>Plug: NEMA 5-15P</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Whittaker TRIO — Brush Selection Guide</h3>
+        <p>The TRIO uses three brush colors for different carpet types:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Color</th>
+                    <th>Type</th>
+                    <th>Recommended For</th>
+                    <th>Soil Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>WHITE</td>
+                    <td>Soft</td>
+                    <td>Residential, soft cut pile, Berbers, Wool, Oriental, Persian</td>
+                    <td>Light to Moderate</td>
+                </tr>
+                <tr>
+                    <td>GRAY</td>
+                    <td>Medium</td>
+                    <td>Commercial loop, low cut pile</td>
+                    <td>Light to Moderate</td>
+                </tr>
+                <tr>
+                    <td>BLACK</td>
+                    <td>Firm</td>
+                    <td>Commercial loop only</td>
+                    <td>Moderate to Heavy / Matted</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">Servus Standard in Action</div>
+            <p>When in doubt about brush selection, start with GRAY (Medium). It works on most commercial carpet types. Only move to BLACK (Firm) for heavily matted commercial loop — and never use BLACK on residential or wool carpet.</p>
+        </div>
+
+        <hr>
+
+        <h3>Whittaker TRIO — Setup &amp; Operation</h3>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Assembly Instructions</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <ol>
+                            <li>Remove machine base from packing, lower handle to upright position until locked</li>
+                            <li>Insert top handle assembly into bottom handle, secure with 4 screws through washers</li>
+                            <li>Grasp ribbed plastic connector, align with cones on lower handle bar, press down and turn clockwise until it clicks</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Starting &amp; Operating Procedure</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <strong>Starting the machine:</strong>
+                        <ol>
+                            <li>Fill solution tank with Proxi Encap solution (crystal-type encapsulation)</li>
+                            <li>Connect power cord to grounded outlet (NEMA 5-15P)</li>
+                            <li>Press pedal while lowering handle backwards — reduces startup friction</li>
+                            <li>Slowly lower handle to operating position</li>
+                            <li>To stop: return handle to upright locked position</li>
+                        </ol>
+
+                        <strong>Cleaning Pattern by Soil Level:</strong>
+                        <ul>
+                            <li><strong>Light soil:</strong> One pass (like a lawnmower — overlapping rows)</li>
+                            <li><strong>Moderate soil:</strong> Two passes (like vacuuming — up/down)</li>
+                            <li><strong>Heavy/matted soil:</strong> Multiple passes in 2 directions (North/South then East/West)</li>
+                        </ul>
+
+                        <p>After cleaning: carpet is ready to vacuum in as little as 30 minutes. Dirt is encapsulated in dry crystals — vacuum removes them at next scheduled vacuuming.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">Servus Standard in Action</div>
+            <p>Always <span class="glossary-term">pre-vacuum<span class="tooltip">Vacuuming carpet before cleaning</span></span> before running the Whittaker TRIO. The manual states: "All cleaning systems will be maximized with pre-vacuuming to remove larger dry particles of soil."</p>
+        </div>
+
+        <hr>
+
+        <h3>Interim Cleaning Program — When to Use TRIO vs HWE</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Situation</th>
+                    <th>Method</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Regular maintenance, light-moderate soil</td>
+                    <td>TRIO/Encapsulation</td>
+                    <td>Fast drying, low moisture</td>
+                </tr>
+                <tr>
+                    <td>First-time clean</td>
+                    <td>HWE</td>
+                    <td>Deep penetration needed</td>
+                </tr>
+                <tr>
+                    <td>Heavy soil</td>
+                    <td>HWE</td>
+                    <td>Requires full extraction</td>
+                </tr>
+                <tr>
+                    <td>Pet contamination</td>
+                    <td>HWE</td>
+                    <td>Needs deep cleaning + odor treatment</td>
+                </tr>
+                <tr>
+                    <td>Moisture-sensitive areas</td>
+                    <td>TRIO/Encapsulation</td>
+                    <td>Low moisture, no backing re-wetting</td>
+                </tr>
+                <tr>
+                    <td>Quick-dry required</td>
+                    <td>TRIO/Encapsulation</td>
+                    <td>30 minutes dry time vs 12-24 hours</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Typical Commercial <span class="glossary-term">Interim Cleaning<span class="tooltip">Scheduled maintenance cleaning between deep cleans</span></span> Frequency:</strong></p>
+        <ul>
+            <li>Weekly or bi-weekly: Vacuum only</li>
+            <li>Monthly: Whittaker TRIO encapsulation clean</li>
+            <li>Quarterly: Full HWE deep clean</li>
+        </ul>
+
+        <h3>Encapsulation Products (TRIO Only — Servus List)</h3>
+        <p>ONLY use these products with the Whittaker TRIO. Do NOT use HWE presprays with the TRIO — they require water extraction and will leave residue.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>pH</th>
+                    <th>Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Proxi Encap</td>
+                    <td>4.5</td>
+                    <td>Primary encapsulation solution for TRIO</td>
+                </tr>
+                <tr>
+                    <td>Proxi Spray and Walk Away</td>
+                    <td>7.95</td>
+                    <td>RTU spot treatment, encapsulation-compatible</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <hr>
+
+        <h2>MODULE 3: Bonnet Cleaning</h2>
+
+        <h3>How Bonnet Cleaning Works</h3>
+        <p>Bonnet cleaning uses a floor machine (rotary buffer) with an absorbent pad (the "bonnet") to clean carpet surface soil. Solution is sprayed on carpet, then the spinning bonnet absorbs surface dirt.</p>
+
+        <p><strong>Important:</strong> This is a surface-only method — it does NOT penetrate deep into the pile.</p>
+
+        <p><strong>When to use bonnet:</strong></p>
+        <ul>
+            <li>Quick maintenance clean between deep cleans</li>
+            <li>Stair cleaning (wand attachment)</li>
+            <li>Areas where equipment access is limited</li>
+            <li>Post-event spot freshening</li>
+        </ul>
+
+        <p><strong>When NOT to use bonnet:</strong></p>
+        <ul>
+            <li>First-time cleans</li>
+            <li>Heavy soil</li>
+            <li>Any carpet with embedded soil in the base</li>
+        </ul>
+
+        <p><strong>Product:</strong> Proxi Spray and Walk Away (RTU, encapsulation-compatible) — spray onto carpet before bonneting.</p>
+
+        <hr>
+
+        <h2>MODULE 4: Critical Equipment Parameters</h2>
+
+        <h3>Understanding <span class="glossary-term">PSI<span class="tooltip">Pounds per Square Inch — measures water pressure from the pump. Higher PSI breaks down soil faster.</span></span> and <span class="glossary-term">CFM<span class="tooltip">Cubic Feet per Minute — measures suction/airflow strength. Higher CFM removes more moisture and prevents wicking.</span></span></h3>
+
+        <p>Two numbers define cleaning power: <span class="glossary-term">PSI<span class="tooltip">Pounds per Square Inch — the pressure that drives solution into carpet fibers</span></span> and <span class="glossary-term">CFM<span class="tooltip">Cubic Feet per Minute — the airflow that pulls moisture out of carpet</span></span>.</p>
+
+        <p><strong>PSI (Pressure):</strong> Higher PSI means stronger water spray. This breaks down soil faster. Truck-mounts reach 200+ PSI. The Warrior 500 portable delivers up to 500 PSI (adjustable).</p>
+
+        <p><strong>CFM (Airflow/Suction):</strong> Higher CFM means more <span class="glossary-term">moisture removal<span class="tooltip">The amount of water pulled out of carpet during extraction — critical for preventing wicking and browning</span></span>. This prevents <span class="glossary-term">wicking<span class="tooltip">When moisture deep in carpet backing rises to the surface as it dries, bringing soil with it — causes brown lines or spots to reappear after cleaning</span></span>. Truck-mounts pull 300–400 CFM. Portables like the Warrior 500 pull 150–200 CFM.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Soil Level</th>
+                    <th>Recommended PSI</th>
+                    <th>Recommended CFM</th>
+                    <th>Dwell Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Light (Maintenance)</td>
+                    <td>100–120</td>
+                    <td>100–150</td>
+                    <td>0–5 min</td>
+                </tr>
+                <tr>
+                    <td>Normal (Regular)</td>
+                    <td>150–180</td>
+                    <td>150–250</td>
+                    <td>5–10 min</td>
+                </tr>
+                <tr>
+                    <td>Heavy (First-Time)</td>
+                    <td>180–200+</td>
+                    <td>250–350+</td>
+                    <td>10–15 min</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="servus-callout">
+            <div class="servus-callout-label">Servus Standard in Action</div>
+            <p>Low CFM on a portable extractor means slower drying. On the Warrior 500, always run both vacuum motors (Vacuum 1 AND Vacuum 2 switches both ON) to maximize CFM. Never run on single vacuum for HWE work.</p>
+        </div>
+
+        <h3><span class="glossary-term">Dwell Time<span class="tooltip">The number of minutes a cleaning chemical sits on carpet before you begin extracting — this is when the chemistry breaks down soil</span></span> &amp; Soil Removal</h3>
+
+        <p><span class="glossary-term">Dwell time<span class="tooltip">How long the pre-spray chemical sits on the carpet before cleaning begins — longer dwell = better soil breakdown</span></span> is crucial. Longer dwell time means better soil removal. But too long risks <span class="glossary-term">fiber damage<span class="tooltip">Physical or chemical breakdown of carpet fibers caused by harsh chemicals left on too long, or incorrect product selection</span></span> or <span class="glossary-term">browning<span class="tooltip">A yellow-brown discoloration that appears in carpet after cleaning — caused by too much moisture, high pH residue, or cellulosic fibers getting wet</span></span>.</p>
+
+        <p><strong>Best Practice:</strong></p>
+        <ul>
+            <li>Light soil: 0–5 minutes</li>
+            <li>Normal soil: 5–10 minutes</li>
+            <li>Heavy soil: 10–15 minutes (check fiber type first)</li>
+            <li>Set a timer so you never forget</li>
+        </ul>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">Servus Standard in Action</div>
+            <p>Complete the pre-run checklist before EVERY job — not just the first time. A loose hose or plugged screen can ruin an entire cleaning job. One minute of checking saves an hour of problem-solving.</p>
+        </div>
+
+
+        <hr>
+
+        <h2>MODULE 5: Pre-Spray Selection by Method</h2>
+
+        <h3>HWE Pre-Spray (Warrior 500)</h3>
+        <p>Alkaline presprays are safe for HWE because you will fully extract them with hot water + acid rinse.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Soil Type</th>
+                    <th>Recommended Servus Product</th>
+                    <th>pH</th>
+                    <th><span class="glossary-term">Dwell Time<span class="tooltip">Minutes chemical sits on carpet before cleaning</span></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Heavy grease/oil</td>
+                    <td>Citrus Break</td>
+                    <td>12</td>
+                    <td>10–15 min</td>
+                </tr>
+                <tr>
+                    <td>Moderate soil</td>
+                    <td>Avenge Heavy-Duty</td>
+                    <td>10</td>
+                    <td>8–10 min</td>
+                </tr>
+                <tr>
+                    <td>Organic/pet</td>
+                    <td>Enz-All</td>
+                    <td>Neutral</td>
+                    <td>10–15 min</td>
+                </tr>
+                <tr>
+                    <td>Grease/oil</td>
+                    <td>Benefect Atomic Degreaser</td>
+                    <td>9–10</td>
+                    <td>8–10 min</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>RULE:</strong> After ANY alkaline prespray → MUST follow with All Fiber Rinse acid rinse. No exceptions.</p>
+
+        <h3>Encapsulation Pre-Spray (Whittaker TRIO)</h3>
+        <p>Only use encapsulation-compatible products. No alkaline presprays — they require extraction.</p>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">Servus Standard in Action</div>
+            <p>Proxi Encap goes IN the TRIO solution tank — it is the only product Servus puts in that tank. Proxi Spray and Walk Away is a topical spray used for spot pre-treatment, not tank fill. Never mix products in the TRIO tank.</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Situation</th>
+                    <th>Product</th>
+                    <th>pH</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Standard maintenance</td>
+                    <td>Proxi Encap (in TRIO tank)</td>
+                    <td>4.5</td>
+                </tr>
+                <tr>
+                    <td>Spot pre-treatment</td>
+                    <td>Proxi Spray and Walk Away</td>
+                    <td>7.95</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">Servus Standard in Action</div>
+            <p>The <span class="glossary-term">dwell time<span class="tooltip">Minutes chemical sits before cleaning</span></span> rule — never skip it. Pre-spray must dwell (sit on carpet) for 8–12 minutes before cleaning. Dwell time is when chemistry does the work. Rushing kills your results.</p>
+        </div>
+
+        <hr>
+
+        <h2>MODULE 6: Rinse &amp; Neutralization by Method</h2>
+
+        <h3>HWE: Acid Rinse Is Mandatory</h3>
+        <p>After any alkaline prespray, carpet pH is elevated (9–12). You MUST bring it back to neutral (4.5–5.5) with an <span class="glossary-term">acid rinse<span class="tooltip">Acidic solution used after alkaline cleaning</span></span>. This prevents browning and rapid resoiling.</p>
+
+        <ul>
+            <li><strong>All Fiber Rinse</strong> (pH 4–4.5, dilution 1:6): Standard acid rinse for all HWE work.</li>
+            <li><strong>Fibre Rinse</strong> (pH 2.3): Heavy residue, stubborn browning situations.</li>
+        </ul>
+
+        <p><strong>The Squeaky Clean Test:</strong> Rub a damp white cloth on cleaned carpet. If it squeaks and stays white — pH is neutral. If it's sticky or discolors — residue remains.</p>
+
+        <h3>Encapsulation: No Rinse Required</h3>
+        <p><span class="glossary-term">Encapsulation<span class="tooltip">Low-moisture cleaning method</span></span> solution crystallizes as it dries. There is no residue to rinse. This is a major advantage of the TRIO system for commercial maintenance.</p>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">Servus Standard in Action</div>
+            <p>If carpet dries sticky after HWE cleaning, the acid rinse was skipped or insufficient. This is the #1 cause of rapid resoiling after professional cleaning. Sticky = residue = re-attracts soil.</p>
+        </div>
+
+        <hr>
+
+        <h2>MODULE 7: Drying &amp; Post-Cleaning by Method</h2>
+
+        <h3>HWE Drying (Warrior 500)</h3>
+        <p>The Warrior 500 leaves more moisture than a truck-mount. Proper drying procedure is critical.</p>
+
+        <p><strong>After extracting:</strong></p>
+        <ol>
+            <li>Run dry strokes (vacuum only, no spray) — minimum 2 extra passes</li>
+            <li>Set up air movers: 1 mover per 200 sq ft</li>
+            <li>Drying time: 12–24 hours (depending on humidity and airflow)</li>
+            <li>If possible: open windows or run HVAC to increase air circulation</li>
+            <li>Never let client walk on wet carpet without shoe covers — tracking-in soil immediately</li>
+        </ol>
+
+        <p><strong>Warrior 500 Service Schedule:</strong></p>
+        <ul>
+            <li>After EACH use: Empty solution tank, clean filter screen, flush with 1–2 gallons clean water, rinse recovery tank</li>
+            <li>Twice monthly: Flush with white vinegar solution (1 qt vinegar to 2 gal water) to prevent alkaline buildup in system</li>
+            <li>Monthly: Lubricate pressure regulator u-cup with Superlube</li>
+            <li>Quarterly: Check vacuum motor carbon brushes — replace when less than 3/8" (9.5mm) long</li>
+        </ul>
+
+        <h3>Encapsulation Drying (Whittaker TRIO)</h3>
+        <p>Drying is minimal — Proxi Encap leaves very low moisture.</p>
+
+        <ul>
+            <li>Carpet is ready to use in as little as 30 minutes</li>
+            <li>Ready to vacuum in 30 minutes (no need to wait — can vacuum immediately if needed)</li>
+            <li>No air movers typically needed for encapsulation</li>
+            <li>Dirt crystals remain locked in dried encapsulant until vacuumed</li>
+        </ul>
+
+        <hr>
+
+        <h2>MODULE 8: Odor &amp; Specialty Treatments by Method</h2>
+
+        <h3>HWE Odor Treatment</h3>
+        <p>Apply <span class="glossary-term">deodorizer<span class="tooltip">Product that neutralizes or masks odors</span></span> AFTER extraction and acid rinse — not before.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Situation</th>
+                    <th>Product</th>
+                    <th>Application</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>General odor</td>
+                    <td>Ends Odor</td>
+                    <td>Post-extraction spray, work into fiber</td>
+                </tr>
+                <tr>
+                    <td>Pet urine/organic</td>
+                    <td>Enz-All</td>
+                    <td>Pre-spray (dwell 15 min), then extract</td>
+                </tr>
+                <tr>
+                    <td>Disinfection required</td>
+                    <td>Benefect Decon 30</td>
+                    <td>Post-extraction spray (RTU)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Encapsulation Odor Treatment</h3>
+        <p>Apply deodorizer BEFORE running the TRIO — it gets worked into the fiber with the brushes.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Situation</th>
+                    <th>Product</th>
+                    <th>Application</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Light odor</td>
+                    <td>Proxi Spray and Walk Away</td>
+                    <td>Pre-TRIO spray, allows 5 min, then run TRIO</td>
+                </tr>
+                <tr>
+                    <td>Disinfection</td>
+                    <td>Benefect Decon 30</td>
+                    <td>Pre-TRIO spray (RTU)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">Servus Standard in Action</div>
+            <p>Ends Odor is NOT encapsulation-compatible. Do not add it to the Whittaker TRIO solution tank. Use it only with HWE or as a separate topical spray after TRIO cleaning.</p>
+        </div>
+
+        <hr>
+
+        <h2>MODULE 9: Decision Tree — Choosing the Right Method</h2>
+
+        <p>Use this interactive guide to select the best cleaning method for any job:</p>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Step 1: Assess the Job</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <p>Before choosing a cleaning method, answer these questions:</p>
+                        <ul>
+                            <li>What is the soil level? (Light, Moderate, Heavy)</li>
+                            <li>Is there a moisture concern? (sensitive backing)</li>
+                            <li>What equipment is available?</li>
+                            <li>What type of fiber? (cut pile, loop, wool, synthetic)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Path A: Heavy Soil Detected</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <strong>Decision:</strong> Use HWE (Warrior 500 or Truck-Mount)
+                        <ul>
+                            <li>Heavy soil requires deep penetration</li>
+                            <li>HWE is the only method that fully extracts deeply embedded soil</li>
+                            <li>Carpet will dry slowly (12–24 hours) but properly</li>
+                        </ul>
+
+                        <strong>Product Selection:</strong>
+                        <ul>
+                            <li><strong>Citrus Break</strong> (pH 12): Heavy grease/oil only — dwell 10–15 minutes</li>
+                        </ul>
+
+                        <strong>Mandatory After-Step:</strong>
+                        <p>Apply All Fiber Rinse (acid rinse, 1:6 dilution) after extraction to neutralize residue and prevent browning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Path B: Light/Normal Soil + Need Decision</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <strong>Ask the question:</strong> Is there a moisture concern or need for speed?
+
+                        <strong>Path B1 — Moisture-Sensitive Area or Quick Dry Needed:</strong>
+                        <p>Use Whittaker TRIO Encapsulation</p>
+                        <ul>
+                            <li>Encapsulation dries in 30 minutes</li>
+                            <li>Minimal water = no backing re-wetting</li>
+                            <li>Perfect for commercial maintenance</li>
+                            <li>Product: Proxi Encap (pH 4.5)</li>
+                        </ul>
+
+                        <strong>Path B2 — Stairs or Limited Access Only:</strong>
+                        <p>Use Bonnet Cleaning</p>
+                        <ul>
+                            <li>Surface cleaning only</li>
+                            <li>Good for stair cleaning with wand attachment</li>
+                            <li>Product: Proxi Spray and Walk Away (RTU)</li>
+                        </ul>
+
+<strong>Path B4 — Standard Maintenance (Default):</strong>
+                        <p>Use Whittaker TRIO Encapsulation (Interim Cleaning Program)</p>
+                        <ul>
+                            <li>Monthly maintenance between quarterly HWE cleans</li>
+                            <li>Low cost, fast execution, satisfied customers</li>
+                            <li>Product: Proxi Encap</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Step 5: Final Steps &amp; Documentation</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <p>After selecting your method, always:</p>
+                        <ol>
+                            <li>Document method chosen (HWE / TRIO / Bonnet)</li>
+                            <li>Document product used (exact name and dilution)</li>
+                            <li>Document <span class="glossary-term">dwell time<span class="tooltip">Minutes chemical sat on carpet</span></span> (how long chemical sat before cleaning)</li>
+                            <li>Document drying time (actual time carpet took to dry)</li>
+                            <li>Note any special situations (pet staining, browning, odor treatment applied)</li>
+                        </ol>
+
+                        <p>This documentation protects Servus and ensures consistent, repeatable results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>MODULE 10: Equipment Maintenance &amp; Troubleshooting</h2>
+
+        <h3>Whittaker Smart Care TRIO — Maintenance</h3>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Daily &amp; Ongoing Maintenance</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <strong>During Operation:</strong>
+                        <ul>
+                            <li>Rotate all 3 brushes end-to-end every 2–3 hours of operation (prolongs brush life, prevents gear damage)</li>
+                            <li>Do NOT lubricate axles — keep clean and dry</li>
+                            <li>NEVER rest machine with brushes directly on floor</li>
+                            <li>Maximum 2 passes per direction — more passes damage fibers</li>
+                        </ul>
+
+                        <strong>After Each Use (TRIO):</strong>
+                        <ol>
+                            <li>Unplug power cord at wall outlet</li>
+                            <li>Remove, empty and rinse solution tank (fresh water)</li>
+                            <li>Remove, empty and rinse collection hopper</li>
+                            <li>Tilt machine backward onto handle</li>
+                            <li>Push axles sideways and out to remove brushes (no tools needed if kept clean)</li>
+                            <li>Inspect brushes for wear — use Brush Wear Indicator hole on axle end to measure bristle length</li>
+                            <li>Wipe underside of machine with damp cloth</li>
+                            <li>Rotate front brush end-to-end before replacing, then rotate other 2 brushes</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>TRIO Troubleshooting</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Problem</th>
+                                    <th>Solution</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Machine doesn't start, no noise</td>
+                                    <td>Wait 30 sec, press Motor Protector Reset button with small object. Check cord.</td>
+                                </tr>
+                                <tr>
+                                    <td>Machine makes grunting noise</td>
+                                    <td>Tilt toward foot pedal side, let brushes spin at full speed before lowering slowly</td>
+                                </tr>
+                                <tr>
+                                    <td>Only one brush turns</td>
+                                    <td>One or more gears stripped — do not use, replace gears before use</td>
+                                </tr>
+                                <tr>
+                                    <td>Machine bounces roughly</td>
+                                    <td>Directional set in brushes — rotate all brushes end-to-end. Check axles and end caps for wear.</td>
+                                </tr>
+                                <tr>
+                                    <td>Pump does not work</td>
+                                    <td>Check fuse — unplug, remove transparent cover, remove fuse holder, replace fuse same rating</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p><strong>Contact Whittaker Support:</strong></p>
+        <div class="servus-callout">
+            <div class="servus-callout-label">Servus Standard in Action</div>
+            <p>Always turn the heater OFF before turning off the pump. The pump must run for 30 seconds after the heater is off to let fittings cool. Hot fittings are a burn hazard — never rush the shutdown sequence.</p>
+        </div>
+                        <ul>
+                            <li>Phone: 888-720-2574</li>
+                            <li>Web: whittakersystem.com</li>
+                            <li>Address: 302 S. Croton Ave, New Castle, PA 16101</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3>Warrior 500 PSI — Maintenance</h3>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Daily, Weekly &amp; Periodic Maintenance Schedule</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <strong>Daily Maintenance (after every use):</strong>
+                        <ul>
+                            <li>Empty unused cleaning solution from solution tank</li>
+                            <li>Inspect and clean filter screen in solution tank</li>
+                            <li>Flush pumping system with 1–2 gallons of clean water</li>
+                            <li>Rinse recovery tank with fresh water (periodically decontaminate with Hospital Grade Virucide or 10:1 bleach/water — dispose waste properly)</li>
+                            <li>Check machine cord for damage</li>
+                            <li>Check recovery dome and gasket for damage and cleanliness</li>
+                            <li>Clean out recovery tank and check float valve moves freely</li>
+                            <li>Clean solution tank, remove and clean vacuum intake screen</li>
+                            <li>Run vacuum motor at least 1 minute to let motor dry</li>
+                            <li>Store with dome off tank to allow tank to dry</li>
+                        </ul>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">Servus Standard in Action</div>
+            <p>Flush the Warrior 500 with clean water after EVERY job — not just at the end of the day. If solution sits in the pump overnight, alkaline residue builds up. This damages seals over time. Two minutes of flushing saves hundreds in repairs.</p>
+        </div>
+
+                        <strong>Weekly Maintenance:</strong>
+                        <ul>
+                            <li>Check all gaskets for wear and leakage</li>
+                            <li>Check pump pressure, observe spray pattern, check with gauge</li>
+                            <li>Check and clean solution screen</li>
+                            <li>Check cables for fraying</li>
+                            <li>Check overall performance of machine</li>
+                        </ul>
+
+                        <strong>Quarterly Maintenance:</strong>
+                        <ul>
+                            <li>Check vacuum motor carbon brushes — replace when less than 3/8" (9.5mm) long</li>
+                        </ul>
+
+                        <strong>Periodic Maintenance (twice monthly):</strong>
+                        <ul>
+                            <li>Flush system with white vinegar solution (1 qt vinegar to 2 gal water) OR anti-browning solution to prevent alkaline residue buildup</li>
+                        </ul>
+
+                        <strong>Pressure Regulator (monthly):</strong>
+                        <ul>
+                            <li>Clean and lubricate piston and u-cup with Superlube lubricant</li>
+                            <li>Steps: turn off → remove cap/spring/retainer → remove piston/u-cup with fingertips → wipe clean → lubricate with Superlube → reassemble → re-adjust pressure with pump ON</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-section">
+            <div class="accordion-item">
+                <div class="accordion-label">
+                    <span>Warrior 500 Troubleshooting</span>
+                    <span class="accordion-toggle">+</span>
+                </div>
+                <div class="accordion-body">
+                    <div class="accordion-content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Problem</th>
+                                    <th>Cause</th>
+                                    <th>Solution</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Loss of power</td>
+                                    <td>Not plugged in / dead circuit / faulty cord</td>
+                                    <td>Check 3-prong outlet, circuit breaker, or replace cord</td>
+                                </tr>
+                                <tr>
+                                    <td>Electrical shock</td>
+                                    <td>Receptacle not grounded / internal wiring</td>
+                                    <td>Call electrician or trained service technician</td>
+                                </tr>
+                                <tr>
+                                    <td>Vac motor varies/won't run</td>
+                                    <td>Circuit breaker tripped / faulty motor / faulty switch</td>
+                                    <td>Reset breaker; replace motor or switch</td>
+                                </tr>
+                                <tr>
+                                    <td>Loss of vacuum</td>
+                                    <td>Loose vacuum dome / crack in dome / lint in screen / loose hose cuffs / full recovery tank</td>
+                                    <td>Check and seal dome; clean screen; tighten cuffs; drain tank</td>
+                                </tr>
+                                <tr>
+                                    <td>Pump runs, no solution</td>
+                                    <td>Inlet screen plugged / pump not primed / damaged solution line</td>
+                                    <td>Clean screen; prime with priming hose; replace line</td>
+                                </tr>
+                                <tr>
+                                    <td>Pump runs, loss of pressure</td>
+                                    <td>Pump components worn / cut seals</td>
+                                    <td>Replace pump kit components (512-555 plunger kit, 512-560 valve kit, 512-565 cam kit)</td>
+                                </tr>
+                                <tr>
+                                    <td>Carpet not getting clean</td>
+                                    <td>Severe soil</td>
+                                    <td>Make multiple passes at right angles, use pre-spray</td>
+                                </tr>
+                                <tr>
+                                    <td>Carpet too wet</td>
+                                    <td>Over-saturation</td>
+                                    <td>Lower solution pressure, make dry passes</td>
+                                </tr>
+                                <tr>
+                                    <td>Carpet browning</td>
+                                    <td>Over-wet / too much chemical</td>
+                                    <td>Check vac pressure; check solution concentration</td>
+                                </tr>
+                                <tr>
+                                    <td>Solution hose hard to connect</td>
+                                    <td>Corrosion on fittings</td>
+                                    <td>Clean with steel wool, soak in acetic acid (white vinegar), lubricate with silicone</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>KEY TAKEAWAYS</h2>
+
+        <div style="background-color: var(--servus-pale-blue); padding: 20px; border-left: 5px solid var(--servus-accent); margin: 20px 0; border-radius: 0 4px 4px 0;">
+            <ul style="margin-left: 20px;">
+                <li><strong>HWE is the gold standard</strong> for deep cleaning — always acid rinse after alkaline prespray</li>
+                <li><strong>Encapsulation (TRIO)</strong> is best for maintenance and moisture-sensitive areas — use Servus encap products only</li>
+                <li><strong>Warrior 500</strong> is Servus's preferred portable extractor — 500 PSI, 13-gal solution, requires daily maintenance</li>
+                <li><strong>Whittaker TRIO</strong> is the encapsulation machine — rotate brushes every 2–3 hours, never skip</li>
+                <li><strong>Products are NOT interchangeable</strong> between methods — check method before selecting product</li>
+                <li><strong>Document everything:</strong> method, product, dwell time, drying time</li>
+            </ul>
+
+        <div class="servus-callout">
+            <div class="servus-callout-label">Servus Standard in Action</div>
+            <p>The goal is not just clean carpet — it is carpet that stays clean longer, dries faster, and does not come back as a complaint. Every Servus Standard in this course exists because someone learned it the hard way. Follow them.</p>
+        </div>
+
+    </div>
+
+    <div class="servus-footer">
+        <div class="logo-footer">
+            <img src="Servus-Colour.png" alt="Servus Group">
+        </div>
+        <strong>Servus Group</strong>
+        <p>Specialty Cleaning — Professional Carpet Care Certification</p>
+        <p>
+            <strong>Contact:</strong> <a href="tel:604-435-1135">604-435-1135</a> | <a href="mailto:info@servusgrouplowermainland.com">info@servusgrouplowermainland.com</a>
+        </p>
+        <p>160–21900 Westminster Hwy, Richmond BC V6V 2K3 | <a href="https://servusgrouplowermainland.com">servusgrouplowermainland.com</a></p>
+
+        <div class="footer-certs">
+            <img src="COR-logo-inverted.png" alt="COR Certified">
+            <img src="ISSA-logo-inverted.png" alt="ISSA Member">
+        </div>
+
+        <div class="compliance-text">
+            This material is for Servus Group staff training and certification purposes only. All equipment and chemicals referenced are approved for use by Servus Group and comply with applicable safety standards (WHMIS, WorkSafeBC). Product recommendations and protocols reflect Servus Group's best practices and may vary based on site-specific conditions. Always consult equipment manuals and chemical Safety Data Sheets (SDS) before use.
+        </div>
+    </div>
+
+</div>
+
+    <!-- Floating Glossary Widget -->
+    <div class="glossary-widget" id="glossaryWidget">
+        <!-- Expandable Panel -->
+        <div class="glossary-panel" id="glossaryPanel">
+            <div class="glossary-panel-header">
+                <h3>📖 Glossary</h3>
+                <button class="glossary-close" onclick="toggleGlossary()">✕</button>
+            </div>
+            <div class="glossary-search">
+                <input type="text" id="glossarySearch" placeholder="Search terms..." oninput="searchGlossary(this.value)">
+            </div>
+            <div class="glossary-filters">
+                <button class="g-filter active" onclick="filterG('all', this)">All</button>
+                <button class="g-filter" onclick="filterG('chem', this)">Chemistry</button>
+                <button class="g-filter" onclick="filterG('tech', this)">Technical</button>
+                <button class="g-filter" onclick="filterG('safe', this)">Safety</button>
+            </div>
+            <div class="glossary-list" id="glossaryList">
+                <!-- Chemistry Terms -->
+                <div class="g-term-item" data-cat="chem" data-search="acid rinse">
+                    <div class="g-term-name">Acid Rinse <span class="g-term-pron">AS-id rinse</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Low-pH solution applied after alkaline cleaning to neutralize carpet and prevent browning. All Fiber Rinse is the Servus standard.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="alkaline">
+                    <div class="g-term-name">Alkaline <span class="g-term-pron">AL-kuh-line</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Opposite of acid. Cleaning chemicals with pH above 7. Breaks down grease and oil.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="browning">
+                    <div class="g-term-name">Browning <span class="g-term-pron">BROW-ning</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Yellow-brown discoloration appearing after cleaning. Caused by over-wetting, high pH residue, or cellulosic fibers.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="crystallizing polymer">
+                    <div class="g-term-name">Crystallizing Polymer <span class="g-term-pron">KRIS-tuh-lye-zing PAH-lih-mer</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Long-chain molecule in encapsulation products. Surrounds soil, dries into brittle crystals, then gets vacuumed away.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="deodorizer">
+                    <div class="g-term-name">Deodorizer <span class="g-term-pron">dee-OH-der-eye-zer</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Chemical that eliminates odors rather than masking them. Ends Odor is the Servus standard for HWE.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="dwell time">
+                    <div class="g-term-name">Dwell Time <span class="g-term-pron">DWEL time</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Minutes a cleaning chemical sits on carpet before extraction. Longer dwell = better soil breakdown.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="emulsifier">
+                    <div class="g-term-name">Emulsifier <span class="g-term-pron">ee-MUL-sih-fye-er</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Keeps oil and water mixed so grease doesn't re-deposit on carpet during cleaning.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="encapsulation">
+                    <div class="g-term-name">Encapsulation <span class="g-term-pron">en-KAP-soo-LAY-shun</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Low-moisture cleaning method where crystals surround soil and dry. Vacuumed away later.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="enzyme">
+                    <div class="g-term-name">Enzyme <span class="g-term-pron">EN-zyme</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Biological cleaning agent. Breaks down organic soil like pet urine, blood, food. Needs warm water and dwell time.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="neutralization">
+                    <div class="g-term-name">Neutralization <span class="g-term-pron">NOO-truh-lih-ZAY-shun</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Bringing carpet pH back to safe range (4.5–5.5) after alkaline cleaning using acid rinse.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="ph">
+                    <div class="g-term-name">pH <span class="g-term-pron">pee-AYCH</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Scale from 0 to 14 measuring acidity vs alkalinity. 7 is neutral. Carpet should be left at 4.5–5.5 after cleaning.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="pre-spray prespray">
+                    <div class="g-term-name">Pre-Spray <span class="g-term-pron">PREE-spray</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Cleaning solution applied to carpet before the main cleaning step. Lets chemistry break down soil during dwell time.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="residue">
+                    <div class="g-term-name">Residue <span class="g-term-pron">REZ-ih-doo</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Leftover chemical trapped in carpet fibers. Causes sticky feel and rapid resoiling if not rinsed out.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="resoiling">
+                    <div class="g-term-name">Resoiling <span class="g-term-pron">ree-SOY-ling</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Carpet getting dirty again quickly after cleaning. Usually caused by sticky chemical residue left in fibers.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="soil suspension">
+                    <div class="g-term-name">Soil Suspension <span class="g-term-pron">soyl suh-SPEN-shun</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Chemistry loosening and holding soil particles in solution so they can be extracted from carpet.</div>
+                </div>
+
+                <!-- Technical Terms -->
+                <div class="g-term-item" data-cat="tech" data-search="air mover">
+                    <div class="g-term-name">Air Mover <span class="g-term-pron">AIR MOO-ver</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Fan placed on cleaned carpet to speed drying. Use 1 per 200 sq ft after HWE cleaning.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="bonnet">
+                    <div class="g-term-name">Bonnet <span class="g-term-pron">BON-it</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Absorbent pad on a rotary floor machine. Spins on carpet surface to absorb light soil. Surface-only method.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="cfm cubic feet">
+                    <div class="g-term-name">CFM <span class="g-term-pron">see-eff-EM</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Cubic Feet per Minute. Measures vacuum suction power. Higher CFM = faster moisture removal.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="dry pass">
+                    <div class="g-term-name">Dry Pass <span class="g-term-pron">DRY pass</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Vacuum-only wand pass with no spray. Removes extra moisture after cleaning. Critical for preventing over-wetting.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="extraction">
+                    <div class="g-term-name">Extraction <span class="g-term-pron">ex-TRAK-shun</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Process of removing water, cleaning solution, and dissolved soil from carpet using vacuum suction.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="hwe hot water extraction">
+                    <div class="g-term-name">HWE <span class="g-term-pron">aych-dub-yoo-EE</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Hot Water Extraction. Most powerful cleaning method. Injects hot solution, then vacuums everything out.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="interim cleaning">
+                    <div class="g-term-name">Interim Cleaning <span class="g-term-pron">IN-ter-im</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Regular maintenance cleaning between full deep cleans. Usually monthly with the Whittaker TRIO.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="overlap">
+                    <div class="g-term-name">Overlap <span class="g-term-pron">OH-ver-lap</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Each cleaning pass covers 50% of the previous pass width. Prevents streaks and ensures full coverage.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="pile">
+                    <div class="g-term-name">Pile <span class="g-term-pron">PYLE</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">The upright fibers of carpet — the visible surface you walk on. Can be cut pile (soft) or loop pile (commercial).</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="pile lifting">
+                    <div class="g-term-name">Pile Lifting <span class="g-term-pron">PYLE LIFT-ing</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Raising flattened carpet fibers back upright. The Whittaker TRIO does this while cleaning.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="psi pounds per square inch">
+                    <div class="g-term-name">PSI <span class="g-term-pron">pee-ess-EYE</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Pounds per Square Inch. Measures water pressure from the pump. Higher PSI = stronger spray.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="truck-mount">
+                    <div class="g-term-name">Truck-Mount <span class="g-term-pron">TRUK-mownt</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Powerful carpet cleaning system mounted inside a van. Provides highest PSI and CFM available.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="wand">
+                    <div class="g-term-name">Wand <span class="g-term-pron">WAHND</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Handheld tool connected to the extractor by hoses. Controls spray, pressure, and vacuum during HWE.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="wicking">
+                    <div class="g-term-name">Wicking <span class="g-term-pron">WIK-ing</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Moisture deep in carpet backing rising to the surface as it dries, bringing soil with it. Stains reappear after cleaning.</div>
+                </div>
+
+                <!-- Safety Terms -->
+                <div class="g-term-item" data-cat="safe" data-search="carbon brushes">
+                    <div class="g-term-name">Carbon Brushes <span class="g-term-pron">KAR-bun BRUSH-ez</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Electrical contacts inside vacuum motor. Wear over time. Replace when shorter than 3/8 inch.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="float shutoff">
+                    <div class="g-term-name">Float Shutoff <span class="g-term-pron">FLOHT SHUT-off</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Safety mechanism in recovery tank. Stops vacuum when tank is full. Prevents motor damage.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="motor protector">
+                    <div class="g-term-name">Motor Protector <span class="g-term-pron">MOH-ter proh-TEK-ter</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Safety switch on Whittaker TRIO. Trips on overheat. Press reset button to restart.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="pressure regulator">
+                    <div class="g-term-name">Pressure Regulator <span class="g-term-pron">PRESH-er REG-yoo-lay-ter</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Valve on Warrior 500 controlling solution pressure. Lubricate monthly with Superlube.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="recovery tank">
+                    <div class="g-term-name">Recovery Tank <span class="g-term-pron">ree-KUV-ree TANK</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Tank on portable extractor collecting dirty water extracted from carpet. Dump after each job.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="solution tank">
+                    <div class="g-term-name">Solution Tank <span class="g-term-pron">suh-LOO-shun TANK</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Tank holding clean water and cleaning solution. 13 gallons on the Warrior 500.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="warrior 500">
+                    <div class="g-term-name">Warrior 500 <span class="g-term-pron">WOR-ee-er</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Servus's preferred portable extractor. 500 PSI pump, dual vacuum motors, 13-gal solution tank.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="whittaker trio">
+                    <div class="g-term-name">Whittaker TRIO <span class="g-term-pron">WIT-uh-ker TREE-oh</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Encapsulation machine with three rotating brushes. Used for interim commercial maintenance cleaning.</div>
+                </div>
+            </div>
+            <div class="glossary-panel-footer" id="glossaryCount">37 terms</div>
+        </div>
+
+        <!-- Floating Button -->
+        <button class="glossary-btn" onclick="toggleGlossary()" title="Open Glossary">
+            📖
+            <span class="badge">37</span>
+        </button>
+    </div>
+
+    <script>
+
+        let glossaryOpen = false;
+
+        function toggleGlossary() {
+            glossaryOpen = !glossaryOpen;
+            document.getElementById('glossaryPanel').classList.toggle('open', glossaryOpen);
+        }
+
+        function filterG(cat, btn) {
+            document.querySelectorAll('.g-filter').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            let count = 0;
+            document.querySelectorAll('.g-term-item').forEach(item => {
+                const show = cat === 'all' || item.dataset.cat === cat;
+                item.style.display = show ? 'block' : 'none';
+                if (show) count++;
+            });
+            document.getElementById('glossaryCount').textContent = count + ' terms';
+            document.getElementById('glossarySearch').value = '';
+        }
+
+        function searchGlossary(query) {
+            const q = query.toLowerCase().trim();
+            let count = 0;
+            document.querySelectorAll('.g-term-item').forEach(item => {
+                const match = !q || item.dataset.search.includes(q) || item.textContent.toLowerCase().includes(q);
+                item.style.display = match ? 'block' : 'none';
+                if (match) count++;
+            });
+            document.getElementById('glossaryCount').textContent = count + ' terms';
+            document.querySelectorAll('.g-filter').forEach(b => b.classList.remove('active'));
+            document.querySelector('.g-filter').classList.add('active');
+        }
+
+        // Accordion functionality
+        document.querySelectorAll('.accordion-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('open');
+            });
+        });
+    </script>
+
+</body>
+</html>
