@@ -2384,6 +2384,8 @@
         // Set header with SVG icon
         document.getElementById('wtHeaderTitle').innerHTML = getSvgIcon('flask_header', 22) + ' Spotting Decision Walkthrough';
 
+        var walkthroughInteracted = false;
+
         function renderStep() {
             var stepId = stepPath[stepPath.length - 1];
             var step = getStepById(stepId);
@@ -2461,11 +2463,14 @@
 
             document.getElementById('stepArea').innerHTML = html;
 
-            // Scroll to step
-            document.getElementById('stepArea').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Scroll to step (only after user interaction, not on initial load)
+            if (walkthroughInteracted) {
+                document.getElementById('stepArea').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
 
         function makeChoice(stepId, choice) {
+            walkthroughInteracted = true;
             var step = getStepById(stepId);
             completedSteps.push({ title: step.title, choice: choice });
             var nextId = step.choices[choice].next;
@@ -2474,6 +2479,7 @@
         }
 
         function goNext(stepId, nextId) {
+            walkthroughInteracted = true;
             var step = getStepById(stepId);
             completedSteps.push({ title: step.title, choice: null });
             stepPath.push(nextId);
@@ -2481,6 +2487,7 @@
         }
 
         function restart() {
+            walkthroughInteracted = true;
             completedSteps = [];
             stepPath = ['step_inspect'];
             renderStep();

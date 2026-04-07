@@ -2777,6 +2777,8 @@
         // Set connector text with SVG icon
         document.getElementById('connectorText').innerHTML = getSvgIcon('target', 28) + '<span>Great work! Now that you\'ve mastered the decision process, practice with these <strong>real-world scenarios</strong> to build field confidence.</span>';
 
+        var walkthroughInteracted = false;
+
         function renderStep() {
             var stepId = stepPath[stepPath.length - 1];
             var step = getStepById(stepId);
@@ -2855,10 +2857,13 @@
             document.getElementById('stepArea').innerHTML = html;
 
             // Scroll to step
-            document.getElementById('stepArea').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (walkthroughInteracted) {
+                document.getElementById('stepArea').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
 
         function makeChoice(stepId, choice) {
+            walkthroughInteracted = true;
             var step = getStepById(stepId);
             completedSteps.push({ title: step.title, choice: choice });
             var nextId = step.choices[choice].next;
@@ -2867,6 +2872,7 @@
         }
 
         function goNext(stepId, nextId) {
+            walkthroughInteracted = true;
             var step = getStepById(stepId);
             completedSteps.push({ title: step.title, choice: null });
             stepPath.push(nextId);
@@ -2874,6 +2880,7 @@
         }
 
         function restart() {
+            walkthroughInteracted = true;
             completedSteps = [];
             stepPath = ['inspect'];
             renderStep();
