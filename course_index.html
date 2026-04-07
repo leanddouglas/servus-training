@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servus Group — Professional Carpet Care Certification Course</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --servus-navy: #0a4875;
+            --servus-navy-dark: #062d4a;
+            --servus-blue: #005a87;
+            --servus-blue-mid: #006ba1;
+            --servus-accent: #ff9900;
+            --servus-accent-glow: #ffad33;
+            --servus-light-blue: #D3EEF5;
+            --servus-pale-blue: #F0FCFF;
+            --servus-cloud-blue: #F2F7FC;
+            --servus-off-white: #FAFAFA;
+            --servus-dark: #1a1a2e;
+            --servus-text: #333333;
+            --servus-text-mid: #555555;
+            --servus-text-light: #777777;
+            --servus-success: #28a745;
+            --servus-gradient: linear-gradient(135deg, #0a4875 0%, #005a87 50%, #006ba1 100%);
+            --servus-gradient-dark: linear-gradient(135deg, #062d4a 0%, #0a4875 50%, #005a87 100%);
+            --card-shadow: 0 4px 24px rgba(10, 72, 117, 0.10);
+            --card-hover-shadow: 0 12px 40px rgba(10, 72, 117, 0.20);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--servus-text);
+            background: #ffffff;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--servus-gradient-dark);
+            overflow: hidden;
+            padding: 60px 20px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="1440" height="900" fill="url(%23grid)"/></svg>');
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to top, #ffffff 0%, transparent 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 153, 0, 0.15);
+            border: 1px solid rgba(255, 153, 0, 0.35);
+            color: var(--servus-accent);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.82em;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero-logo {
+            width: 180px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.2em;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            animation: fadeInDown 0.7s ease-out;
+        }
+
+        .hero .hero-division {
+            font-size: 1.15em;
+            color: rgba(255,255,255,0.55);
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 10px;
+            animation: fadeInDown 0.75s ease-out;
+        }
+
+        .hero .hero-tagline {
+            font-size: 1.35em;
+            color: var(--servus-accent);
+            font-style: italic;
+            font-weight: 400;
+            margin-bottom: 28px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero-title-bar {
+            width: 80px;
+            height: 4px;
+            background: var(--servus-accent);
+            margin: 0 auto 28px;
+            border-radius: 2px;
+            animation: expandBar 1s ease-out 0.5s both;
+        }
+
+        .hero h2 {
+            font-size: 1.8em;
+            font-weight: 300;
+            color: #ffffff;
+            margin-bottom: 10px;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .hero .hero-subtitle {
+            font-size: 1.05em;
+            color: rgba(255,255,255,0.65);
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat .stat-number {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--servus-accent);
+            line-height: 1.1;
+        }
+
+        .hero-stat .stat-label {
+            font-size: 0.78em;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--servus-accent);
+            color: var(--servus-navy-dark);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 1.05em;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 153, 0, 0.35);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 153, 0, 0.5);
+            background: var(--servus-accent-glow);
+        }
+
+        .hero-cta svg {
+            transition: transform 0.3s ease;
+        }
+
+        .hero-cta:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* ===== CERTIFICATION STRIP ===== */
+        .cert-strip {
+            background: var(--servus-cloud-blue);
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 0.82em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--servus-navy);
+            text-transform: uppercase;
+            border-top: 3px solid var(--servus-light-blue);
+            border-bottom: 3px solid var(--servus-light-blue);
+        }
+
+        .cert-strip img {
+            height: 48px;
+            width: auto;
+        }
+
+        .cert-strip .cert-divider {
+            color: var(--servus-accent);
+            font-size: 1.2em;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 30px 60px;
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75em;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--servus-accent);
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            font-weight: 800;
+            color: var(--servus-navy);
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+
+        .section-bar {
+            width: 60px;
+            height: 4px;
+            background: var(--servus-accent);
+            margin: 0 auto 24px;
+            border-radius: 2px;
+        }
+
+        .about-text {
+            font-size: 1.05em;
+            color: var(--servus-text-mid);
+            line-height: 1.9;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .about-text strong {
+            color: var(--servus-navy);
+        }
+
+        /* ===== LEARNING OUTCOMES ===== */
+        .outcomes-section {
+            background: var(--servus-cloud-blue);
+            padding: 60px 30px;
+        }
+
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .outcome-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .outcome-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-hover-shadow);
+        }
+
+        .outcome-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 16px;
+            background: var(--servus-pale-blue);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .outcome-icon svg {
+            color: var(--servus-navy);
+        }
+
+        .outcome-card h4 {
+            font-size: 0.95em;
+            font-weight: 700;
+            color: var(--servus-navy);
+            margin-bottom: 8px;
+        }
+
+        .outcome-card p {
+            font-size: 0.85em;
+            color: var(--servus-text-mid);
+            line-height: 1.6;
+        }
+
+        /* ===== CURRICULUM / DAY CARDS ===== */
+        .curriculum-section {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 80px 30px;
+        }
+
+        .day-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .day-card {
+            display: grid;
+            grid-template-columns: 100px 1fr auto;
+            align-items: stretch;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.35s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid rgba(10, 72, 117, 0.08);
+        }
+
+        .day-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--card-hover-shadow);
+            border-color: var(--servus-accent);
+        }
+
+        .day-card:hover .day-number {
+            background: var(--servus-accent);
+        }
+
+        .day-number {
+            background: var(--servus-gradient);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+            transition: background 0.35s ease;
+        }
+
+        .day-number .dn-label {
+            font-size: 0.65em;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.65);
+        }
+
+        .day-number .dn-num {
+            font-size: 2.5em;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .day-info {
+            padding: 24px 28px;
+        }
+
+        .day-info .day-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--servus-navy);
+            margin-bottom: 6px;
+        }
+
+        .day-info .day-subtitle {
+            font-size: 0.88em;
+            color: var(--servus-text-mid);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .day-modules {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .day-modules .mod-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.72em;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: var(--servus-pale-blue);
+            color: var(--servus-blue);
+        }
+
+        .day-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 28px;
+            border-left: 1px solid rgba(10, 72, 117, 0.06);
+            gap: 8px;
+            min-width: 130px;
+        }
+
+        .day-meta .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78em;
+            color: var(--servus-text-light);
+            font-weight: 500;
+        }
+
+        .day-meta .meta-item svg {
+            color: var(--servus-accent);
+        }
+
+        .day-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-right: 20px;
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: all 0.3s ease;
+        }
+
+        .day-card:hover .day-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ===== INSTRUCTOR / AUTHOR ===== */
+        .instructor-section {
+            background: var(--servus-gradient-dark);
+            padding: 70px 30px;
+            color: #ffffff;
+        }
+
+        .instructor-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .instructor-section .section-label {
+            color: var(--servus-accent);
+        }
+
+        .instructor-section .section-title {
+            color: #ffffff;
+        }
+
+        .instructor-quote {
+            font-size: 1.3em;
+            font-style: italic;
+            font-weight: 300;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.85);
+            margin: 30px 0;
+            padding: 0 20px;
+            border-left: 4px solid var(--servus-accent);
+            text-align: left;
+        }
+
+        .instructor-name {
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--servus-accent);
+            margin-top: 16px;
+        }
+
+        .instructor-role {
+            font-size: 0.88em;
+            color: rgba(255,255,255,0.55);
+            font-weight: 400;
+        }
+
+        /* ===== FEATURES / WHAT'S INCLUDED ===== */
+        .features-section {
+            padding: 80px 30px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 20px;
+            border-radius: 12px;
+            background: var(--servus-cloud-blue);
+            transition: transform 0.2s ease;
+        }
+
+        .feature-item:hover { transform: translateY(-2px); }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--servus-navy);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon svg { color: var(--servus-accent); }
+
+        .feature-item h4 {
+            font-size: 0.88em;
+            font-weight: 700;
+            color: var(--servus-navy);
+            margin-bottom: 4px;
+        }
+
+        .feature-item p {
+            font-size: 0.8em;
+            color: var(--servus-text-mid);
+            line-height: 1.5;
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            text-align: center;
+            padding: 60px 30px 80px;
+            background: var(--servus-cloud-blue);
+        }
+
+        .final-cta h2 {
+            font-size: 2em;
+            font-weight: 800;
+            color: var(--servus-navy);
+            margin-bottom: 12px;
+        }
+
+        .final-cta p {
+            font-size: 1em;
+            color: var(--servus-text-mid);
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--servus-accent);
+            color: var(--servus-navy-dark);
+            padding: 14px 34px;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(255,153,0,0.3);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255,153,0,0.45);
+        }
+
+        .cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--servus-navy);
+            padding: 14px 34px;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid var(--servus-navy);
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            background: var(--servus-navy);
+            color: #ffffff;
+        }
+
+        /* ===== FOOTER ===== */
+        .course-footer {
+            background: var(--servus-navy-dark);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.8em;
+        }
+
+        .course-footer strong {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes expandBar {
+            from { width: 0; }
+            to { width: 80px; }
+        }
+
+        /* Scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2em; letter-spacing: 2px; }
+            .hero h2 { font-size: 1.3em; }
+            .hero-stats { gap: 24px; }
+            .hero-stat .stat-number { font-size: 2em; }
+            .section-title { font-size: 1.7em; }
+
+            .day-card {
+                grid-template-columns: 80px 1fr;
+                grid-template-rows: auto auto;
+            }
+
+            .day-number { padding: 16px 12px; }
+            .day-number .dn-num { font-size: 2em; }
+            .day-info { padding: 18px 20px; }
+            .day-meta {
+                grid-column: 1 / -1;
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 12px 20px;
+                border-left: none;
+                border-top: 1px solid rgba(10,72,117,0.06);
+            }
+            .day-arrow { display: none; }
+
+            .instructor-quote { font-size: 1.1em; }
+        }
+
+        @media (max-width: 480px) {
+            .hero { padding: 40px 16px; min-height: auto; padding-top: 80px; padding-bottom: 100px; }
+            .hero h1 { font-size: 1.6em; }
+            .hero .hero-division { font-size: 0.85em; letter-spacing: 4px; }
+            .hero-logo { width: 130px; }
+            .cert-strip { padding: 14px 16px; gap: 12px; }
+            .about-section, .curriculum-section, .features-section { padding: 50px 20px; }
+            .outcomes-section { padding: 50px 16px; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px 20px; }
+            .hero::after { display: none; }
+            .day-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            IICRC S100 Aligned Program
+        </div>
+
+        <img src="https://servusgrouplowermainland.com/wp-content/uploads/2024/12/Servus-Colour.png" alt="Servus Group Logo" class="hero-logo">
+
+        <h1>Servus Group</h1>
+        <div class="hero-division">Specialty Cleaning</div>
+        <div class="hero-tagline">"At Your Service"</div>
+
+        <div class="hero-title-bar"></div>
+
+        <h2>Professional Carpet Care Certification</h2>
+        <p class="hero-subtitle">A comprehensive 5-day training program designed to transform technicians into certified carpet care professionals — from fiber science to client excellence.</p>
+
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Training Days</div>
+            </div>
+            <div class="hero-stat">
+                <div class="stat-number">34</div>
+                <div class="stat-label">Modules</div>
+            </div>
+            <div class="hero-stat">
+                <div class="stat-number">220+</div>
+                <div class="stat-label">Glossary Terms</div>
+            </div>
+            <div class="hero-stat">
+                <div class="stat-number">50</div>
+                <div class="stat-label">Exam Questions</div>
+            </div>
+        </div>
+
+        <a href="#curriculum" class="hero-cta">
+            Begin Your Training
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- ===== CERTIFICATION STRIP ===== -->
+<div class="cert-strip">
+    <img src="https://servusgrouplowermainland.com/wp-content/uploads/2014/07/go2HR-CORLogo-K-300x283.png" alt="COR Certified">
+    <span>IICRC S100 Compliant</span>
+    <span class="cert-divider">•</span>
+    <span>WorkSafeBC 2026</span>
+    <span class="cert-divider">•</span>
+    <span>COR Certified</span>
+    <span class="cert-divider">•</span>
+    <span>ISSA Member</span>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="about-section reveal">
+    <div class="section-label">About This Program</div>
+    <h2 class="section-title">Master the Process. Protect the Asset.</h2>
+    <div class="section-bar"></div>
+    <p class="about-text">
+        The <strong>Servus Group Professional Carpet Care Certification</strong> is an industry-leading training program built on the IICRC S100 Standard for Professional Cleaning of Textile Floor Covering. Designed for the <strong>Servus Group Lower Mainland team</strong>, this program goes beyond basic instruction — combining <strong>fiber science, cleaning chemistry, advanced extraction methods, stain treatment protocols</strong>, and <strong>professional client management</strong> into one cohesive curriculum.
+        <br><br>
+        We operate on a core formula: <strong>EX (Employee Experience) + CX (Customer Experience) = Growth</strong>. By investing in your knowledge and safety, we ensure you deliver unparalleled, professional results to our clients.
+    </p>
+</section>
+
+<!-- ===== LEARNING OUTCOMES ===== -->
+<section class="outcomes-section">
+    <div style="max-width: 960px; margin: 0 auto; text-align: center;">
+        <div class="section-label reveal">What You'll Achieve</div>
+        <h2 class="section-title reveal">Core Competencies</h2>
+        <div class="section-bar reveal"></div>
+    </div>
+    <div class="outcomes-grid">
+        <div class="outcome-card reveal">
+            <div class="outcome-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h4>Fiber Identification</h4>
+            <p>Identify carpet fiber types on sight and choose safe cleaning methods for each material.</p>
+        </div>
+        <div class="outcome-card reveal">
+            <div class="outcome-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h4>Chemistry Mastery</h4>
+            <p>Understand pH, surfactants, enzymes, and oxidizers to select the right product every time.</p>
+        </div>
+        <div class="outcome-card reveal">
+            <div class="outcome-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+            </div>
+            <h4>Equipment Expertise</h4>
+            <p>Operate HWE portables, truck-mounts, and Whittaker machines with confidence and precision.</p>
+        </div>
+        <div class="outcome-card reveal">
+            <div class="outcome-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>Stain Treatment</h4>
+            <p>Diagnose and treat any stain — from pet contamination to red wine — using the correct protocols.</p>
+        </div>
+        <div class="outcome-card reveal">
+            <div class="outcome-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h4>Client Excellence</h4>
+            <p>Communicate professionally, manage expectations, and build lasting client relationships.</p>
+        </div>
+        <div class="outcome-card reveal">
+            <div class="outcome-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h4>Certified Professional</h4>
+            <p>Pass the 50-question certification exam and earn your Servus Group professional credential.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CURRICULUM ===== -->
+<section class="curriculum-section" id="curriculum">
+    <div style="text-align: center;">
+        <div class="section-label reveal">5-Day Curriculum</div>
+        <h2 class="section-title reveal">Your Training Roadmap</h2>
+        <div class="section-bar reveal"></div>
+    </div>
+
+    <div class="day-cards">
+
+        <!-- DAY 1 -->
+        <a href="day1/" class="day-card reveal">
+            <div class="day-number">
+                <span class="dn-label">Day</span>
+                <span class="dn-num">1</span>
+            </div>
+            <div class="day-info">
+                <div class="day-title">Foundations — Fiber Identification</div>
+                <div class="day-subtitle">Learn to identify every carpet fiber type — natural and synthetic — through visual analysis and burn testing. Understand how each fiber reacts to moisture, heat, and chemicals.</div>
+                <div class="day-modules">
+                    <span class="mod-tag">Wool & Silk</span>
+                    <span class="mod-tag">Nylon Generations</span>
+                    <span class="mod-tag">Polyester & Triexta</span>
+                    <span class="mod-tag">Olefin & Acrylic</span>
+                    <span class="mod-tag">Burn Testing</span>
+                </div>
+            </div>
+            <div class="day-meta">
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+                    10 Modules
+                </div>
+            </div>
+        </a>
+
+        <!-- DAY 2 -->
+        <a href="day2/" class="day-card reveal">
+            <div class="day-number">
+                <span class="dn-label">Day</span>
+                <span class="dn-num">2</span>
+            </div>
+            <div class="day-info">
+                <div class="day-title">Soil Science & Cleaning Chemistry</div>
+                <div class="day-subtitle">Master the chemistry behind cleaning — from pH scales and surfactant action to enzyme applications and encapsulation technology. Learn to choose the right product for every soil type.</div>
+                <div class="day-modules">
+                    <span class="mod-tag">Soil Bonding</span>
+                    <span class="mod-tag">pH Chemistry</span>
+                    <span class="mod-tag">Surfactants</span>
+                    <span class="mod-tag">Enzymes & Oxidizers</span>
+                    <span class="mod-tag">Encapsulation</span>
+                    <span class="mod-tag">Interactive Walkthrough</span>
+                </div>
+            </div>
+            <div class="day-meta">
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+                    8 Modules
+                </div>
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                    73 Terms
+                </div>
+            </div>
+        </a>
+
+        <!-- DAY 3 -->
+        <a href="day3/" class="day-card reveal">
+            <div class="day-number">
+                <span class="dn-label">Day</span>
+                <span class="dn-num">3</span>
+            </div>
+            <div class="day-info">
+                <div class="day-title">Cleaning Methods & Equipment</div>
+                <div class="day-subtitle">From hot water extraction to interim encapsulation — learn every cleaning method and when to deploy it. Hands-on equipment operation with the Warrior 500 PSI, truck-mounts, and Whittaker TRIO.</div>
+                <div class="day-modules">
+                    <span class="mod-tag">HWE Extraction</span>
+                    <span class="mod-tag">Truck-Mounts</span>
+                    <span class="mod-tag">Whittaker TRIO</span>
+                    <span class="mod-tag">Bonneting</span>
+                    <span class="mod-tag">Drying Science</span>
+                    <span class="mod-tag">Video Demo</span>
+                </div>
+            </div>
+            <div class="day-meta">
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+                    6 Modules
+                </div>
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                    37 Terms
+                </div>
+            </div>
+        </a>
+
+        <!-- DAY 4 -->
+        <a href="day4/" class="day-card reveal">
+            <div class="day-number">
+                <span class="dn-label">Day</span>
+                <span class="dn-num">4</span>
+            </div>
+            <div class="day-info">
+                <div class="day-title">Spotting, Stains & Special Situations</div>
+                <div class="day-subtitle">Master the spotting sequence, diagnose stain types, and learn treatment protocols for everything from pet damage to rust, wine, and water restoration categories.</div>
+                <div class="day-modules">
+                    <span class="mod-tag">Spots vs Stains</span>
+                    <span class="mod-tag">Pet Contamination</span>
+                    <span class="mod-tag">RMC PROXI</span>
+                    <span class="mod-tag">Wine & Dye Stains</span>
+                    <span class="mod-tag">Water Damage</span>
+                    <span class="mod-tag">Decision Walkthrough</span>
+                </div>
+            </div>
+            <div class="day-meta">
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+                    8 Modules
+                </div>
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                    40 Terms
+                </div>
+            </div>
+        </a>
+
+        <!-- DAY 5 -->
+        <a href="day5/" class="day-card reveal">
+            <div class="day-number" style="background: linear-gradient(135deg, #ff9900 0%, #e68a00 100%);">
+                <span class="dn-label" style="color: rgba(255,255,255,0.85);">Day</span>
+                <span class="dn-num">5</span>
+            </div>
+            <div class="day-info">
+                <div class="day-title">Professionalism & Certification Exam</div>
+                <div class="day-subtitle">From skilled cleaner to true professional. Master client communication, safety compliance, and business operations — then prove your knowledge with the 50-question certification exam.</div>
+                <div class="day-modules">
+                    <span class="mod-tag">Professional Conduct</span>
+                    <span class="mod-tag">WorkSafeBC</span>
+                    <span class="mod-tag">IICRC Pathways</span>
+                    <span class="mod-tag">Client Loyalty</span>
+                    <span class="mod-tag" style="background: #fff3e0; color: #e68a00;">★ Final Exam</span>
+                </div>
+            </div>
+            <div class="day-meta">
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+                    6 Modules
+                </div>
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    50-Q Exam
+                </div>
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                    30 Terms
+                </div>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<!-- ===== INSTRUCTOR ===== -->
+<section class="instructor-section reveal">
+    <div class="instructor-container">
+        <div class="section-label">Course Philosophy</div>
+        <h2 class="section-title">Master the Process. Protect the Asset.</h2>
+        <div class="section-bar" style="margin: 16px auto 0;"></div>
+
+        <blockquote class="instructor-quote">
+            "Consistent, high-quality carpet care begins with a well-maintained machine and adherence to the Servus methodology. Every fiber, every stain, every client interaction — they all follow a process. Master the process and you'll never guess again."
+        </blockquote>
+
+        <div class="instructor-name">Doug da Silva</div>
+        <div class="instructor-role">Training & Certification Program Director — Servus Group Lower Mainland</div>
+    </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="features-section">
+    <div style="text-align: center;">
+        <div class="section-label reveal">What's Included</div>
+        <h2 class="section-title reveal">Built for Real Learning</h2>
+        <div class="section-bar reveal"></div>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-item reveal">
+            <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+                <h4>Interactive Walkthroughs</h4>
+                <p>Step-by-step decision engines that simulate real job scenarios.</p>
+            </div>
+        </div>
+        <div class="feature-item reveal">
+            <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+            </div>
+            <div>
+                <h4>Searchable Glossary</h4>
+                <p>220+ industry terms with instant lookup on every training day.</p>
+            </div>
+        </div>
+        <div class="feature-item reveal">
+            <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </div>
+            <div>
+                <h4>Video Demonstrations</h4>
+                <p>Equipment operation videos embedded directly in the training material.</p>
+            </div>
+        </div>
+        <div class="feature-item reveal">
+            <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div>
+                <h4>Product-Specific</h4>
+                <p>Training uses the exact Servus-approved products and equipment you'll use on the job.</p>
+            </div>
+        </div>
+        <div class="feature-item reveal">
+            <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+                <h4>Certification Exam</h4>
+                <p>50-question exam with animated scoring dashboard and study recommendations.</p>
+            </div>
+        </div>
+        <div class="feature-item reveal">
+            <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div>
+                <h4>Works Anywhere</h4>
+                <p>Fully self-contained HTML — works on any device, online or offline.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+    <h2 class="reveal">Ready to Begin?</h2>
+    <p class="reveal">Start with Day 1 and work through each training module at your own pace.</p>
+    <div class="cta-buttons reveal">
+        <a href="day1/" class="cta-primary">
+            Start Day 1
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="day5/" class="cta-secondary">
+            Jump to Exam
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </a>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="course-footer">
+    <p><strong>Servus Group Lower Mainland</strong> — Professional Carpet Care Certification Program</p>
+    <p style="margin-top: 6px;">© 2026 Servus Group. For internal training and certification purposes only.</p>
+    <p style="margin-top: 4px;">Developed by <strong>Doug da Silva</strong> · IICRC S100 Compliant · WorkSafeBC 2026 · COR Certified · ISSA Member</p>
+</footer>
+
+<script>
+// Scroll reveal animation
+document.addEventListener('DOMContentLoaded', function() {
+    var reveals = document.querySelectorAll('.reveal');
+
+    function checkReveal() {
+        var windowHeight = window.innerHeight;
+        reveals.forEach(function(el) {
+            var top = el.getBoundingClientRect().top;
+            if (top < windowHeight - 60) {
+                el.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkReveal);
+    checkReveal(); // check on load
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
