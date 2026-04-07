@@ -731,6 +731,49 @@
     border-top: 1px solid #eee;
   }
 
+  /* Tooltip for glossary terms in text */
+  .glossary-term {
+      border-bottom: 2px dotted var(--servus-accent);
+      cursor: help;
+      position: relative;
+      font-weight: 600;
+      color: var(--servus-navy);
+  }
+  .glossary-term .tooltip {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--servus-navy);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.85em;
+      font-weight: 400;
+      line-height: 1.5;
+      width: 260px;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: opacity 0.2s, visibility 0.2s;
+      pointer-events: none;
+  }
+  .glossary-term .tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: var(--servus-navy);
+  }
+  .glossary-term:hover .tooltip,
+  .glossary-term:focus .tooltip {
+      visibility: visible;
+      opacity: 1;
+  }
+
   /* === CONNECTOR TEXT === */
   .connector-text {
     background: linear-gradient(135deg, var(--servus-pale-blue), var(--servus-cloud-blue));
@@ -826,7 +869,7 @@
 
 <p>Accurate fiber identification is the absolute foundation of professional carpet cleaning and the cornerstone of the Servus standard. As Servus technicians held to the rigorous IICRC S100 standards, applying genuine textile science is required to uphold our "At Your Service" commitment. Flooring must be approached not merely as a surface to be cleaned, but as a complex chemical structure that interacts dynamically with its environment and the cleaning agents we apply.</p>
 
-<p>The core T.A.C.T. principles—Temperature, Agitation, Chemistry, and Time—cannot be safely applied without first confirming the exact material composition of the carpet. Each fiber dictates how these four variables must be balanced. Guessing in this industry leads to catastrophic, expensive failures. Treating a delicate natural textile with the high heat and high-alkaline chemistry meant for a commercial synthetic will result in irreversible damage. Conversely, using gentle, neutral chemistry on a heavily soiled synthetic will leave the customer unsatisfied. The transition from a visual assessment to scientific identification is critical to eliminating guesswork, ensuring WorkSafeBC and IICRC compliance, and protecting both the client's investment and your professional reputation as a Servus Group expert.</p>
+<p>The core <span class="glossary-term">T.A.C.T.<span class="tooltip">Temperature, Agitation, Chemistry, Time — the four controllable variables in any cleaning process.</span></span> principles—Temperature, Agitation, Chemistry, and Time—cannot be safely applied without first confirming the exact material composition of the carpet. Each fiber dictates how these four variables must be balanced. Guessing in this industry leads to catastrophic, expensive failures. Treating a delicate natural textile with the high heat and high-alkaline chemistry meant for a commercial synthetic will result in irreversible damage. Conversely, using gentle, neutral chemistry on a heavily soiled synthetic will leave the customer unsatisfied. The transition from a visual assessment to scientific identification is critical to eliminating guesswork, ensuring WorkSafeBC and IICRC compliance, and protecting both the client's investment and your professional reputation as a Servus Group expert.</p>
 
 <h2 class="section-title">Day 1: Fiber Characteristics and Identification
 </h2>
@@ -835,9 +878,9 @@
 
 <h3 class="module-title">Module 1: Introduction to Fibers and Yarns</h3>
 
-<p>A "fiber" is defined as any material made into filaments and yarn, while "yarn" is a bundle of twisted filaments. The way these yarns are constructed—either as short, spun "staple" yarns or long, extruded "Bulked Continuous Filament" (BCF) yarns—affects how they shed and hold up to traffic.</p>
+<p>A "fiber" is defined as any material made into filaments and yarn, while "yarn" is a bundle of twisted filaments. The way these yarns are constructed—either as short, spun "<span class="glossary-term">staple<span class="tooltip">Short fibers twisted together into yarn. Gives a softer, more natural look but may shed initially.</span></span>" yarns or long, extruded "<span class="glossary-term">Bulked Continuous Filament<span class="tooltip">BCF — a single continuous strand of synthetic fiber extruded in long lengths. Resists shedding and fuzzing.</span></span>" (BCF) yarns—affects how they shed and hold up to traffic.</p>
 
-<p>Fibers are fundamentally categorized as natural (derived from living organisms, such as plants or animals) or synthetic (thermoplastic by-products, primarily extruded from petroleum). Natural fibers contain microscopic irregularities that give them unique aesthetics but make them highly sensitive, while synthetic fibers are engineered for uniformity, durability, and cost-effectiveness.</p>
+<p>Fibers are fundamentally categorized as natural (derived from living organisms, such as plants or animals) or synthetic (<span class="glossary-term">thermoplastic<span class="tooltip">A material that softens and melts when heated. All major synthetic carpet fibers (nylon, polyester, olefin) are thermoplastic.</span></span> by-products, primarily extruded from petroleum). Natural fibers contain microscopic irregularities that give them unique aesthetics but make them highly sensitive, while synthetic fibers are engineered for uniformity, durability, and cost-effectiveness.</p>
 
 <div class="servus-callout"> 
   <strong class="callout-label">The Servus Standard in Action:</strong> A technician arrives at a busy corporate lobby for a first-time clean. While vacuuming, they notice the carpet is shedding excessively, filling the vacuum canister with loose fluff. The property manager is concerned the carpet is falling apart. Recalling their training, the technician identifies the carpet as being made of spun "staple" yarns rather than BCF. They confidently explain to the client that this shedding is a normal characteristic of staple construction and adjust their vacuuming approach, instantly establishing trust through education.
@@ -849,9 +892,9 @@
 
 <h3 class="module-title">Module 2: Natural Protein Fibers (Wool)</h3>
 
-<p>Wool, sourced from sheep fleece, requires a completely conservative, gentle cleaning approach. It excels at hiding soil because its opaque structure refracts light differently than synthetics, meaning a wool carpet can hold pounds of dirt before looking visibly soiled. While it boasts incredible natural resilience and inherent fire resistance (it is self-extinguishing), its microscopic protein structure is highly vulnerable to harsh chemistry.</p>
+<p><span class="glossary-term">Wool<span class="tooltip">Natural protein fiber from animal hair. Extremely sensitive to heat (&gt;160°F) and high pH (&gt;9.5). Requires wool-safe, low-temp cleaning.</span></span>, sourced from sheep fleece, requires a completely conservative, gentle cleaning approach. It excels at hiding soil because its opaque structure refracts light differently than synthetics, meaning a wool carpet can hold pounds of dirt before looking visibly soiled. While it boasts incredible natural resilience and inherent fire resistance (it is self-extinguishing), its microscopic protein structure is highly vulnerable to harsh chemistry.</p>
 
-<p>Under a microscope, a wool fiber looks like a pinecone, covered in overlapping cuticular scales. Using a high alkaline pre-spray (pH above 9.5) or extraction temperatures exceeding 160°F will physically cook and dissolve these protein scales. This chemical burn causes the scales to lock together, resulting in irreversible damage known as felting or shrinkage. When cleaning wool, Servus technicians must use approved wool-safe chemistry (like Benefect Impact), maintain acidic to neutral pH levels, and avoid aggressive mechanical agitation.</p>
+<p>Under a microscope, a wool fiber looks like a pinecone, covered in overlapping <span class="glossary-term">cuticular scales<span class="tooltip">Microscopic overlapping scales on wool fibers. Can interlock under heat/agitation, causing irreversible felting.</span></span>. Using a high alkaline pre-spray (pH above 9.5) or extraction temperatures exceeding 160°F will physically cook and dissolve these protein scales. This chemical burn causes the scales to lock together, resulting in irreversible damage known as <span class="glossary-term">felting<span class="tooltip">Irreversible matting of wool fibers caused by excessive heat, agitation, or high pH. The cuticular scales interlock permanently.</span></span> or shrinkage. When cleaning wool, Servus technicians must use approved wool-safe chemistry (like Benefect Impact), maintain acidic to neutral pH levels, and avoid aggressive mechanical agitation.</p>
 
 <div class="servus-callout">
   <strong class="callout-label">The Servus Standard in Action:</strong> A junior technician is tempted to use a heavy-duty alkaline degreaser (pH 11) on a heavily soiled, muddy hallway runner. However, noticing the characteristic dull, opaque look of the fibers, they pause and test the fiber, confirming it is wool. Instead of risking irreversible felting and a costly insurance claim, they switch to Benefect Impact and lower their machine temperature to 150°F. The rug is safely restored without damage.
@@ -859,7 +902,7 @@
 
 <h3 class="module-title">Module 3: Natural Protein Fibers (Silk)</h3>
 
-<p>As a premium natural fiber often found in high-end oriental rugs or luxury blends, silk requires the most gentle, specialized cleaning protocols. It is a continuous filament fiber produced by silkworms that stretches up to 20% of its length but only retracts 2%, meaning aggressive physical agitation can permanently distort the rug's shape. Furthermore, silk loses up to 20% of its tensile strength when wet. Cleaning must occur at temperatures strictly below 170°F, and the fiber is easily degraded or completely dissolved by high alkalinity and chlorine bleach.</p>
+<p>As a premium natural fiber often found in high-end oriental rugs or luxury blends, <span class="glossary-term">silk<span class="tooltip">Natural protein fiber. Loses nearly all tensile strength when wet and stretches irreversibly. Max 170°F, neutral pH only.</span></span> requires the most gentle, specialized cleaning protocols. It is a continuous filament fiber produced by silkworms that stretches up to 20% of its length but only retracts 2%, meaning aggressive physical agitation can permanently distort the rug's shape. Furthermore, silk loses up to 20% of its tensile strength when wet. Cleaning must occur at temperatures strictly below 170°F, and the fiber is easily degraded or completely dissolved by high alkalinity and chlorine bleach.</p>
 
 <div class="servus-callout">
   <strong class="callout-label">The Servus Standard in Action:</strong> A homeowner frantically asks a technician to vigorously scrub a "stubborn" pet stain out of an expensive, shiny oriental rug. The tech identifies the fiber as silk. Knowing silk loses strength when wet and stretches permanently, the tech refuses to use mechanical scrubbing. Instead, they use a gentle, low-moisture blotting technique with cool water and specialized neutral spotters, saving the family heirloom from permanent physical distortion.
@@ -867,9 +910,9 @@
 
 <h3 class="module-title">Module 4: Natural Cellulosic Fibers (Cotton, Jute, Sisal)</h3>
 
-<p>These plant-derived fibers are often used in the warp yarns of woven carpets or as highly absorbent backings (e.g., Jute). They are highly susceptible to shrinkage, cellulosic browning, and mildew. Cotton is highly absorbent and requires careful pH management similar to wool.</p>
+<p>These plant-derived fibers are often used in the warp yarns of woven carpets or as highly absorbent backings (e.g., Jute). They are highly susceptible to shrinkage, <span class="glossary-term">cellulosic browning<span class="tooltip">Brown discoloration in plant-based fibers caused by over-wetting. Lignin compounds wick to the surface as moisture evaporates.</span></span>, and mildew. Cotton is highly absorbent and requires careful pH management similar to wool.</p>
 
-<p>Cellulosic browning is a critical issue technicians must anticipate. When jute backings or cotton fibers are over-wet or exposed to highly alkaline solutions, they release a natural polymer called lignin. As the carpet dries, moisture wicks to the surface, bringing this dark, tea-colored lignin with it, resulting in a brown stain across the carpet. This necessitates strict moisture control, rapid drying protocols, and often the application of an acidic rinse to neutralize the alkalinity and reverse the browning.</p>
+<p>Cellulosic browning is a critical issue technicians must anticipate. When jute backings or cotton fibers are over-wet or exposed to highly alkaline solutions, they release a natural polymer called <span class="glossary-term">lignin<span class="tooltip">Natural compound in plant fibers. Turns brown when exposed to moisture and wicks to the surface, causing cellulosic browning.</span></span>. As the carpet dries, moisture <span class="glossary-term">wicks<span class="tooltip">Stain or moisture drawn up from backing to fiber tips through capillary action during drying. Common cause of spot reappearance.</span></span> to the surface, bringing this dark, tea-colored lignin with it, resulting in a brown stain across the carpet. This necessitates strict moisture control, rapid drying protocols, and often the application of an <span class="glossary-term">acid rinse<span class="tooltip">Low-pH rinse applied after cleaning to neutralize alkaline residues, prevent resoiling, and restore fiber pH balance.</span></span> to neutralize the alkalinity and reverse the browning.</p>
 
 <div class="servus-callout">
   <strong class="callout-label">The Servus Standard in Action:</strong> An uncertified cleaner previously saturated a client's wall-to-wall carpet. The next day, the client noticed large, tea-colored brown stains migrating to the surface. The Servus tech is called in to fix it. They immediately diagnose that the excess moisture penetrated the jute backing, releasing lignin (cellulosic browning). The tech applies a specialized acidic rinse to neutralize the alkalinity and sets up high-speed air movers to dry the area rapidly, completely reversing the browning and winning a customer for life.
@@ -877,9 +920,9 @@
 
 <h3 class="module-title">Module 5: Synthetic Fibers: Nylon Generations 1-5</h3>
 
-<p>Nylon is the undisputed premium champion of durability due to its exceptional resilience and elasticity, bouncing back beautifully after heavy compression. While it accepts dyes vibrantly through engineered "dye sites," Nylon is hydrophilic, naturally absorbing up to 4.5% of its weight in moisture. This means it takes longer to dry than other synthetics and necessitates careful pH management and thorough extraction passes.</p>
+<p><span class="glossary-term">Nylon<span class="tooltip">Most popular carpet fiber (~65% market). Thermoplastic polyamide with excellent resilience. Clean with HWE at 180–200°F.</span></span> is the undisputed premium champion of durability due to its exceptional resilience and elasticity, bouncing back beautifully after heavy compression. While it accepts dyes vibrantly through engineered "<span class="glossary-term">dye sites<span class="tooltip">Molecular locations on nylon fibers where dye bonds. If unprotected, these sites can bond with stain molecules, causing permanent discoloration.</span></span>," Nylon is hydrophilic, naturally absorbing up to 4.5% of its weight in moisture. This means it takes longer to dry than other synthetics and necessitates careful pH management and thorough extraction passes.</p>
 
-<p>Its melting point is around 420°F, making it highly receptive to Hot Water Extraction (HWE) at 180°F-200°F. 5th Generation Nylon is specifically engineered with both a fluorochemical coating (to resist dry soil) and an acid dye resistor (to prevent stains from items like red wine or sports drinks). Using an excessively high pH or harsh solvents on 5th Gen Nylon can strip these protective coatings, voiding the manufacturer's warranty.</p>
+<p>Its melting point is around 420°F, making it highly receptive to <span class="glossary-term">Hot Water Extraction<span class="tooltip">HWE — the gold-standard deep cleaning method. Injects heated solution under pressure and immediately extracts with powerful vacuum.</span></span> (HWE) at 180°F-200°F. <span class="glossary-term">5th Generation Nylon<span class="tooltip">Latest nylon generation with factory-applied fluorochemical coating and acid dye resistor. High pH can strip these protections and void warranty.</span></span> is specifically engineered with both a <span class="glossary-term">fluorochemical coating<span class="tooltip">Factory-applied protective treatment on 5th Gen Nylon that repels dry soil. Stripped by excessively high pH cleaning.</span></span> (to resist dry soil) and an <span class="glossary-term">acid dye resistor<span class="tooltip">Chemical treatment on 5th Gen Nylon that blocks acid-based stains (red wine, sports drinks) from bonding to dye sites.</span></span> (to prevent stains from items like red wine or sports drinks). Using an excessively high pH or harsh solvents on 5th Gen Nylon can strip these protective coatings, voiding the manufacturer's warranty.</p>
 
 <div class="servus-callout">
   <strong class="callout-label">The Servus Standard in Action:</strong> A client spilled red wine on a brand-new 5th Generation Nylon carpet. A previous cleaner tried to remove it using a harsh, high-pH bleach solution, which effectively stripped the acid dye resistor. The wine stain is now permanent. The Servus tech educates the client on how the protective coating was chemically stripped. For the rest of the home, the tech uses appropriate pH solutions (under pH 10), ensuring the warranty and stain resistance remain fully intact.
@@ -887,9 +930,9 @@
 
 <h3 class="module-title">Module 6: Synthetic Fibers: Polyester and Triexta</h3>
 
-<p>Polyester combines moderate stain resistance with a soft, luxurious feel, often manufactured from recycled PET plastic bottles. It resists water-based stains brilliantly but is deeply lipophilic—meaning it acts like a magnet for oily, lipid-based soils. Body oils from bare feet, pet oils, and airborne cooking greases chemically bond to polyester fibers. Over time, this causes "traffic lane graying" or yellowing that cannot be removed with standard water-based cleaners.</p>
+<p><span class="glossary-term">Polyester<span class="tooltip">Synthetic fiber (PET). Extremely stain-resistant to water-based stains but lipophilic — attracts and holds oily soils.</span></span> combines moderate stain resistance with a soft, luxurious feel, often manufactured from recycled PET plastic bottles. It resists water-based stains brilliantly but is deeply <span class="glossary-term">lipophilic<span class="tooltip">Oil-loving — describes fibers that chemically attract and bond with oily/greasy soils. Requires alkaline degreasers and extended dwell times.</span></span>—meaning it acts like a magnet for oily, lipid-based soils. Body oils from bare feet, pet oils, and airborne cooking greases chemically bond to polyester fibers. Over time, this causes "traffic lane graying" or yellowing that cannot be removed with standard water-based cleaners.</p>
 
-<p>Triexta (PTT) is a newer polyester variation partly made from corn polymer, offering improved durability and resiliency while maintaining excellent water-stain resistance. To clean these fibers, Servus technicians must lean heavily on the "Chemistry" and "Time" aspects of T.A.C.T., utilizing aggressive alkaline degreasers and extended dwell times to break the lipid-fiber bond.</p>
+<p><span class="glossary-term">Triexta<span class="tooltip">Newer polyester variant partly derived from corn polymer. Improved durability over standard PET. Same lipophilic cleaning challenges as polyester.</span></span> (PTT) is a newer polyester variation partly made from corn polymer, offering improved durability and resiliency while maintaining excellent water-stain resistance. To clean these fibers, Servus technicians must lean heavily on the "Chemistry" and "Time" aspects of T.A.C.T., utilizing aggressive alkaline degreasers and extended <span class="glossary-term">dwell times<span class="tooltip">The time a chemical solution remains on the carpet before extraction. Longer dwell time increases effectiveness — the "T" in T.A.C.T.</span></span> to break the lipid-fiber bond.</p>
 
 <div class="servus-callout">
   <strong class="callout-label">The Servus Standard in Action:</strong> A technician arrives to clean a heavily soiled, dull-looking dining room rug that the homeowner claims is "luxury wool." A quick burn test confirms it is actually Polyester. Managing expectations, the tech explains that Polyester attracts cooking oils. Knowing a gentle wool cleaner will fail, they adjust their T.A.C.T. protocol. They apply a heavy pre-spray utilizing an aggressive alkaline degreaser (pH 10+), allow a full 15-minute dwell time to cut through the trapped lipid-based soils, and extract at 180°F, successfully restoring the carpet's appearance.
@@ -897,9 +940,9 @@
 
 <h3 class="module-title">Module 7: Synthetic Fibers: Olefin and Acrylic</h3>
 
-<p>Olefin (polypropylene) is the inexpensive workhorse of the commercial sector. It is completely hydrophobic, absorbing only 0.1% of its weight in water, which makes it naturally stain-resistant, highly resistant to chemical bleaching, and buoyant (it floats). Because it doesn't absorb water, any moisture applied sits on the surface or drains into the backing, making it notorious for wicking soils back to the surface as it dries.</p>
+<p><span class="glossary-term">Olefin<span class="tooltip">Polypropylene fiber. Solution-dyed (color locked in), making it bleach-resistant. Softens below 300°F — wand burns are a major risk.</span></span> (polypropylene) is the inexpensive workhorse of the commercial sector. It is completely hydrophobic, absorbing only 0.1% of its weight in water, which makes it naturally stain-resistant, highly resistant to chemical bleaching, and buoyant (it floats). Because it doesn't absorb water, any moisture applied sits on the surface or drains into the backing, making it notorious for <span class="glossary-term">wicking<span class="tooltip">Stain or moisture drawn up from backing to fiber tips through capillary action during drying. Common cause of spot reappearance.</span></span> soils back to the surface as it dries.</p>
 
-<p>This inherent resistance demands aggressive alkaline chemistry (pH 10-12, such as Esteam Citrus Slam) for adequate soil removal. Critically, Olefin has severe physical weaknesses: it crushes easily and is extremely heat sensitive, softening below 300°F (melting point ~320°F–330°F). A technician moving a hot extraction wand too quickly back and forth can generate enough friction heat to physically melt the fibers, leaving permanent "wand drag" marks. Furthermore, Olefin is highly susceptible to permanent alkaline browning if cleaned with a high pH without a proper acidic neutralizing rinse.</p>
+<p>This inherent resistance demands aggressive alkaline chemistry (pH 10-12, such as Esteam Citrus Slam) for adequate soil removal. Critically, Olefin has severe physical weaknesses: it crushes easily and is extremely heat sensitive, softening below 300°F (melting point ~320°F–330°F). A technician moving a hot extraction wand too quickly back and forth can generate enough friction heat to physically melt the fibers, leaving permanent "wand drag" marks. Furthermore, Olefin is highly susceptible to permanent alkaline browning if cleaned with a high pH without a proper acidic neutralizing rinse (<span class="glossary-term">acid rinse<span class="tooltip">Low-pH rinse applied after cleaning to neutralize alkaline residues, prevent resoiling, and restore fiber pH balance.</span></span>).</p>
 
 <div class="servus-callout">
   <strong class="callout-label">The Servus Standard in Action:</strong> A tech is cleaning a sprawling commercial office with low-profile Olefin carpet. The tech knows Olefin's melting point is perilously low. Instead of rushing and scrubbing back and forth with a hot wand—which would cause permanent "wand drag" friction burns—they use smooth, deliberate passes. They apply Esteam Citrus Slam to cut through the heavy soils, followed strictly by an acidic rinse to prevent the notorious alkaline browning Olefin is known for.
@@ -911,7 +954,7 @@
   <iframe src="https://www.youtube.com/embed/4UVVltSjfsk" width="100%" height="400" style="max-width: 700px; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-<p>Visual identification is the least accurate diagnostic method because modern synthetic fibers are specifically engineered to mimic the look and feel of natural ones. However, recognizing specific textures and wear patterns can help formulate an initial hypothesis before chemical testing. For example, noticing an Astroturf-like, rigid feel suggests Olefin; observing severe matting and crushing in traffic lanes also points to Olefin or Polyester. Conversely, a dull, matte appearance with high resilience often suggests Wool, while severe abrasion (where the fiber looks physically scratched or frayed) is characteristic of worn Nylon.</p>
+<p>Visual identification is the least accurate diagnostic method because modern synthetic fibers are specifically engineered to mimic the look and feel of natural ones. However, recognizing specific textures and wear patterns can help formulate an initial hypothesis before chemical testing. For example, noticing an Astroturf-like, rigid feel suggests <span class="glossary-term">Olefin<span class="tooltip">Polypropylene fiber. Solution-dyed (color locked in), making it bleach-resistant. Softens below 300°F — wand burns are a major risk.</span></span>; observing severe matting and crushing in traffic lanes also points to Olefin or Polyester. Conversely, a dull, matte appearance with high resilience often suggests Wool, while severe abrasion (where the fiber looks physically scratched or frayed) is characteristic of worn Nylon.</p>
 
 <div class="servus-callout">
   <strong class="callout-label">The Servus Standard in Action:</strong> During a walk-through for a property management company, the tech steps onto a basement carpet that feels unnaturally rigid, almost like Astroturf, and shows severe, flat matting in the main hallways. Before even pulling out a lighter for a burn test, the tech hypotheses it's Olefin. They immediately factor in the need for an acidic rinse and longer dry times into their quote, impressing the property manager with their instant, accurate assessment of the building's challenges.
@@ -919,7 +962,7 @@
 
 <h3 class="module-title">Module 9: Burn Testing Methodologies</h3>
 
-<p>Because visual inspection is unreliable, burn testing is the industry standard for field identification. This test requires isolating a tuft of fiber from an inconspicuous area (like a closet corner) with tweezers. The technician must ignite the tuft over a fire-safe surface using an odorless butane lighter. Sulfur matches must never be used, as the sulfur smell will completely mask the natural odor of the burning fiber, which is a critical identifying factor. To confirm the fiber type, the technician must carefully observe four distinct elements: the flame color and behavior, the color of the smoke, the odor produced, and the texture and color of the resulting ash.</p>
+<p>Because visual inspection is unreliable, <span class="glossary-term">burn testing<span class="tooltip">Primary field method for fiber identification. A tuft is ignited and four characteristics observed: flame, smoke, odor, and ash/residue.</span></span> is the industry standard for field identification. This test requires isolating a <span class="glossary-term">tuft<span class="tooltip">A small bundle of carpet fibers pulled from an inconspicuous area for burn testing. Always use tweezers; never cut pile loops.</span></span> of fiber from an inconspicuous area (like a closet corner) with tweezers. The technician must ignite the tuft over a fire-safe surface using an odorless <span class="glossary-term">butane lighter<span class="tooltip">The only acceptable ignition source for burn testing. Must be odorless butane — never sulfur matches, as sulfur masks the diagnostic fiber odor.</span></span>. Sulfur matches must never be used, as the sulfur smell will completely mask the natural odor of the burning fiber, which is a critical identifying factor. To confirm the fiber type, the technician must carefully observe four distinct elements: the flame color and behavior, the color of the smoke, the odor produced, and the texture and color of the resulting ash.</p>
 
 <div class="servus-callout">
   <strong class="callout-label">The Servus Standard in Action:</strong> A tech needs to identify a mystery fiber in a dimly lit basement. They reach into their pocket but only find a book of sulfur matches from a restaurant. Remembering their Day 2 training, they pause, walk out to the van, and retrieve an odorless butane lighter. They know the sulfur smell would entirely mask the crucial celery (Nylon) or asphalt (Olefin) odors needed to identify the fiber, preventing a misdiagnosis that could have led to using destructive chemistry.
@@ -929,13 +972,13 @@
 
 <p>Specific burn reactions reliably confirm fiber identities:</p>
 <ul>
-  <li><strong>Nylon:</strong> Melts and shrinks from the flame, produces a blue base flame with an orange tip, smells distinctly of celery or sealing wax, and leaves a hard, perfectly round gray/brown bead.</li>
-  <li><strong>Olefin:</strong> Melts and burns rapidly, smells like asphalt or burning candles, and leaves a hard, round, light-colored bead.</li>
-  <li><strong>Polyester:</strong> Burns with a heavy black smoke, smells sweet or like overripe fruit, and leaves a shiny black, hard bead.</li>
-  <li><strong>Wool:</strong> Burns slowly with an orange flame, sizzles, smells strongly of burning hair or feathers, and leaves a black, crumbly ash that easily turns to powder when crushed.</li>
+  <li><strong><span class="glossary-term">Nylon<span class="tooltip">Most popular carpet fiber (~65% market). Melting point ~420°F. Clean with HWE at 180–200°F.</span></span>:</strong> Melts and shrinks from the flame, produces a blue base flame with an orange tip, smells distinctly of celery or sealing wax, and leaves a hard, perfectly round gray/brown bead.</li>
+  <li><strong><span class="glossary-term">Olefin<span class="tooltip">Polypropylene fiber. Solution-dyed, bleach-resistant. Softens below 300°F — wand burns are a major risk.</span></span>:</strong> Melts and burns rapidly, smells like asphalt or burning candles, and leaves a hard, round, light-colored bead.</li>
+  <li><strong><span class="glossary-term">Polyester<span class="tooltip">Synthetic fiber (PET). Stain-resistant to water-based stains but lipophilic — attracts and holds oily soils.</span></span>:</strong> Burns with a heavy black smoke, smells sweet or like overripe fruit, and leaves a shiny black, hard bead.</li>
+  <li><strong><span class="glossary-term">Wool<span class="tooltip">Natural protein fiber. Extremely sensitive to heat (&gt;160°F) and high pH (&gt;9.5). Requires wool-safe, low-temp cleaning.</span></span>:</strong> Burns slowly with an orange flame, sizzles, smells strongly of burning hair or feathers, and leaves a black, crumbly <span class="glossary-term">ash<span class="tooltip">What remains after burn testing. Synthetics form hard, round beads. Wool produces black, crumbly ash that turns to powder.</span></span> that easily turns to powder when crushed.</li>
 </ul>
 
-<p>Alternatively, chemical field tests can be applied. Formic acid will quickly dissolve nylon fibers at room temperature, instantly distinguishing it from Olefin or Polyester, which will remain completely unaffected by the acid.</p>
+<p>Alternatively, chemical field tests can be applied. <span class="glossary-term">Formic acid<span class="tooltip">Chemical field test — rapidly dissolves nylon at room temperature. Olefin and polyester remain completely unaffected. Definitive nylon confirmation.</span></span> will quickly dissolve nylon fibers at room temperature, instantly distinguishing it from Olefin or Polyester, which will remain completely unaffected by the acid.</p>
 
 <div class="servus-callout">
   <strong class="callout-label">The Servus Standard in Action:</strong> A tech extracts a tuft from a closet and does a burn test. It melts, shrinks, smells vaguely of celery, and leaves a hard round bead. However, the client insists it's a cheap Olefin carpet. To be absolutely certain, the tech drops the tuft into a small vial of formic acid. The fiber dissolves instantly. Armed with 100% scientific proof that it is Nylon, the tech proceeds confidently with a 180°F Hot Water Extraction, knowing the premium Nylon fibers can handle the heat beautifully.
@@ -961,7 +1004,7 @@
       <td><strong>Wool</strong></td>
       <td>160°F</td>
       <td>Neutral to Mild Acid (pH &lt; 9.5)</td>
-      <td>Heat causing shrinkage, high pH causes felting</td>
+      <td>Heat causing shrinkage, high pH causes <span class="glossary-term">felting<span class="tooltip">Irreversible matting of wool fibers caused by excessive heat, agitation, or high pH.</span></span></td>
       <td>Low temp, wool-safe chemistry</td>
     </tr>
     <tr>
@@ -975,7 +1018,7 @@
       <td><strong>Cotton / Jute</strong></td>
       <td>Variable</td>
       <td>Neutral</td>
-      <td>Cellulosic Browning, Molds</td>
+      <td><span class="glossary-term">Cellulosic Browning<span class="tooltip">Brown discoloration in plant-based fibers caused by over-wetting. Lignin wicks to the surface as moisture evaporates.</span></span>, Molds</td>
       <td>Fast drying, moisture control, acidic rinse</td>
     </tr>
     <tr>
@@ -989,7 +1032,7 @@
       <td><strong>Polyester</strong></td>
       <td>180°F</td>
       <td>High Alkaline ok</td>
-      <td>Attracts oils (lipophilic)</td>
+      <td>Attracts oils (<span class="glossary-term">lipophilic<span class="tooltip">Oil-loving — fibers that chemically attract and bond with oily/greasy soils. Requires alkaline degreasers.</span></span>)</td>
       <td>High pH chemistry + extended dwell time</td>
     </tr>
     <tr>
@@ -997,7 +1040,7 @@
       <td>300°F (Melts)</td>
       <td>pH 10 - 12 (High)</td>
       <td>Friction heat (wand burns), crushes easily</td>
-      <td>Smooth wand passes, strong alkaline followed by acid rinse</td>
+      <td>Smooth wand passes, strong alkaline followed by <span class="glossary-term">acid rinse<span class="tooltip">Low-pH rinse applied after cleaning to neutralize alkaline residues and prevent resoiling.</span></span></td>
     </tr>
   </tbody>
 </table>
