@@ -233,17 +233,7 @@
         }
 
         .servus-callout .callout-icon {
-            position: absolute;
-            top: -10px;
-            left: -18px;
-            background: white;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+            display: none;
         }
 
         .servus-callout-label {
@@ -2420,12 +2410,6 @@
 
         // ===== POPULATE SVG ICONS =====
         document.addEventListener('DOMContentLoaded', function() {
-            // Callout icons
-            var calloutEls = document.querySelectorAll('.callout-icon');
-            calloutEls.forEach(function(el) {
-                el.innerHTML = getSvgIcon('wrench', 18);
-            });
-
             // Glossary button icon
             var glossBtn = document.getElementById('glossaryBtnMain');
             if (glossBtn) {

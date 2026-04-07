@@ -233,33 +233,11 @@
         }
 
         .servus-callout::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -18px;
-            font-size: 1.4em;
-            background: white;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+            display: none;
         }
 
         .servus-callout .callout-svg-icon {
-            position: absolute;
-            top: -10px;
-            left: -18px;
-            background: white;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+            display: none;
         }
 
         .servus-callout-label {
@@ -2545,14 +2523,6 @@
 
         // ===== REPLACE EMOJI WITH SVG ICONS ON DOM LOAD =====
         document.addEventListener('DOMContentLoaded', function() {
-            // Replace wrench emoji on .servus-callout with SVG icon
-            document.querySelectorAll('.servus-callout').forEach(function(callout) {
-                var iconDiv = document.createElement('div');
-                iconDiv.className = 'callout-svg-icon';
-                iconDiv.innerHTML = getSvgIcon('wrench', 18);
-                callout.appendChild(iconDiv);
-            });
-
             // Replace glossary button emoji with SVG book icon
             var glossaryBtn = document.getElementById('glossaryBtn');
             if (glossaryBtn) {

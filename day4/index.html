@@ -239,18 +239,7 @@
         }
 
         .servus-callout::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -18px;
-            background: white;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+            display: none;
         }
 
         .servus-callout-label {
@@ -2236,14 +2225,6 @@
 
         // ===== INJECT SVG ICONS (replacing emoji) =====
         document.addEventListener('DOMContentLoaded', function() {
-            // Inject wrench SVG into callout ::before pseudo-elements
-            document.querySelectorAll('.servus-callout').forEach(function(callout) {
-                var wrenchDiv = document.createElement('div');
-                wrenchDiv.innerHTML = getSvgIcon('wrench', 18);
-                wrenchDiv.style.cssText = 'position:absolute;top:-10px;left:-18px;background:white;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.15);z-index:1;';
-                callout.appendChild(wrenchDiv);
-            });
-
             // Inject book SVG into glossary button
             var glossaryBtn = document.getElementById('glossaryBtnMain');
             if (glossaryBtn) {
