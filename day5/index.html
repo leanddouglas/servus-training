@@ -1,0 +1,2870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servus Training: Day 5 - Professionalism & Certification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --servus-navy: #0a4875;
+            --servus-navy-dark: #004085;
+            --servus-blue: #005a87;
+            --servus-blue-mid: #006ba1;
+            --servus-accent: #ff9900;
+            --servus-light-blue: #D3EEF5;
+            --servus-pale-blue: #F0FCFF;
+            --servus-cloud-blue: #F2F7FC;
+            --servus-off-white: #FAFAFA;
+            --servus-dark: #313131;
+            --servus-text: #333333;
+            --servus-text-mid: #393939;
+            --servus-link: #0056b3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Myriad Variable Concept', 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: var(--servus-text);
+            background-color: #ffffff;
+            line-height: 1.7;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* Back to Course Link */
+        .back-link {
+            background-color: var(--servus-navy);
+            padding: 12px 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header Styling — Matched to Day 2 */
+        .servus-header {
+            background: hsl(211, 100%, 22%);
+            color: white;
+            padding: 40px 40px 35px;
+            text-align: center;
+            border-bottom: 6px solid var(--servus-accent);
+            position: relative;
+            page-break-inside: avoid;
+        }
+
+        .servus-header .logo-top-right {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            height: 45px;
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+
+        .servus-header h1 {
+            font-size: 2.6em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2px;
+            font-weight: 800;
+        }
+
+        .servus-header .subtitle {
+            font-size: 1.25em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.85;
+            margin-bottom: 8px;
+        }
+
+        .servus-header .tagline {
+            font-size: 1.4em;
+            font-style: italic;
+            opacity: 0.9;
+            margin: 8px 0;
+        }
+
+        .servus-header h2 {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-top: 18px;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+
+        .servus-header .module-label {
+            font-size: 1em;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+
+        /* Certification Strip — Matched to Day 2 */
+        .cert-strip {
+            background-color: var(--servus-light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 12px 20px;
+            flex-wrap: wrap;
+            page-break-inside: avoid;
+        }
+
+        .cert-strip img {
+            height: 40px;
+            opacity: 0.85;
+        }
+
+        .cert-strip span {
+            font-size: 0.85em;
+            color: var(--servus-navy);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Main Content — Matched to Day 2 */
+        .content {
+            padding: 30px 40px;
+        }
+
+        h2.section-title, h2 {
+            color: var(--servus-navy);
+            font-size: 1.5em;
+            font-weight: 700;
+            border-bottom: 3px solid var(--servus-accent);
+            padding-bottom: 8px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            page-break-inside: avoid;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3.module-title, h3 {
+            color: var(--servus-blue-mid);
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-top: 28px;
+            margin-bottom: 10px;
+            padding-left: 12px;
+            border-left: 4px solid var(--servus-accent);
+            page-break-inside: avoid;
+        }
+
+        p {
+            font-size: 0.97em;
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 14px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        strong {
+            color: var(--servus-navy);
+            font-weight: 600;
+        }
+
+        /* Callout Boxes — Matched to Day 2 (wrench with white circle, replaced via JS) */
+        .servus-callout {
+            background: var(--servus-cloud-blue);
+            border-left: 5px solid var(--servus-navy);
+            border-radius: 0 8px 8px 0;
+            padding: 18px 20px;
+            margin: 18px 0 22px;
+            font-size: 0.93em;
+            line-height: 1.65;
+            position: relative;
+            page-break-inside: avoid;
+        }
+
+        .servus-callout::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -18px;
+            font-size: 1.4em;
+            background: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+        }
+
+        .servus-callout .callout-svg-icon {
+            position: absolute;
+            top: -10px;
+            left: -18px;
+            background: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+        }
+
+        .servus-callout-label {
+            font-weight: 700;
+            color: var(--servus-navy);
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .servus-callout p {
+            margin-bottom: 0;
+            color: var(--servus-text-mid);
+            font-size: 0.95em;
+        }
+
+        .servus-callout strong.callout-label {
+            color: var(--servus-navy);
+            font-weight: 700;
+            display: inline;
+        }
+
+        /* Tables — Matched to Day 2 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+            page-break-inside: avoid;
+        }
+
+        table, th, td {
+            border: 1px solid #d8d8d8;
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--servus-navy) 0%, var(--servus-blue) 100%);
+            color: white;
+            padding: 12px 14px;
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        td {
+            padding: 11px 14px;
+            vertical-align: top;
+            font-size: 0.95em;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: var(--servus-pale-blue);
+        }
+
+        tbody tr:hover {
+            background-color: var(--servus-light-blue);
+        }
+
+        /* Horizontal Rule — Matched to Day 2 */
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, var(--servus-accent), var(--servus-navy), var(--servus-accent));
+            margin: 35px 0;
+            opacity: 0.5;
+            page-break-inside: avoid;
+        }
+
+        /* Accordion — Matched to Day 2 */
+        .accordion-item {
+            cursor: pointer;
+            margin-bottom: 12px;
+            padding: 14px 16px;
+            background: white;
+            border: 1px solid #d8d8d8;
+            border-left: 4px solid var(--servus-navy);
+            border-radius: 0 4px 4px 0;
+            transition: all 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .accordion-item:hover {
+            background: var(--servus-pale-blue);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        }
+
+        .accordion-item.open {
+            background: var(--servus-pale-blue);
+            border-left-color: var(--servus-accent);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .accordion-label {
+            font-weight: 700;
+            color: var(--servus-blue-mid);
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .accordion-toggle {
+            width: 20px;
+            height: 20px;
+            background: var(--servus-accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: 700;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .accordion-item.open .accordion-toggle {
+            transform: rotate(180deg);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-item.open .accordion-body {
+            max-height: 2000px;
+        }
+
+        .accordion-content {
+            padding: 12px 0;
+            font-size: 0.95em;
+            color: var(--servus-text-mid);
+            line-height: 1.6;
+        }
+
+        .accordion-content strong {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            color: var(--servus-navy);
+        }
+
+        .accordion-content ul {
+            margin-left: 18px;
+            margin-bottom: 8px;
+        }
+
+        .accordion-content li {
+            margin-bottom: 4px;
+        }
+
+        .accordion-content table {
+            margin: 12px 0;
+        }
+
+        /* Glossary Tooltip in text */
+        .glossary-term {
+            border-bottom: 2px dotted var(--servus-accent);
+            cursor: help;
+            position: relative;
+            font-weight: 600;
+            color: var(--servus-navy);
+        }
+        .glossary-term .tooltip {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            bottom: calc(100% + 6px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--servus-navy);
+            color: white;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: 400;
+            line-height: 1.5;
+            width: 260px;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: opacity 0.2s, visibility 0.2s;
+            pointer-events: none;
+        }
+        .glossary-term .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: var(--servus-navy);
+        }
+        .glossary-term:hover .tooltip,
+        .glossary-term:focus .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* ===== EXAM SECTION ===== */
+        .exam-section {
+            margin-top: 40px;
+            padding: 25px;
+            background-color: var(--servus-pale-blue);
+            border-left: 5px solid var(--servus-navy);
+            border-radius: 0 8px 8px 0;
+            page-break-inside: avoid;
+        }
+
+        /* Progress Bar */
+        .exam-progress-bar {
+            background: #e0e0e0;
+            border-radius: 20px;
+            height: 12px;
+            margin: 15px 0 25px;
+            overflow: hidden;
+            position: relative;
+        }
+        .exam-progress-fill {
+            background: linear-gradient(90deg, var(--servus-accent), #ffb74d);
+            height: 100%;
+            border-radius: 20px;
+            transition: width 0.4s ease;
+            width: 0%;
+        }
+        .exam-progress-text {
+            text-align: center;
+            font-size: 0.85em;
+            color: var(--servus-text-mid);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Section Navigator */
+        .exam-section-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+            padding: 14px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .section-nav-btn {
+            padding: 6px 14px;
+            border: 2px solid var(--servus-navy);
+            border-radius: 20px;
+            background: white;
+            color: var(--servus-navy);
+            font-size: 0.78em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .section-nav-btn:hover, .section-nav-btn.active {
+            background: var(--servus-navy);
+            color: white;
+        }
+        .section-nav-btn .nav-score {
+            display: inline-block;
+            margin-left: 4px;
+            padding: 1px 6px;
+            border-radius: 10px;
+            font-size: 0.85em;
+            background: var(--servus-accent);
+            color: white;
+        }
+
+        /* Question Cards */
+        .exam-question {
+            margin: 16px 0;
+            padding: 18px 20px;
+            background-color: white;
+            border: 1px solid #d8d8d8;
+            border-left: 4px solid var(--servus-navy);
+            border-radius: 0 8px 8px 0;
+            page-break-inside: avoid;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .exam-question:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .exam-question.answered {
+            border-left-color: var(--servus-accent);
+        }
+        .exam-question.correct {
+            border-left-color: #4caf50;
+            background: #f1f8e9;
+        }
+        .exam-question.incorrect {
+            border-left-color: #e53935;
+            background: #fff5f5;
+        }
+        .exam-question.skipped {
+            border-left-color: #ff9800;
+            background: #fff8e1;
+        }
+        .exam-question .q-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--servus-navy);
+            color: white;
+            font-size: 0.8em;
+            font-weight: 700;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        .exam-question .q-category {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .cat-foundations { background: #e3f2fd; color: #1565c0; }
+        .cat-chemistry { background: #e8f5e9; color: #2e7d32; }
+        .cat-methods { background: #fff3e0; color: #e65100; }
+        .cat-spotting { background: #fce4ec; color: #c62828; }
+        .cat-professional { background: #f3e5f5; color: #7b1fa2; }
+
+        .exam-question label {
+            display: flex;
+            align-items: flex-start;
+            margin: 10px 0;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background 0.15s;
+            line-height: 1.5;
+        }
+        .exam-question label:hover {
+            background: var(--servus-pale-blue);
+        }
+        .exam-question input[type="radio"] {
+            margin-right: 10px;
+            margin-top: 4px;
+            cursor: pointer;
+            accent-color: var(--servus-navy);
+        }
+        .exam-question .correct-indicator {
+            display: none;
+            margin-left: auto;
+            font-size: 1.1em;
+            flex-shrink: 0;
+        }
+        .exam-question.correct .correct-indicator.right,
+        .exam-question.incorrect .correct-indicator.wrong {
+            display: inline-block;
+        }
+
+        /* Submit Button */
+        .exam-submit-area {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+        }
+        .exam-submit-btn {
+            padding: 16px 50px;
+            font-size: 1.15em;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, var(--servus-navy), var(--servus-blue));
+            border: 3px solid var(--servus-accent);
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(10,72,117,0.3);
+        }
+        .exam-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(10,72,117,0.4);
+            background: linear-gradient(135deg, var(--servus-blue), var(--servus-navy));
+        }
+        .exam-submit-btn:active {
+            transform: translateY(0);
+        }
+        .exam-submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .unanswered-warning {
+            color: #e65100;
+            font-size: 0.9em;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* ===== RESULTS DASHBOARD ===== */
+        .results-dashboard {
+            display: none;
+            margin-top: 30px;
+            animation: fadeInUp 0.6s ease;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes countUp {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideRight {
+            from { width: 0%; }
+        }
+
+        /* Hero Score Card */
+        .score-hero {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        .score-hero.pass {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #43a047 100%);
+            color: white;
+        }
+        .score-hero.fail {
+            background: linear-gradient(135deg, #b71c1c 0%, #c62828 50%, #e53935 100%);
+            color: white;
+        }
+        .score-hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .score-hero h2 {
+            color: white !important;
+            border: none !important;
+            font-size: 2em;
+            margin: 0 0 10px !important;
+            padding: 0 !important;
+            letter-spacing: 3px;
+        }
+        .score-big {
+            font-size: 4em;
+            font-weight: 900;
+            line-height: 1;
+            margin: 15px 0;
+            animation: countUp 0.8s ease;
+        }
+        .score-fraction {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        .score-message {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 18px 14px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .stat-number.green { color: #2e7d32; }
+        .stat-number.red { color: #c62828; }
+        .stat-number.orange { color: #e65100; }
+        .stat-number.blue { color: var(--servus-navy); }
+        .stat-label {
+            font-size: 0.78em;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section Breakdown */
+        .section-breakdown {
+            background: white;
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 25px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .section-breakdown h3 {
+            border: none;
+            padding: 0;
+            margin: 0 0 18px;
+            color: var(--servus-navy);
+            font-size: 1.15em;
+        }
+        .section-row {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .section-row:last-child {
+            border-bottom: none;
+        }
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .section-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .section-name {
+            font-weight: 700;
+            font-size: 0.9em;
+            color: var(--servus-navy);
+        }
+        .section-bar-bg {
+            height: 8px;
+            background: #e8e8e8;
+            border-radius: 4px;
+            margin-top: 6px;
+            overflow: hidden;
+        }
+        .section-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease;
+            animation: slideRight 1s ease;
+        }
+        .section-score-label {
+            font-weight: 700;
+            font-size: 0.95em;
+            margin-left: 12px;
+            min-width: 60px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+        .section-grade {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 700;
+            margin-left: 6px;
+        }
+        .grade-a { background: #e8f5e9; color: #2e7d32; }
+        .grade-b { background: #e3f2fd; color: #1565c0; }
+        .grade-c { background: #fff3e0; color: #e65100; }
+        .grade-f { background: #fbe9e7; color: #c62828; }
+
+        /* Recommendations */
+        .recommendations {
+            background: white;
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 25px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .recommendations h3 {
+            border: none;
+            padding: 0;
+            margin: 0 0 15px;
+            color: var(--servus-navy);
+            font-size: 1.15em;
+        }
+        .rec-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid;
+            background: #fafafa;
+        }
+        .rec-item.priority-high {
+            border-left-color: #e53935;
+            background: #fff5f5;
+        }
+        .rec-item.priority-med {
+            border-left-color: #ff9800;
+            background: #fff8e1;
+        }
+        .rec-item.priority-low {
+            border-left-color: #4caf50;
+            background: #f1f8e9;
+        }
+        .rec-icon {
+            font-size: 1.3em;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .rec-content {
+            flex: 1;
+        }
+        .rec-title {
+            font-weight: 700;
+            color: var(--servus-navy);
+            font-size: 0.95em;
+            margin-bottom: 4px;
+        }
+        .rec-desc {
+            font-size: 0.88em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Certification Card */
+        .cert-card {
+            background: linear-gradient(135deg, var(--servus-navy) 0%, var(--servus-blue) 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 4px solid var(--servus-accent);
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cert-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.02) 35px, rgba(255,255,255,0.02) 70px);
+            pointer-events: none;
+        }
+        .cert-card h3 {
+            color: var(--servus-accent) !important;
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 0 5px !important;
+            font-size: 1.4em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        .cert-subtitle {
+            font-size: 0.95em;
+            opacity: 0.85;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .cert-divider {
+            width: 80px;
+            height: 3px;
+            background: var(--servus-accent);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        .cert-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+        .cert-detail {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin: 8px 0;
+        }
+        .cert-score-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--servus-accent);
+            color: white;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 1.1em;
+            margin: 15px 0;
+        }
+
+        /* Retry Button */
+        .retry-btn {
+            padding: 12px 35px;
+            font-size: 1em;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, var(--servus-accent), #e68a00);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+            margin-top: 15px;
+        }
+        .retry-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,153,0,0.4);
+        }
+
+        /* Question Map */
+        .question-map {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin: 15px 0;
+        }
+        .q-dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.15s;
+            color: white;
+        }
+        .q-dot:hover { transform: scale(1.2); }
+        .q-dot.correct { background: #4caf50; }
+        .q-dot.incorrect { background: #e53935; }
+        .q-dot.skipped { background: #ff9800; }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .score-big {
+                font-size: 3em;
+            }
+            .section-nav-btn {
+                font-size: 0.7em;
+                padding: 5px 10px;
+            }
+        }
+
+        /* Footer — Matched to Day 2 */
+        .servus-footer {
+            background: linear-gradient(135deg, var(--servus-dark) 0%, #1a1a2e 100%);
+            color: #ccc;
+            padding: 30px 40px;
+            font-size: 0.88em;
+            text-align: center;
+            position: relative;
+            margin-top: 40px;
+            page-break-inside: avoid;
+        }
+
+        .servus-footer .logo-footer {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 25px;
+            height: 42px;
+        }
+
+        .servus-footer strong {
+            color: white;
+            font-size: 1.1em;
+        }
+
+        .servus-footer p {
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+
+        .servus-footer a {
+            color: var(--servus-accent);
+            text-decoration: none;
+        }
+
+        .servus-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-certs {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-certs img {
+            height: 35px;
+            opacity: 0.7;
+        }
+
+        .servus-footer .compliance-text {
+            margin-top: 14px;
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        /* Floating Glossary Widget */
+        .glossary-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            font-family: 'Inter', sans-serif;
+        }
+        .glossary-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--servus-navy);
+            color: white;
+            border: 3px solid var(--servus-accent);
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            margin-left: auto;
+        }
+        .glossary-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+        }
+        .glossary-btn .badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: var(--servus-accent);
+            color: white;
+            font-size: 10px;
+            font-weight: 800;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .glossary-panel {
+            display: none;
+            width: 340px;
+            max-height: 480px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+            overflow: hidden;
+            flex-direction: column;
+        }
+        .glossary-panel.open { display: flex; }
+        .glossary-panel-header {
+            background: linear-gradient(135deg, var(--servus-navy) 0%, var(--servus-blue) 100%);
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .glossary-panel-header h3 {
+            color: white;
+            font-size: 0.95em;
+            margin: 0;
+            padding: 0;
+            border: none;
+            letter-spacing: 0.5px;
+        }
+        .glossary-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.3em;
+            cursor: pointer;
+            padding: 0 4px;
+            opacity: 0.8;
+        }
+        .glossary-close:hover { opacity: 1; }
+        .glossary-search {
+            padding: 10px 14px;
+            border-bottom: 1px solid #eee;
+            flex-shrink: 0;
+        }
+        .glossary-search input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .glossary-search input:focus { border-color: var(--servus-accent); }
+        .glossary-search input::placeholder { color: #aaa; }
+        .glossary-filters {
+            padding: 8px 14px;
+            display: flex;
+            gap: 6px;
+            flex-shrink: 0;
+            border-bottom: 1px solid #eee;
+        }
+        .g-filter {
+            padding: 3px 10px;
+            border: 1.5px solid var(--servus-navy);
+            border-radius: 14px;
+            background: white;
+            color: var(--servus-navy);
+            font-size: 0.75em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .g-filter:hover, .g-filter.active {
+            background: var(--servus-navy);
+            color: white;
+        }
+        .glossary-list {
+            overflow-y: auto;
+            flex: 1;
+            padding: 6px 0;
+        }
+        .glossary-list::-webkit-scrollbar { width: 6px; }
+        .glossary-list::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+        .g-term-item {
+            padding: 10px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: default;
+            transition: background 0.15s;
+        }
+        .g-term-item:hover { background: var(--servus-pale-blue); }
+        .g-term-item:last-child { border-bottom: none; }
+        .g-term-name {
+            font-weight: 700;
+            color: var(--servus-navy);
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .g-term-pron {
+            font-size: 0.75em;
+            color: #999;
+            font-style: italic;
+            font-weight: 400;
+        }
+        .g-term-cat {
+            display: inline-block;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-size: 0.65em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-left: auto;
+        }
+        .g-cat-chem { background: #e8f5e9; color: #2e7d32; }
+        .g-cat-tech { background: #e3f2fd; color: #1565c0; }
+        .g-cat-safe { background: #fbe9e7; color: #c62828; }
+        .g-cat-prof { background: #fff3e0; color: #e65100; }
+        .g-term-def {
+            font-size: 0.85em;
+            color: var(--servus-text-mid);
+            line-height: 1.5;
+            margin-top: 4px;
+        }
+        .glossary-panel-footer {
+            padding: 8px 16px;
+            font-size: 0.75em;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid #eee;
+            flex-shrink: 0;
+            background: var(--servus-off-white);
+        }
+
+        /* Print Optimization */
+        @media print {
+            body { max-width: 100%; padding: 0; }
+            .servus-header, .servus-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            table, .servus-callout { page-break-inside: avoid; }
+            .cert-strip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .glossary-widget { display: none; }
+            .back-link { display: none; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .back-link {
+                padding: 10px 20px;
+            }
+
+            .back-link a {
+                font-size: 0.9em;
+            }
+
+            .servus-header {
+                padding: 30px 20px;
+            }
+
+            .servus-header .logo-top-right {
+                position: static;
+                margin-bottom: 16px;
+                height: 40px;
+            }
+
+            .servus-header h1 {
+                font-size: 2em;
+                letter-spacing: 2px;
+            }
+
+            .cert-strip {
+                padding: 12px 20px;
+                gap: 16px;
+            }
+
+            .content {
+                padding: 24px 20px;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            h3 {
+                font-size: 1.1em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            .servus-footer {
+                padding: 20px;
+            }
+
+            .servus-footer .logo-footer {
+                position: static;
+                transform: none;
+                display: block;
+                margin: 0 auto 12px;
+            }
+
+            .glossary-panel { width: calc(100vw - 40px); max-height: 60vh; }
+            .glossary-widget { bottom: 14px; right: 14px; }
+        }
+    </style>
+</head>
+<body>
+<div class="content-wrapper">
+    <div class="back-link">
+        <a href="course_index.html">← Back to Course</a>
+    </div>
+
+    <div class="servus-header">
+        <img src="https://servusgrouplowermainland.com/wp-content/uploads/2024/12/Servus-Colour.png" alt="Servus Group" class="logo-top-right">
+        <h1>Servus Group</h1>
+        <div class="subtitle">Specialty Cleaning</div>
+        <div class="tagline">"At Your Service"</div>
+        <h2>Professional Carpet Care Certification</h2>
+        <div class="module-label">Day 5 — Professionalism & Certification</div>
+        <div class="module-label">From Skilled Cleaner to True Professional: Your Career Path</div>
+    </div>
+
+    <div class="cert-strip">
+        <img src="https://servusgrouplowermainland.com/wp-content/uploads/2014/07/go2HR-CORLogo-K-300x283.png" alt="COR Certified">
+        <span>IICRC S100 Compliant</span><span>•</span>
+        <span>WorkSafeBC 2026</span><span>•</span>
+        <span>COR Certified</span><span>•</span>
+        <span>ISSA Member</span>
+    </div>
+
+    <div class="content">
+
+<h2>MODULE 1: PROFESSIONAL APPEARANCE, CONDUCT & COMMUNICATION</h2>
+
+<p>Your appearance and conduct directly impact client trust and your professional reputation. Every interaction is an opportunity to build your brand as a cleaning professional.</p>
+
+<div class="servus-callout">
+<div class="servus-callout-label">Servus Standard in Action</div>
+<p>Professional carpet cleaners maintain a clean, organized appearance and conduct themselves with integrity at all times, setting the standard for the industry.</p>
+</div>
+
+<h3>The Power of First Impressions</h3>
+<p>Clients make judgments within seconds of meeting you. Your appearance, demeanor, and communication style form the foundation of the client relationship.</p>
+
+<div class="accordion-item">
+    <div class="accordion-label">
+        <span>Behavior Standards for Professionals</span>
+        <span class="accordion-toggle">+</span>
+    </div>
+    <div class="accordion-body">
+        <div class="accordion-content">
+<ul>
+<li><strong>Punctuality:</strong> Arrive on time or 5-10 minutes early. Call ahead if you'll be delayed.</li>
+<li><strong>Appearance:</strong> Wear clean, professional clothing. Servus uniform shirts or well-maintained work wear.</li>
+<li><strong>Hygiene:</strong> Clean hands and nails. Minimal cologne/perfume (chemical-sensitive clients).</li>
+<li><strong>Attitude:</strong> Positive, respectful tone. Never complain about other cleaners or companies.</li>
+<li><strong>Language:</strong> Professional vocabulary. Avoid slang, swearing, or negative comments.</li>
+<li><strong>Respect:</strong> Treat all home/business items with care. Remove shoes if requested. Ask before touching anything.</li>
+</ul>
+        </div>
+    </div>
+</div>
+
+<h3>Professionalism in Action</h3>
+<p>Small gestures make a lasting impact: a firm handshake, eye contact, remembering client names, and following through on commitments.</p>
+
+<h3>Customer Communication & Problem-Solving</h3>
+
+<p>Clear communication prevents misunderstandings and builds long-term relationships. The ability to listen and solve problems separates good cleaners from great ones.</p>
+
+<div class="accordion-item">
+    <div class="accordion-label">
+        <span>Key Pre-Job Questions</span>
+        <span class="accordion-toggle">+</span>
+    </div>
+    <div class="accordion-body">
+        <div class="accordion-content">
+<ol>
+<li>What specific concerns do you have about your carpets? (Stains, odor, traffic patterns, pet issues)</li>
+<li>Are there any delicate areas we should avoid or use special care on?</li>
+<li>Do you have any <span class="glossary-term">allergies<span class="tooltip">Adverse physical reactions to substances or environmental factors; important to know when selecting cleaning products.</span></span> or sensitivities to cleaning products?</li>
+<li>What is your timeline? Do you need carpets dry by a specific time?</li>
+<li>Have you used professional cleaning services before? What worked well?</li>
+</ol>
+        </div>
+    </div>
+</div>
+
+<div class="servus-callout">
+<div class="servus-callout-label">Servus Standard in Action</div>
+<p>Professional communication includes active listening, asking clarifying questions, and providing realistic timelines and solutions.</p>
+</div>
+
+<h3>Building Solutions Together</h3>
+<p>When clients raise concerns, frame your response as a partnership: "Here's what I recommend, and here's why. Does this work for you?"</p>
+
+<h2>MODULE 2: PRICING, CONTRACTS & DOCUMENTATION</h2>
+
+<p>Clear pricing and documentation protect both you and your clients. Professional agreements prevent disputes and create a record of service.</p>
+
+<h3>Creating Professional Quotes</h3>
+<p>Provide written estimates that include square footage, cleaning method, stain treatment, and timeline. Clear pricing builds trust.</p>
+
+<div class="accordion-item">
+    <div class="accordion-label">
+        <span>Documentation Essentials</span>
+        <span class="accordion-toggle">+</span>
+    </div>
+    <div class="accordion-body">
+        <div class="accordion-content">
+<table>
+<tr>
+<th>Document</th>
+<th>Purpose</th>
+<th>Key Info</th>
+<th>Client Copy?</th>
+</tr>
+<tr>
+<td>Quote/Estimate</td>
+<td>Pre-service pricing</td>
+<td>Square footage, method, timeline, cost</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Work Order</td>
+<td>Service agreement</td>
+<td>Client name, address, service type, date, signature</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Service Report</td>
+<td>After-service record</td>
+<td>What was cleaned, products used, issues found, recommendations</td>
+<td>Copy to client</td>
+</tr>
+<tr>
+<td>Payment Receipt</td>
+<td>Transaction record</td>
+<td>Amount paid, date, payment method, service description</td>
+<td>Yes</td>
+</tr>
+</table>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <div class="accordion-label">
+        <span>When Clients Request Changes</span>
+        <span class="accordion-toggle">+</span>
+    </div>
+    <div class="accordion-body">
+        <div class="accordion-content">
+<p>If a client requests additional work (extra rooms, stain treatment, rush timeline), provide an addendum to the original quote. Document the change and get written approval before proceeding.</p>
+        </div>
+    </div>
+</div>
+
+<h2>MODULE 3: SAFETY, COMPLIANCE & WORKSAFEBC</h2>
+
+<p>Client safety is your responsibility. Identifying hazards and following protocols prevents accidents and protects your business.</p>
+
+<div class="servus-callout">
+<div class="servus-callout-label">Servus Standard in Action</div>
+<p>Professional cleaners assess all client environments for hazards before service and communicate any risks to clients.</p>
+</div>
+
+<h3>Common Hazards in Residential & Commercial Spaces</h3>
+<ul>
+<li>Slippery floors (water from cleaning equipment)</li>
+<li>Wet carpet (trip hazards, cleaning time)</li>
+<li>Chemical sensitivity (respiratory issues, skin reactions)</li>
+<li>Pets or children in the work area</li>
+<li>Electrical outlets near water</li>
+<li>Mold or asbestos (call professionals, do not attempt removal)</li>
+<li>Hoarding or unsanitary conditions</li>
+</ul>
+
+<h3>Your Legal Responsibilities</h3>
+<p>You must maintain liability insurance, follow WorkSafeBC protocols, and document any incidents. Never make health claims about cleaning products.</p>
+
+<h3>WorkSafeBC & Health/Safety Compliance</h3>
+
+<p><span class="glossary-term">WorkSafeBC<span class="tooltip">British Columbia's worker compensation and workplace safety authority; sets safety standards and investigates workplace injuries.</span></span> sets workplace safety standards for cleaning companies. Compliance protects your employees and your business from fines and liability.</p>
+
+<div class="servus-callout">
+<div class="servus-callout-label">Servus Standard in Action</div>
+<p>Professional cleaning companies maintain WorkSafeBC compliance, provide proper training, and document all safety protocols.</p>
+</div>
+
+<h3>Essential PPE for Carpet Cleaners</h3>
+<ul>
+<li><strong>Eye Protection:</strong> Safety glasses (chemical splash protection)</li>
+<li><strong>Hand Protection:</strong> Nitrile gloves (chemical and microbial exposure)</li>
+<li><strong>Foot Protection:</strong> Closed-toe boots with slip-resistant soles (wet floor hazard)</li>
+<li><strong>Respiratory Protection:</strong> N95 or P100 mask (dust, mold, chemical fumes)</li>
+<li><strong>Hearing Protection:</strong> Earplugs (equipment noise above 85 dB)</li>
+<li><strong>Back Support:</strong> Lifting belt (equipment and solution bags weigh 30-50+ lbs)</li>
+</ul>
+
+<div class="accordion-item">
+    <div class="accordion-label">
+        <span>Ergonomics &amp; Injury Prevention</span>
+        <span class="accordion-toggle">+</span>
+    </div>
+    <div class="accordion-body">
+        <div class="accordion-content">
+<table>
+<tr>
+<th>Hazard</th>
+<th>Prevention Strategy</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>Back strain from lifting</td>
+<td>Bend knees, keep load close, use dollies for heavy items</td>
+<td>Reduced hernias and chronic pain</td>
+</tr>
+<tr>
+<td>Repetitive strain (wrist, shoulder)</td>
+<td>Rotate tasks, take breaks, stretch regularly</td>
+<td>Prevention of carpal tunnel and tendonitis</td>
+</tr>
+<tr>
+<td>Slip/trip hazards</td>
+<td>Wet floor signs, proper footwear, clear pathways</td>
+<td>Fewer falls and workplace injuries</td>
+</tr>
+<tr>
+<td>Chemical exposure</td>
+<td>Use SDS, wear gloves/masks, ventilate properly</td>
+<td>Protection from burns, respiratory issues</td>
+</tr>
+</table>
+        </div>
+    </div>
+</div>
+
+<h2>MODULE 4: BUILDING CLIENT LOYALTY & REFERRALS</h2>
+
+<p>Repeat clients and referrals are the lifeblood of a successful cleaning business. Loyalty is earned through consistent quality and exceptional service.</p>
+
+<div class="accordion-item">
+    <div class="accordion-label">
+        <span>6 Proven Loyalty Strategies</span>
+        <span class="accordion-toggle">+</span>
+    </div>
+    <div class="accordion-body">
+        <div class="accordion-content">
+<ol>
+<li><strong>Consistency:</strong> Deliver the same quality every visit. Clients remember reliability.</li>
+<li><strong>Personalization:</strong> Remember preferences (no harsh chemicals, avoid certain areas, preferred appointment times).</li>
+<li><strong>Follow-up:</strong> Text or call after the job. "How are you happy with the results? Any questions?"</li>
+<li><strong>Rewards:</strong> Offer loyalty discounts (10% off every 5th visit) or seasonal specials.</li>
+<li><strong>Reputation:</strong> Ask satisfied clients for Google/Facebook reviews. Respond professionally to all feedback.</li>
+<li><strong>Referral Program:</strong> Offer $25-$50 credit for each new client referred by existing clients.</li>
+</ol>
+        </div>
+    </div>
+</div>
+
+<h3>Managing Your Online Reputation</h3>
+<p>In today's digital world, your reputation lives online. Maintain profiles on Google Business, Facebook, and Yelp. Respond to reviews (even negative ones) professionally and promptly.</p>
+
+<h2>MODULE 5: TIME MANAGEMENT & BUSINESS OPERATIONS</h2>
+
+<p>Professional cleaners manage their time efficiently, control costs, and maintain accurate records to run a profitable operation.</p>
+
+<h3>Estimating Service Times</h3>
+<table>
+<tr>
+<th>Service Type</th>
+<th>Typical Area</th>
+<th>Estimated Time</th>
+<th>Equipment</th>
+</tr>
+<tr>
+<td>HWE Residential</td>
+<td>1,000-1,500 sq ft</td>
+<td>2-3 hours</td>
+<td>Portable HWE</td>
+</tr>
+<tr>
+<td>Encapsulation</td>
+<td>1,500-2,000 sq ft</td>
+<td>1.5-2 hours</td>
+<td>Encap machine</td>
+</tr>
+<tr>
+<td>Spot Cleaning</td>
+<td>Single room or area</td>
+<td>30-60 min</td>
+<td>Spot cleaner</td>
+</tr>
+<tr>
+<td>Commercial</td>
+<td>2,000+ sq ft</td>
+<td>4-6 hours</td>
+<td>Truck-mount</td>
+</tr>
+</table>
+
+<div class="accordion-item">
+    <div class="accordion-label">
+        <span>Equipment Maintenance Checklist</span>
+        <span class="accordion-toggle">+</span>
+    </div>
+    <div class="accordion-body">
+        <div class="accordion-content">
+<ul>
+<li>Daily: Empty recovery tanks, rinse hoses, check fluid levels</li>
+<li>Weekly: Clean/replace filters, inspect hoses for cracks, test heating element</li>
+<li>Monthly: Deep-clean solution tanks, inspect belts and brushes, service seals</li>
+<li>Quarterly: Professional servicing (Warrior 500, TRIO, etc.), electrical safety check</li>
+<li>Yearly: Full machine inspection, replace worn components, safety certification</li>
+</ul>
+        </div>
+    </div>
+</div>
+
+<h2>MODULE 6: IICRC CERTIFICATION, INDUSTRY STANDARDS & CAREER PATH</h2>
+
+<p>The <span class="glossary-term">IICRC<span class="tooltip">Institute of Inspection Cleaning and Restoration Certification; the global gold standard for cleaning and restoration professionals.</span></span> certification is the gold standard in the carpet cleaning industry. It demonstrates competence, accountability, and commitment to professional standards.</p>
+
+<h3>IICRC Certification Levels</h3>
+<table>
+<tr>
+<th>Certification Level</th>
+<th>Description</th>
+<th>Requirements</th>
+<th>Career Impact</th>
+</tr>
+<tr>
+<td>CCT (Carpet Cleaning Technician)</td>
+<td>Entry-level certification</td>
+<td>Pass CCT exam; 50 hours classroom + hands-on</td>
+<td>Qualify for cleaning jobs; $35-$50/hour</td>
+</tr>
+<tr>
+<td>Master Carpet Cleaner</td>
+<td>Intermediate; specialty expertise</td>
+<td>2 years CCT experience + advanced training</td>
+<td>Lead technician; $55-$75/hour or own business</td>
+</tr>
+<tr>
+<td>RIA (Restoration Inspector-Apprentice)</td>
+<td>Water damage/restoration focus</td>
+<td>RIA exam + 200 hours restoration experience</td>
+<td>Command premium rates; $70-$100+/hour</td>
+</tr>
+<tr>
+<td>WRT (Water Restoration Tech)</td>
+<td>Advanced water mitigation</td>
+<td>WRT exam + RIA prerequisite + 500 hours</td>
+<td>Specialized contractor; $100+/hour</td>
+</tr>
+</table>
+
+<div class="accordion-item">
+    <div class="accordion-label">
+        <span>CCT Exam Path (6 Steps)</span>
+        <span class="accordion-toggle">+</span>
+    </div>
+    <div class="accordion-body">
+        <div class="accordion-content">
+<ol>
+<li><strong>Enroll in IICRC-approved school:</strong> Find accredited schools in BC (online or in-person options available)</li>
+<li><strong>Complete 50 hours training:</strong> Classroom + hands-on labs covering chemistry, equipment, techniques</li>
+<li><strong>Pass written exam:</strong> 80% minimum on multiple-choice test; covers cleaning science, methods, equipment, safety, business</li>
+<li><strong>Pass practical exam:</strong> Demonstrate cleaning skills on real carpet samples</li>
+<li><strong>Submit SDS documentation:</strong> Provide chemical Safety Data Sheets for all products used</li>
+<li><strong>Receive CCT certificate:</strong> Valid for 3 years; requires 14 hours continuing education per cycle for renewal</li>
+</ol>
+        </div>
+    </div>
+</div>
+
+<h3>Continuing Education for CCT Renewal</h3>
+<ul>
+<li>Complete 14 hours continuing education every 3 years</li>
+<li>Topics include new cleaning technologies, eco-friendly practices, advanced stain removal, customer service</li>
+<li>Online courses, webinars, and live training available through IICRC partners</li>
+<li>Some certifications (WRT, RIA) require annual hours to maintain active status</li>
+</ul>
+
+<h3>IICRC S100 Carpet Cleaning Standard</h3>
+<p>The IICRC S100 standard is the benchmark for professional carpet care. It covers:</p>
+<ul>
+<li>Pre-inspection and stain classification</li>
+<li>Pre-treatment and dwell times</li>
+<li>Cleaning method selection (HWE, Encapsulation, etc.)</li>
+<li>Post-cleaning inspection and documentation</li>
+<li>Warranty and customer satisfaction protocols</li>
+</ul>
+
+<h3>Specialty Techniques You May Encounter</h3>
+<ul>
+<li><strong>Bonnet Cleaning:</strong> Buffing with absorbent pads; lower cost, shorter drying time, less thorough</li>
+<li><strong>Dry Foam:</strong> Minimal moisture application; faster drying, limited soil removal</li>
+<li><strong>Specialty Stain Treatments:</strong> Protein stains (enzyme), tannin stains (oxidizers), synthetic dyes (reducing agents)</li>
+<li><strong>Odor Treatment:</strong> Enzymatic treatments, encapsulation with odor-blocking polymers</li>
+<li><strong>Pet Urine Detection:</strong> Blacklight inspection, enzyme-based stain/odor removal</li>
+</ul>
+
+<h3>Your Professional Career Path</h3>
+
+<p>Carpet cleaning offers diverse career paths -- from employment to business ownership. Your success depends on skill development, business acumen, and customer focus.</p>
+
+<div class="accordion-item">
+    <div class="accordion-label">
+        <span>Career Levels &amp; Earning Potential</span>
+        <span class="accordion-toggle">+</span>
+    </div>
+    <div class="accordion-body">
+        <div class="accordion-content">
+<table>
+<tr>
+<th>Career Stage</th>
+<th>Experience</th>
+<th>Typical Hourly Rate</th>
+<th>Annual Income (Full-Time)</th>
+<th>Path Forward</th>
+</tr>
+<tr>
+<td>Trainee / Entry Level</td>
+<td>0-6 months</td>
+<td>$15-$20/hour (plus training)</td>
+<td>$31,000-$42,000</td>
+<td>Learn equipment, complete certification</td>
+</tr>
+<tr>
+<td>Certified Technician (CCT)</td>
+<td>6-12 months, CCT cert</td>
+<td>$20-$35/hour</td>
+<td>$42,000-$73,000</td>
+<td>Gain experience, specialize in methods</td>
+</tr>
+<tr>
+<td>Senior/Lead Technician</td>
+<td>2-3 years, advanced cert (RIA/WRT)</td>
+<td>$35-$55/hour</td>
+<td>$73,000-$115,000</td>
+<td>Mentor trainees, quote complex jobs, manage projects</td>
+</tr>
+<tr>
+<td>Business Owner / Contractor</td>
+<td>3+ years, full certs, business plan</td>
+<td>$65-$150+/hour (variable)</td>
+<td>$65,000-$300,000+ (highly variable)</td>
+<td>Grow team, diversify services, build brand</td>
+</tr>
+</table>
+        </div>
+    </div>
+</div>
+
+<div class="accordion-item">
+    <div class="accordion-label">
+        <span>Steps to Starting Your Own Business</span>
+        <span class="accordion-toggle">+</span>
+    </div>
+    <div class="accordion-body">
+        <div class="accordion-content">
+<ol>
+<li><strong>Get Certified:</strong> Obtain CCT at minimum; RIA/WRT for competitive advantage</li>
+<li><strong>Gain Experience:</strong> Work for established company 2+ years to learn operational systems</li>
+<li><strong>Plan Your Business:</strong> Define services (residential, commercial, restoration), pricing, service area</li>
+<li><strong>Secure Licenses & Insurance:</strong> Business license, liability insurance ($2-$5M coverage), bonding</li>
+<li><strong>Invest in Equipment:</strong> Portable HWE machine ($3,000-$7,000), supplies, vehicle ($10,000-$30,000)</li>
+<li><strong>Market Your Services:</strong> Local advertising, Google Business, referral program, partnerships</li>
+<li><strong>Build Your Client Base:</strong> Start with referrals from previous clients; target repeat business</li>
+<li><strong>Scale Operations:</strong> Hire and train technicians; invest in truck-mount equipment; expand service offerings</li>
+</ol>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<h2>KEY TAKEAWAYS</h2>
+<ul>
+<li>Professional appearance and conduct build client trust and your reputation as a carpet cleaning expert.</li>
+<li>Clear communication, active listening, and problem-solving separate good cleaners from great ones.</li>
+<li>Proper documentation and pricing agreements protect both you and your clients from disputes.</li>
+<li>Workplace safety, PPE, and <span class="glossary-term">ergonomics<span class="tooltip">The science of designing work environments and tasks to minimize strain and injury, protecting worker health.</span></span> are non-negotiable for long-term career sustainability.</li>
+<li>IICRC certification (CCT and beyond) is the gold standard for career advancement and earning potential.</li>
+<li>Industry standards like IICRC S100 ensure professional quality and customer satisfaction.</li>
+<li>Building client loyalty through consistency, personalization, and excellent service drives repeat business and referrals.</li>
+<li>Effective time management, equipment maintenance, and cost control are essential for profitable operations.</li>
+<li>WorkSafeBC compliance, proper training, and documented safety protocols protect your business and team.</li>
+<li>Your professional career path -- from technician to business owner -- depends on continuous learning, certifications, and business acumen.</li>
+</ul>
+
+<hr>
+
+<div class="exam-section">
+<h2>FINAL CERTIFICATION EXAM</h2>
+<p>This 50-question exam covers all material from Days 1–5. You must score 80% (40/50) or higher to pass and receive your Servus Group Professional Carpet Cleaning Certification. Select the BEST answer for each question.</p>
+
+<!-- Progress Bar -->
+<div class="exam-progress-text" id="progressText">0 of 50 questions answered</div>
+<div class="exam-progress-bar">
+    <div class="exam-progress-fill" id="progressFill"></div>
+</div>
+
+<!-- Section Navigator -->
+<div class="exam-section-nav" id="sectionNav">
+    <button class="section-nav-btn active" onclick="filterSection('all', this)">All (50)</button>
+    <button class="section-nav-btn" onclick="filterSection('foundations', this)">Day 1: Foundations</button>
+    <button class="section-nav-btn" onclick="filterSection('chemistry', this)">Day 2: Chemistry</button>
+    <button class="section-nav-btn" onclick="filterSection('methods', this)">Day 3: Methods</button>
+    <button class="section-nav-btn" onclick="filterSection('spotting', this)">Day 4: Spotting</button>
+    <button class="section-nav-btn" onclick="filterSection('professional', this)">Day 5: Professional</button>
+</div>
+
+<form id="examForm">
+<div class="exam-question" data-section="foundations">
+<p><span class="q-number">1</span><strong>Q1:</strong> What does IICRC stand for? <span class="q-category cat-foundations">Day 1</span></p>
+<label><input type="radio" name="q1" value="a"> Institute of Inspection Cleaning and Restoration Certification</label>
+<label><input type="radio" name="q1" value="b"> International Industrial Cleaning and Repair Company</label>
+<label><input type="radio" name="q1" value="c"> Institute of Integrated Carpet Restoration and Care</label>
+<label><input type="radio" name="q1" value="d"> International Inspection and Cleaning Registration Committee</label>
+</div>
+
+<div class="exam-question" data-section="chemistry">
+<p><span class="q-number">2</span><strong>Q2:</strong> Which cleaning method uses heat and pressure to remove soil from carpet fibers? <span class="q-category cat-chemistry">Day 2</span></p>
+<label><input type="radio" name="q2" value="a"> Bonnet cleaning</label>
+<label><input type="radio" name="q2" value="b"> Encapsulation</label>
+<label><input type="radio" name="q2" value="c"> Hot Water Extraction (HWE)</label>
+<label><input type="radio" name="q2" value="d"> Dry foam</label>
+</div>
+
+<div class="exam-question" data-section="chemistry">
+<p><span class="q-number">3</span><strong>Q3:</strong> What is the pH scale range for neutral substances? <span class="q-category cat-chemistry">Day 2</span></p>
+<label><input type="radio" name="q3" value="a"> 0–3</label>
+<label><input type="radio" name="q3" value="b"> 6.5–7.5</label>
+<label><input type="radio" name="q3" value="c"> 11–14</label>
+<label><input type="radio" name="q3" value="d"> 8–10</label>
+</div>
+
+<div class="exam-question" data-section="foundations">
+<p><span class="q-number">4</span><strong>Q4:</strong> Which organization sets workplace safety standards in British Columbia? <span class="q-category cat-foundations">Day 1</span></p>
+<label><input type="radio" name="q4" value="a"> WorkSafeBC</label>
+<label><input type="radio" name="q4" value="b"> IICRC Safety Committee</label>
+<label><input type="radio" name="q4" value="c"> Servus Group Standards</label>
+<label><input type="radio" name="q4" value="d"> Canadian Safety Board</label>
+</div>
+
+<div class="exam-question" data-section="foundations">
+<p><span class="q-number">5</span><strong>Q5:</strong> What does COR certification indicate? <span class="q-category cat-foundations">Day 1</span></p>
+<label><input type="radio" name="q5" value="a"> Cleaning Operations Registry</label>
+<label><input type="radio" name="q5" value="b"> Certified Operational Readiness</label>
+<label><input type="radio" name="q5" value="c"> Commercial and Outdoor Restoration</label>
+<label><input type="radio" name="q5" value="d"> Certificate of Recognition for workplace safety excellence</label>
+</div>
+
+<div class="exam-question" data-section="spotting">
+<p><span class="q-number">6</span><strong>Q6:</strong> Which type of stain requires an enzyme-based treatment? <span class="q-category cat-spotting">Day 4</span></p>
+<label><input type="radio" name="q6" value="a"> Tannin stains (tea, wine, coffee)</label>
+<label><input type="radio" name="q6" value="b"> Protein stains (blood, vomit, urine)</label>
+<label><input type="radio" name="q6" value="c"> Oil-based stains (grease, tar)</label>
+<label><input type="radio" name="q6" value="d"> Synthetic dye stains</label>
+</div>
+
+<div class="exam-question" data-section="chemistry">
+<p><span class="q-number">7</span><strong>Q7:</strong> What is the recommended dwell time for most alkaline pre-sprays? <span class="q-category cat-chemistry">Day 2</span></p>
+<label><input type="radio" name="q7" value="a"> 5–15 minutes</label>
+<label><input type="radio" name="q7" value="b"> 1–2 minutes</label>
+<label><input type="radio" name="q7" value="c"> 30–45 minutes</label>
+<label><input type="radio" name="q7" value="d"> 60+ minutes</label>
+</div>
+
+<div class="exam-question" data-section="methods">
+<p><span class="q-number">8</span><strong>Q8:</strong> Which encapsulation machine is mentioned as the standard in professional cleaning? <span class="q-category cat-methods">Day 3</span></p>
+<label><input type="radio" name="q8" value="a"> Bridgepoint Ripsaw</label>
+<label><input type="radio" name="q8" value="b"> Sapphire Supreme</label>
+<label><input type="radio" name="q8" value="c"> Whittaker TRIO</label>
+<label><input type="radio" name="q8" value="d"> Buckeye Ripsaw</label>
+</div>
+
+<div class="exam-question" data-section="methods">
+<p><span class="q-number">9</span><strong>Q9:</strong> What is the primary purpose of the "squeaky clean" test? <span class="q-category cat-methods">Day 3</span></p>
+<label><input type="radio" name="q9" value="a"> To test if the carpet will resoil quickly</label>
+<label><input type="radio" name="q9" value="b"> To check if the cleaning solution is at the right temperature</label>
+<label><input type="radio" name="q9" value="c"> To measure soil extraction effectiveness</label>
+<label><input type="radio" name="q9" value="d"> To verify all detergent residue has been rinsed from carpet fibers</label>
+</div>
+
+<div class="exam-question" data-section="methods">
+<p><span class="q-number">10</span><strong>Q10:</strong> Which critical care metric is essential for the Warrior 500 portable HWE machine? <span class="q-category cat-methods">Day 3</span></p>
+<label><input type="radio" name="q10" value="a"> 500 PSI pressure for optimal cleaning performance</label>
+<label><input type="radio" name="q10" value="b"> 2000 PSI for commercial applications</label>
+<label><input type="radio" name="q10" value="c"> 100 CFM for air movement</label>
+<label><input type="radio" name="q10" value="d"> 10-gallon recovery tank capacity</label>
+</div>
+
+<div class="exam-question" data-section="chemistry">
+<p><span class="q-number">11</span><strong>Q11:</strong> What is a surfactant and why is it important in cleaning solutions? <span class="q-category cat-chemistry">Day 2</span></p>
+<label><input type="radio" name="q11" value="a"> A thickening agent that improves solution viscosity</label>
+<label><input type="radio" name="q11" value="b"> A cleaning agent that breaks down the boundary between soil and fibers, enabling soil suspension</label>
+<label><input type="radio" name="q11" value="c"> A preservative that extends solution shelf life</label>
+<label><input type="radio" name="q11" value="d"> A pH buffer that stabilizes acidity</label>
+</div>
+
+<div class="exam-question" data-section="chemistry">
+<p><span class="q-number">12</span><strong>Q12:</strong> What is CMC (Critical Micelle Concentration)? <span class="q-category cat-chemistry">Day 2</span></p>
+<label><input type="radio" name="q12" value="a"> The drying time required after cleaning</label>
+<label><input type="radio" name="q12" value="b"> The maximum temperature a cleaning solution can withstand</label>
+<label><input type="radio" name="q12" value="c"> The pH level most effective for carpet cleaning</label>
+<label><input type="radio" name="q12" value="d"> The minimum concentration of detergent needed to suspend soil effectively</label>
+</div>
+
+<div class="exam-question" data-section="chemistry">
+<p><span class="q-number">13</span><strong>Q13:</strong> Which factor is the PRIMARY cause of rapid resoiling after carpet cleaning? <span class="q-category cat-chemistry">Day 2</span></p>
+<label><input type="radio" name="q13" value="a"> Excessive detergent residue left in carpet fibers creating a sticky surface</label>
+<label><input type="radio" name="q13" value="b"> Insufficient vacuum passes during extraction</label>
+<label><input type="radio" name="q13" value="c"> Improper carpet backing drying</label>
+<label><input type="radio" name="q13" value="d"> Using water that is too hot</label>
+</div>
+
+<div class="exam-question" data-section="chemistry">
+<p><span class="q-number">14</span><strong>Q14:</strong> What is the role of an oxidizer in specialty chemistry treatments? <span class="q-category cat-chemistry">Day 2</span></p>
+<label><input type="radio" name="q14" value="a"> To neutralize alkaline pre-sprays</label>
+<label><input type="radio" name="q14" value="b"> To liquefy oil-based stains for easier extraction</label>
+<label><input type="radio" name="q14" value="c"> To break down chromophores (color molecules) in tannin stains through chemical oxidation</label>
+<label><input type="radio" name="q14" value="d"> To reduce drying time by improving air circulation</label>
+</div>
+
+<div class="exam-question" data-section="chemistry">
+<p><span class="q-number">15</span><strong>Q15:</strong> Why is neutralization important after acid pre-treatment? <span class="q-category cat-chemistry">Day 2</span></p>
+<label><input type="radio" name="q15" value="a"> To speed up the drying process</label>
+<label><input type="radio" name="q15" value="b"> To restore carpet pH to safe range (4.5–5.5) and prevent fiber damage from chemical residue</label>
+<label><input type="radio" name="q15" value="c"> To prevent the spread of the original stain</label>
+<label><input type="radio" name="q15" value="d"> To improve the appearance of the cleaned carpet</label>
+</div>
+
+<div class="exam-question" data-section="methods">
+<p><span class="q-number">16</span><strong>Q16:</strong> What does the Servus 8-step protocol begin with? <span class="q-category cat-methods">Day 3</span></p>
+<label><input type="radio" name="q16" value="a"> Post-cleaning documentation</label>
+<label><input type="radio" name="q16" value="b"> Application of pre-spray solution</label>
+<label><input type="radio" name="q16" value="c"> Hot water extraction</label>
+<label><input type="radio" name="q16" value="d"> Pre-inspection and stain identification</label>
+</div>
+
+<div class="exam-question" data-section="spotting">
+<p><span class="q-number">17</span><strong>Q17:</strong> What is the primary hazard when mixing incompatible cleaning chemicals? <span class="q-category cat-spotting">Day 4</span></p>
+<label><input type="radio" name="q17" value="a"> Creation of toxic gases or uncontrolled chemical reactions</label>
+<label><input type="radio" name="q17" value="b"> Reduced cleaning effectiveness</label>
+<label><input type="radio" name="q17" value="c"> Slowing of drying time</label>
+<label><input type="radio" name="q17" value="d"> Discoloration of carpet fibers</label>
+</div>
+
+<div class="exam-question" data-section="spotting">
+<p><span class="q-number">18</span><strong>Q18:</strong> What information is found on a Safety Data Sheet (SDS)? <span class="q-category cat-spotting">Day 4</span></p>
+<label><input type="radio" name="q18" value="a"> Product cost and supplier contact information</label>
+<label><input type="radio" name="q18" value="b"> Hazard identification, PPE requirements, first aid measures, and proper disposal procedures</label>
+<label><input type="radio" name="q18" value="c"> Recommended selling price and profit margins</label>
+<label><input type="radio" name="q18" value="d"> Equipment specifications and maintenance schedules</label>
+</div>
+
+<div class="exam-question" data-section="spotting">
+<p><span class="q-number">19</span><strong>Q19:</strong> Which WHMIS symbol indicates a health hazard? <span class="q-category cat-spotting">Day 4</span></p>
+<label><input type="radio" name="q19" value="a"> Corrosion symbol (hand dissolving)</label>
+<label><input type="radio" name="q19" value="b"> Skull and crossbones</label>
+<label><input type="radio" name="q19" value="c"> Exclamation mark in a diamond with health hazard symbol (exclamation mark or flame over circle)</label>
+<label><input type="radio" name="q19" value="d"> Flame over circle (oxidizer)</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">20</span><strong>Q20:</strong> What is professional appearance in carpet cleaning? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q20" value="a"> Following fashion trends in workwear</label>
+<label><input type="radio" name="q20" value="b"> Wearing designer clothing to impress clients</label>
+<label><input type="radio" name="q20" value="c"> Using brand-name equipment and vehicles</label>
+<label><input type="radio" name="q20" value="d"> Clean, professional clothing; good hygiene; and a well-maintained, organized appearance</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">21</span><strong>Q21:</strong> How should you handle a client complaint during or after service? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q21" value="a"> Listen actively, acknowledge their concern, offer a solution, and document the issue for follow-up</label>
+<label><input type="radio" name="q21" value="b"> Defend your work and explain why they are wrong</label>
+<label><input type="radio" name="q21" value="c"> Offer a discount immediately without investigating the complaint</label>
+<label><input type="radio" name="q21" value="d"> Refer the client to the company owner and leave</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">22</span><strong>Q22:</strong> What are the key elements of a professional written quote? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q22" value="a"> Only the total cost</label>
+<label><input type="radio" name="q22" value="b"> Square footage, cleaning method, stain treatment, estimated timeline, and total cost</label>
+<label><input type="radio" name="q22" value="c"> Cleaning method and drying time only</label>
+<label><input type="radio" name="q22" value="d"> Verbal estimate with no documentation</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">23</span><strong>Q23:</strong> What is the purpose of a work order contract? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q23" value="a"> To collect payment information only</label>
+<label><input type="radio" name="q23" value="b"> To guarantee perfect results</label>
+<label><input type="radio" name="q23" value="c"> To document the service agreement, protect both client and service provider, and establish a legal record</label>
+<label><input type="radio" name="q23" value="d"> To replace verbal communication</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">24</span><strong>Q24:</strong> Which environment hazard requires immediate action and professional intervention? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q24" value="a"> Slightly damp carpet backing</label>
+<label><input type="radio" name="q24" value="b"> Light dust or surface soil</label>
+<label><input type="radio" name="q24" value="c"> Normal pet odor</label>
+<label><input type="radio" name="q24" value="d"> Suspected mold or asbestos; do not attempt removal, call professionals</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">25</span><strong>Q25:</strong> What is a loyalty discount program? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q25" value="a"> Offering reduced rates (e.g., 10% off every 5th visit) to encourage repeat business and client retention</label>
+<label><input type="radio" name="q25" value="b"> Randomly discounting services without structure</label>
+<label><input type="radio" name="q25" value="c"> Only offering discounts during holidays</label>
+<label><input type="radio" name="q25" value="d"> Discounting all first-time clients equally</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">26</span><strong>Q26:</strong> How long should a CCT (Carpet Cleaning Technician) certification remain valid? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q26" value="a"> 2 years with annual testing</label>
+<label><input type="radio" name="q26" value="b"> Lifetime without renewal</label>
+<label><input type="radio" name="q26" value="c"> 3 years; requires 14 hours continuing education for renewal</label>
+<label><input type="radio" name="q26" value="d"> 1 year; requires annual recertification</label>
+</div>
+
+<div class="exam-question" data-section="chemistry">
+<p><span class="q-number">27</span><strong>Q27:</strong> What is the Critical Micelle Concentration (CMC) and why does dilution matter? <span class="q-category cat-chemistry">Day 2</span></p>
+<label><input type="radio" name="q27" value="a"> CMC is the maximum temperature a solution can withstand</label>
+<label><input type="radio" name="q27" value="b"> CMC is the minimum detergent concentration needed for soil suspension; over-dilution reduces cleaning effectiveness and over-concentration causes resoiling</label>
+<label><input type="radio" name="q27" value="c"> Dilution does not matter; any dilution level works equally</label>
+<label><input type="radio" name="q27" value="d"> CMC only applies to alkaline solutions</label>
+</div>
+
+<div class="exam-question" data-section="chemistry">
+<p><span class="q-number">28</span><strong>Q28:</strong> What does a reducing agent do in specialty stain treatment? <span class="q-category cat-chemistry">Day 2</span></p>
+<label><input type="radio" name="q28" value="a"> Prevents resoiling by encapsulating soil</label>
+<label><input type="radio" name="q28" value="b"> Increases pH to remove oil stains</label>
+<label><input type="radio" name="q28" value="c"> Speeds up drying time</label>
+<label><input type="radio" name="q28" value="d"> Breaks down synthetic dye molecules by reversing oxidation, restoring original color</label>
+</div>
+
+<div class="exam-question" data-section="methods">
+<p><span class="q-number">29</span><strong>Q29:</strong> What is the Warrior 500 machine used for in professional cleaning? <span class="q-category cat-methods">Day 3</span></p>
+<label><input type="radio" name="q29" value="a"> Portable HWE machine rated at 500 PSI for residential and commercial hot water extraction</label>
+<label><input type="radio" name="q29" value="b"> Commercial truck-mount system</label>
+<label><input type="radio" name="q29" value="c"> Bonnet cleaning machine</label>
+<label><input type="radio" name="q29" value="d"> Dry foam cleaning system</label>
+</div>
+
+<div class="exam-question" data-section="methods">
+<p><span class="q-number">30</span><strong>Q30:</strong> What are the three brush types used with Whittaker TRIO encapsulation equipment? <span class="q-category cat-methods">Day 3</span></p>
+<label><input type="radio" name="q30" value="a"> Only nylon and polypropylene brushes</label>
+<label><input type="radio" name="q30" value="b"> Soft bristle, medium bristle, and hard bristle brushes for different carpet pile heights and soil levels</label>
+<label><input type="radio" name="q30" value="c"> Round and flat brush options</label>
+<label><input type="radio" name="q30" value="d"> Brushes only for commercial carpets</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">31</span><strong>Q31:</strong> Why are time estimates important in carpet cleaning? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q31" value="a"> Estimates are not important</label>
+<label><input type="radio" name="q31" value="b"> To justify higher pricing</label>
+<label><input type="radio" name="q31" value="c"> To set client expectations, schedule multiple jobs, manage resources, and build a professional reputation</label>
+<label><input type="radio" name="q31" value="d"> To discourage large jobs</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">32</span><strong>Q32:</strong> What is proper PPE (Personal Protective Equipment) for carpet cleaning? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q32" value="a"> Only respiratory protection</label>
+<label><input type="radio" name="q32" value="b"> Only gloves and apron</label>
+<label><input type="radio" name="q32" value="c"> No PPE needed for residential cleaning</label>
+<label><input type="radio" name="q32" value="d"> Safety glasses, nitrile gloves, closed-toe slip-resistant boots, respiratory protection, and hearing protection as needed</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">33</span><strong>Q33:</strong> What is ergonomics and why is it important in carpet cleaning? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q33" value="a"> The science of designing work to minimize strain and injury; critical for preventing back injury, repetitive strain, and long-term disability</label>
+<label><input type="radio" name="q33" value="b"> A type of cleaning method</label>
+<label><input type="radio" name="q33" value="c"> A brand of cleaning equipment</label>
+<label><input type="radio" name="q33" value="d"> A WorkSafeBC certification</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">34</span><strong>Q34:</strong> How often should your cleaning equipment receive maintenance? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q34" value="a"> Only when it breaks down</label>
+<label><input type="radio" name="q34" value="b"> Daily cleaning, weekly filter changes, monthly deep cleaning, quarterly professional servicing, and yearly full inspection</label>
+<label><input type="radio" name="q34" value="c"> Once per year is sufficient</label>
+<label><input type="radio" name="q34" value="d"> Maintenance is optional</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">35</span><strong>Q35:</strong> What qualifies someone as a Master Carpet Cleaner? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q35" value="a"> 10 years of any cleaning experience</label>
+<label><input type="radio" name="q35" value="b"> Just passing the CCT exam</label>
+<label><input type="radio" name="q35" value="c"> 2+ years of CCT experience plus advanced training in specialty techniques and equipment</label>
+<label><input type="radio" name="q35" value="d"> Ownership of any cleaning company</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">36</span><strong>Q36:</strong> What does the IICRC S100 standard emphasize? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q36" value="a"> Marketing and advertising methods</label>
+<label><input type="radio" name="q36" value="b"> Only equipment requirements</label>
+<label><input type="radio" name="q36" value="c"> Pricing and discounting strategies</label>
+<label><input type="radio" name="q36" value="d"> Professional pre-inspection, stain classification, appropriate method selection, documentation, and customer satisfaction protocols</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">37</span><strong>Q37:</strong> What is the first step when building your own cleaning business? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q37" value="a"> Obtain CCT certification and gain 2+ years of field experience with an established company</label>
+<label><input type="radio" name="q37" value="b"> Buy expensive equipment immediately</label>
+<label><input type="radio" name="q37" value="c"> Start pricing without certifications</label>
+<label><input type="radio" name="q37" value="d"> Skip the training and learn on the job</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">38</span><strong>Q38:</strong> What is required to maintain WorkSafeBC compliance? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q38" value="a"> Just having insurance</label>
+<label><input type="radio" name="q38" value="b"> Proper safety training, documented protocols, appropriate PPE, incident reporting, and regular safety audits</label>
+<label><input type="radio" name="q38" value="c"> Compliance is only for large companies</label>
+<label><input type="radio" name="q38" value="d"> Following OSHA standards (US only)</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">39</span><strong>Q39:</strong> How do you build client referrals and loyalty? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q39" value="a"> Client loyalty develops on its own</label>
+<label><input type="radio" name="q39" value="b"> Only through heavy discounting</label>
+<label><input type="radio" name="q39" value="c"> Deliver consistent quality, personalize service, follow up after jobs, offer loyalty rewards, and ask satisfied clients for reviews and referrals</label>
+<label><input type="radio" name="q39" value="d"> Never ask clients for feedback</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">40</span><strong>Q40:</strong> What is the minimum score needed to pass the CCT exam? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q40" value="a"> 60%</label>
+<label><input type="radio" name="q40" value="b"> 50%</label>
+<label><input type="radio" name="q40" value="c"> 70%</label>
+<label><input type="radio" name="q40" value="d"> 80%</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">41</span><strong>Q41:</strong> What is a key pre-job question to ask clients? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q41" value="a"> "What specific concerns do you have about your carpets?" (stains, odor, traffic patterns, pets)</label>
+<label><input type="radio" name="q41" value="b"> "How much are you willing to pay?"</label>
+<label><input type="radio" name="q41" value="c"> "Do you like our competitors better?"</label>
+<label><input type="radio" name="q41" value="d"> "Can I use my own chemicals?"</label>
+</div>
+
+<div class="exam-question" data-section="spotting">
+<p><span class="q-number">42</span><strong>Q42:</strong> What is an SDS (Safety Data Sheet)? <span class="q-category cat-spotting">Day 4</span></p>
+<label><input type="radio" name="q42" value="a"> A sales document</label>
+<label><input type="radio" name="q42" value="b"> A document containing hazard information, PPE requirements, first aid, and disposal procedures for chemicals</label>
+<label><input type="radio" name="q42" value="c"> A warranty certificate</label>
+<label><input type="radio" name="q42" value="d"> A price list</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">43</span><strong>Q43:</strong> How should you respond to a difficult client situation? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q43" value="a"> Offer the maximum discount immediately</label>
+<label><input type="radio" name="q43" value="b"> Argue and defend your position</label>
+<label><input type="radio" name="q43" value="c"> Walk away without addressing the issue</label>
+<label><input type="radio" name="q43" value="d"> Stay calm, listen without interrupting, acknowledge their feelings, and work toward a mutually agreeable solution</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">44</span><strong>Q44:</strong> What is the role of a service report? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q44" value="a"> Marketing material</label>
+<label><input type="radio" name="q44" value="b"> Just a receipt</label>
+<label><input type="radio" name="q44" value="c"> Document what was cleaned, products used, any issues found, and recommendations for future care</label>
+<label><input type="radio" name="q44" value="d"> An optional form</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">45</span><strong>Q45:</strong> What is punctuality and why is it important? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q45" value="a"> Arriving on time or 5–10 minutes early; demonstrates respect and professionalism</label>
+<label><input type="radio" name="q45" value="b"> Being 15–20 minutes late is acceptable</label>
+<label><input type="radio" name="q45" value="c"> Punctuality doesn't matter</label>
+<label><input type="radio" name="q45" value="d"> Arriving very early (30+ minutes) is preferred</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">46</span><strong>Q46:</strong> What is the purpose of a referral program in a cleaning business? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q46" value="a"> Only large companies use referral programs</label>
+<label><input type="radio" name="q46" value="b"> To incentivize existing clients to recommend your services and grow your client base cost-effectively ($25–$50 credit per referral)</label>
+<label><input type="radio" name="q46" value="c"> To reduce prices for all clients</label>
+<label><input type="radio" name="q46" value="d"> Referrals should never be incentivized</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">47</span><strong>Q47:</strong> What is your liability if an accident occurs in a client's home? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q47" value="a"> Small accidents don't matter legally</label>
+<label><input type="radio" name="q47" value="b"> You have no liability if you're working as an employee</label>
+<label><input type="radio" name="q47" value="c"> Liability only applies to commercial work</label>
+<label><input type="radio" name="q47" value="d"> You must have proper liability insurance and follow all safety protocols; improper safety practices can result in lawsuits and fines</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">48</span><strong>Q48:</strong> What does continuing education accomplish for your CCT certification? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q48" value="a"> Only required if you own a business</label>
+<label><input type="radio" name="q48" value="b"> Is optional</label>
+<label><input type="radio" name="q48" value="c"> Keeps your certification valid, updates your knowledge of new technologies and methods, and maintains industry credibility</label>
+<label><input type="radio" name="q48" value="d"> Not necessary after initial certification</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">49</span><strong>Q49:</strong> What is Google Business and why is it important? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q49" value="a"> A payment platform only</label>
+<label><input type="radio" name="q49" value="b"> A free business profile and review platform; critical for local visibility, client reviews, and competitive online presence</label>
+<label><input type="radio" name="q49" value="c"> Only for large corporations</label>
+<label><input type="radio" name="q49" value="d"> Not important for service businesses</label>
+</div>
+
+<div class="exam-question" data-section="professional">
+<p><span class="q-number">50</span><strong>Q50:</strong> What is the most important factor in building a successful long-term carpet cleaning career? <span class="q-category cat-professional">Day 5</span></p>
+<label><input type="radio" name="q50" value="a"> Avoiding customer interaction</label>
+<label><input type="radio" name="q50" value="b"> Focusing only on profit margins</label>
+<label><input type="radio" name="q50" value="c"> Cutting corners to work faster</label>
+<label><input type="radio" name="q50" value="d"> Continuous learning, maintaining certifications, delivering consistent quality, and prioritizing client satisfaction and safety</label>
+</div>
+
+</form>
+
+<div class="exam-submit-area">
+    <button class="exam-submit-btn" id="submitBtn" onclick="submitExam()">Submit Exam</button>
+    <div class="unanswered-warning" id="unansweredWarning">⚠️ You have <span id="unansweredCount">50</span> unanswered questions</div>
+</div>
+
+<!-- Results Dashboard -->
+<div class="results-dashboard" id="resultsDashboard">
+    <!-- Score Hero -->
+    <div class="score-hero" id="scoreHero">
+        <h2 id="heroTitle">EXAM RESULTS</h2>
+        <div class="score-big" id="scoreBig">0%</div>
+        <div class="score-fraction" id="scoreFraction">0/50 correct</div>
+        <div class="score-message" id="scoreMessage"></div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number green" id="statCorrect">0</div>
+            <div class="stat-label">Correct</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number red" id="statWrong">0</div>
+            <div class="stat-label">Incorrect</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number orange" id="statSkipped">0</div>
+            <div class="stat-label">Skipped</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number blue" id="statGrade">—</div>
+            <div class="stat-label">Grade</div>
+        </div>
+    </div>
+
+    <!-- Question Map -->
+    <div class="section-breakdown">
+        <h3>📊 Question Map</h3>
+        <p style="font-size:0.85em; color:#666; margin-bottom:10px;">Click any question to jump to it. <span style="display:inline-block; width:12px; height:12px; background:#4caf50; border-radius:2px;"></span> Correct &nbsp; <span style="display:inline-block; width:12px; height:12px; background:#e53935; border-radius:2px;"></span> Incorrect &nbsp; <span style="display:inline-block; width:12px; height:12px; background:#ff9800; border-radius:2px;"></span> Skipped</p>
+        <div class="question-map" id="questionMap"></div>
+    </div>
+
+    <!-- Section Breakdown -->
+    <div class="section-breakdown" id="sectionBreakdown">
+        <h3>📈 Performance by Training Day</h3>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="recommendations" id="recommendations">
+        <h3>📋 Study Recommendations</h3>
+    </div>
+
+    <!-- Certification Card (pass only) -->
+    <div id="certCardArea"></div>
+
+    <!-- Retry -->
+    <div style="text-align:center; margin-top:20px;">
+        <button class="retry-btn" onclick="retryExam()">🔄 Retake Exam</button>
+    </div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+    <div class="servus-footer">
+        <img src="https://servusgrouplowermainland.com/wp-content/uploads/2024/12/Servus-Colour.png" alt="Servus Group" class="logo-footer">
+        <strong>Servus Group</strong>
+        <p>Specialty Cleaning — Professional Carpet Care Certification</p>
+        <p>
+            <strong>Contact:</strong> <a href="tel:604-435-1135">604-435-1135</a> | <a href="mailto:info@servusgrouplowermainland.com">info@servusgrouplowermainland.com</a>
+        </p>
+        <p>160–21900 Westminster Hwy, Richmond BC V6V 2K3 | <a href="https://servusgrouplowermainland.com">servusgrouplowermainland.com</a></p>
+
+        <div class="footer-certs">
+            <img src="https://servusgrouplowermainland.com/wp-content/uploads/2014/07/go2HR-CORLogo-K-300x283.png" alt="COR Certified" style="filter: brightness(0) invert(1); opacity: 0.7; height: 40px;">
+            <svg height="35" viewBox="0 0 120 35" style="opacity: 0.7;"><text x="0" y="26" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="white" letter-spacing="3">ISSA</text><text x="0" y="34" font-family="Inter, Arial, sans-serif" font-size="7" fill="#ccc">Member</text></svg>
+        </div>
+
+        <div class="compliance-text">
+            This material is for Servus Group staff training and certification purposes only. All equipment and chemicals referenced are approved for use by Servus Group and comply with applicable safety standards (WHMIS, WorkSafeBC). Product recommendations and protocols reflect Servus Group's best practices and may vary based on site-specific conditions. Always consult equipment manuals and chemical Safety Data Sheets (SDS) before use.
+        </div>
+    </div>
+
+    <!-- Floating Glossary Widget -->
+    <div class="glossary-widget" id="glossaryWidget">
+        <!-- Expandable Panel -->
+        <div class="glossary-panel" id="glossaryPanel">
+            <div class="glossary-panel-header">
+                <h3 id="glossaryPanelTitle">Glossary</h3>
+                <button class="glossary-close" onclick="toggleGlossary()">&#x2715;</button>
+            </div>
+            <div class="glossary-search">
+                <input type="text" id="glossarySearch" placeholder="Search terms..." oninput="searchGlossary(this.value)">
+            </div>
+            <div class="glossary-filters">
+                <button class="g-filter active" onclick="filterG('all', this)">All</button>
+                <button class="g-filter" onclick="filterG('prof', this)">Professional</button>
+                <button class="g-filter" onclick="filterG('tech', this)">Technical</button>
+                <button class="g-filter" onclick="filterG('safe', this)">Safety</button>
+            </div>
+            <div class="glossary-list" id="glossaryList">
+                <!-- Professional Terms -->
+                <div class="g-term-item" data-cat="prof" data-search="active listening">
+                    <div class="g-term-name">Active Listening <span class="g-term-pron">AK-tiv LIS-en-ing</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Fully focusing on what a client is saying without planning your response, demonstrating understanding through questions and paraphrasing.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="addendum">
+                    <div class="g-term-name">Addendum <span class="g-term-pron">uh-DEN-dum</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">A written addition to an original agreement, documenting changes to scope, timeline, or cost with client approval.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="business acumen">
+                    <div class="g-term-name">Business Acumen <span class="g-term-pron">BIZ-nis uh-KYOO-men</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Knowledge and skill in financial planning, pricing strategy, customer management, and operational efficiency.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="cct certification">
+                    <div class="g-term-name">CCT Certification <span class="g-term-pron">see-see-TEE</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Carpet Cleaning Technician certification by IICRC; entry-level professional qualification valid for 3 years.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="client retention">
+                    <div class="g-term-name">Client Retention <span class="g-term-pron">KLY-ent ree-TEN-shun</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">The practice of keeping existing customers satisfied and engaged to encourage repeat business and referrals.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="documentation">
+                    <div class="g-term-name">Documentation <span class="g-term-pron">DOK-yoo-men-TAY-shun</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Written records of services provided, products used, client agreements, and incident reports for legal protection.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="iicrc">
+                    <div class="g-term-name">IICRC <span class="g-term-pron">eye-eye-see-ar-SEE</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Institute of Inspection Cleaning and Restoration Certification; the global gold standard for cleaning and restoration professionals.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="liability insurance">
+                    <div class="g-term-name">Liability Insurance <span class="g-term-pron">ly-uh-BIL-ih-tee</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Legal protection covering damages or injuries occurring during your service; essential for professional cleaners.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="loyalty program">
+                    <div class="g-term-name">Loyalty Program <span class="g-term-pron">LOY-ul-tee</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Incentive structure offering discounts or rewards to encourage repeat business from existing clients.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="master cleaner">
+                    <div class="g-term-name">Master Cleaner <span class="g-term-pron">MAS-ter KLEE-ner</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Intermediate IICRC certification requiring 2+ years CCT experience; qualifies for lead technician or business ownership roles.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="online reputation">
+                    <div class="g-term-name">Online Reputation <span class="g-term-pron">on-LINE rep-yoo-TAY-shun</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Your professional image as reflected in Google Business, Yelp, Facebook, and client reviews.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="organizational skills">
+                    <div class="g-term-name">Organizational Skills <span class="g-term-pron">or-gan-eye-ZAY-shun-ul</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Ability to manage time, resources, and documents efficiently; critical for scheduling and business operations.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="overbooking">
+                    <div class="g-term-name">Overbooking <span class="g-term-pron">OH-ver-BUK-ing</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Scheduling more jobs than can be completed in available time; leads to rushed work and client dissatisfaction.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="punctuality">
+                    <div class="g-term-name">Punctuality <span class="g-term-pron">PUNK-choo-AL-ih-tee</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Arriving on time or early; demonstrates respect, professionalism, and reliability to clients.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="referral program">
+                    <div class="g-term-name">Referral Program <span class="g-term-pron">ree-FER-ul</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Incentive offering rewards ($25–$50) for clients who refer new business; cost-effective marketing strategy.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="ria certification">
+                    <div class="g-term-name">RIA Certification <span class="g-term-pron">ar-eye-AY</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Restoration Inspector–Apprentice; water damage and restoration specialist; requires 200 hours field experience.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="service report">
+                    <div class="g-term-name">Service Report <span class="g-term-pron">SER-vis ree-PORT</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Post-service document documenting work completed, products used, issues found, and care recommendations.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="tenant">
+                    <div class="g-term-name">Tenant <span class="g-term-pron">TEN-unt</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">A person who rents or leases a property; cleaning may require landlord or property management approval.</div>
+                </div>
+                <div class="g-term-item" data-cat="prof" data-search="wrt certification">
+                    <div class="g-term-name">WRT Certification <span class="g-term-pron">dub-yoo-ar-TEE</span><span class="g-term-cat g-cat-prof">Prof</span></div>
+                    <div class="g-term-def">Water Restoration Technician; advanced certification requiring WRT exam, RIA prerequisite, and 500 hours experience.</div>
+                </div>
+                <!-- Technical Terms -->
+                <div class="g-term-item" data-cat="tech" data-search="buffering">
+                    <div class="g-term-name">Buffering <span class="g-term-pron">BUF-er-ing</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">A neutralization technique using pH-neutral solutions to prevent fiber damage from alkaline or acidic treatments.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="microbe">
+                    <div class="g-term-name">Microbe <span class="g-term-pron">MY-krohb</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Microscopic organisms including bacteria, viruses, and fungi; some require specific cleaning protocols.</div>
+                </div>
+                <div class="g-term-item" data-cat="tech" data-search="neutralization">
+                    <div class="g-term-name">Neutralization <span class="g-term-pron">NOO-truh-lih-ZAY-shun</span><span class="g-term-cat g-cat-tech">Tech</span></div>
+                    <div class="g-term-def">Process of restoring carpet pH to safe range (4.5–5.5) after alkaline cleaning using acid rinse to prevent browning.</div>
+                </div>
+                <!-- Safety Terms -->
+                <div class="g-term-item" data-cat="safe" data-search="allergies">
+                    <div class="g-term-name">Allergies <span class="g-term-pron">AL-er-jeez</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Adverse physical reactions to substances or environmental factors; important to know when selecting cleaning products.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="cor certification">
+                    <div class="g-term-name">COR Certification <span class="g-term-pron">KOR</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Certificate of Recognition; demonstrates workplace safety excellence and WorkSafeBC compliance.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="ergonomics">
+                    <div class="g-term-name">Ergonomics <span class="g-term-pron">er-guh-NOM-iks</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">The science of designing work environments and tasks to minimize strain and injury, protecting worker health.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="hazard assessment">
+                    <div class="g-term-name">Hazard Assessment <span class="g-term-pron">HAZ-erd uh-SES-ment</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Systematic evaluation of workplace or client environment for potential risks and safety issues.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="safety protocol">
+                    <div class="g-term-name">Safety Protocol <span class="g-term-pron">SAYF-tee PROH-tuh-kol</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Documented procedures for preventing injuries and hazards; includes PPE, emergency procedures, and incident reporting.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="sds">
+                    <div class="g-term-name">SDS <span class="g-term-pron">ess-dee-ESS</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Safety Data Sheet; mandatory document containing hazard info, PPE requirements, first aid, and disposal procedures.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="worksafebc">
+                    <div class="g-term-name">WorkSafeBC <span class="g-term-pron">WERK-sayf-bee-SEE</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">British Columbia's worker compensation and workplace safety authority; sets safety standards and investigates injuries.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="whmis">
+                    <div class="g-term-name">WHMIS <span class="g-term-pron">WIM-iss</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Workplace Hazardous Materials Information System; Canadian system for classifying and communicating chemical hazards.</div>
+                </div>
+            </div>
+            <div class="glossary-panel-footer" id="glossaryCount">30 terms</div>
+        </div>
+
+        <!-- Floating Button -->
+        <button class="glossary-btn" id="glossaryBtn" onclick="toggleGlossary()" title="Open Glossary">
+            <span class="badge">30</span>
+        </button>
+    </div>
+
+<script>
+        // ===== SVG ICON SYSTEM (from Day 2 template) =====
+        function getSvgIcon(name, size) {
+            size = size || 32;
+            var icons = {
+                wrench: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<path d="M22 4C19.5 4 17.3 5.5 16.4 7.7L7 17.1C5.8 16.7 4.4 17 3.4 18L2 19.4C0.8 20.6 0.8 22.6 2 23.8L8.2 30C9.4 31.2 11.4 31.2 12.6 30L14 28.6C15 27.6 15.3 26.2 14.9 24.9L24.3 15.6C26.5 14.7 28 12.5 28 10C28 6.7 25.3 4 22 4Z" fill="none" stroke="#0a4875" stroke-width="2"/>' +
+                    '<circle cx="22" cy="10" r="3" fill="#ff9900" opacity="0.7"/>' +
+                    '</svg>',
+
+                book: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<path d="M5 4C5 4 8 2 16 2C24 2 27 4 27 4L27 28C27 28 24 26 16 26C8 26 5 28 5 28Z" fill="none" stroke="currentColor" stroke-width="2"/>' +
+                    '<line x1="16" y1="2" x2="16" y2="26" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>' +
+                    '<line x1="9" y1="10" x2="14" y2="10" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>' +
+                    '<line x1="9" y1="14" x2="14" y2="14" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>' +
+                    '<line x1="18" y1="10" x2="23" y2="10" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>' +
+                    '<line x1="18" y1="14" x2="23" y2="14" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>' +
+                    '</svg>',
+
+                book_white: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<path d="M5 4C5 4 8 2 16 2C24 2 27 4 27 4L27 28C27 28 24 26 16 26C8 26 5 28 5 28Z" fill="none" stroke="white" stroke-width="2"/>' +
+                    '<line x1="16" y1="2" x2="16" y2="26" stroke="white" stroke-width="1.5" opacity="0.5"/>' +
+                    '<line x1="9" y1="10" x2="14" y2="10" stroke="white" stroke-width="1.5" opacity="0.6"/>' +
+                    '<line x1="9" y1="14" x2="14" y2="14" stroke="white" stroke-width="1.5" opacity="0.6"/>' +
+                    '<line x1="18" y1="10" x2="23" y2="10" stroke="white" stroke-width="1.5" opacity="0.6"/>' +
+                    '<line x1="18" y1="14" x2="23" y2="14" stroke="white" stroke-width="1.5" opacity="0.6"/>' +
+                    '</svg>'
+            };
+            return icons[name] || '';
+        }
+
+        // ===== REPLACE EMOJI WITH SVG ICONS ON DOM LOAD =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Replace wrench emoji on .servus-callout with SVG icon
+            document.querySelectorAll('.servus-callout').forEach(function(callout) {
+                var iconDiv = document.createElement('div');
+                iconDiv.className = 'callout-svg-icon';
+                iconDiv.innerHTML = getSvgIcon('wrench', 18);
+                callout.appendChild(iconDiv);
+            });
+
+            // Replace glossary button emoji with SVG book icon
+            var glossaryBtn = document.getElementById('glossaryBtn');
+            if (glossaryBtn) {
+                var badgeEl = glossaryBtn.querySelector('.badge');
+                glossaryBtn.innerHTML = getSvgIcon('book', 22);
+                if (badgeEl) glossaryBtn.appendChild(badgeEl);
+            }
+
+            // Replace glossary panel header emoji with SVG book icon
+            var panelTitle = document.getElementById('glossaryPanelTitle');
+            if (panelTitle) {
+                panelTitle.innerHTML = getSvgIcon('book_white', 16) + ' Glossary';
+            }
+        });
+
+        let glossaryOpen = false;
+
+        function toggleGlossary() {
+            glossaryOpen = !glossaryOpen;
+            document.getElementById('glossaryPanel').classList.toggle('open', glossaryOpen);
+        }
+
+        function filterG(cat, btn) {
+            document.querySelectorAll('.g-filter').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            let count = 0;
+            document.querySelectorAll('.g-term-item').forEach(item => {
+                const show = cat === 'all' || item.dataset.cat === cat;
+                item.style.display = show ? 'block' : 'none';
+                if (show) count++;
+            });
+            document.getElementById('glossaryCount').textContent = count + ' terms';
+            document.getElementById('glossarySearch').value = '';
+        }
+
+        function searchGlossary(query) {
+            const q = query.toLowerCase().trim();
+            let count = 0;
+            document.querySelectorAll('.g-term-item').forEach(item => {
+                const match = !q || item.dataset.search.includes(q) || item.textContent.toLowerCase().includes(q);
+                item.style.display = match ? 'block' : 'none';
+                if (match) count++;
+            });
+            document.getElementById('glossaryCount').textContent = count + ' terms';
+            document.querySelectorAll('.g-filter').forEach(b => b.classList.remove('active'));
+            document.querySelector('.g-filter').classList.add('active');
+        }
+
+        // Accordion functionality
+        document.querySelectorAll('.accordion-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('open');
+            });
+        });
+
+        // ===== EXAM ENGINE =====
+        const correctAnswers = {
+            q1: 'a', q2: 'c', q3: 'b', q4: 'a', q5: 'd',
+            q6: 'b', q7: 'a', q8: 'c', q9: 'd', q10: 'a',
+            q11: 'b', q12: 'd', q13: 'a', q14: 'c', q15: 'b',
+            q16: 'd', q17: 'a', q18: 'b', q19: 'c', q20: 'd',
+            q21: 'a', q22: 'b', q23: 'c', q24: 'd', q25: 'a',
+            q26: 'c', q27: 'b', q28: 'd', q29: 'a', q30: 'b',
+            q31: 'c', q32: 'd', q33: 'a', q34: 'b', q35: 'c',
+            q36: 'd', q37: 'a', q38: 'b', q39: 'c', q40: 'd',
+            q41: 'a', q42: 'b', q43: 'd', q44: 'c', q45: 'a',
+            q46: 'b', q47: 'd', q48: 'c', q49: 'b', q50: 'd',
+        };
+
+        const sectionConfig = {
+            foundations: { name: 'Day 1: Foundations', icon: '🏗️', color: '#1565c0', questions: [1,4,5] },
+            chemistry:   { name: 'Day 2: Chemistry', icon: '🧪', color: '#2e7d32', questions: [2,3,7,11,12,13,14,15,27,28] },
+            methods:     { name: 'Day 3: Methods', icon: '⚙️', color: '#e65100', questions: [8,9,10,16,29,30] },
+            spotting:    { name: 'Day 4: Spotting', icon: '🎯', color: '#c62828', questions: [6,17,18,19,42] },
+            professional:{ name: 'Day 5: Professional', icon: '🏆', color: '#7b1fa2', questions: [20,21,22,23,24,25,26,31,32,33,34,35,36,37,38,39,40,41,43,44,45,46,47,48,49,50] }
+        };
+
+        // Progress tracking
+        function updateProgress() {
+            let answered = 0;
+            for (let i = 1; i <= 50; i++) {
+                if (document.querySelector('input[name="q' + i + '"]:checked')) answered++;
+            }
+            const pct = Math.round((answered / 50) * 100);
+            document.getElementById('progressFill').style.width = pct + '%';
+            document.getElementById('progressText').textContent = answered + ' of 50 questions answered';
+            document.getElementById('unansweredCount').textContent = (50 - answered);
+
+            if (answered < 50) {
+                document.getElementById('unansweredWarning').style.display = 'block';
+            } else {
+                document.getElementById('unansweredWarning').style.display = 'none';
+            }
+
+            // Mark answered questions
+            document.querySelectorAll('.exam-question').forEach((q, idx) => {
+                if (document.querySelector('input[name="q' + (idx+1) + '"]:checked')) {
+                    q.classList.add('answered');
+                } else {
+                    q.classList.remove('answered');
+                }
+            });
+        }
+
+        // Attach progress listeners to all radio buttons
+        document.querySelectorAll('#examForm input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', updateProgress);
+        });
+
+        // Section filter
+        function filterSection(section, btn) {
+            document.querySelectorAll('.section-nav-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.exam-question').forEach(q => {
+                if (section === 'all' || q.dataset.section === section) {
+                    q.style.display = 'block';
+                } else {
+                    q.style.display = 'none';
+                }
+            });
+        }
+
+        function submitExam() {
+            let score = 0;
+            let wrong = [];
+            let skipped = [];
+            let sectionResults = {};
+
+            // Initialize section results
+            Object.keys(sectionConfig).forEach(function(key) {
+                sectionResults[key] = { correct: 0, total: sectionConfig[key].questions.length, wrong: [], skipped: [] };
+            });
+
+            // Show all questions
+            document.querySelectorAll('.exam-question').forEach(function(q) { q.style.display = 'block'; });
+            document.querySelectorAll('.section-nav-btn').forEach(function(b) { b.classList.remove('active'); });
+            document.querySelector('.section-nav-btn').classList.add('active');
+
+            // Grade each question
+            for (let i = 1; i <= 50; i++) {
+                const qName = 'q' + i;
+                const selected = document.querySelector('input[name="' + qName + '"]:checked');
+                const qDiv = document.querySelectorAll('.exam-question')[i-1];
+                const section = qDiv ? qDiv.dataset.section : '';
+
+                // Disable all radios
+                qDiv.querySelectorAll('input[type="radio"]').forEach(function(r) { r.disabled = true; });
+
+                if (!selected) {
+                    skipped.push(i);
+                    if (qDiv) qDiv.classList.add('skipped');
+                    if (sectionResults[section]) sectionResults[section].skipped.push(i);
+                } else if (selected.value === correctAnswers[qName]) {
+                    score++;
+                    if (qDiv) qDiv.classList.add('correct');
+                    if (sectionResults[section]) sectionResults[section].correct++;
+                } else {
+                    wrong.push(i);
+                    if (qDiv) qDiv.classList.add('incorrect');
+                    if (sectionResults[section]) sectionResults[section].wrong.push(i);
+                }
+            }
+
+            const percent = Math.round((score / 50) * 100);
+            const pass = score >= 40;
+
+            // Disable submit
+            document.getElementById('submitBtn').disabled = true;
+            document.getElementById('submitBtn').textContent = 'Exam Submitted';
+
+            // Calculate grade
+            let grade = 'F';
+            if (percent >= 95) grade = 'A+';
+            else if (percent >= 90) grade = 'A';
+            else if (percent >= 85) grade = 'A-';
+            else if (percent >= 80) grade = 'B+';
+            else if (percent >= 75) grade = 'B';
+            else if (percent >= 70) grade = 'C+';
+            else if (percent >= 65) grade = 'C';
+            else if (percent >= 60) grade = 'D';
+
+            // === Populate Dashboard ===
+            const dashboard = document.getElementById('resultsDashboard');
+            dashboard.style.display = 'block';
+
+            // Score Hero
+            const hero = document.getElementById('scoreHero');
+            hero.classList.add(pass ? 'pass' : 'fail');
+            document.getElementById('heroTitle').textContent = pass ? '🎉 CONGRATULATIONS!' : '📚 KEEP STUDYING!';
+            document.getElementById('scoreBig').textContent = percent + '%';
+            document.getElementById('scoreFraction').textContent = score + '/50 correct';
+            document.getElementById('scoreMessage').textContent = pass
+                ? 'You passed the Servus Group Professional Carpet Cleaning Certification Exam!'
+                : 'You need 80% (40/50) to pass. Review your weak areas below and try again.';
+
+            // Stats
+            document.getElementById('statCorrect').textContent = score;
+            document.getElementById('statWrong').textContent = wrong.length;
+            document.getElementById('statSkipped').textContent = skipped.length;
+            document.getElementById('statGrade').textContent = grade;
+
+            // Question Map
+            const mapDiv = document.getElementById('questionMap');
+            mapDiv.innerHTML = '';
+            for (let i = 1; i <= 50; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'q-dot';
+                dot.textContent = i;
+                if (skipped.includes(i)) dot.classList.add('skipped');
+                else if (wrong.includes(i)) dot.classList.add('incorrect');
+                else dot.classList.add('correct');
+                (function(idx) {
+                    dot.onclick = function() {
+                        var qEl = document.querySelectorAll('.exam-question')[idx-1];
+                        if (qEl) qEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    };
+                })(i);
+                mapDiv.appendChild(dot);
+            }
+
+            // Section Breakdown with bar charts
+            var breakdownDiv = document.getElementById('sectionBreakdown');
+            var breakdownHTML = '<h3>📈 Performance by Training Day</h3>';
+            Object.keys(sectionConfig).forEach(function(key) {
+                var cfg = sectionConfig[key];
+                var res = sectionResults[key];
+                var pct = res.total > 0 ? Math.round((res.correct / res.total) * 100) : 0;
+                var sGrade = 'F', gClass = 'grade-f';
+                if (pct >= 90) { sGrade = 'A'; gClass = 'grade-a'; }
+                else if (pct >= 80) { sGrade = 'B'; gClass = 'grade-b'; }
+                else if (pct >= 65) { sGrade = 'C'; gClass = 'grade-c'; }
+                var barColor = pct >= 80 ? '#4caf50' : pct >= 65 ? '#ff9800' : '#e53935';
+
+                breakdownHTML += '<div class="section-row">' +
+                    '<div class="section-icon" style="background:' + cfg.color + '20; color:' + cfg.color + ';">' + cfg.icon + '</div>' +
+                    '<div class="section-info">' +
+                        '<div class="section-name">' + cfg.name + '</div>' +
+                        '<div class="section-bar-bg"><div class="section-bar-fill" style="width:' + pct + '%; background:' + barColor + ';"></div></div>' +
+                    '</div>' +
+                    '<div class="section-score-label">' + res.correct + '/' + res.total +
+                        ' <span class="section-grade ' + gClass + '">' + sGrade + '</span>' +
+                    '</div>' +
+                '</div>';
+            });
+            breakdownDiv.innerHTML = breakdownHTML;
+
+            // Study Recommendations
+            var recDiv = document.getElementById('recommendations');
+            var recHTML = '<h3>📋 Study Recommendations</h3>';
+
+            var studyTips = {
+                foundations: { tip: 'Review IICRC standards, COR certification requirements, and WorkSafeBC fundamentals. Focus on industry terminology and organizational structure.', resource: 'Day 1 Course Materials' },
+                chemistry: { tip: 'Study pH scale, surfactant science, CMC principles, oxidizers vs reducers, and fiber-safe chemistry ranges. Practice dilution calculations.', resource: 'Day 2 Course Materials' },
+                methods: { tip: 'Review HWE procedures, encapsulation techniques, equipment specifications (Warrior 500, Whittaker TRIO), and the Servus 8-step protocol.', resource: 'Day 3 Course Materials' },
+                spotting: { tip: 'Study stain classification (protein, tannin, oil, dye), treatment selection, SDS reading, WHMIS symbols, and chemical safety protocols.', resource: 'Day 4 Course Materials' },
+                professional: { tip: 'Focus on client communication, documentation, pricing, safety compliance, ergonomics, career pathways, and business development strategies.', resource: 'Day 5 Course Materials' }
+            };
+
+            // Sort sections by performance (worst first)
+            var sortedSections = Object.keys(sectionConfig).sort(function(a, b) {
+                var pctA = sectionResults[a].total > 0 ? sectionResults[a].correct / sectionResults[a].total : 0;
+                var pctB = sectionResults[b].total > 0 ? sectionResults[b].correct / sectionResults[b].total : 0;
+                return pctA - pctB;
+            });
+
+            var hasRecs = false;
+            sortedSections.forEach(function(key) {
+                var res = sectionResults[key];
+                var pct = res.total > 0 ? Math.round((res.correct / res.total) * 100) : 0;
+                if (pct < 100) {
+                    hasRecs = true;
+                    var priority = 'priority-low';
+                    var icon = '✅';
+                    var label = 'Strong';
+                    if (pct < 65) { priority = 'priority-high'; icon = '🔴'; label = 'Needs Work'; }
+                    else if (pct < 80) { priority = 'priority-med'; icon = '🟡'; label = 'Review Recommended'; }
+                    else { icon = '🟢'; label = 'Good'; }
+
+                    var wrongQs = res.wrong.concat(res.skipped);
+                    recHTML += '<div class="rec-item ' + priority + '">' +
+                        '<div class="rec-icon">' + icon + '</div>' +
+                        '<div class="rec-content">' +
+                            '<div class="rec-title">' + sectionConfig[key].name + ' — ' + label + ' (' + pct + '%)</div>' +
+                            '<div class="rec-desc">' + studyTips[key].tip +
+                                (wrongQs.length > 0 ? '<br><strong>Review questions:</strong> ' + wrongQs.join(', ') : '') +
+                                '<br><strong>Resource:</strong> ' + studyTips[key].resource +
+                            '</div>' +
+                        '</div>' +
+                    '</div>';
+                }
+            });
+
+            if (!hasRecs) {
+                recHTML += '<div class="rec-item priority-low"><div class="rec-icon">🌟</div><div class="rec-content"><div class="rec-title">Perfect Score!</div><div class="rec-desc">Outstanding! You demonstrated mastery across all training areas.</div></div></div>';
+            }
+            recDiv.innerHTML = recHTML;
+
+            // Certification Card (pass only)
+            var certArea = document.getElementById('certCardArea');
+            if (pass) {
+                var today = new Date().toLocaleDateString('en-CA');
+                certArea.innerHTML = '<div class="cert-card">' +
+                    '<h3>Servus Group</h3>' +
+                    '<div class="cert-subtitle">Specialty Cleaning</div>' +
+                    '<div class="cert-divider"></div>' +
+                    '<div class="cert-title">Professional Carpet Cleaning Certification</div>' +
+                    '<p style="opacity:0.85; margin:10px 0;">This certifies successful completion of the 5-Day<br>Servus Group Professional Carpet Care Training Program</p>' +
+                    '<div class="cert-score-badge">Score: ' + percent + '% — Grade: ' + grade + '</div>' +
+                    '<div class="cert-detail">IICRC S100 Compliant | WorkSafeBC 2026 | COR Certified</div>' +
+                    '<div class="cert-detail">Date: ' + today + '</div>' +
+                '</div>';
+            }
+
+            // Scroll to dashboard
+            dashboard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function retryExam() {
+            // Reset all questions
+            document.querySelectorAll('.exam-question').forEach(function(q) {
+                q.classList.remove('correct', 'incorrect', 'skipped', 'answered');
+                q.style.display = 'block';
+                q.querySelectorAll('input[type="radio"]').forEach(function(r) {
+                    r.checked = false;
+                    r.disabled = false;
+                });
+            });
+
+            // Reset UI
+            document.getElementById('resultsDashboard').style.display = 'none';
+            document.getElementById('submitBtn').disabled = false;
+            document.getElementById('submitBtn').textContent = 'Submit Exam';
+            document.getElementById('scoreHero').classList.remove('pass', 'fail');
+            document.getElementById('certCardArea').innerHTML = '';
+            document.getElementById('progressFill').style.width = '0%';
+            document.getElementById('progressText').textContent = '0 of 50 questions answered';
+            document.getElementById('unansweredWarning').style.display = 'block';
+            document.getElementById('unansweredCount').textContent = '50';
+
+            // Reset section nav
+            document.querySelectorAll('.section-nav-btn').forEach(function(b) { b.classList.remove('active'); });
+            document.querySelector('.section-nav-btn').classList.add('active');
+
+            // Scroll to top of exam
+            document.querySelector('.exam-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
+
+</body>
+</html>
