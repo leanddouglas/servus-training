@@ -691,14 +691,7 @@
     </style>
 </head>
 <body>
-<script>
-    // Simple client-side password protection
-    const pword = prompt("Please enter the password to view this training module:");
-    if (pword !== "*Servus*Doug*2026*") {
-        document.body.innerHTML = "<div style='text-align: center; margin-top: 50px; font-family: sans-serif;'><h2 style='color: #0a4875;'>Access Denied</h2><p>Incorrect password. Please refresh the page to try again.</p></div>";
-        throw new Error("Access Denied");
-    }
-</script>
+<!-- Password protection temporarily disabled for testing -->
 <div class="content-wrapper">
     <div class="back-link">
         <a href="course_index.html">← Back to Course</a>
