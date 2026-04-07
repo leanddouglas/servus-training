@@ -67,7 +67,7 @@
             text-decoration: underline;
         }
 
-        /* Header Styling — Matched to Day 1 (Antigravity) */
+        /* Header Styling */
         .servus-header {
             background: hsl(211, 100%, 22%);
             color: white;
@@ -125,7 +125,7 @@
             margin-top: 4px;
         }
 
-        /* Certification Strip — Matched to Day 1 */
+        /* Certification Strip */
         .cert-strip {
             background-color: var(--servus-light-blue);
             display: flex;
@@ -150,7 +150,7 @@
             text-transform: uppercase;
         }
 
-        /* Main Content — Matched to Day 1 */
+        /* Main Content */
         .content {
             padding: 30px 40px;
         }
@@ -203,7 +203,7 @@
             font-weight: 600;
         }
 
-        /* Callout Boxes — Matched to Day 1 (wrench with white circle) */
+        /* Callout Boxes */
         .servus-callout {
             background: var(--servus-cloud-blue);
             border-left: 5px solid var(--servus-navy);
@@ -217,11 +217,10 @@
         }
 
         .servus-callout::before {
-            content: "🔧";
+            content: "";
             position: absolute;
             top: -10px;
             left: -18px;
-            font-size: 1.4em;
             background: white;
             border-radius: 50%;
             width: 30px;
@@ -253,7 +252,7 @@
             display: inline;
         }
 
-        /* Tables — Matched to Day 1 */
+        /* Tables */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -289,7 +288,7 @@
             background-color: var(--servus-light-blue);
         }
 
-        /* Horizontal Rule — Matched to Day 1 */
+        /* Horizontal Rule */
         hr {
             border: none;
             height: 2px;
@@ -299,7 +298,7 @@
             page-break-inside: avoid;
         }
 
-        /* Interactive Accordion Styles (Card-style, Day 2 compatible) */
+        /* Interactive Accordion Styles */
         .accordion-section {
             margin: 20px 0;
             page-break-inside: avoid;
@@ -393,7 +392,112 @@
             margin: 12px 0;
         }
 
-        /* Footer — Matched to Day 1 (gradient + logo) */
+        /* Scenario Cards */
+        .scenario-card {
+            background: var(--servus-cloud-blue);
+            border: 1px solid #d8d8d8;
+            border-left: 5px solid var(--servus-accent);
+            border-radius: 0 8px 8px 0;
+            margin: 18px 0;
+            page-break-inside: avoid;
+            overflow: hidden;
+        }
+
+        .scenario-header {
+            padding: 16px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, var(--servus-navy) 0%, var(--servus-blue) 100%);
+            transition: background 0.2s;
+        }
+
+        .scenario-header:hover {
+            background: linear-gradient(135deg, var(--servus-navy-dark) 0%, var(--servus-blue) 100%);
+        }
+
+        .scenario-header h4 {
+            color: white;
+            font-size: 1em;
+            font-weight: 700;
+            margin: 0;
+            flex: 1;
+        }
+
+        .scenario-toggle {
+            width: 24px;
+            height: 24px;
+            background: white;
+            color: var(--servus-navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            font-weight: 700;
+            transition: transform 0.3s;
+        }
+
+        .scenario-card.open .scenario-toggle {
+            transform: rotate(180deg);
+        }
+
+        .scenario-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            padding: 0 20px;
+            background: white;
+        }
+
+        .scenario-card.open .scenario-content {
+            max-height: 2000px;
+            padding: 18px 20px;
+        }
+
+        .product-step {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: var(--servus-text-mid);
+        }
+
+        .product-step::before {
+            content: attr(data-step);
+            background: var(--servus-accent);
+            color: white;
+            min-width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85em;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .product-name {
+            font-weight: 700;
+            color: var(--servus-navy);
+        }
+
+        .tech-tip {
+            background-color: #fff3e0;
+            border-left: 4px solid var(--servus-accent);
+            padding: 12px 16px;
+            margin-top: 12px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: var(--servus-text);
+        }
+
+        /* Footer */
         .servus-footer {
             background: linear-gradient(135deg, var(--servus-dark) 0%, #1a1a2e 100%);
             color: #ccc;
@@ -619,13 +723,13 @@
         .g-cat-chem { background: #e8f5e9; color: #2e7d32; }
         .g-cat-tech { background: #e3f2fd; color: #1565c0; }
         .g-cat-safe { background: #fbe9e7; color: #c62828; }
+        .g-cat-spot { background: #fff3e0; color: #e65100; }
         .g-term-def {
             font-size: 0.85em;
             color: var(--servus-text-mid);
             line-height: 1.5;
             margin-top: 4px;
         }
-        .g-cat-spot { background: #fff3e0; color: #e65100; }
         .glossary-panel-footer {
             padding: 8px 16px;
             font-size: 0.75em;
@@ -679,54 +783,467 @@
             opacity: 1;
         }
 
-        /* Print Styles */
+        /* Connector text between sections */
+        .connector-text {
+            background: linear-gradient(135deg, var(--servus-pale-blue), var(--servus-cloud-blue));
+            border-left: 5px solid var(--servus-accent);
+            border-radius: 0 8px 8px 0;
+            padding: 18px 24px;
+            margin: 30px 0;
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--servus-navy);
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .connector-text svg { flex-shrink: 0; margin-top: 2px; }
+
+        /* Print Optimization */
         @media print {
-            body::before { display: none; }
+            body { max-width: 100%; padding: 0; }
+            .servus-header, .servus-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .walkthrough-container, table, .servus-callout, .cheat-sheet { page-break-inside: avoid; }
+            .cert-strip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .glossary-widget { display: none; }
             .back-link { display: none; }
             .accordion-item { page-break-inside: avoid; }
             .accordion-item.open .accordion-body { max-height: none; }
             .accordion-body { max-height: none; }
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .back-link {
+                padding: 10px 20px;
+            }
+
+            .back-link a {
+                font-size: 0.9em;
+            }
+
+            .servus-header {
+                padding: 30px 20px;
+            }
+
+            .servus-header .logo-top-right {
+                position: static;
+                margin-bottom: 16px;
+                height: 40px;
+            }
+
+            .servus-header h1 {
+                font-size: 2em;
+                letter-spacing: 2px;
+            }
+
+            .cert-strip {
+                padding: 12px 20px;
+                gap: 16px;
+            }
+
+            .content {
+                padding: 24px 20px;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            h3 {
+                font-size: 1.1em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            .servus-footer {
+                padding: 20px;
+            }
+
+            .servus-footer .logo-footer {
+                position: static;
+                transform: none;
+                display: block;
+                margin: 0 auto 12px;
+            }
+
+            .glossary-panel { width: calc(100vw - 40px); max-height: 60vh; }
+            .glossary-widget { bottom: 14px; right: 14px; }
+        }
+
+        /* ===== WALKTHROUGH ENGINE ===== */
+        .walkthrough-container {
+            background: var(--servus-cloud-blue);
+            border: 2px solid var(--servus-blue);
+            border-radius: 12px;
+            padding: 0;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        /* Progress Header */
+        .wt-header {
+            background: linear-gradient(135deg, var(--servus-navy) 0%, var(--servus-blue) 100%);
+            color: white;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .wt-header h3 {
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+            margin: 0;
+            color: white;
+            border: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .wt-step-counter {
+            background: rgba(255,255,255,0.15);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        /* Breadcrumb Trail */
+        .wt-breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            padding: 14px 24px;
+            background: rgba(255,255,255,0.5);
+            border-bottom: 1px solid #ddd;
+            min-height: 48px;
+            align-items: center;
+        }
+        .wt-crumb {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 0.78em;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: default;
+        }
+        .wt-crumb svg { vertical-align: middle; flex-shrink: 0; }
+        .wt-crumb.completed {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #c8e6c9;
+        }
+        .wt-crumb.current {
+            background: var(--servus-accent);
+            color: white;
+            border: 1px solid var(--servus-accent);
+            animation: pulse 2s infinite;
+        }
+        .wt-crumb.locked {
+            background: #e0e0e0;
+            color: #999;
+            border: 1px solid #ccc;
+        }
+        .wt-crumb-arrow {
+            color: #aaa;
+            font-size: 0.7em;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255,153,0,0.4); }
+            50% { box-shadow: 0 0 0 6px rgba(255,153,0,0); }
+        }
+
+        /* Current Step Card */
+        .wt-step-area {
+            padding: 24px;
+        }
+        .wt-step-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            animation: slideIn 0.4s ease;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .wt-step-top {
+            padding: 20px 24px;
+        }
+        .wt-step-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            margin-bottom: 12px;
+        }
+        .wt-step-icon svg { display: block; }
+        .wt-step-icon.inspect { background: #e3f2fd; }
+        .wt-step-icon.decide { background: #fff3e0; }
+        .wt-step-icon.action { background: #e8f5e9; }
+        .wt-step-icon.complete { background: #f3e5f5; }
+
+        .wt-step-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .wt-step-label.inspect { color: #1565c0; }
+        .wt-step-label.decide { color: #e65100; }
+        .wt-step-label.action { color: #2e7d32; }
+        .wt-step-label.complete { color: #7b1fa2; }
+
+        .wt-step-title {
+            font-size: 1.3em;
+            font-weight: 800;
+            color: var(--servus-navy);
+            margin-bottom: 12px;
+        }
+        .wt-step-body {
+            font-size: 0.93em;
+            line-height: 1.7;
+            color: var(--servus-text-mid);
+        }
+        .wt-step-body strong { color: var(--servus-navy); }
+
+        /* Product Tip */
+        .wt-product-tip {
+            background: #fff8e1;
+            border-left: 4px solid var(--servus-accent);
+            padding: 12px 16px;
+            margin-top: 14px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.88em;
+        }
+        .wt-product-tip strong { color: #e65100; }
+
+        /* Choice Buttons */
+        .wt-choices {
+            padding: 0 24px 24px;
+            display: flex;
+            gap: 12px;
+        }
+        .wt-choice-btn {
+            flex: 1;
+            padding: 16px 20px;
+            border: 3px solid;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .wt-choice-btn::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .wt-choice-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .wt-choice-btn.yes {
+            background: white;
+            border-color: #4caf50;
+            color: #2e7d32;
+        }
+        .wt-choice-btn.yes:hover {
+            background: #e8f5e9;
+        }
+        .wt-choice-btn.no {
+            background: white;
+            border-color: #e53935;
+            color: #c62828;
+        }
+        .wt-choice-btn.no:hover {
+            background: #fff5f5;
+        }
+        .wt-choice-btn .btn-icon {
+            font-size: 1.4em;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .wt-choice-btn .btn-label {
+            font-size: 0.82em;
+            font-weight: 400;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        /* Continue / Next Button */
+        .wt-continue {
+            padding: 0 24px 24px;
+        }
+        .wt-continue-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--servus-navy), var(--servus-blue));
+            color: white;
+            border: 3px solid var(--servus-accent);
+            border-radius: 10px;
+            font-size: 1.05em;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s;
+        }
+        .wt-continue-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(10,72,117,0.3);
+        }
+
+        /* Completed Step Summary */
+        .wt-history {
+            padding: 0 24px 20px;
+        }
+        .wt-history-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 14px;
+            margin-bottom: 6px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+            font-size: 0.88em;
+            animation: slideIn 0.3s ease;
+        }
+        .wt-history-icon {
+            margin-right: 10px;
+            font-size: 1.1em;
+            flex-shrink: 0;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+        }
+        .wt-history-text {
+            flex: 1;
+        }
+        .wt-history-text strong { color: var(--servus-navy); }
+        .wt-history-choice {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            font-weight: 700;
+            margin-left: 6px;
+        }
+        .wt-history-choice.yes { background: #e8f5e9; color: #2e7d32; }
+        .wt-history-choice.no { background: #fbe9e7; color: #c62828; }
+
+        /* Result Card */
+        .wt-result {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+            padding: 24px;
+            text-align: center;
+            animation: slideIn 0.5s ease;
+        }
+        .wt-result h3 {
+            color: #2e7d32;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            border: none;
+            padding: 0;
+        }
+        .wt-result-icon { font-size: 2.5em; margin-bottom: 10px; display: flex; justify-content: center; }
+        .wt-result-body { font-size: 0.95em; line-height: 1.6; }
+        .wt-result-body strong { color: var(--servus-navy); }
+
+        /* Restart */
+        .wt-restart-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 10px 28px;
+            background: var(--servus-accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.95em;
+            transition: all 0.2s;
+        }
+        .wt-restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255,153,0,0.4);
+        }
+
+        @media (max-width: 768px) {
+            .wt-choices { flex-direction: column; }
+            .wt-step-title { font-size: 1.1em; }
+        }
     </style>
 </head>
 <body>
-<!-- Password protection temporarily disabled for testing -->
 <div class="content-wrapper">
+    <!-- Back to Course Link -->
     <div class="back-link">
-        <a href="course_index.html">← Back to Course</a>
+        <a href="course_index.html">&#8592; Back to Course Hub</a>
     </div>
 
-    <div class="servus-header">
-        <img src="https://servusgrouplowermainland.com/wp-content/uploads/2024/12/Servus-Colour.png" alt="Servus Group" class="logo-top-right">
+    <!-- Header -->
+    <header class="servus-header">
+        <img src="https://servusgrouplowermainland.com/wp-content/uploads/2024/12/Servus-Colour.png" alt="Servus Logo" class="logo-top-right">
         <h1>Servus Group</h1>
         <div class="subtitle">Specialty Cleaning</div>
         <div class="tagline">"At Your Service"</div>
         <h2>Professional Carpet Care Certification</h2>
-        <div class="module-label">Day 4 — Spotting, Stains & Special Situations</div>
-        <div class="module-label">Master Stain Identification, Removal Protocols & Client Communication</div>
-    </div>
+        <div class="module-label">Day 4 -- Spotting, Stains &amp; Special Situations</div>
+        <div class="module-label">Master Stain Identification, Removal Protocols &amp; Client Communication</div>
+    </header>
 
+    <!-- Certification Strip -->
     <div class="cert-strip">
         <img src="https://servusgrouplowermainland.com/wp-content/uploads/2014/07/go2HR-CORLogo-K-300x283.png" alt="COR Certified">
-        <span>IICRC S100 Compliant</span><span>•</span>
-        <span>WorkSafeBC 2026</span><span>•</span>
-        <span>COR Certified</span><span>•</span>
+        <span>IICRC S100 Compliant</span><span>&#8226;</span>
+        <span>WorkSafeBC 2026</span><span>&#8226;</span>
+        <span>COR Certified</span><span>&#8226;</span>
         <span>ISSA Member</span>
     </div>
 
+    <!-- Main Content -->
     <div class="content">
 
-        <h2>MODULE 1: Spots vs Stains — Know the Difference</h2>
+        <!-- ============================================================ -->
+        <!-- MODULE 1: Spots vs Stains & The Spotting Sequence -->
+        <!-- ============================================================ -->
+        <h2>Module 1: Spots vs Stains &amp; The Spotting Sequence</h2>
 
         <h3>The Critical Distinction</h3>
-        <p>A <span class="glossary-term">spot<span class="tooltip">Foreign substance sitting on the fiber surface</span></span> is a foreign substance sitting ON the fiber surface — it can usually be removed with the right chemistry and technique.</p>
-        <p>A <span class="glossary-term">stain<span class="tooltip">Permanent color change penetrated into the fiber structure</span></span> is a permanent color change that has penetrated INTO the fiber structure — it may be reduced but often cannot be fully removed.</p>
+        <p>A <span class="glossary-term">spot<span class="tooltip">Foreign substance sitting on the fiber surface</span></span> is a foreign substance sitting ON the fiber surface -- it can usually be removed with the right chemistry and technique.</p>
+        <p>A <span class="glossary-term">stain<span class="tooltip">Permanent color change penetrated into the fiber structure</span></span> is a permanent color change that has penetrated INTO the fiber structure -- it may be reduced but often cannot be fully removed.</p>
 
         <h3>Why This Matters for Your Business</h3>
         <ul>
             <li><strong>Client expectations:</strong> Setting accurate expectations prevents callbacks</li>
-            <li><strong>Quoting accuracy:</strong> Spot removal ($50-150) vs stain treatment ($150-400+) — pricing must reflect difficulty</li>
+            <li><strong>Quoting accuracy:</strong> Spot removal ($50-150) vs stain treatment ($150-400+) -- pricing must reflect difficulty</li>
             <li><strong>Professional credibility:</strong> Knowing the difference on-site builds trust immediately</li>
         </ul>
 
@@ -735,20 +1252,16 @@
             <p>Always inspect with a UV light and moisture meter before quoting. What looks like a simple coffee spot on the surface may be hiding deep pet contamination underneath. Investigate before you promise.</p>
         </div>
 
-        <h3>Case Study — Setting Expectations Up Front</h3>
-        <p>Red wine on beige carpet. Customer says "just a spill." UV inspection reveals the stain has been there 3+ days and has penetrated into backing. Technician explains: "I can reduce this significantly — probably 70-80% — but 100% removal is unlikely given the age and depth. Let me show you what's possible." Customer appreciates honesty. Result: 75% improvement, no callback, referral earned.</p>
-
-        <hr>
-
-        <h2>MODULE 2: The Spotting Sequence</h2>
+        <h3>Case Study -- Setting Expectations Up Front</h3>
+        <p>Red wine on beige carpet. Customer says "just a spill." UV inspection reveals the stain has been there 3+ days and has penetrated into backing. Technician explains: "I can reduce this significantly -- probably 70-80% -- but 100% removal is unlikely given the age and depth. Let me show you what's possible." Customer appreciates honesty. Result: 75% improvement, no callback, referral earned.</p>
 
         <h3>The Four-Step Escalation</h3>
         <p>Every spot removal follows the same escalation sequence. Never skip steps.</p>
         <ol>
-            <li><strong>DRY</strong> — Remove loose contamination first (vacuum, scrape, blot dry material)</li>
-            <li><strong>WET</strong> — Apply plain water or mild detergent, blot from outside-in</li>
-            <li><strong>CHEMICAL</strong> — Escalate to spot-removal chemistry if water didn't work</li>
-            <li><strong>EXTRACTION</strong> — Remove ALL chemistry completely — residue causes rapid resoiling</li>
+            <li><strong>DRY</strong> -- Remove loose contamination first (vacuum, scrape, blot dry material)</li>
+            <li><strong>WET</strong> -- Apply plain water or mild detergent, blot from outside-in</li>
+            <li><strong>CHEMICAL</strong> -- Escalate to spot-removal chemistry if water didn't work</li>
+            <li><strong>EXTRACTION</strong> -- Remove ALL chemistry completely -- residue causes rapid resoiling</li>
         </ol>
 
         <p>Use <span class="glossary-term">blot<span class="tooltip">Apply pressure without rubbing to lift contamination</span></span>, <span class="glossary-term">dwell time<span class="tooltip">Time chemistry sits on the stain before removal</span></span>, and <span class="glossary-term">extraction<span class="tooltip">Remove all liquid and dissolved soil from carpet</span></span> correctly.</p>
@@ -762,16 +1275,19 @@
         <p>Critical for preventing stain spread. Start at the outer edge and work toward the center. This is especially important for: red wine, juice, dye-based stains, grease, and pet urine.</p>
 
         <h3>Blot, Don't Rub</h3>
-        <p>Rubbing pushes contamination deeper into fibers and can damage pile structure. Always blot with a clean white towel — white lets you see color transfer and know when the stain is lifting.</p>
+        <p>Rubbing pushes contamination deeper into fibers and can damage pile structure. Always blot with a clean white towel -- white lets you see color transfer and know when the stain is lifting.</p>
 
         <div class="servus-callout">
             <div class="servus-callout-label">Servus Standard in Action</div>
-            <p>Ketchup on hotel carpet. Housekeeper had rubbed it with a colored towel — spreading the stain AND transferring towel dye. Servus technician: dry-vacuum first, mild detergent blot, enzyme for remaining protein, extract. Reduced from 6-inch spread to invisible. The lesson: technique matters more than chemistry.</p>
+            <p>Ketchup on hotel carpet. Housekeeper had rubbed it with a colored towel -- spreading the stain AND transferring towel dye. Servus technician: dry-vacuum first, mild detergent blot, enzyme for remaining protein, extract. Reduced from 6-inch spread to invisible. The lesson: technique matters more than chemistry.</p>
         </div>
 
         <hr>
 
-        <h2>MODULE 3: Common Spot Removal — The 10 Most Common</h2>
+        <!-- ============================================================ -->
+        <!-- MODULE 2: Common Spot Removal -- The 10 Most Common -->
+        <!-- ============================================================ -->
+        <h2>Module 2: Common Spot Removal -- The 10 Most Common</h2>
 
         <h3>Quick Reference Table</h3>
         <table>
@@ -788,13 +1304,13 @@
                     <td><strong>Coffee/Tea</strong></td>
                     <td>Water, mild detergent</td>
                     <td>Blot plain water first; escalate to oxidizer if tannin stain persists</td>
-                    <td>Test oxidizer on wool — can weaken protein fibers</td>
+                    <td>Test oxidizer on wool -- can weaken protein fibers</td>
                 </tr>
                 <tr>
                     <td><strong>Red Wine</strong></td>
                     <td>Water, then reducing agent</td>
-                    <td>Immediate blotting crucial; see Module 5 for full Red Relief Protocol</td>
-                    <td>Wool requires gentle approach; see Module 5</td>
+                    <td>Immediate blotting crucial; see Module 4 for full Red Relief Protocol</td>
+                    <td>Wool requires gentle approach; see Module 4</td>
                 </tr>
                 <tr>
                     <td><strong>Ketchup</strong></td>
@@ -805,7 +1321,7 @@
                 <tr>
                     <td><strong>Mud</strong></td>
                     <td>Dry vacuum, then plain water</td>
-                    <td>LET IT DRY FIRST. Vacuum completely. Never wet fresh mud — drives it deeper.</td>
+                    <td>LET IT DRY FIRST. Vacuum completely. Never wet fresh mud -- drives it deeper.</td>
                     <td>Straightforward once dry</td>
                 </tr>
                 <tr>
@@ -823,26 +1339,26 @@
                 <tr>
                     <td><strong>Blood</strong></td>
                     <td>Cold water, then enzyme</td>
-                    <td>NEVER hot water — protein coagulates. Cold water first, enzyme for protein.</td>
-                    <td>H₂O₂ may bleach darker fibers — test first</td>
+                    <td>NEVER hot water -- protein coagulates. Cold water first, enzyme for protein.</td>
+                    <td>RMC PROXI may bleach darker fibers -- test first</td>
                 </tr>
                 <tr>
                     <td><strong>Pet Urine (Fresh)</strong></td>
                     <td>Enzyme cleaner, then oxidizer</td>
                     <td>Blot completely; apply enzyme per label; extract; oxidizer if odor remains</td>
-                    <td>See Module 4 for full pet damage protocol</td>
+                    <td>See Module 3 for full pet damage protocol</td>
                 </tr>
                 <tr>
                     <td><strong>Gum</strong></td>
                     <td>Ice pack to freeze, scrape</td>
                     <td>Harden with ice; scrape parallel to surface with plastic tool; solvent for residue</td>
-                    <td>Don't pull upward — scrape flat to avoid pile fuzz</td>
+                    <td>Don't pull upward -- scrape flat to avoid pile fuzz</td>
                 </tr>
                 <tr>
                     <td><strong>Wax/Candle</strong></td>
                     <td>Heat (iron + paper towel)</td>
                     <td>Medium heat iron on paper towel over wax; wax adheres to towel; solvent for residue</td>
-                    <td>Medium heat ONLY — high heat damages fibers</td>
+                    <td>Medium heat ONLY -- high heat damages fibers</td>
                 </tr>
             </tbody>
         </table>
@@ -854,17 +1370,20 @@
 
         <hr>
 
-        <h2>MODULE 4: Pet Damage Protocols</h2>
+        <!-- ============================================================ -->
+        <!-- MODULE 3: Pet Damage Protocols -->
+        <!-- ============================================================ -->
+        <h2>Module 3: Pet Damage Protocols</h2>
 
-        <h3>Detection — Finding Hidden Contamination</h3>
-        <p><strong>UV Light (Black Light):</strong> Urine fluoresces under UV — reveals contamination invisible to the naked eye. Always scan the entire area, not just the reported spot. Multiple hidden deposits are common.</p>
+        <h3>Detection -- Finding Hidden Contamination</h3>
+        <p><strong>UV Light (Black Light):</strong> Urine fluoresces under UV -- reveals contamination invisible to the naked eye. Always scan the entire area, not just the reported spot. Multiple hidden deposits are common.</p>
         <p><strong>Moisture Meter:</strong> Indicates deep contamination in carpet backing and padding. If moisture reads above 12% in a dry room, contamination has penetrated beyond the surface.</p>
 
         <p>Use <span class="glossary-term">contamination depth<span class="tooltip">How far pet damage has penetrated into carpet layers</span></span> and <span class="glossary-term">UV light<span class="tooltip">Black light that reveals urine deposits</span></span> correctly.</p>
 
         <div class="servus-callout">
             <div class="servus-callout-label">Servus Standard in Action</div>
-            <p>Customer reports 'one small cat accident.' UV scan reveals 7 separate deposits across the room. Moisture meter shows 18% in backing near the worst spot. This changes a $150 spot treatment into a $500+ deep treatment. Always scan first — the UV light pays for itself on every pet job.</p>
+            <p>Customer reports 'one small cat accident.' UV scan reveals 7 separate deposits across the room. Moisture meter shows 18% in backing near the worst spot. This changes a $150 spot treatment into a $500+ deep treatment. Always scan first -- the UV light pays for itself on every pet job.</p>
         </div>
 
         <h3>Contamination Depth Escalation</h3>
@@ -905,10 +1424,10 @@
             </tbody>
         </table>
 
-        <h3>Enzyme vs Oxidizer — When to Use Each</h3>
-        <p><strong>Enzyme (First Choice):</strong> Breaks down organic compounds (urine protein). Best for fresh contamination. Needs warm water (45-50°C) and 20-30 minute dwell time. Won't harm most fibers. Servus product: <strong>Enz-All</strong>.</p>
-        <p><strong>Oxidizer (Backup):</strong> Breaks down stain and odor via chemical reaction. Faster and stronger than enzyme. Must test on delicate fibers first — can cause color shift. Servus product: <strong>Ends Odor</strong> (for odor) or <strong>hydrogen peroxide</strong> (for stain).</p>
-        <p><strong>Combo Approach:</strong> Enzyme first (gentler), oxidizer second if odor persists. Never mix simultaneously — they cancel each other out.</p>
+        <h3>Enzyme vs Oxidizer -- When to Use Each</h3>
+        <p><strong>Enzyme (First Choice):</strong> Breaks down organic compounds (urine protein). Best for fresh contamination. Needs warm water (45-50&#176;C) and 20-30 minute dwell time. Won't harm most fibers. Servus product: <strong>Enz-All</strong>.</p>
+        <p><strong>Oxidizer (Backup):</strong> Breaks down stain and odor via chemical reaction. Faster and stronger than enzyme. Must test on delicate fibers first -- can cause color shift. Servus product: <strong>Ends Odor</strong> (for odor) or <strong>RMC PROXI Spray &amp; Walk Away Stain Remover</strong> (for stain).</p>
+        <p><strong>Combo Approach:</strong> Enzyme first (gentler), oxidizer second if odor persists. Never mix simultaneously -- they cancel each other out.</p>
 
         <p>Use <span class="glossary-term">enzyme<span class="tooltip">Biological catalyst that breaks down urine proteins</span></span> and <span class="glossary-term">oxidizer<span class="tooltip">Chemical that breaks down stains and odors through oxidation</span></span> correctly.</p>
 
@@ -922,7 +1441,10 @@
 
         <hr>
 
-        <h2>MODULE 5: Red Stain Removal — The Red Relief Protocol</h2>
+        <!-- ============================================================ -->
+        <!-- MODULE 4: Red Stain Removal -- The Red Relief Protocol -->
+        <!-- ============================================================ -->
+        <h2>Module 4: Red Stain Removal -- The Red Relief Protocol</h2>
 
         <h3>Why Red Dyes Are the Problem Child</h3>
         <p>Red dyes (anthocyanins in wine, artificial dyes in juice/candy) bond AGGRESSIVELY to fiber molecules. Once set, they become extremely difficult or impossible to remove. Common sources: red wine, Kool-Aid/juice, candy, food coloring, tomato products, barbecue sauce.</p>
@@ -930,7 +1452,7 @@
         <p>Use <span class="glossary-term">reducing agent<span class="tooltip">Chemistry that removes dyes by reversing the bonding process</span></span>, <span class="glossary-term">oxidizer<span class="tooltip">Chemistry that breaks down stains and odors through oxidation</span></span>, and <span class="glossary-term">anthocyanins<span class="tooltip">Natural red pigments found in wine and berries</span></span> correctly.</p>
 
         <h3>Chemistry: Reducing Agents vs Oxidizers</h3>
-        <p><strong>Oxidizers:</strong> Fast, effective — BUT can weaken delicate fibers (especially wool) and may cause permanent carpet color shift. Use as last resort.</p>
+        <p><strong>Oxidizers:</strong> Fast, effective -- BUT can weaken delicate fibers (especially wool) and may cause permanent carpet color shift. Use as last resort.</p>
         <p><strong>Reducing Agents:</strong> Gentler, slower, better for delicate fibers, safer for color-sensitive carpets. First choice for red stains.</p>
 
         <p>Recommended escalation order:</p>
@@ -946,56 +1468,59 @@
             <p>Oxidizer might remove the red stain but bleach the carpet's original color. Always get customer permission before escalating to oxidizer on colored carpet. Show them the test area first.</p>
         </div>
 
-        <h3>The Red Relief Protocol — Step by Step</h3>
+        <h3>The Red Relief Protocol -- Step by Step</h3>
         <ol>
-            <li><strong>Immediate Action:</strong> Blot with cold water. Speed is critical — red dyes set over time.</li>
+            <li><strong>Immediate Action:</strong> Blot with cold water. Speed is critical -- red dyes set over time.</li>
             <li><strong>Detergent Phase:</strong> Mild detergent solution, 5 min dwell, blot thoroughly.</li>
             <li><strong>Vinegar Rinse (optional):</strong> Diluted white vinegar (1:3 ratio) can help on some tannin stains.</li>
             <li><strong>Reducing Agent:</strong> If dye remains, apply reducing agent. Follow product dwell time. Blot thoroughly.</li>
-            <li><strong>Evaluate at 70%:</strong> If 70%+ of the stain is removed — STOP. More treatment risks fiber damage. If less than 30% removed, escalate to oxidizer WITH customer permission.</li>
+            <li><strong>Evaluate at 70%:</strong> If 70%+ of the stain is removed -- STOP. More treatment risks fiber damage. If less than 30% removed, escalate to oxidizer WITH customer permission.</li>
             <li><strong>Final Extraction:</strong> Extract ALL chemistry completely. Apply acid rinse (All Fiber Rinse) to prevent browning.</li>
         </ol>
 
-        <h3>The Honest Conversation — Setting Realistic Expectations</h3>
-        <p><strong>Initial assessment:</strong> "I can reduce this significantly — maybe 80-90% — but 100% removal might not be realistic given the dye type."</p>
+        <h3>The Honest Conversation -- Setting Realistic Expectations</h3>
+        <p><strong>Initial assessment:</strong> "I can reduce this significantly -- maybe 80-90% -- but 100% removal might not be realistic given the dye type."</p>
         <p><strong>After treatment:</strong> "I got about 85% out. The remaining 15% is bonded deep in the fiber. Options: accept as-is, try stronger chemistry (but risks fiber damage), or discuss patch/professional dye services."</p>
 
         <p><strong>NEVER promise full removal of red stains.</strong> Promise "significant reduction" and exceed expectations instead.</p>
 
         <div class="servus-callout">
             <div class="servus-callout-label">Servus Standard in Action</div>
-            <p>Red wine on light gray wool carpet. 3-day-old stain. Customer references a competitor who 'guarantees removal.' Servus technician: 'I won't guarantee what I can't deliver. Let me show you what I CAN do.' Result: 85% reduction using reducing agent protocol. Customer thrilled with honesty AND result. Referral earned — the competitor who 'guarantees' gets the callbacks.</p>
+            <p>Red wine on light gray wool carpet. 3-day-old stain. Customer references a competitor who 'guarantees removal.' Servus technician: 'I won't guarantee what I can't deliver. Let me show you what I CAN do.' Result: 85% reduction using reducing agent protocol. Customer thrilled with honesty AND result. Referral earned -- the competitor who 'guarantees' gets the callbacks.</p>
         </div>
 
         <hr>
 
-        <h2>MODULE 6: Specialty Stains</h2>
+        <!-- ============================================================ -->
+        <!-- MODULE 5: Specialty Stains -->
+        <!-- ============================================================ -->
+        <h2>Module 5: Specialty Stains</h2>
 
         <h3>Rust Stains</h3>
         <p>Source: Metal furniture and fixtures transferring iron oxide to carpet.</p>
-        <p>Traditional treatment: <span class="glossary-term">Hydrofluoric acid<span class="tooltip">Extremely dangerous acid used for stubborn rust stains — requires full PPE</span></span> (HF) — highly effective but DANGEROUS.</p>
-        <p><strong>HF Safety:</strong> Skin contact = chemical burn, inhalation = respiratory damage. Full <span class="glossary-term">PPE<span class="tooltip">Personal Protective Equipment — gloves, eye protection, respirator as required by chemical SDS</span></span> required (chemical-resistant gloves, eye protection, ventilation).</p>
-        <p><strong>Alternative:</strong> <span class="glossary-term">Chelating agents<span class="tooltip">Chemical that binds to metal ions — used for rust removal as a safer alternative to HF acid</span></span> — slower but much safer. Recommended for most field situations.</p>
-        <p><strong>Application:</strong> Per label, 10–20 min dwell, blot carefully, rinse thoroughly.</p>
+        <p>Traditional treatment: <span class="glossary-term">Hydrofluoric acid<span class="tooltip">Extremely dangerous acid used for stubborn rust stains -- requires full PPE</span></span> (HF) -- highly effective but DANGEROUS.</p>
+        <p><strong>HF Safety:</strong> Skin contact = chemical burn, inhalation = respiratory damage. Full <span class="glossary-term">PPE<span class="tooltip">Personal Protective Equipment -- gloves, eye protection, respirator as required by chemical SDS</span></span> required (chemical-resistant gloves, eye protection, ventilation).</p>
+        <p><strong>Alternative:</strong> <span class="glossary-term">Chelating agents<span class="tooltip">Chemical that binds to metal ions -- used for rust removal as a safer alternative to HF acid</span></span> -- slower but much safer. Recommended for most field situations.</p>
+        <p><strong>Application:</strong> Per label, 10-20 min dwell, blot carefully, rinse thoroughly.</p>
 
         <div class="servus-callout">
             <div class="servus-callout-label">Critical Safety</div>
-            <p>Hydrofluoric acid is one of the most dangerous chemicals in carpet care. If you use it: chemical-resistant gloves, eye protection, full ventilation. Better yet — use chelating agents for routine rust work and reserve HF for stubborn cases only. Always follow <span class="glossary-term">SDS<span class="tooltip">Safety Data Sheet — required document for every chemical, lists hazards and handling procedures</span></span> protocols.</p>
+            <p>Hydrofluoric acid is one of the most dangerous chemicals in carpet care. If you use it: chemical-resistant gloves, eye protection, full ventilation. Better yet -- use chelating agents for routine rust work and reserve HF for stubborn cases only. Always follow <span class="glossary-term">SDS<span class="tooltip">Safety Data Sheet -- required document for every chemical, lists hazards and handling procedures</span></span> protocols.</p>
         </div>
 
         <h3>Ink Stains</h3>
-        <p><strong>Ballpoint Pen:</strong> Oil-based ink. Rubbing alcohol or dry cleaning solvent. Blot with solvent on white towel, work outside-in. Multiple applications may be needed. Test first — solvents can damage synthetics.</p>
+        <p><strong>Ballpoint Pen:</strong> Oil-based ink. Rubbing alcohol or dry cleaning solvent. Blot with solvent on white towel, work outside-in. Multiple applications may be needed. Test first -- solvents can damage synthetics.</p>
         <p><strong>Permanent Marker:</strong> Highly pigmented, designed to be permanent. Solvent-based spotters may help slowly. Often recommendation: accept as permanent, or discuss carpet patch.</p>
         <p><strong>Fountain Pen/Liquid Ink:</strong> Water-based. Plain water + mild detergent usually works if caught fresh.</p>
 
         <h3>Nail Polish</h3>
-        <p><strong>Chemistry:</strong> <span class="glossary-term">Acetone<span class="tooltip">Solvent for nail polish removal — dissolves acetate fibers, use with extreme caution</span></span> is traditional — highly effective but risky.</p>
-        <p><strong>CAUTION:</strong> Acetate fibers DISSOLVE in acetone. Always identify fiber type first. Strong fumes — ventilate well. Use sparingly.</p>
+        <p><strong>Chemistry:</strong> <span class="glossary-term">Acetone<span class="tooltip">Solvent for nail polish removal -- dissolves acetate fibers, use with extreme caution</span></span> is traditional -- highly effective but risky.</p>
+        <p><strong>CAUTION:</strong> Acetate fibers DISSOLVE in acetone. Always identify fiber type first. Strong fumes -- ventilate well. Use sparingly.</p>
         <p><strong>Safer alternative:</strong> Non-acetone nail polish removers or specialty carpet spotters. Apply on white towel, blot gently, extract thoroughly.</p>
 
-        <h3>Tar & Asphalt</h3>
+        <h3>Tar &amp; Asphalt</h3>
         <p><strong>Source:</strong> Driveway tar, construction, roofing.</p>
-        <p><strong>Solvent sequence:</strong> (1) Mineral spirits first → (2) Citrus solvent if partial → (3) Stronger petroleum solvents as last resort (test first).</p>
+        <p><strong>Solvent sequence:</strong> (1) Mineral spirits first &#8594; (2) Citrus solvent if partial &#8594; (3) Stronger petroleum solvents as last resort (test first).</p>
         <p><strong>Physical removal:</strong> Harden with ice pack, scrape with plastic tool.</p>
 
         <div class="servus-callout">
@@ -1004,18 +1529,21 @@
         </div>
 
         <h3>Paint Stains</h3>
-        <p><strong>Wet Latex Paint:</strong> Water-based — rinse IMMEDIATELY with plain water, blot, repeat. Easy if caught fresh.</p>
-        <p><strong>Wet Oil Paint:</strong> Solvent-based — mineral spirits or paint thinner. Blot, dwell, blot. Multiple applications needed.</p>
+        <p><strong>Wet Latex Paint:</strong> Water-based -- rinse IMMEDIATELY with plain water, blot, repeat. Easy if caught fresh.</p>
+        <p><strong>Wet Oil Paint:</strong> Solvent-based -- mineral spirits or paint thinner. Blot, dwell, blot. Multiple applications needed.</p>
         <p><strong>Dried Paint:</strong> Much harder. Solvents help but may not fully remove. Physical scraping + solvents. Acceptance of residual may be necessary.</p>
 
         <div class="servus-callout">
             <div class="servus-callout-label">Critical Safety</div>
-            <p>Paint thinner can damage synthetic and acetate fibers. Always test on a hidden area. Use minimal product. Avoid over-saturating — the goal is controlled chemistry application, not flooding.</p>
+            <p>Paint thinner can damage synthetic and acetate fibers. Always test on a hidden area. Use minimal product. Avoid over-saturating -- the goal is controlled chemistry application, not flooding.</p>
         </div>
 
         <hr>
 
-        <h2>MODULE 7: Browning &amp; Wicking — Diagnosing Post-Clean Problems</h2>
+        <!-- ============================================================ -->
+        <!-- MODULE 6: Browning & Wicking -->
+        <!-- ============================================================ -->
+        <h2>Module 6: Browning &amp; Wicking -- Diagnosing Post-Clean Problems</h2>
 
         <p><em>Note: This module focuses on diagnosing and fixing browning/wicking as field problems. The chemistry theory behind pH and acid rinse is covered in Day 2.</em></p>
 
@@ -1037,10 +1565,10 @@
         <p><strong>Prevention:</strong> ALWAYS acid rinse after alkaline pre-spray. Test pH after cleaning.</p>
         <p><strong>Treatment:</strong> Apply All Fiber Rinse to affected area. If already set, may be permanent.</p>
 
-        <h3>Wicking — The Returning Stain</h3>
+        <h3>Wicking -- The Returning Stain</h3>
         <p><strong>What:</strong> Stain appears removed, then reappears as carpet dries.</p>
         <p><strong>Cause:</strong> Contamination wasn't fully extracted from backing/subfloor. Moisture <span class="glossary-term">wicks<span class="tooltip">Liquid moves upward through carpet fibers via capillary action, carrying dissolved soil to the surface</span></span> upward carrying soil.</p>
-        <p><strong>Prevention:</strong> Over-extract (better to over-dry). Multiple extraction passes on deep stains. Use <span class="glossary-term">moisture meter<span class="tooltip">Tool measuring moisture content in carpet and backing — essential for pet damage assessment</span></span> to verify — don't assume dry.</p>
+        <p><strong>Prevention:</strong> Over-extract (better to over-dry). Multiple extraction passes on deep stains. Use <span class="glossary-term">moisture meter<span class="tooltip">Tool measuring moisture content in carpet and backing -- essential for pet damage assessment</span></span> to verify -- don't assume dry.</p>
         <p><strong>Treatment:</strong> Re-clean, extract aggressively, consider moisture barrier.</p>
 
         <div class="servus-callout">
@@ -1050,7 +1578,10 @@
 
         <hr>
 
-        <h2>MODULE 8: Carpet Repair Awareness — Know Your Limits</h2>
+        <!-- ============================================================ -->
+        <!-- MODULE 7: Carpet Repair & Special Situations -->
+        <!-- ============================================================ -->
+        <h2>Module 7: Carpet Repair &amp; Special Situations</h2>
 
         <h3>Common Carpet Damage Types</h3>
 
@@ -1063,23 +1594,23 @@
                 <div class="accordion-body">
                     <div class="accordion-content">
                         <strong>Burns:</strong>
-                        <p>Light scorch (surface only, may improve with cleaning) vs melted/charred (fiber structure damaged, requires patch — specialist work)</p>
+                        <p>Light scorch (surface only, may improve with cleaning) vs melted/charred (fiber structure damaged, requires patch -- specialist work)</p>
                         <strong>Tears &amp; Cuts:</strong>
-                        <p>Superficial cut (monitor for unraveling) vs deep tear through backing (requires seaming/patching — specialist)</p>
+                        <p>Superficial cut (monitor for unraveling) vs deep tear through backing (requires seaming/patching -- specialist)</p>
                         <strong>Snags:</strong>
                         <p>Can sometimes be worked back with careful brushing. If fiber broken, may need spot repair.</p>
-                        <strong><span class="glossary-term">Delamination<span class="tooltip">Carpet backing layers separating — causes buckling, not field-repairable</span></span>:</strong>
+                        <strong><span class="glossary-term">Delamination<span class="tooltip">Carpet backing layers separating -- causes buckling, not field-repairable</span></span>:</strong>
                         <p>Primary/secondary backing separating. Causes wrinkling, buckling. NOT field-repairable. Refer to carpet installer.</p>
                         <strong>Ripples &amp; Wrinkles:</strong>
-                        <p>From inadequate stretching, humidity, or water damage. Professional power-stretching can correct. NOT a cleaning issue — don't take blame.</p>
+                        <p>From inadequate stretching, humidity, or water damage. Professional power-stretching can correct. NOT a cleaning issue -- don't take blame.</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <h3>In-Field Repairs You Can Do</h3>
-        <p><strong>Seam Repair:</strong> Apply seam sealer per product instructions. Most sealers are temporary — recommend professional seaming for permanent fix.</p>
-        <p><strong>Fiber Wrapping (snags):</strong> Work snagged fiber back into place with brush. Don't pull — work gently.</p>
+        <p><strong>Seam Repair:</strong> Apply seam sealer per product instructions. Most sealers are temporary -- recommend professional seaming for permanent fix.</p>
+        <p><strong>Fiber Wrapping (snags):</strong> Work snagged fiber back into place with brush. Don't pull -- work gently.</p>
 
         <div class="servus-callout">
             <div class="servus-callout-label">Servus Standard in Action</div>
@@ -1093,7 +1624,7 @@
             <li><strong>Chronic moisture issues</strong> (recurring wicking/browning/odor)</li>
             <li><strong>Permanent staining</strong> that won't respond to chemistry</li>
         </ul>
-        <p>Frame replacement as solution: "Your carpet has served well. This damage is beyond what cleaning or repair can address — but replacement would give you a fresh start."</p>
+        <p>Frame replacement as solution: "Your carpet has served well. This damage is beyond what cleaning or repair can address -- but replacement would give you a fresh start."</p>
 
         <h3>Protecting Yourself from Liability</h3>
         <ul>
@@ -1102,10 +1633,6 @@
             <li><strong>Don't over-promise repairs:</strong> Offer to try, explain limitations, get customer sign-off</li>
             <li><strong>Liability insurance:</strong> Ensure policy covers carpet care work</li>
         </ul>
-
-        <hr>
-
-        <h2>MODULE 9: Special Situations</h2>
 
         <h3>Water Damage Categories</h3>
 
@@ -1120,21 +1647,21 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><span class="glossary-term">Category 1 (Clean)<span class="tooltip">Clean water from supply lines — low risk, carpet usually salvageable</span></span></td>
+                    <td><span class="glossary-term">Category 1 (Clean)<span class="tooltip">Clean water from supply lines -- low risk, carpet usually salvageable</span></span></td>
                     <td>Broken pipe, clean supply line</td>
                     <td>Low</td>
-                    <td>Extract quickly (24–48 hrs), aggressive extraction, dehumidify, inspect after drying</td>
+                    <td>Extract quickly (24-48 hrs), aggressive extraction, dehumidify, inspect after drying</td>
                 </tr>
                 <tr>
-                    <td><span class="glossary-term">Category 2 (Gray)<span class="tooltip">Gray water from appliances — microbial risk, needs sanitizing rinse</span></span></td>
+                    <td><span class="glossary-term">Category 2 (Gray)<span class="tooltip">Gray water from appliances -- microbial risk, needs sanitizing rinse</span></span></td>
                     <td>Washing machine, dishwasher, shower</td>
-                    <td>Medium — microbial risk</td>
+                    <td>Medium -- microbial risk</td>
                     <td>Aggressive cleaning, sanitizing rinse (Benefect Decon 30), thorough drying, antimicrobial treatment</td>
                 </tr>
                 <tr>
-                    <td><span class="glossary-term">Category 3 (Black)<span class="tooltip">Black water (sewage/flood) — health hazard, carpet must be discarded, refer to specialist</span></span></td>
+                    <td><span class="glossary-term">Category 3 (Black)<span class="tooltip">Black water (sewage/flood) -- health hazard, carpet must be discarded, refer to specialist</span></span></td>
                     <td>Sewage, flood water, toilet overflow</td>
-                    <td>HIGH — health hazard</td>
+                    <td>HIGH -- health hazard</td>
                     <td>DO NOT ATTEMPT. Carpet must be removed and discarded. Refer to certified remediation specialist.</td>
                 </tr>
             </tbody>
@@ -1142,46 +1669,49 @@
 
         <div class="servus-callout">
             <div class="servus-callout-label">Critical Safety</div>
-            <p>Know your limits. Category 1 water damage may be in your scope. Category 2 is borderline — proceed with caution and full PPE. Category 3 is ABSOLUTELY NOT your job. The health and liability risk is too high. Always refer to certified water damage specialists.</p>
+            <p>Know your limits. Category 1 water damage may be in your scope. Category 2 is borderline -- proceed with caution and full PPE. Category 3 is ABSOLUTELY NOT your job. The health and liability risk is too high. Always refer to certified water damage specialists.</p>
         </div>
 
         <h3>Smoke &amp; Soot Damage</h3>
         <p>Dry vacuum loose soot first (don't spread wet soot). Specialized soot removal products (acidic cleaners). Standard HWE with proper detergent. Odor treatment with enzymatic/chemical deodorizers. Heavy smoke in backing/subfloor requires professional remediation.</p>
 
         <h3>Construction Dust Cleanup</h3>
-        <p>DRY-VACUUM thoroughly first — construction dust is abrasive. Use HEPA-filter vacuum to avoid re-suspending. Light wet cleaning if needed (minimal water). Multiple passes may be needed for fine dust settled deep in backing.</p>
+        <p>DRY-VACUUM thoroughly first -- construction dust is abrasive. Use HEPA-filter vacuum to avoid re-suspending. Light wet cleaning if needed (minimal water). Multiple passes may be needed for fine dust settled deep in backing.</p>
 
         <div class="servus-callout">
             <div class="servus-callout-label">Servus Standard in Action</div>
-            <p>Post-renovation condo. Drywall dust everywhere — 3 months of construction. 80% of this job is dry vacuuming, not chemistry. Three passes with HEPA vacuum, light alkaline pre-spray on traffic areas, HWE extraction with frequent tank dumps (dust clogs fast). Customer amazed by the systematic approach.</p>
+            <p>Post-renovation condo. Drywall dust everywhere -- 3 months of construction. 80% of this job is dry vacuuming, not chemistry. Three passes with HEPA vacuum, light alkaline pre-spray on traffic areas, HWE extraction with frequent tank dumps (dust clogs fast). Customer amazed by the systematic approach.</p>
         </div>
 
         <h3>New Carpet Off-Gassing</h3>
-        <p><strong>What:</strong> New carpet releases <span class="glossary-term">VOCs<span class="tooltip">Volatile Organic Compounds — chemicals released from new carpet, adhesives, and manufacturing processes</span></span> (volatile organic compounds) from dyes, adhesives, manufacturing chemicals.</p>
-        <p><strong>Is this a cleaning issue?</strong> NO. <span class="glossary-term">Off-gassing<span class="tooltip">New carpet releasing volatile organic compounds — normal, fades in 2-4 weeks, not a cleaning issue</span></span> is normal and fades over 2–4 weeks.</p>
+        <p><strong>What:</strong> New carpet releases <span class="glossary-term">VOCs<span class="tooltip">Volatile Organic Compounds -- chemicals released from new carpet, adhesives, and manufacturing processes</span></span> (volatile organic compounds) from dyes, adhesives, manufacturing chemicals.</p>
+        <p><strong>Is this a cleaning issue?</strong> NO. <span class="glossary-term">Off-gassing<span class="tooltip">New carpet releasing volatile organic compounds -- normal, fades in 2-4 weeks, not a cleaning issue</span></span> is normal and fades over 2-4 weeks.</p>
         <p><strong>Customer asks:</strong> "Can you clean my new carpet to remove the smell?"</p>
-        <p><strong>Your answer:</strong> "New carpet smell is normal off-gassing and will fade naturally. Cleaning won't remove it — it's chemical emission, not surface contamination. Ventilation, air circulation, and time are the solution."</p>
+        <p><strong>Your answer:</strong> "New carpet smell is normal off-gassing and will fade naturally. Cleaning won't remove it -- it's chemical emission, not surface contamination. Ventilation, air circulation, and time are the solution."</p>
 
         <h3>Commercial vs Residential Expectations</h3>
         <p><strong>Commercial:</strong> Higher traffic, tight turnaround (nights/weekends), focus on speed and odor control.</p>
         <p><strong>Residential:</strong> Flexible scheduling, higher quality expectations, more callbacks if expectations not managed.</p>
-        <p>Manage accordingly — quote and communicate different service levels.</p>
+        <p>Manage accordingly -- quote and communicate different service levels.</p>
 
         <hr>
 
-        <h2>MODULE 10: The Servus Spotting Protocol — Complete Field Guide</h2>
+        <!-- ============================================================ -->
+        <!-- MODULE 8: Interactive Decision Walkthrough -->
+        <!-- ============================================================ -->
+        <h2 id="walkthrough">Module 8: Interactive Spotting Decision Walkthrough</h2>
 
-        <h3>The 8-Step Complete Protocol</h3>
-        <ol>
-            <li><strong>INSPECT</strong> — <span class="glossary-term">UV light<span class="tooltip">Ultraviolet (black) light used to detect urine, bodily fluids, and hidden contamination</span></span> + moisture meter scan. Document with photos.</li>
-            <li><strong>IDENTIFY</strong> — What substance? Spot or stain? How deep?</li>
-            <li><strong>IDENTIFY FIBER</strong> — Wool, nylon, polyester, olefin, blend? Determines chemistry safety.</li>
-            <li><strong>TEST</strong> — Apply chemistry to hidden area. Wait 24 hours. Check for adverse reaction.</li>
-            <li><strong>APPLY</strong> — Once test is clear, apply chemistry. Proper <span class="glossary-term">dwell time<span class="tooltip">Minutes a cleaning chemical sits on carpet before extraction</span></span>. Don't oversaturate. Work outside-in.</li>
-            <li><strong>EXTRACT</strong> — Remove ALL chemistry. Under-extraction leaves residue. Over-extract to minimize browning/wicking.</li>
-            <li><strong>EVALUATE &amp; DOCUMENT</strong> — Step back, assess result. Photo if significant. Record: substance, chemistry, dwell time, result.</li>
-            <li><strong>COMMUNICATE</strong> — Tell customer what you found, what you did, and what the result is. Set expectations for any remaining stain.</li>
-        </ol>
+        <p>Use this interactive tool to practice the Servus Spotting Protocol. Each decision point mirrors what you will face in the field. Work through the steps to reach the correct treatment recommendation.</p>
+
+        <div class="walkthrough-container">
+            <div class="wt-header">
+                <h3 id="wtHeaderTitle">Spotting Decision Walkthrough</h3>
+                <span class="wt-step-counter" id="stepCounter">Step 1</span>
+            </div>
+            <div class="wt-breadcrumb" id="breadcrumb"></div>
+            <div class="wt-history" id="history"></div>
+            <div class="wt-step-area" id="stepArea"></div>
+        </div>
 
         <h3>Spotting Product Quick Reference (Servus Products Only)</h3>
 
@@ -1200,55 +1730,55 @@
                     <td>General Spots</td>
                     <td>Benefect Botanical Impact Cleaner</td>
                     <td>9.7</td>
-                    <td>5–10 min</td>
+                    <td>5-10 min</td>
                     <td>Safe starting point for unknown spots</td>
                 </tr>
                 <tr>
                     <td>Protein/Organic</td>
                     <td>Enz-All</td>
                     <td>Neutral</td>
-                    <td>20–30 min</td>
+                    <td>20-30 min</td>
                     <td>WARM water only, never hot</td>
                 </tr>
                 <tr>
                     <td>Oil/Grease</td>
                     <td>Dry Solv or Citrus Burst</td>
                     <td>Variable</td>
-                    <td>5–10 min</td>
+                    <td>5-10 min</td>
                     <td>Solvent-based, minimize moisture</td>
                 </tr>
                 <tr>
                     <td>Heavy Grease</td>
                     <td>Benefect Atomic Degreaser</td>
-                    <td>9–10</td>
-                    <td>7–10 min</td>
-                    <td>Strong alkaline — acid rinse required after</td>
+                    <td>9-10</td>
+                    <td>7-10 min</td>
+                    <td>Strong alkaline -- acid rinse required after</td>
                 </tr>
                 <tr>
                     <td>Tannin/Color</td>
-                    <td>Hydrogen Peroxide (diluted)</td>
-                    <td>Variable</td>
-                    <td>5–15 min</td>
-                    <td>Spot test CRITICAL — bleaching risk</td>
+                    <td>RMC PROXI Spray &amp; Walk Away Stain Remover</td>
+                    <td>7.8</td>
+                    <td>Air dry (up to 3 days)</td>
+                    <td>Spot test CRITICAL -- bleaching risk</td>
                 </tr>
                 <tr>
                     <td>Red Dye</td>
                     <td>Reducing Agent (specialty)</td>
                     <td>Variable</td>
-                    <td>10–15 min</td>
-                    <td>See Module 5 Red Relief Protocol</td>
+                    <td>10-15 min</td>
+                    <td>See Module 4 Red Relief Protocol</td>
                 </tr>
                 <tr>
                     <td>Pet Urine</td>
                     <td>Enz-All + Ends Odor (if needed)</td>
                     <td>Neutral</td>
-                    <td>20–30 min</td>
+                    <td>20-30 min</td>
                     <td>Enzyme first, oxidizer backup</td>
                 </tr>
                 <tr>
                     <td>Post-Treatment Rinse</td>
                     <td>All Fiber Rinse</td>
-                    <td>4–4.5</td>
+                    <td>4-4.5</td>
                     <td>One pass</td>
                     <td>MANDATORY after any alkaline chemistry</td>
                 </tr>
@@ -1269,12 +1799,12 @@
             </tbody>
         </table>
 
-        <h3>The Honest Conversation — When to Stop</h3>
+        <h3>The Honest Conversation -- When to Stop</h3>
         <p>The most important professional skill: knowing when to stop treatment and have an honest conversation with the customer.</p>
 
-        <p><strong>The script:</strong> "I've treated this stain with [X approaches] and here's where we are: I've removed about [X]%. The remaining [X]% is deep in the fiber or may be a permanent dye bond. More treatment risks damaging the carpet without further improvement. Your options: (1) Accept the current result, (2) I can refer you to a professional dye specialist for another 10–15% improvement, or (3) We can discuss carpet patch or replacement."</p>
+        <p><strong>The script:</strong> "I've treated this stain with [X approaches] and here's where we are: I've removed about [X]%. The remaining [X]% is deep in the fiber or may be a permanent dye bond. More treatment risks damaging the carpet without further improvement. Your options: (1) Accept the current result, (2) I can refer you to a professional dye specialist for another 10-15% improvement, or (3) We can discuss carpet patch or replacement."</p>
 
-        <p><strong>Why this works:</strong> You're honest (builds trust), offering solutions (shows professionalism), not promising impossible results (prevents callbacks). The customer chooses their path — informed and respected.</p>
+        <p><strong>Why this works:</strong> You're honest (builds trust), offering solutions (shows professionalism), not promising impossible results (prevents callbacks). The customer chooses their path -- informed and respected.</p>
 
         <div class="servus-callout">
             <div class="servus-callout-label">Servus Standard in Action</div>
@@ -1283,39 +1813,43 @@
 
         <hr>
 
-        <h2>KEY TAKEAWAYS</h2>
+        <!-- ============================================================ -->
+        <!-- KEY TAKEAWAYS -->
+        <!-- ============================================================ -->
+        <h2>Key Takeaways</h2>
 
         <div style="background-color: var(--servus-pale-blue); padding: 20px; border-left: 5px solid var(--servus-accent); margin: 20px 0; border-radius: 0 4px 4px 0;">
             <ul style="margin-left: 20px;">
-                <li><strong>Spot vs Stain</strong> — Know the difference before you quote or treat</li>
-                <li><strong>Four-Step Escalation</strong> — DRY → WET → CHEMICAL → EXTRACT (never skip steps)</li>
-                <li><strong>Outside-In, Blot Don't Rub</strong> — Technique matters more than chemistry</li>
-                <li><strong>Pet Damage Depth Assessment</strong> — UV light + moisture meter on EVERY pet job</li>
-                <li><strong>Enzyme first, oxidizer second</strong> — Never mix simultaneously</li>
-                <li><strong>Red dyes need reducing agents</strong> — Oxidizers are last resort, with customer permission</li>
-                <li><strong>Browning prevention</strong> — Acid rinse after every alkaline pre-spray, no exceptions</li>
-                <li><strong>Wicking prevention</strong> — Over-extract, use moisture meter, air movers</li>
-                <li><strong>Know your limits</strong> — Refer to specialists for carpet repair, Category 3 water, heavy smoke</li>
-                <li><strong>Document everything</strong> — Chemistry, dwell time, result, photos</li>
-                <li><strong>The Honest Conversation</strong> — The most valuable professional skill in stain removal</li>
+                <li><strong>Spot vs Stain</strong> -- Know the difference before you quote or treat</li>
+                <li><strong>Four-Step Escalation</strong> -- DRY &#8594; WET &#8594; CHEMICAL &#8594; EXTRACT (never skip steps)</li>
+                <li><strong>Outside-In, Blot Don't Rub</strong> -- Technique matters more than chemistry</li>
+                <li><strong>Pet Damage Depth Assessment</strong> -- UV light + moisture meter on EVERY pet job</li>
+                <li><strong>Enzyme first, oxidizer second</strong> -- Never mix simultaneously</li>
+                <li><strong>Red dyes need reducing agents</strong> -- Oxidizers are last resort, with customer permission</li>
+                <li><strong>Browning prevention</strong> -- Acid rinse after every alkaline pre-spray, no exceptions</li>
+                <li><strong>Wicking prevention</strong> -- Over-extract, use moisture meter, air movers</li>
+                <li><strong>Know your limits</strong> -- Refer to specialists for carpet repair, Category 3 water, heavy smoke</li>
+                <li><strong>Document everything</strong> -- Chemistry, dwell time, result, photos</li>
+                <li><strong>The Honest Conversation</strong> -- The most valuable professional skill in stain removal</li>
             </ul>
         </div>
 
         <div class="servus-callout">
             <div class="servus-callout-label">Servus Standard in Action</div>
-            <p>The goal is not just stain removal — it is accurate assessment, correct treatment, proper documentation, and honest communication. Every Servus Standard in this course exists because someone learned it the hard way. Follow them.</p>
+            <p>The goal is not just stain removal -- it is accurate assessment, correct treatment, proper documentation, and honest communication. Every Servus Standard in this course exists because someone learned it the hard way. Follow them.</p>
         </div>
 
     </div>
 
+    <!-- Footer -->
     <div class="servus-footer">
         <img src="https://servusgrouplowermainland.com/wp-content/uploads/2024/12/Servus-Colour.png" alt="Servus Group" class="logo-footer">
         <strong>Servus Group</strong>
-        <p>Specialty Cleaning — Professional Carpet Care Certification</p>
+        <p>Specialty Cleaning -- Professional Carpet Care Certification</p>
         <p>
             <strong>Contact:</strong> <a href="tel:604-435-1135">604-435-1135</a> | <a href="mailto:info@servusgrouplowermainland.com">info@servusgrouplowermainland.com</a>
         </p>
-        <p>160–21900 Westminster Hwy, Richmond BC V6V 2K3 | <a href="https://servusgrouplowermainland.com">servusgrouplowermainland.com</a></p>
+        <p>160-21900 Westminster Hwy, Richmond BC V6V 2K3 | <a href="https://servusgrouplowermainland.com">servusgrouplowermainland.com</a></p>
 
         <div class="footer-certs">
             <img src="https://servusgrouplowermainland.com/wp-content/uploads/2014/07/go2HR-CORLogo-K-300x283.png" alt="COR Certified" style="filter: brightness(0) invert(1); opacity: 0.7; height: 40px;">
@@ -1334,8 +1868,8 @@
         <!-- Expandable Panel -->
         <div class="glossary-panel" id="glossaryPanel">
             <div class="glossary-panel-header">
-                <h3>📖 Glossary</h3>
-                <button class="glossary-close" onclick="toggleGlossary()">✕</button>
+                <h3 id="glossaryTitle">Glossary</h3>
+                <button class="glossary-close" onclick="toggleGlossary()">&#10005;</button>
             </div>
             <div class="glossary-search">
                 <input type="text" id="glossarySearch" placeholder="Search terms..." oninput="searchGlossary(this.value)">
@@ -1347,18 +1881,18 @@
                 <button class="g-filter" onclick="filterG('safe', this)">Safety</button>
             </div>
             <div class="glossary-list" id="glossaryList">
-                <!-- Spotting Terms -->
+                <!-- Spotting Terms (14) -->
                 <div class="g-term-item" data-cat="spot" data-search="spot foreign substance fiber surface">
                     <div class="g-term-name">Spot <span class="g-term-pron">SPAHT</span><span class="g-term-cat g-cat-spot">Spot</span></div>
                     <div class="g-term-def">Foreign substance ON fiber surface that can usually be removed with the right chemistry and technique.</div>
                 </div>
                 <div class="g-term-item" data-cat="spot" data-search="stain permanent color change fiber">
                     <div class="g-term-name">Stain <span class="g-term-pron">STAYN</span><span class="g-term-cat g-cat-spot">Spot</span></div>
-                    <div class="g-term-def">Permanent color change that has penetrated INTO fiber structure — may be reduced but often cannot be fully removed.</div>
+                    <div class="g-term-def">Permanent color change that has penetrated INTO fiber structure -- may be reduced but often cannot be fully removed.</div>
                 </div>
                 <div class="g-term-item" data-cat="spot" data-search="blot pressing towel absorb">
                     <div class="g-term-name">Blot <span class="g-term-pron">BLAHT</span><span class="g-term-cat g-cat-spot">Spot</span></div>
-                    <div class="g-term-def">Pressing a clean white towel onto a stain to absorb — never rub.</div>
+                    <div class="g-term-def">Pressing a clean white towel onto a stain to absorb -- never rub.</div>
                 </div>
                 <div class="g-term-item" data-cat="spot" data-search="outside-in edge center spreading">
                     <div class="g-term-name">Outside-In <span class="g-term-pron">owt-SYDE-in</span><span class="g-term-cat g-cat-spot">Spot</span></div>
@@ -1370,11 +1904,11 @@
                 </div>
                 <div class="g-term-item" data-cat="spot" data-search="wicking stain reappearing dries backing">
                     <div class="g-term-name">Wicking <span class="g-term-pron">WIK-ing</span><span class="g-term-cat g-cat-spot">Spot</span></div>
-                    <div class="g-term-def">Stain reappearing as carpet dries — contamination wicks up from backing to surface.</div>
+                    <div class="g-term-def">Stain reappearing as carpet dries -- contamination wicks up from backing to surface.</div>
                 </div>
                 <div class="g-term-item" data-cat="spot" data-search="browning yellow-brown discoloration">
                     <div class="g-term-name">Browning <span class="g-term-pron">BROW-ning</span><span class="g-term-cat g-cat-spot">Spot</span></div>
-                    <div class="g-term-def">Yellow-brown discoloration appearing after cleaning — caused by over-wetting, high pH residue, or cellulosic fibers.</div>
+                    <div class="g-term-def">Yellow-brown discoloration appearing after cleaning -- caused by over-wetting, high pH residue, or cellulosic fibers.</div>
                 </div>
                 <div class="g-term-item" data-cat="spot" data-search="cellulosic browning tannic jute backing">
                     <div class="g-term-name">Cellulosic Browning <span class="g-term-pron">sel-yoo-LOH-sik</span><span class="g-term-cat g-cat-spot">Spot</span></div>
@@ -1386,7 +1920,7 @@
                 </div>
                 <div class="g-term-item" data-cat="spot" data-search="contamination depth surface backing padding subfloor">
                     <div class="g-term-name">Contamination Depth <span class="g-term-pron">kon-TAM-ih-NAY-shun</span><span class="g-term-cat g-cat-spot">Spot</span></div>
-                    <div class="g-term-def">How far a substance has penetrated — surface, backing, padding, or subfloor.</div>
+                    <div class="g-term-def">How far a substance has penetrated -- surface, backing, padding, or subfloor.</div>
                 </div>
                 <div class="g-term-item" data-cat="spot" data-search="anthocyanins red pigment wine berries">
                     <div class="g-term-name">Anthocyanins <span class="g-term-pron">an-thoh-SY-uh-ninz</span><span class="g-term-cat g-cat-spot">Spot</span></div>
@@ -1396,27 +1930,35 @@
                     <div class="g-term-name">Pad Replacement <span class="g-term-pron">PAD ree-PLAYS-ment</span><span class="g-term-cat g-cat-spot">Spot</span></div>
                     <div class="g-term-def">Removing and replacing carpet padding saturated with deep contamination.</div>
                 </div>
+                <div class="g-term-item" data-cat="spot" data-search="spot test hidden area chemistry safety">
+                    <div class="g-term-name">Spot Test <span class="g-term-pron">SPAHT test</span><span class="g-term-cat g-cat-spot">Spot</span></div>
+                    <div class="g-term-def">Applying chemistry to a hidden area of carpet before full treatment to check for adverse reactions.</div>
+                </div>
+                <div class="g-term-item" data-cat="spot" data-search="tannin plant-based coffee tea wine browning">
+                    <div class="g-term-name">Tannin <span class="g-term-pron">TAN-in</span><span class="g-term-cat g-cat-spot">Spot</span></div>
+                    <div class="g-term-def">Plant-based compound found in coffee, tea, wine, and jute backing that causes browning and color stains.</div>
+                </div>
 
-                <!-- Chemistry Terms -->
+                <!-- Chemistry Terms (13) -->
                 <div class="g-term-item" data-cat="chem" data-search="enzyme biological cleaning organic pet urine blood">
                     <div class="g-term-name">Enzyme <span class="g-term-pron">EN-zyme</span><span class="g-term-cat g-cat-chem">Chem</span></div>
                     <div class="g-term-def">Biological cleaning agent that breaks down organic soil like pet urine, blood, and food.</div>
                 </div>
                 <div class="g-term-item" data-cat="chem" data-search="oxidizer breaks down stains oxidation">
                     <div class="g-term-name">Oxidizer <span class="g-term-pron">OX-ih-dye-zer</span><span class="g-term-cat g-cat-chem">Chem</span></div>
-                    <div class="g-term-def">Chemical that breaks down stains via oxidation reaction — stronger than enzyme, must test first.</div>
+                    <div class="g-term-def">Chemical that breaks down stains via oxidation reaction -- stronger than enzyme, must test first.</div>
                 </div>
                 <div class="g-term-item" data-cat="chem" data-search="reducing agent color reduction red dye">
                     <div class="g-term-name">Reducing Agent <span class="g-term-pron">ree-DOO-sing AY-jent</span><span class="g-term-cat g-cat-chem">Chem</span></div>
-                    <div class="g-term-def">Chemical that removes color by reduction — gentler than oxidizers, first choice for red dye stains.</div>
+                    <div class="g-term-def">Chemical that removes color by reduction -- gentler than oxidizers, first choice for red dye stains.</div>
                 </div>
                 <div class="g-term-item" data-cat="chem" data-search="chelating agent metal ions rust">
                     <div class="g-term-name">Chelating Agent <span class="g-term-pron">KEE-lay-ting AY-jent</span><span class="g-term-cat g-cat-chem">Chem</span></div>
-                    <div class="g-term-def">Chemical that binds to metal ions — used for rust removal as a safer alternative to HF acid.</div>
+                    <div class="g-term-def">Chemical that binds to metal ions -- used for rust removal as a safer alternative to HF acid.</div>
                 </div>
                 <div class="g-term-item" data-cat="chem" data-search="hydrofluoric acid dangerous rust">
                     <div class="g-term-name">Hydrofluoric Acid <span class="g-term-pron">hy-droh-FLOOR-ik</span><span class="g-term-cat g-cat-chem">Chem</span></div>
-                    <div class="g-term-def">Extremely dangerous acid used for stubborn rust stains — requires full PPE and ventilation.</div>
+                    <div class="g-term-def">Extremely dangerous acid used for stubborn rust stains -- requires full PPE and ventilation.</div>
                 </div>
                 <div class="g-term-item" data-cat="chem" data-search="acid rinse low-pH alkaline neutralize">
                     <div class="g-term-name">Acid Rinse <span class="g-term-pron">AS-id rinse</span><span class="g-term-cat g-cat-chem">Chem</span></div>
@@ -1432,57 +1974,65 @@
                 </div>
                 <div class="g-term-item" data-cat="chem" data-search="acetone solvent nail polish acetate">
                     <div class="g-term-name">Acetone <span class="g-term-pron">AS-eh-tohn</span><span class="g-term-cat g-cat-chem">Chem</span></div>
-                    <div class="g-term-def">Solvent for nail polish removal — dissolves acetate fibers, use with extreme caution.</div>
+                    <div class="g-term-def">Solvent for nail polish removal -- dissolves acetate fibers, use with extreme caution.</div>
                 </div>
-                <div class="g-term-item" data-cat="chem" data-search="hydrogen peroxide oxidizer tannin bleaching">
-                    <div class="g-term-name">Hydrogen Peroxide <span class="g-term-pron">HY-droh-jen per-OX-ide</span><span class="g-term-cat g-cat-chem">Chem</span></div>
-                    <div class="g-term-def">Oxidizer used for tannin and color stains — bleaching risk on dark fibers, test first.</div>
+                <div class="g-term-item" data-cat="chem" data-search="rmc proxi spray walk away stain remover oxidizer">
+                    <div class="g-term-name">RMC PROXI Spray &amp; Walk Away <span class="g-term-pron">ar-em-SEE PROX-ee</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Professional hydrogen peroxide oxidizer (pH 7.8) for tannin and color stains. Spray, do not scrub, let air dry. Bleaching risk on dark fibers -- spot test first.</div>
                 </div>
                 <div class="g-term-item" data-cat="chem" data-search="deodorizer eliminates odors ends odor">
                     <div class="g-term-name">Deodorizer <span class="g-term-pron">dee-OH-der-eye-zer</span><span class="g-term-cat g-cat-chem">Chem</span></div>
                     <div class="g-term-def">Chemical that eliminates odors. Ends Odor is the Servus standard for HWE work.</div>
                 </div>
+                <div class="g-term-item" data-cat="chem" data-search="chromophore color molecule dye stain">
+                    <div class="g-term-name">Chromophore <span class="g-term-pron">KROH-moh-for</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">The molecular part of a dye that gives it color. Oxidizers break chromophores apart to remove stain color.</div>
+                </div>
+                <div class="g-term-item" data-cat="chem" data-search="surfactant surface active agent water grease">
+                    <div class="g-term-name">Surfactant <span class="g-term-pron">ser-FAK-tant</span><span class="g-term-cat g-cat-chem">Chem</span></div>
+                    <div class="g-term-def">Surface Active Agent -- one end grabs water, the other grabs dirt. Bridge between water and grease for soil removal.</div>
+                </div>
 
-                <!-- Safety Terms -->
+                <!-- Safety Terms (13) -->
                 <div class="g-term-item" data-cat="safe" data-search="uv light ultraviolet black urine">
                     <div class="g-term-name">UV Light <span class="g-term-pron">yoo-VEE lite</span><span class="g-term-cat g-cat-safe">Safety</span></div>
                     <div class="g-term-def">Ultraviolet (black) light used to detect urine, bodily fluids, and hidden contamination.</div>
                 </div>
                 <div class="g-term-item" data-cat="safe" data-search="moisture meter measuring content backing">
                     <div class="g-term-name">Moisture Meter <span class="g-term-pron">MOY-scher MEE-ter</span><span class="g-term-cat g-cat-safe">Safety</span></div>
-                    <div class="g-term-def">Tool measuring moisture content in carpet and backing — essential for pet damage assessment.</div>
+                    <div class="g-term-def">Tool measuring moisture content in carpet and backing -- essential for pet damage assessment.</div>
                 </div>
                 <div class="g-term-item" data-cat="safe" data-search="sds safety data sheet chemical hazards">
                     <div class="g-term-name">SDS <span class="g-term-pron">ess-dee-ESS</span><span class="g-term-cat g-cat-safe">Safety</span></div>
-                    <div class="g-term-def">Safety Data Sheet — required document for every chemical, lists hazards and handling procedures.</div>
+                    <div class="g-term-def">Safety Data Sheet -- required document for every chemical, lists hazards and handling procedures.</div>
                 </div>
                 <div class="g-term-item" data-cat="safe" data-search="ppe personal protective equipment gloves">
                     <div class="g-term-name">PPE <span class="g-term-pron">pee-pee-EE</span><span class="g-term-cat g-cat-safe">Safety</span></div>
-                    <div class="g-term-def">Personal Protective Equipment — gloves, eye protection, respirator as required by chemical SDS.</div>
+                    <div class="g-term-def">Personal Protective Equipment -- gloves, eye protection, respirator as required by chemical SDS.</div>
                 </div>
                 <div class="g-term-item" data-cat="safe" data-search="category 1 water clean supply lines low risk">
                     <div class="g-term-name">Category 1 Water <span class="g-term-pron">KAT-eh-gor-ee WUN</span><span class="g-term-cat g-cat-safe">Safety</span></div>
-                    <div class="g-term-def">Clean water from supply lines — low risk, carpet usually salvageable.</div>
+                    <div class="g-term-def">Clean water from supply lines -- low risk, carpet usually salvageable.</div>
                 </div>
                 <div class="g-term-item" data-cat="safe" data-search="category 2 water gray appliances microbial">
                     <div class="g-term-name">Category 2 Water <span class="g-term-pron">KAT-eh-gor-ee TOO</span><span class="g-term-cat g-cat-safe">Safety</span></div>
-                    <div class="g-term-def">Gray water from appliances — microbial risk, needs sanitizing rinse.</div>
+                    <div class="g-term-def">Gray water from appliances -- microbial risk, needs sanitizing rinse.</div>
                 </div>
                 <div class="g-term-item" data-cat="safe" data-search="category 3 water black sewage flood health">
                     <div class="g-term-name">Category 3 Water <span class="g-term-pron">KAT-eh-gor-ee THREE</span><span class="g-term-cat g-cat-safe">Safety</span></div>
-                    <div class="g-term-def">Black water (sewage/flood) — health hazard, carpet must be discarded, refer to specialist.</div>
+                    <div class="g-term-def">Black water (sewage/flood) -- health hazard, carpet must be discarded, refer to specialist.</div>
                 </div>
                 <div class="g-term-item" data-cat="safe" data-search="delamination backing separating buckling">
                     <div class="g-term-name">Delamination <span class="g-term-pron">dee-LAM-ih-NAY-shun</span><span class="g-term-cat g-cat-safe">Safety</span></div>
-                    <div class="g-term-def">Carpet backing layers separating — causes buckling, not field-repairable.</div>
+                    <div class="g-term-def">Carpet backing layers separating -- causes buckling, not field-repairable.</div>
                 </div>
                 <div class="g-term-item" data-cat="safe" data-search="off-gassing new carpet voc volatile">
                     <div class="g-term-name">Off-Gassing <span class="g-term-pron">OFF-gas-ing</span><span class="g-term-cat g-cat-safe">Safety</span></div>
-                    <div class="g-term-def">New carpet releasing volatile organic compounds — normal, fades in 2-4 weeks, not a cleaning issue.</div>
+                    <div class="g-term-def">New carpet releasing volatile organic compounds -- normal, fades in 2-4 weeks, not a cleaning issue.</div>
                 </div>
                 <div class="g-term-item" data-cat="safe" data-search="whmis workplace hazardous materials canadian">
                     <div class="g-term-name">WHMIS <span class="g-term-pron">WIM-iss</span><span class="g-term-cat g-cat-safe">Safety</span></div>
-                    <div class="g-term-def">Workplace Hazardous Materials Information System — Canadian safety standard for chemical handling.</div>
+                    <div class="g-term-def">Workplace Hazardous Materials Information System -- Canadian safety standard for chemical handling.</div>
                 </div>
                 <div class="g-term-item" data-cat="safe" data-search="fiber damage breakdown harsh chemicals">
                     <div class="g-term-name">Fiber Damage <span class="g-term-pron">FY-ber DAM-ij</span><span class="g-term-cat g-cat-safe">Safety</span></div>
@@ -1490,22 +2040,43 @@
                 </div>
                 <div class="g-term-item" data-cat="safe" data-search="voc volatile organic compound new carpet">
                     <div class="g-term-name">VOC <span class="g-term-pron">vee-oh-SEE</span><span class="g-term-cat g-cat-safe">Safety</span></div>
-                    <div class="g-term-def">Volatile Organic Compound — chemicals released from new carpet, adhesives, and manufacturing.</div>
+                    <div class="g-term-def">Volatile Organic Compound -- chemicals released from new carpet, adhesives, and manufacturing.</div>
+                </div>
+                <div class="g-term-item" data-cat="safe" data-search="fiber identification wool nylon polyester olefin">
+                    <div class="g-term-name">Fiber Identification <span class="g-term-pron">FY-ber eye-DEN-tih-fih-KAY-shun</span><span class="g-term-cat g-cat-safe">Safety</span></div>
+                    <div class="g-term-def">Determining carpet fiber type (wool, nylon, polyester, olefin) before treatment -- critical for chemistry safety.</div>
                 </div>
             </div>
             <div class="glossary-panel-footer" id="glossaryCount">40 terms</div>
         </div>
 
         <!-- Floating Button -->
-        <button class="glossary-btn" onclick="toggleGlossary()" title="Open Glossary">
-            📖
+        <button class="glossary-btn" id="glossaryBtnMain" onclick="toggleGlossary()" title="Open Glossary">
             <span class="badge">40</span>
         </button>
     </div>
 
     <script>
+        // ===== ACCORDION FUNCTIONALITY =====
+        document.querySelectorAll('.accordion-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                this.classList.toggle('open');
+            });
+        });
 
-        let glossaryOpen = false;
+        // ===== SCENARIO CARD TOGGLE =====
+        function toggleScenario(header) {
+            header.parentElement.classList.toggle('open');
+        }
+
+        document.querySelectorAll('.scenario-header').forEach(function(header) {
+            header.addEventListener('click', function() {
+                toggleScenario(this);
+            });
+        });
+
+        // ===== GLOSSARY =====
+        var glossaryOpen = false;
 
         function toggleGlossary() {
             glossaryOpen = !glossaryOpen;
@@ -1513,12 +2084,12 @@
         }
 
         function filterG(cat, btn) {
-            document.querySelectorAll('.g-filter').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.g-filter').forEach(function(b) { b.classList.remove('active'); });
             btn.classList.add('active');
 
-            let count = 0;
-            document.querySelectorAll('.g-term-item').forEach(item => {
-                const show = cat === 'all' || item.dataset.cat === cat;
+            var count = 0;
+            document.querySelectorAll('.g-term-item').forEach(function(item) {
+                var show = cat === 'all' || item.dataset.cat === cat;
                 item.style.display = show ? 'block' : 'none';
                 if (show) count++;
             });
@@ -1527,25 +2098,378 @@
         }
 
         function searchGlossary(query) {
-            const q = query.toLowerCase().trim();
-            let count = 0;
-            document.querySelectorAll('.g-term-item').forEach(item => {
-                const match = !q || item.dataset.search.includes(q) || item.textContent.toLowerCase().includes(q);
+            var q = query.toLowerCase().trim();
+            var count = 0;
+            document.querySelectorAll('.g-term-item').forEach(function(item) {
+                var match = !q || item.dataset.search.indexOf(q) !== -1 || item.textContent.toLowerCase().indexOf(q) !== -1;
                 item.style.display = match ? 'block' : 'none';
                 if (match) count++;
             });
             document.getElementById('glossaryCount').textContent = count + ' terms';
-            document.querySelectorAll('.g-filter').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.g-filter').forEach(function(b) { b.classList.remove('active'); });
             document.querySelector('.g-filter').classList.add('active');
         }
 
-        // Accordion functionality
-        document.querySelectorAll('.accordion-item').forEach(item => {
-            item.addEventListener('click', function() {
-                this.classList.toggle('open');
-            });
-        });
-    </script>
+        // ===== SVG ICON SYSTEM =====
+        function getSvgIcon(name, size) {
+            size = size || 32;
+            var icons = {
+                inspect: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<path d="M5 22 L5 28 L9 28 L9 26 L7 26 L7 22 Z" fill="#0a4875" opacity="0.3"/>' +
+                    '<path d="M11 22 L11 28 L15 28 L15 26 L13 26 L13 22 Z" fill="#0a4875" opacity="0.3"/>' +
+                    '<path d="M17 22 L17 28 L21 28 L21 26 L19 26 L19 22 Z" fill="#0a4875" opacity="0.3"/>' +
+                    '<circle cx="14" cy="13" r="7" stroke="#0a4875" stroke-width="2.5" fill="none"/>' +
+                    '<line x1="19" y1="18" x2="26" y2="25" stroke="#ff9900" stroke-width="2.5" stroke-linecap="round"/>' +
+                    '<circle cx="14" cy="13" r="3" stroke="#ff9900" stroke-width="1" fill="none" opacity="0.5"/>' +
+                    '</svg>',
 
+                decision: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<rect x="16" y="2" width="18" height="18" rx="2" transform="rotate(45 16 2)" fill="#ff9900"/>' +
+                    '<text x="16" y="20" text-anchor="middle" fill="white" font-size="16" font-weight="700" font-family="Inter, sans-serif">?</text>' +
+                    '</svg>',
+
+                enzyme: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<circle cx="6" cy="16" r="4" fill="none" stroke="#2e7d32" stroke-width="2"/>' +
+                    '<circle cx="16" cy="10" r="3" fill="none" stroke="#0a4875" stroke-width="2"/>' +
+                    '<circle cx="16" cy="22" r="3" fill="none" stroke="#0a4875" stroke-width="2"/>' +
+                    '<line x1="9.5" y1="13.5" x2="13.5" y2="11" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="2 2"/>' +
+                    '<line x1="9.5" y1="18.5" x2="13.5" y2="21" stroke="#2e7d32" stroke-width="1.5" stroke-dasharray="2 2"/>' +
+                    '<circle cx="26" cy="12" r="2.5" fill="none" stroke="#0a4875" stroke-width="1.5" opacity="0.5"/>' +
+                    '<circle cx="26" cy="20" r="2.5" fill="none" stroke="#0a4875" stroke-width="1.5" opacity="0.5"/>' +
+                    '<path d="M19 10 L22 11" stroke="#0a4875" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.4"/>' +
+                    '<path d="M19 22 L22 21" stroke="#0a4875" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.4"/>' +
+                    '</svg>',
+
+                oxidizer: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<path d="M16 4 Q16 4 20 12 Q24 20 20 26 Q18 30 16 30 Q14 30 12 26 Q8 20 12 12 Q16 4 16 4 Z" fill="none" stroke="#006ba1" stroke-width="2"/>' +
+                    '<path d="M16 10 Q18 16 17 22 Q16 26 15 22 Q13 16 16 10 Z" fill="#006ba1" opacity="0.15"/>' +
+                    '<path d="M22 6 L24 3 L23 7 L27 5 L24 8 Z" fill="#ff9900"/>' +
+                    '<circle cx="24" cy="5.5" r="0.8" fill="#ff9900"/>' +
+                    '</svg>',
+
+                acid: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<rect x="6" y="8" width="10" height="20" rx="2" fill="none" stroke="#0a4875" stroke-width="2"/>' +
+                    '<rect x="8" y="12" width="6" height="4" rx="1" fill="#ff9900" opacity="0.6"/>' +
+                    '<rect x="8" y="18" width="6" height="4" rx="1" fill="#0a4875" opacity="0.3"/>' +
+                    '<rect x="8" y="24" width="6" height="2" rx="1" fill="#0a4875" opacity="0.15"/>' +
+                    '<line x1="20" y1="8" x2="20" y2="28" stroke="#0a4875" stroke-width="2" stroke-linecap="round"/>' +
+                    '<circle cx="20" cy="8" r="2" fill="#ff9900"/>' +
+                    '<text x="24" y="14" fill="#0a4875" font-size="7" font-weight="700" font-family="Inter, sans-serif">pH</text>' +
+                    '</svg>',
+
+                unknown: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<rect x="6" y="2" width="20" height="28" rx="3" fill="none" stroke="#0a4875" stroke-width="2"/>' +
+                    '<line x1="6" y1="8" x2="26" y2="8" stroke="#0a4875" stroke-width="1.5"/>' +
+                    '<rect x="10" y="4" width="8" height="2" rx="1" fill="#0a4875" opacity="0.3"/>' +
+                    '<line x1="10" y1="13" x2="22" y2="13" stroke="#0a4875" stroke-width="1" opacity="0.3"/>' +
+                    '<line x1="10" y1="17" x2="22" y2="17" stroke="#0a4875" stroke-width="1" opacity="0.3"/>' +
+                    '<text x="16" y="26" text-anchor="middle" fill="#0a4875" font-size="11" font-weight="700" font-family="Inter, sans-serif">?</text>' +
+                    '</svg>',
+
+                result: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<path d="M16 2 L28 8 L28 18 C28 24 22 29 16 30 C10 29 4 24 4 18 L4 8 Z" fill="none" stroke="#2e7d32" stroke-width="2"/>' +
+                    '<path d="M16 4 L26 9 L26 18 C26 23 21 27.5 16 28.5 C11 27.5 6 23 6 18 L6 9 Z" fill="#2e7d32" opacity="0.1"/>' +
+                    '<polyline points="11,16 14.5,20 21,12" fill="none" stroke="#2e7d32" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+                    '</svg>',
+
+                restart: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<path d="M16 6 A10 10 0 1 1 6 16" fill="none" stroke="#ff9900" stroke-width="2.5" stroke-linecap="round"/>' +
+                    '<polygon points="16,2 20,6 16,10" fill="#ff9900"/>' +
+                    '</svg>',
+
+                flask_header: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<path d="M11 4 L11 14 L6 26 C5 28.5 7 30 9 30 L23 30 C25 30 27 28.5 26 26 L21 14 L21 4 Z" fill="none" stroke="white" stroke-width="2"/>' +
+                    '<path d="M7 24 Q12 20 16 24 Q20 28 25 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>' +
+                    '<rect x="11" y="2" width="10" height="3" rx="1" fill="white"/>' +
+                    '<circle cx="13" cy="21" r="1.5" fill="rgba(255,255,255,0.5)"/>' +
+                    '<circle cx="18" cy="18" r="1" fill="rgba(255,255,255,0.4)"/>' +
+                    '</svg>',
+
+                target: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<circle cx="16" cy="16" r="13" fill="none" stroke="#0a4875" stroke-width="2"/>' +
+                    '<circle cx="16" cy="16" r="8" fill="none" stroke="#ff9900" stroke-width="2"/>' +
+                    '<circle cx="16" cy="16" r="3" fill="#ff9900"/>' +
+                    '</svg>',
+
+                wrench: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<path d="M22.5 4.5C20.5 3.5 18 3.8 16.3 5.5L15.5 6.3C14 7.8 13.6 10 14.5 11.8L5.5 20.8C4.1 22.2 4.1 24.5 5.5 25.9L6.1 26.5C7.5 27.9 9.8 27.9 11.2 26.5L20.2 17.5C22 18.4 24.2 18 25.7 16.5L26.5 15.7C28.2 14 28.5 11.5 27.5 9.5L24 13L21 12L20 9L23.5 5.5Z" fill="none" stroke="#0a4875" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+                    '</svg>',
+
+                book: '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 32 32" fill="none">' +
+                    '<path d="M4 6C4 4.9 4.9 4 6 4H12C14.2 4 16 5.8 16 8V28C16 26.3 14.7 25 13 25H6C4.9 25 4 24.1 4 23V6Z" fill="none" stroke="white" stroke-width="2"/>' +
+                    '<path d="M28 6C28 4.9 27.1 4 26 4H20C17.8 4 16 5.8 16 8V28C16 26.3 17.3 25 19 25H26C27.1 25 28 24.1 28 23V6Z" fill="none" stroke="white" stroke-width="2"/>' +
+                    '</svg>'
+            };
+            return icons[name] || '';
+        }
+
+        // ===== INJECT SVG ICONS (replacing emoji) =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inject wrench SVG into callout ::before pseudo-elements
+            document.querySelectorAll('.servus-callout').forEach(function(callout) {
+                var wrenchDiv = document.createElement('div');
+                wrenchDiv.innerHTML = getSvgIcon('wrench', 18);
+                wrenchDiv.style.cssText = 'position:absolute;top:-10px;left:-18px;background:white;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.15);z-index:1;';
+                callout.appendChild(wrenchDiv);
+            });
+
+            // Inject book SVG into glossary button
+            var glossaryBtn = document.getElementById('glossaryBtnMain');
+            if (glossaryBtn) {
+                glossaryBtn.innerHTML = getSvgIcon('book', 22) + '<span class="badge">40</span>';
+            }
+
+            // Inject book SVG into glossary panel header
+            var glossaryTitle = document.getElementById('glossaryTitle');
+            if (glossaryTitle) {
+                glossaryTitle.innerHTML = getSvgIcon('book', 18) + ' Glossary';
+            }
+        });
+
+        // ===== WALKTHROUGH ENGINE =====
+        var steps = [
+            {
+                id: 'step_inspect',
+                type: 'action',
+                iconName: 'inspect',
+                iconClass: 'inspect',
+                label: 'INSPECTION',
+                labelClass: 'inspect',
+                title: 'Step 1: Inspect the Stain',
+                body: '<strong>What to do:</strong> Kneel down and examine the stain closely. Use your UV light to check for hidden contamination. Use your moisture meter to check depth. Rub fibers between your fingers -- is the substance dry, wet, oily, or crusty?<br><br><strong>Ask yourself:</strong> What substance is this? How old is it? How deep has it penetrated? What fiber type is this carpet?',
+                tip: '<strong>Servus Tip:</strong> The inspection determines your entire treatment approach. UV light + moisture meter on EVERY job. Document with photos before you start.',
+                next: 'step_identify_substance',
+                crumbLabel: 'Inspect',
+                crumbIcon: 'inspect'
+            },
+            {
+                id: 'step_identify_substance',
+                type: 'decision',
+                iconName: 'decision',
+                iconClass: 'decide',
+                label: 'DECISION',
+                labelClass: 'decide',
+                title: 'Is the stain protein-based or organic?',
+                body: '<strong>How to tell:</strong> Protein stains often have a biological origin. Look for:<br>* Blood (dark red/brown)<br>* Pet urine (yellow, ammonia smell, UV fluorescence)<br>* Vomit, milk, eggs, food residue<br><br><strong>Key clue:</strong> Does it smell organic? Did the UV light reveal contamination? Is it near pet areas or a kitchen?<br><br><strong>WARNING:</strong> NEVER use hot water on protein stains -- heat cooks the protein and sets the stain permanently.',
+                choices: {
+                    yes: { label: 'Yes, it\'s protein/organic', sublabel: 'Blood, urine, vomit, food', next: 'step_check_fiber_protein' },
+                    no: { label: 'No, not biological', sublabel: 'Could be dye, tannin, oil, or mineral', next: 'step_check_tannin_oil' }
+                },
+                crumbLabel: 'Protein?'
+            },
+            {
+                id: 'step_check_fiber_protein',
+                type: 'decision',
+                iconName: 'decision',
+                iconClass: 'decide',
+                label: 'DECISION',
+                labelClass: 'decide',
+                title: 'Is the carpet a delicate fiber (wool or silk)?',
+                body: '<strong>How to tell:</strong> Check the carpet tag, or use the burn test in an inconspicuous area.<br>* <strong>Wool:</strong> Feels soft, has natural variations in color, smells like burning hair when singed<br>* <strong>Nylon/Polyester:</strong> More uniform appearance, melts rather than burns<br><br><strong>Why it matters:</strong> Wool requires gentler enzyme formulations and cooler water temperatures. Aggressive chemistry can damage protein-based fibers.',
+                choices: {
+                    yes: { label: 'Yes, it\'s delicate fiber', sublabel: 'Wool, silk, or natural', next: 'result_enzyme_gentle' },
+                    no: { label: 'No, it\'s synthetic', sublabel: 'Nylon, polyester, olefin', next: 'result_enzyme_standard' }
+                },
+                crumbLabel: 'Delicate?'
+            },
+            {
+                id: 'result_enzyme_gentle',
+                type: 'result',
+                iconName: 'enzyme',
+                title: 'Gentle Enzyme Protocol -- Delicate Fibers',
+                body: '<strong>Process:</strong><br>1. Blot excess material with clean white towel (outside-in)<br>2. Apply <strong>Enz-All</strong> at reduced concentration<br>3. Use <strong>COOL water only (35-40&#176;C)</strong> -- even lower than standard<br>4. Dwell time: <strong>20-30 minutes</strong>, keep area moist<br>5. Extract gently with cool water<br>6. Apply <strong>All Fiber Rinse</strong> to neutralize<br><br><strong>If stain color remains:</strong> Do NOT escalate to oxidizer on wool without customer permission. Oxidizers can cause permanent fiber damage on protein-based fibers.',
+                tip: '<strong>Servus Products:</strong> Enz-All Enzymatic Cleaner (reduced concentration for delicate fibers). All Fiber Rinse (pH 4.0-4.5) to neutralize. Advanced Protector (pH 7.5) after successful treatment.<br><strong>Available at:</strong> safetyexpress.com',
+                crumbLabel: 'Gentle Enzyme',
+                crumbIcon: 'enzyme'
+            },
+            {
+                id: 'result_enzyme_standard',
+                type: 'result',
+                iconName: 'enzyme',
+                title: 'Standard Enzyme Protocol -- Synthetic Fibers',
+                body: '<strong>Process:</strong><br>1. Blot excess material with clean white towel (outside-in)<br>2. Apply <strong>Enz-All</strong> at standard concentration<br>3. Use <strong>WARM water (45-50&#176;C)</strong> -- NOT hot!<br>4. Dwell time: <strong>20-30 minutes minimum</strong>, keep area moist<br>5. Extract with warm water, multiple passes<br>6. Apply <strong>All Fiber Rinse</strong> to neutralize<br><br><strong>If odor persists:</strong> Follow with <strong>Ends Odor</strong>. If color stain remains after enzyme, apply <strong>RMC PROXI Spray &amp; Walk Away Stain Remover</strong> -- spray from 12 inches, do not scrub, let air dry.',
+                tip: '<strong>Servus Products:</strong> Enz-All Enzymatic Cleaner. Un-Duz-It Unleashed (pH 9.0) for tough organic stains. Ends Odor Deodorizer (pH 6.5-7.5) for residual odor. RMC PROXI Spray &amp; Walk Away Stain Remover if color persists. All Fiber Rinse (pH 4.0-4.5). Advanced Protector (pH 7.5).<br><strong>Available at:</strong> safetyexpress.com',
+                crumbLabel: 'Enzyme',
+                crumbIcon: 'enzyme'
+            },
+            {
+                id: 'step_check_tannin_oil',
+                type: 'decision',
+                iconName: 'decision',
+                iconClass: 'decide',
+                label: 'DECISION',
+                labelClass: 'decide',
+                title: 'Is the stain a color/tannin stain or oily/greasy?',
+                body: '<strong>Color/Tannin stains:</strong> Red wine, coffee, tea, juice, Kool-Aid, food coloring. The stain has a distinct color that was not there before.<br><br><strong>Oil/Grease stains:</strong> Dark, slippery, does not dissolve in water. Near kitchens, garages, or from cosmetics.<br><br><strong>Neither?</strong> Could be mineral/rust (orange-brown, near metal) or unknown -- choose "No" to continue.',
+                choices: {
+                    yes: { label: 'Yes, it\'s a color/tannin stain', sublabel: 'Wine, coffee, juice, dye', next: 'step_check_red_dye' },
+                    no: { label: 'No, it\'s oily, mineral, or unknown', sublabel: 'Grease, rust, or unidentified', next: 'result_specialty' }
+                },
+                crumbLabel: 'Color?'
+            },
+            {
+                id: 'step_check_red_dye',
+                type: 'decision',
+                iconName: 'decision',
+                iconClass: 'decide',
+                label: 'DECISION',
+                labelClass: 'decide',
+                title: 'Is it a red dye stain?',
+                body: '<strong>Red dye stains include:</strong> Red wine, Kool-Aid, cranberry/grape juice, candy, food coloring, tomato sauce, barbecue sauce.<br><br><strong>Why it matters:</strong> Red dyes contain anthocyanins that bond aggressively to fibers. They require a specific protocol (reducing agent first, oxidizer only as last resort).<br><br><strong>Non-red color stains</strong> (coffee, tea, ink) respond better to oxidizers directly.',
+                choices: {
+                    yes: { label: 'Yes, it\'s red', sublabel: 'Wine, juice, candy, sauce', next: 'result_reducing_agent' },
+                    no: { label: 'No, it\'s another color', sublabel: 'Coffee, tea, ink, other', next: 'result_oxidizer' }
+                },
+                crumbLabel: 'Red?'
+            },
+            {
+                id: 'result_reducing_agent',
+                type: 'result',
+                iconName: 'acid',
+                title: 'Red Relief Protocol -- Reducing Agent First',
+                body: '<strong>Process (The Red Relief Protocol):</strong><br>1. <strong>Immediate:</strong> Blot with cold water (outside-in). Speed is critical.<br>2. <strong>Detergent:</strong> Mild detergent solution, 5 min dwell, blot thoroughly.<br>3. <strong>Reducing Agent:</strong> Apply reducing agent, follow label dwell time (10-15 min). Blot.<br>4. <strong>Evaluate at 70%:</strong> If 70%+ removed -- STOP. More treatment risks fiber damage.<br>5. <strong>Escalate (if needed):</strong> If less than 30% removed, offer oxidizer WITH customer permission.<br>6. <strong>Final:</strong> Extract ALL chemistry. Apply All Fiber Rinse to prevent browning.<br><br><strong>NEVER promise full removal of red stains.</strong> Promise "significant reduction" and exceed expectations.',
+                tip: '<strong>Servus Products:</strong> Reducing Agent (specialty product) for red dyes. RMC PROXI Spray &amp; Walk Away Stain Remover as oxidizer backup (spray, do not scrub, air dry). All Fiber Rinse (pH 4.0-4.5) to prevent browning. Advanced Protector (pH 7.5) after treatment.<br><strong>Available at:</strong> safetyexpress.com',
+                crumbLabel: 'Red Relief',
+                crumbIcon: 'acid'
+            },
+            {
+                id: 'result_oxidizer',
+                type: 'result',
+                iconName: 'oxidizer',
+                title: 'Oxidizer Protocol -- Break Down the Color',
+                body: '<strong>Process:</strong><br>1. <strong>ALWAYS spot-test first</strong> in a hidden area<br>2. Remove loose soil from the stain<br>3. Spray <strong>RMC PROXI Spray &amp; Walk Away Stain Remover</strong> generously from 12 inches away<br>4. <strong>Do NOT scrub or blot</strong> -- let the product work on its own<br>5. Allow area to air dry completely (up to 3 days for deep stains)<br>6. For deep pile, lightly work solution into fibers with a clean cloth<br><br><strong>How it works:</strong> Professional hydrogen peroxide oxidizer (pH 7.8) breaks down chromophores as it dries. Ready-to-use, no mixing required.',
+                tip: '<strong>Servus Products:</strong> RMC PROXI Spray &amp; Walk Away Stain Remover -- professional oxidizer for coffee, tea, juice and color stains. Citrus Burst Spotter (RTU) for lighter color stains.<br>Follow with All Fiber Rinse (pH 4.0-4.5) and Advanced Protector (pH 7.5).<br>If PROXI does not resolve the stain, escalate to senior technician.<br><strong>Available at:</strong> safetyexpress.com',
+                crumbLabel: 'Oxidizer',
+                crumbIcon: 'oxidizer'
+            },
+            {
+                id: 'result_specialty',
+                type: 'result',
+                iconName: 'unknown',
+                title: 'Specialty Protocol -- Oil, Mineral, Rust, or Unknown',
+                body: '<strong>For Oil/Grease:</strong><br>1. Apply dry solvent or Citrus Burst, dwell 5-10 min, blot<br>2. For heavy grease: Benefect Atomic Degreaser (pH 9-10), 7-10 min dwell<br>3. Extract, then acid rinse to neutralize<br><br><strong>For Rust/Mineral:</strong><br>1. Esteam Rust Remover (reducing agent), 15 min dwell<br>2. Blot carefully, rinse thoroughly<br>3. Chelating agents are safer than HF acid for routine rust<br><br><strong>For Unknown:</strong><br>1. Start with mild alkaline cleaner (Benefect Impact, pH 9.7), small test area<br>2. Dwell 5 min, observe. If working, continue. If not, try enzyme or oxidizer next.<br>3. <strong>Document everything</strong> you tried -- this protects you and Servus.',
+                tip: '<strong>Servus Products:</strong> Dry Solv or Citrus Burst (oil/grease). Benefect Atomic Degreaser (heavy grease). Esteam Rust Remover (rust/mineral). Benefect Botanical Impact Cleaner (unknown stains). All Fiber Rinse (pH 4.0-4.5) after any alkaline chemistry. Advanced Protector (pH 7.5) after treatment.<br><strong>Available at:</strong> safetyexpress.com',
+                crumbLabel: 'Specialty',
+                crumbIcon: 'unknown'
+            }
+        ];
+
+        var currentStepIndex = 0;
+        var completedSteps = [];
+        var stepPath = ['step_inspect'];
+
+        function getStepById(id) {
+            return steps.find(function(s) { return s.id === id; });
+        }
+
+        // Set header with SVG icon
+        document.getElementById('wtHeaderTitle').innerHTML = getSvgIcon('flask_header', 22) + ' Spotting Decision Walkthrough';
+
+        function renderStep() {
+            var stepId = stepPath[stepPath.length - 1];
+            var step = getStepById(stepId);
+            if (!step) return;
+
+            // Update counter
+            document.getElementById('stepCounter').textContent = 'Step ' + stepPath.length + ' of ' + (stepPath.length + (step.type === 'result' ? 0 : 1)) + '+';
+
+            // Render breadcrumb
+            var bcHTML = '';
+            stepPath.forEach(function(sid, idx) {
+                var s = getStepById(sid);
+                var isLast = idx === stepPath.length - 1;
+                var cls = isLast ? 'current' : 'completed';
+                var crumbContent = '';
+                if (s && s.crumbIcon) {
+                    crumbContent = getSvgIcon(s.crumbIcon, 14) + ' ';
+                }
+                crumbContent += (s ? s.crumbLabel : sid);
+                bcHTML += '<span class="wt-crumb ' + cls + '">' + crumbContent + '</span>';
+                if (!isLast) bcHTML += '<span class="wt-crumb-arrow">&#8594;</span>';
+            });
+            document.getElementById('breadcrumb').innerHTML = bcHTML;
+
+            // Render history
+            var histHTML = '';
+            for (var i = 0; i < completedSteps.length; i++) {
+                var cs = completedSteps[i];
+                histHTML += '<div class="wt-history-item">' +
+                    '<span class="wt-history-icon">' + getSvgIcon('result', 18) + '</span>' +
+                    '<span class="wt-history-text"><strong>' + cs.title + '</strong>' +
+                    (cs.choice ? ' <span class="wt-history-choice ' + cs.choice + '">' + (cs.choice === 'yes' ? '&#10003; Yes' : '&#10007; No') + '</span>' : '') +
+                    '</span></div>';
+            }
+            document.getElementById('history').innerHTML = histHTML;
+
+            // Render current step
+            var html = '';
+            if (step.type === 'result') {
+                html = '<div class="wt-result">' +
+                    '<div class="wt-result-icon">' + getSvgIcon(step.iconName, 48) + '</div>' +
+                    '<h3>' + step.title + '</h3>' +
+                    '<div class="wt-result-body">' + step.body + '</div>' +
+                    (step.tip ? '<div class="wt-product-tip" style="text-align:left; margin-top:16px;">' + step.tip + '</div>' : '') +
+                    '<br><button class="wt-restart-btn" onclick="restart()">' + getSvgIcon('restart', 18) + ' Try a Different Scenario</button>' +
+                '</div>';
+            } else {
+                html = '<div class="wt-step-card">' +
+                    '<div class="wt-step-top">' +
+                        '<div class="wt-step-icon ' + (step.iconClass || '') + '">' + getSvgIcon(step.iconName, 28) + '</div>' +
+                        '<div class="wt-step-label ' + (step.labelClass || '') + '">' + (step.label || 'STEP') + '</div>' +
+                        '<div class="wt-step-title">' + step.title + '</div>' +
+                        '<div class="wt-step-body">' + step.body + '</div>' +
+                        (step.tip ? '<div class="wt-product-tip">' + step.tip + '</div>' : '') +
+                    '</div>';
+
+                if (step.choices) {
+                    html += '<div class="wt-choices">' +
+                        '<button class="wt-choice-btn yes" onclick="makeChoice(\'' + step.id + '\', \'yes\')">' +
+                            '<span class="btn-icon">&#10003;</span>' + step.choices.yes.label +
+                            '<div class="btn-label">' + step.choices.yes.sublabel + '</div>' +
+                        '</button>' +
+                        '<button class="wt-choice-btn no" onclick="makeChoice(\'' + step.id + '\', \'no\')">' +
+                            '<span class="btn-icon">&#10007;</span>' + step.choices.no.label +
+                            '<div class="btn-label">' + step.choices.no.sublabel + '</div>' +
+                        '</button>' +
+                    '</div>';
+                } else if (step.next) {
+                    html += '<div class="wt-continue">' +
+                        '<button class="wt-continue-btn" onclick="goNext(\'' + step.id + '\', \'' + step.next + '\')">Continue &#8594;</button>' +
+                    '</div>';
+                }
+                html += '</div>';
+            }
+
+            document.getElementById('stepArea').innerHTML = html;
+
+            // Scroll to step
+            document.getElementById('stepArea').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function makeChoice(stepId, choice) {
+            var step = getStepById(stepId);
+            completedSteps.push({ title: step.title, choice: choice });
+            var nextId = step.choices[choice].next;
+            stepPath.push(nextId);
+            renderStep();
+        }
+
+        function goNext(stepId, nextId) {
+            var step = getStepById(stepId);
+            completedSteps.push({ title: step.title, choice: null });
+            stepPath.push(nextId);
+            renderStep();
+        }
+
+        function restart() {
+            completedSteps = [];
+            stepPath = ['step_inspect'];
+            renderStep();
+            document.getElementById('walkthrough').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Initialize walkthrough
+        renderStep();
+    </script>
 </body>
 </html>
