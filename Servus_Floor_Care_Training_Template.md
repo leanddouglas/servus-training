@@ -8,7 +8,7 @@
 ## Source Repository
 - **Repo:** `leanddouglas/servus-training`
 - **GitHub Pages:** `https://leanddouglas.github.io/servus-training/`
-- **Netlify:** (deployed — see site URL after deployment)
+- **Netlify:** `https://servus-training.netlify.app/` (Site ID: `5891f18b-9cdd-45cf-ac20-e71877c9222a`)
 - **Pages:** course_index.html, day1-5/index.html, fiber_identification_printable.html, sop/index.html, burn-test-visual-samples.html
 - **Extracted from:** All pages (course index + 5 day pages + SOP reference + printables)
 
