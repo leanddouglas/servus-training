@@ -864,23 +864,23 @@
             box-shadow: 0 4px 12px rgba(255,153,0,0.4);
         }
         .page-nav-top {
-            padding: 6px 40px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 8px 40px 0;
         }
         .page-nav-top a {
-            color: var(--servus-navy);
+            color: #7a8ea0;
             text-decoration: none;
+            font-size: 0.8em;
             font-weight: 500;
-            font-size: 0.88em;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
-            transition: color 0.2s;
+            gap: 4px;
         }
         .page-nav-top a:hover {
-            color: #ff9900;
+            color: var(--servus-navy);
         }
         @media (max-width: 768px) {
             .page-nav { padding: 10px 16px; gap: 8px; }
