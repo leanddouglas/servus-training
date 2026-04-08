@@ -652,15 +652,45 @@
 
         /* ===== FOOTER ===== */
         .course-footer {
-            background: var(--servus-navy-dark);
-            color: rgba(255,255,255,0.5);
+            background: linear-gradient(135deg, var(--servus-navy-dark) 0%, #1a1a2e 100%);
+            color: rgba(255,255,255,0.6);
             text-align: center;
-            padding: 30px 20px;
-            font-size: 0.8em;
+            padding: 40px 20px 30px;
+            font-size: 0.85em;
         }
 
         .course-footer strong {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.85);
+        }
+
+        .course-footer a {
+            color: var(--servus-accent);
+            text-decoration: none;
+        }
+
+        .course-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .course-footer .footer-certs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        .course-footer .footer-certs img {
+            height: 38px;
+            filter: brightness(0) invert(1);
+            opacity: 0.7;
+        }
+
+        .course-footer .footer-certs img.servus-logo {
+            filter: none;
+            border-radius: 6px;
+            height: 40px;
         }
 
         /* ===== ANIMATIONS ===== */
@@ -1121,9 +1151,18 @@
 
 <!-- ===== FOOTER ===== -->
 <footer class="course-footer">
-    <p><strong>Servus Group Lower Mainland</strong> — Professional Carpet Care Certification Program</p>
-    <p style="margin-top: 6px;">© 2026 Servus Group. For internal training and certification purposes only.</p>
-    <p style="margin-top: 4px;">Developed by <strong>Doug da Silva</strong> · IICRC S100 Compliant · WorkSafeBC 2026 · COR Certified · CRI Standards</p>
+    <p><strong style="font-size: 1.2em; color: rgba(255,255,255,0.9);">Servus Group</strong></p>
+    <p style="margin: 4px 0 12px;">Specialty Cleaning &mdash; Professional Carpet Care Certification</p>
+    <p style="margin: 4px 0;"><strong>Contact:</strong> <a href="tel:604-435-1135">604-435-1135</a> | <a href="mailto:info@servusgroup.com">info@servusgroup.com</a></p>
+    <p style="margin: 4px 0;">160-21900 Westminster Hwy, Richmond BC V6V 2K3 | <a href="https://servusgrouplowermainland.com" target="_blank">servusgrouplowermainland.com</a></p>
+    <div class="footer-certs">
+        <img src="https://servusgrouplowermainland.com/wp-content/uploads/2014/07/go2HR-CORLogo-K-300x283.png" alt="COR Certified">
+        <img src="assets/iicrc-logo.png" alt="IICRC S100 Certified">
+        <img src="assets/cri-logo.png" alt="CRI - Carpet &amp; Rug Institute">
+        <img src="assets/servus-logo-white.jpg" alt="Servus Group" class="servus-logo">
+    </div>
+    <p style="font-size: 0.8em; max-width: 700px; margin: 10px auto 0; line-height: 1.4; opacity: 0.5;">This material is for Servus Group staff training and certification purposes only. All equipment and chemicals referenced are approved for use by Servus Group and comply with applicable safety standards (WHMIS, WorkSafeBC). Product recommendations and protocols reflect Servus Group&rsquo;s best practices and may vary based on site-specific conditions. Always consult equipment manuals and chemical Safety Data Sheets (SDS) before use.</p>
+    <p style="margin-top: 14px; font-size: 0.75em; opacity: 0.4;">&copy; 2026 Servus Group. Developed by <strong>Douglas da Silva</strong></p>
 </footer>
 
 <script>
