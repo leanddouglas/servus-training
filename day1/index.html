@@ -813,6 +813,16 @@
     .cert-strip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .glossary-widget { display: none; }
   }
+  /* === SOP SYSTEM BANNER === */
+  .sop-system-card { border: 2px solid #0a4875; border-radius: 14px; overflow: hidden; margin-bottom: 28px; }
+  .sop-system-card-header { background: linear-gradient(135deg, #062d4a, #0a4875); color: white; padding: 16px 22px; display: flex; align-items: center; gap: 14px; }
+  .sop-system-card-header .sop-icon { width: 36px; height: 36px; background: rgba(255,153,0,0.15); border: 1.5px solid rgba(255,153,0,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .sop-system-card-header h4 { margin: 0; font-size: 0.95em; font-weight: 800; }
+  .sop-system-card-header .sop-sub { font-size: 0.75em; opacity: 0.7; margin-top: 2px; }
+  .sop-system-card-body { padding: 14px 22px; display: flex; gap: 10px; flex-wrap: wrap; background: #f8fafc; }
+  .sop-chip { display: inline-flex; align-items: center; gap: 6px; background: white; border: 1px solid #dde5ed; padding: 5px 12px; border-radius: 8px; font-size: 0.76em; font-weight: 600; color: #0a4875; }
+  .sop-chip-num { background: #0a4875; color: white; padding: 1px 6px; border-radius: 4px; font-size: 0.8em; font-weight: 800; }
+  @media (max-width: 768px) { .sop-system-card-body { flex-direction: column; } }
 </style>
 
 <script type="module">
@@ -870,6 +880,21 @@
 
 <!-- ==================== MAIN CONTENT ==================== -->
 <div class="content">
+
+<!-- SOP SYSTEM BANNER -->
+<div class="sop-system-card">
+    <div class="sop-system-card-header">
+        <div class="sop-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff9900" stroke-width="2" stroke-linecap="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6"/><path d="M9 16h6"/></svg></div>
+        <div>
+            <h4>Servus Standard Operating Procedures &mdash; Day 1</h4>
+            <div class="sop-sub">This module contains 2 SOPs from the Servus Operational System</div>
+        </div>
+    </div>
+    <div class="sop-system-card-body">
+        <div class="sop-chip"><span class="sop-chip-num">001</span> Pre-Inspection &amp; Client Documentation</div>
+        <div class="sop-chip"><span class="sop-chip-num">002</span> Burn Test Fiber Identification Protocol</div>
+    </div>
+</div>
 
 <h2 class="section-title">Executive Overview: The Servus Standard</h2>
 
