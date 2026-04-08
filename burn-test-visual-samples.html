@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Burn Test Visual Concepts — Pick Your Favorite</title>
+<title>Burn Test — Professional Fiber Identification Guide</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -15,174 +15,122 @@
     --servus-cloud-blue: #F2F7FC;
     --servus-text: #333333;
 }
+* { box-sizing: border-box; }
 body {
     font-family: 'Inter', sans-serif;
     color: var(--servus-text);
-    background: #f5f5f5;
+    background: #f0f2f5;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     line-height: 1.6;
 }
-.concept-header {
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #062d4a 0%, #005a87 100%);
+
+/* ===== HEADER ===== */
+.page-header {
+    background: linear-gradient(135deg, #041e30 0%, #062d4a 30%, #005a87 100%);
     color: white;
-    border-radius: 16px;
+    text-align: center;
+    padding: 50px 20px 40px;
+    position: relative;
+    overflow: hidden;
+}
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(255,153,0,0.08) 0%, transparent 60%);
+    pointer-events: none;
+}
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,153,0,0.15);
+    border: 1px solid rgba(255,153,0,0.3);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.78em;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ffb84d;
+    margin-bottom: 16px;
+}
+.page-header h1 {
+    margin: 0 0 8px;
+    font-size: 2.2em;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+.page-header .subtitle {
+    opacity: 0.7;
+    font-size: 1em;
+    font-weight: 400;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.page-content { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+/* ===== STEP FLOW SECTION ===== */
+.section-label {
+    text-align: center;
+    margin-bottom: 8px;
+}
+.section-label span {
+    display: inline-block;
+    font-size: 0.72em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--servus-navy);
+    background: var(--servus-light-blue);
+    padding: 5px 16px;
+    border-radius: 4px;
+}
+.section-title {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--servus-navy);
+    margin: 0 0 30px;
+}
+
+.flow-steps {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: center;
+    gap: 0;
     margin-bottom: 40px;
 }
-.concept-header h1 { margin: 0 0 8px; font-size: 2em; }
-.concept-header p { opacity: 0.8; margin: 0; }
-.concept-label {
-    background: var(--servus-accent);
-    color: white;
-    display: inline-block;
-    padding: 8px 24px;
-    border-radius: 20px;
-    font-weight: 800;
-    font-size: 1.1em;
-    margin-bottom: 16px;
-    letter-spacing: 1px;
-}
-.concept-desc {
-    max-width: 800px;
-    margin: 0 auto 30px;
-    text-align: center;
-    color: #666;
-    font-size: 0.95em;
-}
-.section-divider {
-    height: 4px;
-    background: var(--servus-accent);
-    border: none;
-    margin: 60px 0;
-    border-radius: 2px;
-}
-
-/* ===== CONCEPT A: SMELL MEMORY CARDS ===== */
-.smell-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 960px;
-    margin: 0 auto;
-}
-.smell-card {
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-.smell-card:hover { transform: translateY(-6px); }
-.smell-card-top {
-    padding: 30px 20px;
-    text-align: center;
-    color: white;
-    position: relative;
-}
-.smell-emoji { font-size: 3.5em; margin-bottom: 8px; }
-.smell-name { font-size: 1.4em; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
-.smell-tagline { font-size: 1em; font-weight: 600; opacity: 0.9; margin-top: 4px; }
-.smell-card-bottom {
-    background: white;
-    padding: 20px;
-}
-.smell-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 10px;
-    font-size: 0.85em;
-}
-.smell-icon { font-size: 1.1em; flex-shrink: 0; margin-top: 1px; }
-.smell-label { font-weight: 700; color: var(--servus-navy); min-width: 55px; }
-
-.card-nylon .smell-card-top { background: linear-gradient(135deg, #1565c0, #1976d2); }
-.card-polyester .smell-card-top { background: linear-gradient(135deg, #6a1b9a, #8e24aa); }
-.card-olefin .smell-card-top { background: linear-gradient(135deg, #e65100, #f57c00); }
-.card-wool .smell-card-top { background: linear-gradient(135deg, #2e7d32, #43a047); }
-
-/* ===== CONCEPT B: COMPARISON TABLE ===== */
-.compare-table {
-    max-width: 960px;
-    margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-.compare-table table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-}
-.compare-table th {
-    padding: 14px 16px;
-    font-size: 0.78em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-    color: white;
-    background: var(--servus-navy);
-}
-.compare-table th:first-child { text-align: left; }
-.compare-table td {
-    padding: 16px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    font-size: 0.88em;
-    vertical-align: middle;
-}
-.compare-table td:first-child { text-align: left; font-weight: 700; }
-.compare-table tr:hover { background: var(--servus-pale-blue); }
-.fiber-badge {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 0.85em;
-    color: white;
-}
-.fiber-badge.nylon { background: #1565c0; }
-.fiber-badge.polyester { background: #8e24aa; }
-.fiber-badge.olefin { background: #e65100; }
-.fiber-badge.wool { background: #2e7d32; }
-.obs-emoji { font-size: 1.6em; display: block; margin-bottom: 4px; }
-.obs-text { font-size: 0.82em; color: #555; }
-.compare-table .residue-cell { font-weight: 600; }
-
-/* ===== CONCEPT C: STEP FLOW + DECISION ===== */
-.flow-container {
-    max-width: 960px;
-    margin: 0 auto;
-}
-.flow-steps {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 30px;
-}
 .flow-step {
-    flex: 1;
     background: white;
-    border-radius: 12px;
-    padding: 20px;
+    border-radius: 16px;
+    padding: 28px 20px 24px;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
     position: relative;
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-.flow-step::after {
-    content: "→";
-    position: absolute;
-    right: -14px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5em;
-    color: var(--servus-accent);
-    font-weight: 800;
+.flow-step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
 }
-.flow-step:last-child::after { display: none; }
+.flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+}
+.flow-arrow svg { width: 36px; height: 36px; }
+
 .step-num {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     background: var(--servus-navy);
     color: white;
     border-radius: 50%;
@@ -190,323 +138,1211 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: 800;
-    margin: 0 auto 10px;
+    font-size: 0.85em;
+    margin: 0 auto 16px;
 }
-.step-title { font-weight: 700; color: var(--servus-navy); font-size: 0.9em; }
-.step-desc { font-size: 0.8em; color: #666; margin-top: 4px; }
+.step-illustration {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.step-title {
+    font-weight: 700;
+    color: var(--servus-navy);
+    font-size: 0.95em;
+    margin-bottom: 6px;
+}
+.step-desc {
+    font-size: 0.82em;
+    color: #666;
+    line-height: 1.5;
+}
 
+/* ===== MATCH RESULTS DIVIDER ===== */
+.match-divider {
+    text-align: center;
+    margin: 10px 0 36px;
+    position: relative;
+}
+.match-divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ddd, transparent);
+}
+.match-divider span {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--servus-accent);
+    color: white;
+    padding: 10px 28px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.88em;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(255,153,0,0.3);
+}
+
+/* ===== DECISION CARDS ===== */
 .decision-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 20px;
 }
 .decision-card {
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 18px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(0,0,0,0.04);
 }
-.decision-header {
-    padding: 16px 20px;
+.decision-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+/* Card Header */
+.card-header {
+    padding: 18px 22px;
     color: white;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 }
-.decision-header .fiber-emoji { font-size: 2em; }
-.decision-header .fiber-title { font-weight: 800; font-size: 1.2em; text-transform: uppercase; }
-.decision-body {
-    background: white;
-    padding: 16px 20px;
+.card-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
+.card-header-text .fiber-name {
+    font-weight: 800;
+    font-size: 1.15em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.card-header-text .fiber-sub {
+    opacity: 0.8;
+    font-size: 0.82em;
+    font-weight: 400;
+}
+
+/* Visual Observation Strip */
+.obs-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: #f8f9fb;
+    border-bottom: 1px solid #eee;
+}
+.obs-panel {
+    padding: 14px 8px;
+    text-align: center;
+    border-right: 1px solid #eee;
+    position: relative;
+}
+.obs-panel:last-child { border-right: none; }
+.obs-panel-label {
+    font-size: 0.62em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 8px;
+}
+.obs-panel-illustration {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.obs-panel-text {
+    font-size: 0.68em;
+    color: #555;
+    margin-top: 6px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+/* Card Body */
+.card-body { background: white; padding: 16px 22px; }
 .clue-row {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 8px 0;
-    border-bottom: 1px solid #f0f0f0;
+    padding: 9px 0;
+    border-bottom: 1px solid #f3f3f3;
     font-size: 0.88em;
 }
 .clue-row:last-child { border-bottom: none; }
-.clue-icon { font-size: 1.3em; width: 30px; text-align: center; }
-.clue-label { font-weight: 700; color: var(--servus-navy); width: 70px; }
-.clue-value { color: #444; }
+.clue-icon-wrap {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.clue-label {
+    font-weight: 700;
+    color: var(--servus-navy);
+    width: 65px;
+    flex-shrink: 0;
+    font-size: 0.9em;
+}
+.clue-value { color: #444; line-height: 1.4; }
+
+/* Memory Tip */
 .memory-tip {
-    margin-top: 12px;
+    margin: 14px 0 4px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 0.84em;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.4;
+}
+.memory-tip-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+.memory-tip strong { font-weight: 700; }
+
+/* pH Warning bar */
+.ph-bar {
+    padding: 10px 22px;
+    font-size: 0.78em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===== COLOR THEMES ===== */
+/* Nylon — Blue */
+.card-nylon .card-header { background: linear-gradient(135deg, #0d47a1, #1565c0 60%, #1976d2); }
+.card-nylon .clue-icon-wrap { background: #e3f2fd; }
+.card-nylon .clue-icon-wrap svg { color: #1565c0; }
+.card-nylon .memory-tip { background: #e3f2fd; color: #0d47a1; }
+.card-nylon .ph-bar { background: #f0f7ff; color: #1565c0; }
+
+/* Polyester — Purple */
+.card-polyester .card-header { background: linear-gradient(135deg, #4a148c, #6a1b9a 60%, #8e24aa); }
+.card-polyester .clue-icon-wrap { background: #f3e5f5; }
+.card-polyester .clue-icon-wrap svg { color: #7b1fa2; }
+.card-polyester .memory-tip { background: #f3e5f5; color: #4a148c; }
+.card-polyester .ph-bar { background: #faf0fc; color: #7b1fa2; }
+
+/* Olefin — Orange */
+.card-olefin .card-header { background: linear-gradient(135deg, #bf360c, #e65100 60%, #f57c00); }
+.card-olefin .clue-icon-wrap { background: #fff3e0; }
+.card-olefin .clue-icon-wrap svg { color: #e65100; }
+.card-olefin .memory-tip { background: #fff3e0; color: #bf360c; }
+.card-olefin .ph-bar { background: #fff8f0; color: #e65100; }
+
+/* Wool — Green */
+.card-wool .card-header { background: linear-gradient(135deg, #1b5e20, #2e7d32 60%, #43a047); }
+.card-wool .clue-icon-wrap { background: #e8f5e9; }
+.card-wool .clue-icon-wrap svg { color: #2e7d32; }
+.card-wool .memory-tip { background: #e8f5e9; color: #1b5e20; }
+.card-wool .ph-bar { background: #f0faf0; color: #2e7d32; }
+
+/* ===== PRINT KEY ===== */
+.print-key {
+    margin-top: 40px;
+    background: white;
+    border-radius: 12px;
+    padding: 24px 28px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.print-key h3 {
+    margin: 0 0 12px;
+    font-size: 0.9em;
+    color: var(--servus-navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.print-key-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.print-key-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding: 10px 14px;
     border-radius: 8px;
+    background: #f8f9fb;
     font-size: 0.82em;
-    font-weight: 600;
+}
+.pk-swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    flex-shrink: 0;
 }
 
-.card-nylon-d .decision-header { background: linear-gradient(135deg, #1565c0, #1976d2); }
-.card-nylon-d .memory-tip { background: #e3f2fd; color: #1565c0; }
-.card-polyester-d .decision-header { background: linear-gradient(135deg, #6a1b9a, #8e24aa); }
-.card-polyester-d .memory-tip { background: #f3e5f5; color: #6a1b9a; }
-.card-olefin-d .decision-header { background: linear-gradient(135deg, #e65100, #f57c00); }
-.card-olefin-d .memory-tip { background: #fff3e0; color: #e65100; }
-.card-wool-d .decision-header { background: linear-gradient(135deg, #2e7d32, #43a047); }
-.card-wool-d .memory-tip { background: #e8f5e9; color: #2e7d32; }
-
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .smell-grid { grid-template-columns: 1fr 1fr; }
-    .flow-steps { flex-direction: column; }
-    .flow-step::after { display: none; }
+    .flow-steps {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .flow-arrow {
+        transform: rotate(90deg);
+        padding: 4px 0;
+    }
     .decision-grid { grid-template-columns: 1fr; }
+    .print-key-grid { grid-template-columns: 1fr 1fr; }
+    .obs-strip { grid-template-columns: repeat(2, 1fr); }
+    .obs-panel:nth-child(2) { border-right: none; }
 }
+
+/* ===== PRINT ===== */
 @media print {
     body { background: white; }
-    .concept-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .smell-card, .decision-card { break-inside: avoid; }
+    .page-header, .card-header, .obs-strip, .memory-tip, .ph-bar, .print-key-item {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .decision-card, .flow-step { break-inside: avoid; page-break-inside: avoid; }
+    .decision-card:hover, .flow-step:hover { transform: none; box-shadow: none; }
 }
 </style>
 </head>
 <body>
 
-<div class="concept-header">
-    <h1>Burn Test Visual Concepts</h1>
-    <p>3 different approaches — pick the one that clicks best for your students</p>
+<!-- ===== HEADER ===== -->
+<div class="page-header">
+    <div class="header-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Day 1 — Fiber Identification
+    </div>
+    <h1>Burn Test Protocol</h1>
+    <p class="subtitle">Professional fiber identification through controlled burn analysis</p>
 </div>
 
-<!-- ==================== CONCEPT A ==================== -->
-<div style="text-align: center;">
-    <div class="concept-label">CONCEPT A — "Smell Memory Cards"</div>
+<div class="page-content">
+
+<!-- ===== THE PROCESS (3 STEPS) ===== -->
+<div class="section-label"><span>The Process</span></div>
+<h2 class="section-title">3-Step Burn Test Procedure</h2>
+
+<div class="flow-steps">
+    <!-- STEP 1 -->
+    <div class="flow-step">
+        <div class="step-num">1</div>
+        <div class="step-illustration">
+            <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Carpet base -->
+                <rect x="15" y="72" width="80" height="22" rx="3" fill="#c8b89a"/>
+                <rect x="15" y="72" width="80" height="6" rx="2" fill="#b8a488"/>
+                <!-- Carpet fibers (tuft rows) -->
+                <g opacity="0.9">
+                    <path d="M22 72c0-6 1-14 2-18" stroke="#8B7355" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M26 72c0-5 0-12 1-17" stroke="#9B8365" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M30 72c0-6 2-14 1-18" stroke="#8B7355" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M34 72c0-5 -1-13 0-16" stroke="#7B6345" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M38 72c0-6 1-14 2-18" stroke="#9B8365" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M42 72c0-5 0-11 -1-15" stroke="#8B7355" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M46 72c0-6 1-13 2-17" stroke="#7B6345" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M50 72c0-5 -1-14 0-18" stroke="#9B8365" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M54 72c0-6 1-12 1-16" stroke="#8B7355" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M58 72c0-5 0-14 -1-17" stroke="#7B6345" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M62 72c0-6 2-13 1-18" stroke="#9B8365" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M66 72c0-5 -1-11 0-15" stroke="#8B7355" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M70 72c0-6 1-14 2-17" stroke="#7B6345" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M74 72c0-5 0-13 -1-16" stroke="#9B8365" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M78 72c0-6 1-12 1-18" stroke="#8B7355" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M82 72c0-5 -1-14 0-17" stroke="#7B6345" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M86 72c0-6 2-13 1-16" stroke="#9B8365" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M90 72c0-5 0-11 -1-15" stroke="#8B7355" stroke-width="1.8" stroke-linecap="round"/>
+                </g>
+                <!-- Tweezers -->
+                <g transform="translate(46, 8) rotate(15)">
+                    <!-- Left arm -->
+                    <path d="M0 45 L8 0" stroke="#888" stroke-width="3" stroke-linecap="round" fill="none"/>
+                    <path d="M0 45 L-1 48" stroke="#999" stroke-width="4" stroke-linecap="round" fill="none"/>
+                    <!-- Right arm -->
+                    <path d="M6 45 L14 0" stroke="#888" stroke-width="3" stroke-linecap="round" fill="none"/>
+                    <path d="M6 45 L7 48" stroke="#999" stroke-width="4" stroke-linecap="round" fill="none"/>
+                    <!-- Grip ridges -->
+                    <line x1="3" y1="12" x2="5" y2="12" stroke="#aaa" stroke-width="1"/>
+                    <line x1="3" y1="16" x2="5" y2="16" stroke="#aaa" stroke-width="1"/>
+                    <line x1="3" y1="20" x2="5" y2="20" stroke="#aaa" stroke-width="1"/>
+                    <line x1="3" y1="24" x2="5" y2="24" stroke="#aaa" stroke-width="1"/>
+                    <!-- Fiber tuft in grip -->
+                    <g transform="translate(3, 46)">
+                        <path d="M-2 0c0 4 -1 8 0 12" stroke="#9B8365" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M0 0c0 3 1 7 0 11" stroke="#8B7355" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M2 0c0 4 -1 8 1 12" stroke="#7B6345" stroke-width="1.2" stroke-linecap="round"/>
+                    </g>
+                    <!-- Metal sheen highlights -->
+                    <path d="M2 8 L10 8" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
+                </g>
+                <!-- "Hidden area" label arrow -->
+                <path d="M55 96 L38 82" stroke="#0a4875" stroke-width="1.2" stroke-dasharray="3 2" fill="none" marker-end="url(#arrowhead)"/>
+                <defs>
+                    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto"><polygon points="0 0, 6 2, 0 4" fill="#0a4875"/></marker>
+                </defs>
+            </svg>
+        </div>
+        <div class="step-title">Isolate Sample</div>
+        <div class="step-desc">Pull a small tuft from a <strong>hidden area</strong> (closet corner, under furniture). Use tweezers — never cut loop pile.</div>
+    </div>
+
+    <!-- Arrow -->
+    <div class="flow-arrow">
+        <svg viewBox="0 0 36 36" fill="none"><path d="M8 18h16M20 12l6 6-6 6" stroke="#ff9900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="flow-step">
+        <div class="step-num">2</div>
+        <div class="step-illustration">
+            <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Lighter body -->
+                <rect x="35" y="42" width="22" height="52" rx="4" fill="url(#lighterGrad)"/>
+                <rect x="37" y="44" width="18" height="48" rx="3" fill="url(#lighterInner)" opacity="0.3"/>
+                <!-- Lighter top mechanism -->
+                <rect x="39" y="38" width="14" height="8" rx="2" fill="#777"/>
+                <rect x="42" y="34" width="8" height="6" rx="1.5" fill="#666"/>
+                <circle cx="46" cy="36" r="2.5" fill="#555"/>
+                <!-- Spark wheel -->
+                <rect x="41" y="39" width="10" height="3" rx="1" fill="#999"/>
+                <!-- Gas window -->
+                <rect x="40" y="60" width="12" height="20" rx="2" fill="#87CEEB" opacity="0.3"/>
+                <rect x="40" y="60" width="12" height="8" rx="2" fill="#87CEEB" opacity="0.15"/>
+                <!-- Flame -->
+                <g>
+                    <ellipse cx="46" cy="20" rx="7" ry="14" fill="url(#flameOuter)" opacity="0.6"/>
+                    <ellipse cx="46" cy="22" rx="5" ry="11" fill="url(#flameMiddle)" opacity="0.8"/>
+                    <ellipse cx="46" cy="24" rx="3" ry="8" fill="url(#flameInner)"/>
+                    <ellipse cx="46" cy="28" rx="2" ry="5" fill="#4fc3f7" opacity="0.9"/>
+                    <!-- Flame glow -->
+                    <ellipse cx="46" cy="20" rx="12" ry="18" fill="url(#flameGlow)" opacity="0.2"/>
+                </g>
+                <!-- Fiber sample being held to flame -->
+                <g transform="translate(58, 18)">
+                    <path d="M0 8 C4 6, 8 4, 16 2" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M0 10 C4 8, 8 7, 15 5" stroke="#9B8365" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M0 12 C4 10, 8 9, 14 8" stroke="#7B6345" stroke-width="1.5" stroke-linecap="round"/>
+                    <!-- Heat glow on fiber tip -->
+                    <circle cx="2" cy="10" r="4" fill="#ff6600" opacity="0.25"/>
+                </g>
+                <!-- Lighter label -->
+                <text x="46" y="80" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="4" font-weight="700" letter-spacing="1">BUTANE</text>
+                <defs>
+                    <linearGradient id="lighterGrad" x1="35" y1="42" x2="57" y2="42" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#555"/>
+                        <stop offset="40%" stop-color="#777"/>
+                        <stop offset="100%" stop-color="#555"/>
+                    </linearGradient>
+                    <linearGradient id="lighterInner" x1="37" y1="44" x2="55" y2="44" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#fff"/>
+                        <stop offset="100%" stop-color="transparent"/>
+                    </linearGradient>
+                    <radialGradient id="flameOuter" cx="50%" cy="60%" r="50%">
+                        <stop offset="0%" stop-color="#ff6600"/>
+                        <stop offset="100%" stop-color="#ff3300" stop-opacity="0"/>
+                    </radialGradient>
+                    <radialGradient id="flameMiddle" cx="50%" cy="60%" r="50%">
+                        <stop offset="0%" stop-color="#ffcc00"/>
+                        <stop offset="100%" stop-color="#ff6600"/>
+                    </radialGradient>
+                    <radialGradient id="flameInner" cx="50%" cy="70%" r="50%">
+                        <stop offset="0%" stop-color="#fff8e1"/>
+                        <stop offset="60%" stop-color="#ffcc00"/>
+                        <stop offset="100%" stop-color="#ff9900"/>
+                    </radialGradient>
+                    <radialGradient id="flameGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#ffcc00"/>
+                        <stop offset="100%" stop-color="#ffcc00" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="step-title">Ignite & Observe</div>
+        <div class="step-desc">Use <strong>odorless butane lighter</strong> (never matches). Hold tuft to flame. Watch for: melt vs. sizzle vs. burn.</div>
+    </div>
+
+    <!-- Arrow -->
+    <div class="flow-arrow">
+        <svg viewBox="0 0 36 36" fill="none"><path d="M8 18h16M20 12l6 6-6 6" stroke="#ff9900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="flow-step">
+        <div class="step-num">3</div>
+        <div class="step-illustration">
+            <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Clipboard -->
+                <rect x="20" y="14" width="70" height="86" rx="6" fill="#e8e0d4"/>
+                <rect x="22" y="18" width="66" height="80" rx="4" fill="white"/>
+                <rect x="38" y="8" width="34" height="14" rx="4" fill="#999"/>
+                <rect x="42" y="10" width="26" height="10" rx="3" fill="#bbb"/>
+                <circle cx="55" cy="15" r="3" fill="#ddd"/>
+
+                <!-- 4 Observation rows with icons -->
+                <!-- Row 1: Flame -->
+                <g transform="translate(30, 28)">
+                    <rect width="50" height="16" rx="3" fill="#fff3e0"/>
+                    <g transform="translate(4, 2)">
+                        <ellipse cx="6" cy="6" rx="4" ry="7" fill="#ff9900" opacity="0.8"/>
+                        <ellipse cx="6" cy="7" rx="2.5" ry="5" fill="#ffcc00"/>
+                        <ellipse cx="6" cy="8" rx="1.5" ry="3" fill="#fff8e1"/>
+                    </g>
+                    <text x="18" y="11" fill="#333" font-size="6" font-weight="700">FLAME</text>
+                    <rect x="52" y="4" width="6" height="8" rx="1" fill="none" stroke="#ccc" stroke-width="0.8"/>
+                </g>
+
+                <!-- Row 2: Smoke -->
+                <g transform="translate(30, 48)">
+                    <rect width="50" height="16" rx="3" fill="#f5f5f5"/>
+                    <g transform="translate(3, 1)">
+                        <circle cx="6" cy="10" r="3" fill="#999" opacity="0.4"/>
+                        <circle cx="8" cy="7" r="3.5" fill="#aaa" opacity="0.3"/>
+                        <circle cx="5" cy="5" r="2.5" fill="#bbb" opacity="0.3"/>
+                        <circle cx="7" cy="3" r="2" fill="#ccc" opacity="0.2"/>
+                    </g>
+                    <text x="18" y="11" fill="#333" font-size="6" font-weight="700">SMOKE</text>
+                    <rect x="52" y="4" width="6" height="8" rx="1" fill="none" stroke="#ccc" stroke-width="0.8"/>
+                </g>
+
+                <!-- Row 3: Odor -->
+                <g transform="translate(30, 68)">
+                    <rect width="50" height="16" rx="3" fill="#e8f5e9"/>
+                    <g transform="translate(2, 1)">
+                        <ellipse cx="7" cy="9" rx="5" ry="5" fill="none" stroke="#666" stroke-width="1.2"/>
+                        <path d="M5 6 C5 4, 7 3, 8 5" stroke="#666" stroke-width="0.8" fill="none"/>
+                        <circle cx="5.5" cy="8" r="0.6" fill="#666"/>
+                        <path d="M12 7 C14 5, 15 3, 14 1" stroke="#999" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.6"/>
+                        <path d="M13 9 C15 7, 16 5, 15 3" stroke="#999" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.4"/>
+                    </g>
+                    <text x="18" y="11" fill="#333" font-size="6" font-weight="700">ODOR</text>
+                    <rect x="52" y="4" width="6" height="8" rx="1" fill="none" stroke="#ccc" stroke-width="0.8"/>
+                </g>
+
+                <!-- Row 4: Residue -->
+                <g transform="translate(30, 88)">
+                    <rect width="50" height="16" rx="3" fill="#e3f2fd"/>
+                    <g transform="translate(3, 3)">
+                        <circle cx="6" cy="5" r="4" fill="url(#residueGrad)"/>
+                        <ellipse cx="5" cy="4" rx="1.5" ry="1" fill="rgba(255,255,255,0.4)"/>
+                    </g>
+                    <text x="18" y="11" fill="#333" font-size="6" font-weight="700">RESIDUE</text>
+                    <rect x="52" y="4" width="6" height="8" rx="1" fill="none" stroke="#ccc" stroke-width="0.8"/>
+                </g>
+                <defs>
+                    <radialGradient id="residueGrad" cx="40%" cy="35%" r="55%">
+                        <stop offset="0%" stop-color="#888"/>
+                        <stop offset="100%" stop-color="#444"/>
+                    </radialGradient>
+                </defs>
+
+                <!-- Checkmark decorations -->
+                <g transform="translate(83, 32)" opacity="0.7">
+                    <path d="M0 4 L2 6 L6 0" stroke="#4caf50" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                </g>
+                <g transform="translate(83, 52)" opacity="0.7">
+                    <path d="M0 4 L2 6 L6 0" stroke="#4caf50" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                </g>
+            </svg>
+        </div>
+        <div class="step-title">Check 4 Pillars</div>
+        <div class="step-desc">Document: <strong>Flame behavior</strong>, <strong>Smoke color</strong>, <strong>Odor</strong>, and <strong>Residue</strong> (ash or bead).</div>
+    </div>
 </div>
-<p class="concept-desc">Each fiber gets a <strong>color + emoji + memorable smell tagline</strong>. Students remember "Nylon = celery" or "Polyester = rotten fruit" — the smell is the anchor that sticks in memory. Great for quick field reference.</p>
 
-<div class="smell-grid">
-    <div class="smell-card card-nylon">
-        <div class="smell-card-top">
-            <div class="smell-emoji">🥬</div>
-            <div class="smell-name">Nylon</div>
-            <div class="smell-tagline">"Celery & Sealing Wax"</div>
-        </div>
-        <div class="smell-card-bottom">
-            <div class="smell-row"><span class="smell-icon">🔥</span> <span class="smell-label">Flame:</span> Blue base, orange tip</div>
-            <div class="smell-row"><span class="smell-icon">💨</span> <span class="smell-label">Smoke:</span> White/gray, moderate</div>
-            <div class="smell-row"><span class="smell-icon">👃</span> <span class="smell-label">Smell:</span> Celery or sealing wax</div>
-            <div class="smell-row"><span class="smell-icon">⚫</span> <span class="smell-label">Residue:</span> Hard, round gray/brown bead</div>
-            <div class="smell-row"><span class="smell-icon">⚠️</span> <span class="smell-label">pH:</span> Safe range 2-10</div>
-        </div>
-    </div>
-
-    <div class="smell-card card-polyester">
-        <div class="smell-card-top">
-            <div class="smell-emoji">🍎</div>
-            <div class="smell-name">Polyester</div>
-            <div class="smell-tagline">"Sweet Overripe Fruit"</div>
-        </div>
-        <div class="smell-card-bottom">
-            <div class="smell-row"><span class="smell-icon">🔥</span> <span class="smell-label">Flame:</span> Burns rapidly, sputters</div>
-            <div class="smell-row"><span class="smell-icon">💨</span> <span class="smell-label">Smoke:</span> Heavy black smoke</div>
-            <div class="smell-row"><span class="smell-icon">👃</span> <span class="smell-label">Smell:</span> Sweet, overripe fruit</div>
-            <div class="smell-row"><span class="smell-icon">⚫</span> <span class="smell-label">Residue:</span> Shiny, hard black bead</div>
-            <div class="smell-row"><span class="smell-icon">⚠️</span> <span class="smell-label">pH:</span> Safe range 4-10</div>
-        </div>
-    </div>
-
-    <div class="smell-card card-olefin">
-        <div class="smell-card-top">
-            <div class="smell-emoji">🕯️</div>
-            <div class="smell-name">Olefin</div>
-            <div class="smell-tagline">"Asphalt & Candle Wax"</div>
-        </div>
-        <div class="smell-card-bottom">
-            <div class="smell-row"><span class="smell-icon">🔥</span> <span class="smell-label">Flame:</span> Burns rapidly, melts fast</div>
-            <div class="smell-row"><span class="smell-icon">💨</span> <span class="smell-label">Smoke:</span> Light smoke</div>
-            <div class="smell-row"><span class="smell-icon">👃</span> <span class="smell-label">Smell:</span> Asphalt or burning candles</div>
-            <div class="smell-row"><span class="smell-icon">⚫</span> <span class="smell-label">Residue:</span> Hard, round, light bead</div>
-            <div class="smell-row"><span class="smell-icon">⚠️</span> <span class="smell-label">pH:</span> Safe range 2-12 (bleach-safe)</div>
-        </div>
-    </div>
-
-    <div class="smell-card card-wool">
-        <div class="smell-card-top">
-            <div class="smell-emoji">💇</div>
-            <div class="smell-name">Wool</div>
-            <div class="smell-tagline">"Burning Hair / Feathers"</div>
-        </div>
-        <div class="smell-card-bottom">
-            <div class="smell-row"><span class="smell-icon">🔥</span> <span class="smell-label">Flame:</span> Sizzles, self-extinguishes</div>
-            <div class="smell-row"><span class="smell-icon">💨</span> <span class="smell-label">Smoke:</span> Light gray</div>
-            <div class="smell-row"><span class="smell-icon">👃</span> <span class="smell-label">Smell:</span> Burning hair or feathers</div>
-            <div class="smell-row"><span class="smell-icon">⚫</span> <span class="smell-label">Residue:</span> Black, crumbly ash (crushable)</div>
-            <div class="smell-row"><span class="smell-icon">⚠️</span> <span class="smell-label">pH:</span> Safe range 4-8 ONLY</div>
-        </div>
-    </div>
+<!-- ===== MATCH DIVIDER ===== -->
+<div class="match-divider">
+    <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        MATCH YOUR RESULTS
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </span>
 </div>
 
-<hr class="section-divider">
+<!-- ===== DECISION CARDS ===== -->
+<div class="decision-grid">
 
-<!-- ==================== CONCEPT B ==================== -->
-<div style="text-align: center;">
-    <div class="concept-label">CONCEPT B — "Side-by-Side Comparison"</div>
-</div>
-<p class="concept-desc">A single table where students compare all 4 fibers at once — <strong>same test, different results</strong>. The brain learns by contrast. When they smell something in the field, they scan across the row and match it. Printable for the van clipboard.</p>
-
-<div class="compare-table">
-<table>
-<tr>
-    <th style="width:15%;">Observation</th>
-    <th style="width:21%;"><span class="fiber-badge nylon">NYLON</span></th>
-    <th style="width:21%;"><span class="fiber-badge polyester">POLYESTER</span></th>
-    <th style="width:21%;"><span class="fiber-badge olefin">OLEFIN</span></th>
-    <th style="width:22%;"><span class="fiber-badge wool">WOOL</span></th>
-</tr>
-<tr>
-    <td>🔥 Flame</td>
-    <td><span class="obs-emoji">🔵🟠</span><span class="obs-text">Blue base, orange tip</span></td>
-    <td><span class="obs-emoji">🔥💥</span><span class="obs-text">Rapid burn, sputters</span></td>
-    <td><span class="obs-emoji">🔥💧</span><span class="obs-text">Rapid melt, drips</span></td>
-    <td><span class="obs-emoji">✨🔥</span><span class="obs-text">Sizzles, self-extinguishes</span></td>
-</tr>
-<tr>
-    <td>💨 Smoke</td>
-    <td><span class="obs-emoji">🌫️</span><span class="obs-text">White/gray, moderate</span></td>
-    <td><span class="obs-emoji">🖤🖤🖤</span><span class="obs-text">Heavy BLACK smoke</span></td>
-    <td><span class="obs-emoji">🌫️</span><span class="obs-text">Light smoke</span></td>
-    <td><span class="obs-emoji">🌫️</span><span class="obs-text">Light gray</span></td>
-</tr>
-<tr>
-    <td>👃 Smell</td>
-    <td><span class="obs-emoji">🥬</span><span class="obs-text"><strong>Celery / sealing wax</strong></span></td>
-    <td><span class="obs-emoji">🍎</span><span class="obs-text"><strong>Sweet overripe fruit</strong></span></td>
-    <td><span class="obs-emoji">🕯️</span><span class="obs-text"><strong>Asphalt / candle wax</strong></span></td>
-    <td><span class="obs-emoji">💇</span><span class="obs-text"><strong>Burning hair / feathers</strong></span></td>
-</tr>
-<tr>
-    <td>⚫ Residue</td>
-    <td class="residue-cell"><span class="obs-emoji">⚪</span><span class="obs-text">Hard, round gray/brown bead</span></td>
-    <td class="residue-cell"><span class="obs-emoji">⚫</span><span class="obs-text">Shiny, hard BLACK bead</span></td>
-    <td class="residue-cell"><span class="obs-emoji">🟤</span><span class="obs-text">Hard, round LIGHT bead</span></td>
-    <td class="residue-cell"><span class="obs-emoji">💨</span><span class="obs-text">Crumbly black ash (crushes to powder)</span></td>
-</tr>
-<tr>
-    <td>⚠️ Safe pH</td>
-    <td><strong style="color:#1565c0;">2-10</strong></td>
-    <td><strong style="color:#8e24aa;">4-10</strong></td>
-    <td><strong style="color:#e65100;">2-12</strong></td>
-    <td><strong style="color:#c62828;">4-8 ONLY ⚠️</strong></td>
-</tr>
-<tr style="background: #fff8e1;">
-    <td>🧠 Memory Trick</td>
-    <td><em>"Nylon = Celery Stick"</em></td>
-    <td><em>"Polyester = Rotten Apple"</em></td>
-    <td><em>"Olefin = Road Candle"</em></td>
-    <td><em>"Wool = Barbershop Floor"</em></td>
-</tr>
-</table>
-</div>
-
-<hr class="section-divider">
-
-<!-- ==================== CONCEPT C ==================== -->
-<div style="text-align: center;">
-    <div class="concept-label">CONCEPT C — "Step Flow + Decision Cards"</div>
-</div>
-<p class="concept-desc">Shows the <strong>process first</strong> (3 steps), then the <strong>diagnosis</strong> (4 result cards). Each card has a bold memory trick at the bottom. Combines the flow of your original with cleaner card layout. Best for students who think in sequences.</p>
-
-<!-- Step Flow -->
-<div class="flow-container">
-    <div class="flow-steps">
-        <div class="flow-step">
-            <div class="step-num">1</div>
-            <div style="font-size: 2em; margin-bottom: 6px;">✂️</div>
-            <div class="step-title">Isolate Sample</div>
-            <div class="step-desc">Pull a small tuft from a hidden area (closet corner, under furniture). Use tweezers — never cut loop pile.</div>
+    <!-- ========== NYLON ========== -->
+    <div class="decision-card card-nylon">
+        <div class="card-header">
+            <div class="card-icon-wrap">
+                <!-- Nylon fiber icon — bouncy spring representing resilience -->
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <path d="M6 24 C6 18, 10 14, 10 10 C10 6, 14 4, 15 4 C16 4, 20 6, 20 10 C20 14, 24 18, 24 24" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                    <path d="M10 10 L10 6" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M20 10 L20 6" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="15" cy="4" r="2" fill="rgba(255,255,255,0.7)"/>
+                </svg>
+            </div>
+            <div class="card-header-text">
+                <div class="fiber-name">Nylon</div>
+                <div class="fiber-sub">Most common residential fiber</div>
+            </div>
         </div>
-        <div class="flow-step">
-            <div class="step-num">2</div>
-            <div style="font-size: 2em; margin-bottom: 6px;">🔥</div>
-            <div class="step-title">Ignite & Observe</div>
-            <div class="step-desc">Use odorless butane lighter (never matches). Hold tuft to flame. Watch for: melt vs. sizzle vs. burn.</div>
-        </div>
-        <div class="flow-step">
-            <div class="step-num">3</div>
-            <div style="font-size: 2em; margin-bottom: 6px;">🔍</div>
-            <div class="step-title">Check 4 Pillars</div>
-            <div class="step-desc">Document: <strong>Flame behavior</strong>, <strong>Smoke color</strong>, <strong>Odor</strong>, and <strong>Residue</strong> (ash or bead).</div>
-        </div>
-    </div>
 
-    <div style="text-align: center; margin: 10px 0 24px;">
-        <div style="display: inline-block; background: var(--servus-accent); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 700; font-size: 0.9em;">↓ MATCH YOUR RESULTS ↓</div>
-    </div>
-
-    <!-- Decision Cards -->
-    <div class="decision-grid">
-        <div class="decision-card card-nylon-d">
-            <div class="decision-header">
-                <div class="fiber-emoji">🥬</div>
-                <div>
-                    <div class="fiber-title">Nylon</div>
-                    <div style="opacity:0.8; font-size:0.85em;">Most common residential</div>
+        <!-- Visual observation strip -->
+        <div class="obs-strip">
+            <div class="obs-panel">
+                <div class="obs-panel-label">Flame</div>
+                <div class="obs-panel-illustration">
+                    <!-- Blue base, orange tip flame -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <ellipse cx="18" cy="22" rx="10" ry="20" fill="url(#nylonFlameOuter)" opacity="0.5"/>
+                        <ellipse cx="18" cy="24" rx="8" ry="16" fill="url(#nylonFlameMid)" opacity="0.7"/>
+                        <ellipse cx="18" cy="28" rx="5" ry="11" fill="url(#nylonFlameInner)"/>
+                        <ellipse cx="18" cy="36" rx="4" ry="7" fill="url(#nylonFlameBlue)"/>
+                        <ellipse cx="17" cy="20" rx="2" ry="4" fill="rgba(255,255,255,0.3)"/>
+                        <defs>
+                            <linearGradient id="nylonFlameOuter" x1="18" y1="2" x2="18" y2="42" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#ff6600" stop-opacity="0.6"/>
+                                <stop offset="100%" stop-color="#ff9900" stop-opacity="0"/>
+                            </linearGradient>
+                            <linearGradient id="nylonFlameMid" x1="18" y1="8" x2="18" y2="40" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#ff8800"/>
+                                <stop offset="70%" stop-color="#ffbb33"/>
+                                <stop offset="100%" stop-color="#2196f3"/>
+                            </linearGradient>
+                            <linearGradient id="nylonFlameInner" x1="18" y1="17" x2="18" y2="39" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#ffcc00"/>
+                                <stop offset="50%" stop-color="#fff8e1"/>
+                                <stop offset="100%" stop-color="#42a5f5"/>
+                            </linearGradient>
+                            <linearGradient id="nylonFlameBlue" x1="18" y1="29" x2="18" y2="43" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#64b5f6"/>
+                                <stop offset="100%" stop-color="#1565c0"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
                 </div>
+                <div class="obs-panel-text">Blue base<br>Orange tip</div>
             </div>
-            <div class="decision-body">
-                <div class="clue-row"><span class="clue-icon">🔥</span><span class="clue-label">Flame</span><span class="clue-value">Blue base with orange tip</span></div>
-                <div class="clue-row"><span class="clue-icon">💨</span><span class="clue-label">Smoke</span><span class="clue-value">White/gray, moderate amount</span></div>
-                <div class="clue-row"><span class="clue-icon">👃</span><span class="clue-label">Smell</span><span class="clue-value"><strong>Celery or sealing wax</strong></span></div>
-                <div class="clue-row"><span class="clue-icon">⚫</span><span class="clue-label">Residue</span><span class="clue-value">Hard, round gray/brown bead</span></div>
-                <div class="memory-tip">🧠 Remember: <strong>"Nylon = Celery Stick"</strong> — the unique celery smell is your #1 identifier</div>
+            <div class="obs-panel">
+                <div class="obs-panel-label">Smoke</div>
+                <div class="obs-panel-illustration">
+                    <!-- Light gray smoke wisps -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <g opacity="0.7">
+                            <path d="M18 46 C18 40, 14 36, 14 30 C14 24, 20 22, 18 16 C16 10, 22 6, 20 2" stroke="#b0b0b0" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4"/>
+                            <path d="M22 46 C22 38, 18 34, 20 28 C22 22, 16 20, 18 14 C20 8, 16 4, 18 0" stroke="#c0c0c0" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.3"/>
+                            <path d="M14 44 C14 38, 18 36, 16 30 C14 24, 18 22, 16 16" stroke="#d0d0d0" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/>
+                        </g>
+                        <circle cx="18" cy="46" r="3" fill="#ff9900" opacity="0.4"/>
+                    </svg>
+                </div>
+                <div class="obs-panel-text">White/gray<br>Moderate</div>
+            </div>
+            <div class="obs-panel">
+                <div class="obs-panel-label">Odor</div>
+                <div class="obs-panel-illustration">
+                    <!-- Celery illustration -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <!-- Celery stalks -->
+                        <path d="M14 48 C14 36, 12 28, 14 18" stroke="#7cb342" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M18 48 C18 34, 17 26, 18 14" stroke="#8bc34a" stroke-width="4.5" stroke-linecap="round"/>
+                        <path d="M22 48 C22 36, 24 28, 22 16" stroke="#689f38" stroke-width="4" stroke-linecap="round"/>
+                        <!-- Celery leaves -->
+                        <path d="M14 18 C10 12, 6 10, 4 6" stroke="#43a047" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M18 14 C18 8, 18 4, 18 2" stroke="#66bb6a" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M22 16 C26 10, 30 8, 32 4" stroke="#43a047" stroke-width="2" stroke-linecap="round"/>
+                        <ellipse cx="4" cy="5" rx="4" ry="6" fill="#66bb6a" opacity="0.7" transform="rotate(-20, 4, 5)"/>
+                        <ellipse cx="18" cy="3" rx="3" ry="5" fill="#81c784" opacity="0.7"/>
+                        <ellipse cx="32" cy="3" rx="4" ry="6" fill="#66bb6a" opacity="0.7" transform="rotate(20, 32, 3)"/>
+                        <!-- Stalk detail lines -->
+                        <line x1="14" y1="28" x2="14" y2="32" stroke="#689f38" stroke-width="0.5" opacity="0.5"/>
+                        <line x1="18" y1="26" x2="18" y2="30" stroke="#7cb342" stroke-width="0.5" opacity="0.5"/>
+                        <line x1="22" y1="28" x2="22" y2="32" stroke="#558b2f" stroke-width="0.5" opacity="0.5"/>
+                    </svg>
+                </div>
+                <div class="obs-panel-text"><strong>Celery /<br>Sealing wax</strong></div>
+            </div>
+            <div class="obs-panel">
+                <div class="obs-panel-label">Residue</div>
+                <div class="obs-panel-illustration">
+                    <!-- Hard round gray/brown bead -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <ellipse cx="18" cy="30" rx="12" ry="11" fill="url(#nylonBeadGrad)"/>
+                        <ellipse cx="18" cy="30" rx="12" ry="11" fill="url(#nylonBeadShine)" opacity="0.6"/>
+                        <ellipse cx="14" cy="26" rx="5" ry="3" fill="rgba(255,255,255,0.25)" transform="rotate(-15, 14, 26)"/>
+                        <ellipse cx="18" cy="40" rx="10" ry="3" fill="rgba(0,0,0,0.1)"/>
+                        <defs>
+                            <radialGradient id="nylonBeadGrad" cx="40%" cy="35%" r="60%">
+                                <stop offset="0%" stop-color="#a08070"/>
+                                <stop offset="50%" stop-color="#806050"/>
+                                <stop offset="100%" stop-color="#604030"/>
+                            </radialGradient>
+                            <radialGradient id="nylonBeadShine" cx="35%" cy="30%" r="40%">
+                                <stop offset="0%" stop-color="white"/>
+                                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="obs-panel-text">Hard, round<br>Gray/brown bead</div>
             </div>
         </div>
 
-        <div class="decision-card card-polyester-d">
-            <div class="decision-header">
-                <div class="fiber-emoji">🍎</div>
-                <div>
-                    <div class="fiber-title">Polyester</div>
-                    <div style="opacity:0.8; font-size:0.85em;">Oil-loving, stain-resistant</div>
-                </div>
+        <div class="card-body">
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Flame</span>
+                <span class="clue-value">Blue base with orange tip — steady burn</span>
             </div>
-            <div class="decision-body">
-                <div class="clue-row"><span class="clue-icon">🔥</span><span class="clue-label">Flame</span><span class="clue-value">Burns rapidly, sputters</span></div>
-                <div class="clue-row"><span class="clue-icon">💨</span><span class="clue-label">Smoke</span><span class="clue-value"><strong>Heavy BLACK smoke</strong></span></div>
-                <div class="clue-row"><span class="clue-icon">👃</span><span class="clue-label">Smell</span><span class="clue-value"><strong>Sweet, overripe fruit</strong></span></div>
-                <div class="clue-row"><span class="clue-icon">⚫</span><span class="clue-label">Residue</span><span class="clue-value">Shiny, hard BLACK bead</span></div>
-                <div class="memory-tip">🧠 Remember: <strong>"Polyester = Rotten Apple"</strong> — sweet smell + black smoke = polyester every time</div>
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Smoke</span>
+                <span class="clue-value">White/gray, moderate amount</span>
+            </div>
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Smell</span>
+                <span class="clue-value"><strong>Celery or sealing wax</strong></span>
+            </div>
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Residue</span>
+                <span class="clue-value">Hard, round gray/brown bead</span>
+            </div>
+            <div class="memory-tip">
+                <svg class="memory-tip-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                <div>Remember: <strong>"Nylon = Celery Stick"</strong> — the unique celery smell is your #1 identifier</div>
+            </div>
+        </div>
+        <div class="ph-bar">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+            Safe pH range: <strong>2–10</strong>
+        </div>
+    </div>
+
+    <!-- ========== POLYESTER ========== -->
+    <div class="decision-card card-polyester">
+        <div class="card-header">
+            <div class="card-icon-wrap">
+                <!-- Polyester — oil drop icon -->
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <path d="M15 4 C15 4, 6 16, 6 20 C6 25, 10 28, 15 28 C20 28, 24 25, 24 20 C24 16, 15 4, 15 4Z" fill="rgba(255,255,255,0.8)" stroke="rgba(255,255,255,0.9)" stroke-width="1"/>
+                    <ellipse cx="12" cy="18" rx="3" ry="2" fill="rgba(255,255,255,0.3)" transform="rotate(-20, 12, 18)"/>
+                </svg>
+            </div>
+            <div class="card-header-text">
+                <div class="fiber-name">Polyester</div>
+                <div class="fiber-sub">Oil-loving, stain-resistant</div>
             </div>
         </div>
 
-        <div class="decision-card card-olefin-d">
-            <div class="decision-header">
-                <div class="fiber-emoji">🕯️</div>
-                <div>
-                    <div class="fiber-title">Olefin</div>
-                    <div style="opacity:0.8; font-size:0.85em;">Solution-dyed, bleach-safe</div>
+        <div class="obs-strip">
+            <div class="obs-panel">
+                <div class="obs-panel-label">Flame</div>
+                <div class="obs-panel-illustration">
+                    <!-- Rapid sputtering flame with sparks -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <ellipse cx="18" cy="22" rx="11" ry="22" fill="url(#polyFlameOuter)" opacity="0.4"/>
+                        <ellipse cx="18" cy="24" rx="8" ry="17" fill="#ff6600" opacity="0.6"/>
+                        <ellipse cx="18" cy="28" rx="6" ry="13" fill="url(#polyFlameInner)"/>
+                        <ellipse cx="18" cy="34" rx="4" ry="8" fill="#ffcc00" opacity="0.8"/>
+                        <!-- Sputter sparks -->
+                        <circle cx="8" cy="18" r="1.5" fill="#ff9900" opacity="0.7"/>
+                        <circle cx="28" cy="14" r="1" fill="#ffcc00" opacity="0.6"/>
+                        <circle cx="6" cy="24" r="1" fill="#ff6600" opacity="0.5"/>
+                        <circle cx="30" cy="22" r="1.5" fill="#ff9900" opacity="0.5"/>
+                        <circle cx="10" cy="12" r="0.8" fill="#ffee58" opacity="0.7"/>
+                        <circle cx="26" cy="28" r="1.2" fill="#ff8800" opacity="0.6"/>
+                        <!-- Spark trails -->
+                        <path d="M10 20 L6 18" stroke="#ff9900" stroke-width="0.8" opacity="0.5"/>
+                        <path d="M26 16 L30 14" stroke="#ffcc00" stroke-width="0.8" opacity="0.4"/>
+                        <defs>
+                            <radialGradient id="polyFlameOuter" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#ff4400"/>
+                                <stop offset="100%" stop-color="#ff4400" stop-opacity="0"/>
+                            </radialGradient>
+                            <linearGradient id="polyFlameInner" x1="18" y1="15" x2="18" y2="41" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#ff6600"/>
+                                <stop offset="40%" stop-color="#ff9900"/>
+                                <stop offset="100%" stop-color="#ffcc00"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
                 </div>
+                <div class="obs-panel-text">Burns rapidly<br>Sputters</div>
             </div>
-            <div class="decision-body">
-                <div class="clue-row"><span class="clue-icon">🔥</span><span class="clue-label">Flame</span><span class="clue-value">Burns rapidly, melts fast</span></div>
-                <div class="clue-row"><span class="clue-icon">💨</span><span class="clue-label">Smoke</span><span class="clue-value">Light smoke</span></div>
-                <div class="clue-row"><span class="clue-icon">👃</span><span class="clue-label">Smell</span><span class="clue-value"><strong>Asphalt or burning candles</strong></span></div>
-                <div class="clue-row"><span class="clue-icon">⚫</span><span class="clue-label">Residue</span><span class="clue-value">Hard, round, light-colored bead</span></div>
-                <div class="memory-tip">🧠 Remember: <strong>"Olefin = Road Candle"</strong> — smells like hot asphalt + candle wax, melts like wax</div>
+            <div class="obs-panel">
+                <div class="obs-panel-label">Smoke</div>
+                <div class="obs-panel-illustration">
+                    <!-- Heavy BLACK smoke -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <g>
+                            <ellipse cx="18" cy="8" rx="14" ry="8" fill="#333" opacity="0.35"/>
+                            <ellipse cx="16" cy="14" rx="12" ry="7" fill="#444" opacity="0.4"/>
+                            <ellipse cx="20" cy="20" rx="10" ry="6" fill="#555" opacity="0.45"/>
+                            <ellipse cx="17" cy="26" rx="8" ry="5" fill="#666" opacity="0.4"/>
+                            <ellipse cx="19" cy="32" rx="6" ry="4" fill="#777" opacity="0.35"/>
+                            <path d="M18 46 C18 40, 14 36, 16 30 C18 24, 14 20, 16 14 C18 8, 14 4, 18 0" stroke="#333" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.3"/>
+                            <path d="M20 44 C20 38, 24 34, 22 28 C20 22, 24 18, 22 12" stroke="#444" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.25"/>
+                        </g>
+                        <circle cx="18" cy="46" r="3" fill="#ff6600" opacity="0.4"/>
+                    </svg>
+                </div>
+                <div class="obs-panel-text"><strong>Heavy BLACK<br>smoke</strong></div>
+            </div>
+            <div class="obs-panel">
+                <div class="obs-panel-label">Odor</div>
+                <div class="obs-panel-illustration">
+                    <!-- Overripe fruit / apple -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <!-- Apple body -->
+                        <ellipse cx="18" cy="30" rx="13" ry="14" fill="url(#appleGrad)"/>
+                        <!-- Apple highlight -->
+                        <ellipse cx="13" cy="24" rx="5" ry="6" fill="rgba(255,255,255,0.2)" transform="rotate(-15, 13, 24)"/>
+                        <!-- Bruise/overripe spots -->
+                        <circle cx="22" cy="34" r="3" fill="#6d3a0a" opacity="0.3"/>
+                        <circle cx="16" cy="38" r="2" fill="#5d2a00" opacity="0.25"/>
+                        <circle cx="24" cy="28" r="1.5" fill="#7d4a1a" opacity="0.2"/>
+                        <!-- Stem -->
+                        <path d="M18 17 C18 14, 17 11, 19 9" stroke="#5d4037" stroke-width="2" stroke-linecap="round"/>
+                        <!-- Leaf -->
+                        <path d="M19 11 C22 8, 26 8, 28 10" fill="#66bb6a" stroke="#43a047" stroke-width="0.8"/>
+                        <!-- Stink lines -->
+                        <path d="M30 22 C32 20, 33 18, 32 16" stroke="#999" stroke-width="0.8" stroke-linecap="round" opacity="0.4"/>
+                        <path d="M32 26 C34 24, 35 22, 34 20" stroke="#999" stroke-width="0.8" stroke-linecap="round" opacity="0.3"/>
+                        <defs>
+                            <radialGradient id="appleGrad" cx="40%" cy="35%" r="60%">
+                                <stop offset="0%" stop-color="#ef5350"/>
+                                <stop offset="60%" stop-color="#c62828"/>
+                                <stop offset="100%" stop-color="#8e2020"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="obs-panel-text"><strong>Sweet,<br>overripe fruit</strong></div>
+            </div>
+            <div class="obs-panel">
+                <div class="obs-panel-label">Residue</div>
+                <div class="obs-panel-illustration">
+                    <!-- Shiny hard BLACK bead -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <ellipse cx="18" cy="30" rx="12" ry="11" fill="url(#polyBeadGrad)"/>
+                        <!-- Glossy reflection -->
+                        <ellipse cx="14" cy="25" rx="5" ry="3.5" fill="url(#polyBeadShine)" transform="rotate(-15, 14, 25)"/>
+                        <!-- Secondary shine -->
+                        <ellipse cx="22" cy="34" rx="3" ry="2" fill="rgba(255,255,255,0.08)" transform="rotate(10, 22, 34)"/>
+                        <!-- Shadow -->
+                        <ellipse cx="18" cy="40" rx="10" ry="3" fill="rgba(0,0,0,0.15)"/>
+                        <defs>
+                            <radialGradient id="polyBeadGrad" cx="35%" cy="30%" r="65%">
+                                <stop offset="0%" stop-color="#555"/>
+                                <stop offset="40%" stop-color="#333"/>
+                                <stop offset="100%" stop-color="#111"/>
+                            </radialGradient>
+                            <radialGradient id="polyBeadShine" cx="50%" cy="40%" r="50%">
+                                <stop offset="0%" stop-color="white" stop-opacity="0.6"/>
+                                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="obs-panel-text">Shiny, hard<br><strong>BLACK bead</strong></div>
             </div>
         </div>
 
-        <div class="decision-card card-wool-d">
-            <div class="decision-header">
-                <div class="fiber-emoji">💇</div>
-                <div>
-                    <div class="fiber-title">Wool</div>
-                    <div style="opacity:0.8; font-size:0.85em;">Natural protein — pH sensitive!</div>
+        <div class="card-body">
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Flame</span>
+                <span class="clue-value">Burns rapidly, sputters and sparks</span>
+            </div>
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Smoke</span>
+                <span class="clue-value"><strong>Heavy BLACK smoke</strong> — key identifier</span>
+            </div>
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Smell</span>
+                <span class="clue-value"><strong>Sweet, overripe fruit</strong></span>
+            </div>
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Residue</span>
+                <span class="clue-value">Shiny, hard BLACK bead</span>
+            </div>
+            <div class="memory-tip">
+                <svg class="memory-tip-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                <div>Remember: <strong>"Polyester = Rotten Apple"</strong> — sweet smell + black smoke = polyester every time</div>
+            </div>
+        </div>
+        <div class="ph-bar">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+            Safe pH range: <strong>4–10</strong>
+        </div>
+    </div>
+
+    <!-- ========== OLEFIN ========== -->
+    <div class="decision-card card-olefin">
+        <div class="card-header">
+            <div class="card-icon-wrap">
+                <!-- Olefin — waxy/melting icon -->
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <rect x="9" y="8" width="12" height="18" rx="2" fill="rgba(255,255,255,0.7)"/>
+                    <ellipse cx="15" cy="8" rx="6" ry="2" fill="rgba(255,255,255,0.5)"/>
+                    <!-- Drip -->
+                    <path d="M12 26 C12 26, 11 29, 12 30" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M18 26 C18 26, 19 28, 18 30" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+                    <!-- Wick -->
+                    <line x1="15" y1="8" x2="15" y2="4" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+                    <ellipse cx="15" cy="3" rx="2" ry="3" fill="#ffcc00" opacity="0.8"/>
+                </svg>
+            </div>
+            <div class="card-header-text">
+                <div class="fiber-name">Olefin</div>
+                <div class="fiber-sub">Solution-dyed, bleach-safe</div>
+            </div>
+        </div>
+
+        <div class="obs-strip">
+            <div class="obs-panel">
+                <div class="obs-panel-label">Flame</div>
+                <div class="obs-panel-illustration">
+                    <!-- Rapid melt, dripping flame -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <ellipse cx="18" cy="18" rx="9" ry="16" fill="url(#olefinFlameOuter)" opacity="0.4"/>
+                        <ellipse cx="18" cy="22" rx="7" ry="13" fill="url(#olefinFlameMid)" opacity="0.7"/>
+                        <ellipse cx="18" cy="26" rx="5" ry="9" fill="url(#olefinFlameInner)"/>
+                        <!-- Melting drips -->
+                        <path d="M14 40 C14 42, 13 46, 14 50" stroke="#daa520" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <path d="M18 38 C18 42, 17 46, 18 50" stroke="#cd9b1d" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+                        <path d="M22 40 C22 44, 23 47, 22 50" stroke="#daa520" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                        <!-- Drip drops -->
+                        <ellipse cx="14" cy="49" rx="2" ry="2.5" fill="#daa520" opacity="0.4"/>
+                        <ellipse cx="22" cy="48" rx="1.5" ry="2" fill="#cd9b1d" opacity="0.35"/>
+                        <defs>
+                            <radialGradient id="olefinFlameOuter" cx="50%" cy="40%" r="50%">
+                                <stop offset="0%" stop-color="#ff8800"/>
+                                <stop offset="100%" stop-color="#ff6600" stop-opacity="0"/>
+                            </radialGradient>
+                            <linearGradient id="olefinFlameMid" x1="18" y1="9" x2="18" y2="35" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#ffaa00"/>
+                                <stop offset="100%" stop-color="#ffcc00"/>
+                            </linearGradient>
+                            <linearGradient id="olefinFlameInner" x1="18" y1="17" x2="18" y2="35" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#fff8e1"/>
+                                <stop offset="50%" stop-color="#ffee58"/>
+                                <stop offset="100%" stop-color="#ffcc00"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
                 </div>
+                <div class="obs-panel-text">Burns rapidly<br><strong>Melts & drips</strong></div>
             </div>
-            <div class="decision-body">
-                <div class="clue-row"><span class="clue-icon">🔥</span><span class="clue-label">Flame</span><span class="clue-value">Sizzles, self-extinguishes</span></div>
-                <div class="clue-row"><span class="clue-icon">💨</span><span class="clue-label">Smoke</span><span class="clue-value">Light gray smoke</span></div>
-                <div class="clue-row"><span class="clue-icon">👃</span><span class="clue-label">Smell</span><span class="clue-value"><strong>Burning hair / feathers</strong></span></div>
-                <div class="clue-row"><span class="clue-icon">⚫</span><span class="clue-label">Residue</span><span class="clue-value">Black crumbly ash (crushes to powder)</span></div>
-                <div class="memory-tip">🧠 Remember: <strong>"Wool = Barbershop Floor"</strong> — it's hair! Smells like hair because it IS hair (protein fiber)</div>
+            <div class="obs-panel">
+                <div class="obs-panel-label">Smoke</div>
+                <div class="obs-panel-illustration">
+                    <!-- Light smoke -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <g opacity="0.5">
+                            <path d="M18 46 C18 40, 16 36, 17 30 C18 24, 16 22, 17 18" stroke="#ccc" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
+                            <path d="M20 44 C20 38, 22 34, 21 28 C20 24, 22 22, 21 18" stroke="#ddd" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.3"/>
+                        </g>
+                        <circle cx="18" cy="46" r="3" fill="#ff9900" opacity="0.3"/>
+                    </svg>
+                </div>
+                <div class="obs-panel-text">Light<br>smoke</div>
             </div>
+            <div class="obs-panel">
+                <div class="obs-panel-label">Odor</div>
+                <div class="obs-panel-illustration">
+                    <!-- Asphalt road + candle -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <!-- Road surface -->
+                        <rect x="2" y="34" width="32" height="14" rx="2" fill="#444"/>
+                        <rect x="2" y="34" width="32" height="3" fill="#555"/>
+                        <!-- Road line markings -->
+                        <rect x="8" y="40" width="6" height="2" rx="1" fill="#ffcc00" opacity="0.7"/>
+                        <rect x="22" y="40" width="6" height="2" rx="1" fill="#ffcc00" opacity="0.7"/>
+                        <!-- Candle -->
+                        <rect x="14" y="14" width="8" height="20" rx="1.5" fill="#f5e6c8"/>
+                        <rect x="14" y="14" width="8" height="3" rx="1" fill="#ede0c8" opacity="0.7"/>
+                        <!-- Wax drips on candle -->
+                        <path d="M14 20 C12 22, 12 24, 13 26" stroke="#ede0c8" stroke-width="1.5" fill="none" opacity="0.6"/>
+                        <path d="M22 18 C24 20, 24 22, 23 24" stroke="#ede0c8" stroke-width="1.5" fill="none" opacity="0.5"/>
+                        <!-- Wick -->
+                        <line x1="18" y1="14" x2="18" y2="8" stroke="#555" stroke-width="1"/>
+                        <!-- Candle flame -->
+                        <ellipse cx="18" cy="5" rx="3" ry="5" fill="#ff9900" opacity="0.7"/>
+                        <ellipse cx="18" cy="6" rx="2" ry="3.5" fill="#ffcc00" opacity="0.8"/>
+                        <ellipse cx="18" cy="7" rx="1" ry="2" fill="#fff8e1"/>
+                        <!-- Heat shimmer -->
+                        <path d="M10 8 C10 4, 12 2, 12 0" stroke="#ddd" stroke-width="0.5" opacity="0.3"/>
+                        <path d="M24 6 C24 2, 26 0, 26 -2" stroke="#ddd" stroke-width="0.5" opacity="0.3"/>
+                    </svg>
+                </div>
+                <div class="obs-panel-text"><strong>Asphalt /<br>candle wax</strong></div>
+            </div>
+            <div class="obs-panel">
+                <div class="obs-panel-label">Residue</div>
+                <div class="obs-panel-illustration">
+                    <!-- Hard round light-colored bead -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <ellipse cx="18" cy="30" rx="12" ry="11" fill="url(#olefinBeadGrad)"/>
+                        <ellipse cx="14" cy="26" rx="5" ry="3" fill="url(#olefinBeadShine)" transform="rotate(-15, 14, 26)"/>
+                        <ellipse cx="20" cy="33" rx="3" ry="2" fill="rgba(255,255,255,0.15)" transform="rotate(10, 20, 33)"/>
+                        <ellipse cx="18" cy="40" rx="10" ry="3" fill="rgba(0,0,0,0.08)"/>
+                        <defs>
+                            <radialGradient id="olefinBeadGrad" cx="40%" cy="35%" r="60%">
+                                <stop offset="0%" stop-color="#e8d8c0"/>
+                                <stop offset="50%" stop-color="#c8b090"/>
+                                <stop offset="100%" stop-color="#a89070"/>
+                            </radialGradient>
+                            <radialGradient id="olefinBeadShine" cx="50%" cy="40%" r="50%">
+                                <stop offset="0%" stop-color="white" stop-opacity="0.5"/>
+                                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="obs-panel-text">Hard, round<br>Light-colored bead</div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Flame</span>
+                <span class="clue-value">Burns rapidly, melts and drips like wax</span>
+            </div>
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Smoke</span>
+                <span class="clue-value">Light smoke</span>
+            </div>
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Smell</span>
+                <span class="clue-value"><strong>Asphalt or burning candles</strong></span>
+            </div>
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Residue</span>
+                <span class="clue-value">Hard, round, light-colored bead</span>
+            </div>
+            <div class="memory-tip">
+                <svg class="memory-tip-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                <div>Remember: <strong>"Olefin = Road Candle"</strong> — smells like hot asphalt + candle wax, melts like wax</div>
+            </div>
+        </div>
+        <div class="ph-bar">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+            Safe pH range: <strong>2–12</strong> (bleach-safe!)
+        </div>
+    </div>
+
+    <!-- ========== WOOL ========== -->
+    <div class="decision-card card-wool">
+        <div class="card-header">
+            <div class="card-icon-wrap">
+                <!-- Wool — natural fiber / sheep icon -->
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <circle cx="15" cy="14" r="8" fill="rgba(255,255,255,0.6)"/>
+                    <circle cx="10" cy="11" r="4" fill="rgba(255,255,255,0.5)"/>
+                    <circle cx="20" cy="11" r="4" fill="rgba(255,255,255,0.5)"/>
+                    <circle cx="15" cy="8" r="4" fill="rgba(255,255,255,0.5)"/>
+                    <circle cx="12" cy="16" r="3.5" fill="rgba(255,255,255,0.5)"/>
+                    <circle cx="18" cy="16" r="3.5" fill="rgba(255,255,255,0.5)"/>
+                    <!-- Face -->
+                    <ellipse cx="15" cy="20" rx="4" ry="5" fill="rgba(255,255,255,0.8)"/>
+                    <circle cx="13.5" cy="19" r="0.8" fill="#333"/>
+                    <circle cx="16.5" cy="19" r="0.8" fill="#333"/>
+                    <!-- Legs -->
+                    <line x1="12" y1="22" x2="11" y2="28" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+                    <line x1="18" y1="22" x2="19" y2="28" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <div class="card-header-text">
+                <div class="fiber-name">Wool</div>
+                <div class="fiber-sub">Natural protein — pH sensitive!</div>
+            </div>
+        </div>
+
+        <div class="obs-strip">
+            <div class="obs-panel">
+                <div class="obs-panel-label">Flame</div>
+                <div class="obs-panel-illustration">
+                    <!-- Sizzle spark effect, self-extinguishing -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <!-- Small dying flame -->
+                        <ellipse cx="18" cy="30" rx="5" ry="8" fill="#ff9900" opacity="0.3"/>
+                        <ellipse cx="18" cy="32" rx="3.5" ry="6" fill="#ffcc00" opacity="0.4"/>
+                        <ellipse cx="18" cy="34" rx="2" ry="4" fill="#fff8e1" opacity="0.5"/>
+                        <!-- Sizzle sparks radiating outward -->
+                        <line x1="18" y1="24" x2="18" y2="18" stroke="#ffcc00" stroke-width="1" opacity="0.7"/>
+                        <line x1="22" y1="26" x2="28" y2="20" stroke="#ffcc00" stroke-width="1" opacity="0.6"/>
+                        <line x1="14" y1="26" x2="8" y2="20" stroke="#ffcc00" stroke-width="1" opacity="0.6"/>
+                        <line x1="24" y1="30" x2="30" y2="28" stroke="#ffcc00" stroke-width="0.8" opacity="0.5"/>
+                        <line x1="12" y1="30" x2="6" y2="28" stroke="#ffcc00" stroke-width="0.8" opacity="0.5"/>
+                        <line x1="22" y1="34" x2="26" y2="36" stroke="#ff9900" stroke-width="0.8" opacity="0.4"/>
+                        <line x1="14" y1="34" x2="10" y2="36" stroke="#ff9900" stroke-width="0.8" opacity="0.4"/>
+                        <!-- Spark dots -->
+                        <circle cx="18" cy="17" r="1.2" fill="#ffee58" opacity="0.7"/>
+                        <circle cx="29" cy="19" r="1" fill="#ffcc00" opacity="0.6"/>
+                        <circle cx="7" cy="19" r="1" fill="#ffcc00" opacity="0.6"/>
+                        <circle cx="31" cy="27" r="0.8" fill="#ff9900" opacity="0.5"/>
+                        <circle cx="5" cy="27" r="0.8" fill="#ff9900" opacity="0.5"/>
+                        <!-- Self-extinguish X -->
+                        <g transform="translate(14, 40)" opacity="0.5">
+                            <line x1="0" y1="0" x2="8" y2="8" stroke="#c62828" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="8" y1="0" x2="0" y2="8" stroke="#c62828" stroke-width="2" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="obs-panel-text">Sizzles, then<br><strong>self-extinguishes</strong></div>
+            </div>
+            <div class="obs-panel">
+                <div class="obs-panel-label">Smoke</div>
+                <div class="obs-panel-illustration">
+                    <!-- Very light gray smoke -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <g opacity="0.35">
+                            <path d="M18 44 C18 38, 16 34, 17 28 C18 24, 17 22, 18 18" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                            <path d="M20 42 C20 36, 19 32, 20 26" stroke="#ddd" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+                        </g>
+                        <circle cx="18" cy="46" r="2" fill="#ff9900" opacity="0.25"/>
+                    </svg>
+                </div>
+                <div class="obs-panel-text">Very light<br>gray</div>
+            </div>
+            <div class="obs-panel">
+                <div class="obs-panel-label">Odor</div>
+                <div class="obs-panel-illustration">
+                    <!-- Burning hair illustration -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <!-- Hair strands -->
+                        <path d="M8 44 C8 36, 6 28, 10 18 C14 8, 10 4, 12 2" stroke="#5d4037" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M14 44 C14 34, 12 26, 16 16 C20 6, 16 2, 18 0" stroke="#795548" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M20 44 C20 36, 22 28, 18 18 C14 8, 20 4, 18 2" stroke="#6d4c41" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M26 44 C26 34, 28 26, 24 16 C20 6, 26 2, 24 0" stroke="#5d4037" stroke-width="2" stroke-linecap="round"/>
+                        <!-- Burning tips glow -->
+                        <circle cx="12" cy="3" r="3" fill="#ff6600" opacity="0.4"/>
+                        <circle cx="18" cy="1" r="3.5" fill="#ff6600" opacity="0.45"/>
+                        <circle cx="24" cy="1" r="3" fill="#ff6600" opacity="0.35"/>
+                        <!-- Tiny ember sparks -->
+                        <circle cx="10" cy="5" r="0.8" fill="#ffcc00" opacity="0.6"/>
+                        <circle cx="20" cy="3" r="0.8" fill="#ffcc00" opacity="0.5"/>
+                        <circle cx="26" cy="4" r="0.6" fill="#ff9900" opacity="0.5"/>
+                    </svg>
+                </div>
+                <div class="obs-panel-text"><strong>Burning hair<br>/ feathers</strong></div>
+            </div>
+            <div class="obs-panel">
+                <div class="obs-panel-label">Residue</div>
+                <div class="obs-panel-illustration">
+                    <!-- Black crumbly ash that crushes to powder -->
+                    <svg width="36" height="50" viewBox="0 0 36 50" fill="none">
+                        <!-- Main ash pile -->
+                        <ellipse cx="18" cy="36" rx="14" ry="6" fill="#333" opacity="0.7"/>
+                        <ellipse cx="18" cy="34" rx="12" ry="5" fill="#444" opacity="0.6"/>
+                        <!-- Crumble chunks -->
+                        <circle cx="12" cy="32" r="3" fill="#3a3a3a" opacity="0.7"/>
+                        <circle cx="20" cy="30" r="2.5" fill="#404040" opacity="0.6"/>
+                        <circle cx="16" cy="28" r="2" fill="#383838" opacity="0.7"/>
+                        <circle cx="24" cy="33" r="2" fill="#363636" opacity="0.6"/>
+                        <!-- Powder scatter -->
+                        <circle cx="8" cy="38" r="1" fill="#555" opacity="0.4"/>
+                        <circle cx="28" cy="37" r="0.8" fill="#555" opacity="0.3"/>
+                        <circle cx="10" cy="40" r="0.6" fill="#666" opacity="0.3"/>
+                        <circle cx="26" cy="40" r="0.7" fill="#666" opacity="0.25"/>
+                        <circle cx="14" cy="42" r="0.5" fill="#777" opacity="0.2"/>
+                        <circle cx="22" cy="42" r="0.6" fill="#777" opacity="0.2"/>
+                        <!-- Crush arrow -->
+                        <g transform="translate(14, 16)" opacity="0.4">
+                            <path d="M4 0 L4 8" stroke="#999" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M1 5 L4 8 L7 5" stroke="#999" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="obs-panel-text">Black crumbly ash<br><strong>Crushes to powder</strong></div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Flame</span>
+                <span class="clue-value">Sizzles, self-extinguishes — won't stay lit</span>
+            </div>
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Smoke</span>
+                <span class="clue-value">Very light gray smoke</span>
+            </div>
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Smell</span>
+                <span class="clue-value"><strong>Burning hair / feathers</strong></span>
+            </div>
+            <div class="clue-row">
+                <div class="clue-icon-wrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                <span class="clue-label">Residue</span>
+                <span class="clue-value">Black crumbly ash (crushes to powder)</span>
+            </div>
+            <div class="memory-tip">
+                <svg class="memory-tip-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+                <div>Remember: <strong>"Wool = Barbershop Floor"</strong> — it's hair! Smells like hair because it IS hair (protein fiber)</div>
+            </div>
+        </div>
+        <div class="ph-bar" style="background: #fff0f0; color: #c62828;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+            Safe pH range: <strong>4–8 ONLY</strong> — most restricted of all fibers!
         </div>
     </div>
 </div>
 
-<div style="text-align: center; margin-top: 60px; padding: 30px; color: #999; font-size: 0.85em;">
-    <p>These are 3 visual concepts for the Burn Test identification guide.<br>Pick your favorite and we'll integrate it into Day 1.</p>
+<!-- ===== QUICK REFERENCE KEY ===== -->
+<div class="print-key">
+    <h3>Quick Reference Key</h3>
+    <div class="print-key-grid">
+        <div class="print-key-item">
+            <div class="pk-swatch" style="background: linear-gradient(135deg, #0d47a1, #1976d2);"></div>
+            <div><strong>Nylon</strong> — Celery smell, gray bead</div>
+        </div>
+        <div class="print-key-item">
+            <div class="pk-swatch" style="background: linear-gradient(135deg, #4a148c, #8e24aa);"></div>
+            <div><strong>Polyester</strong> — Black smoke, black bead</div>
+        </div>
+        <div class="print-key-item">
+            <div class="pk-swatch" style="background: linear-gradient(135deg, #bf360c, #f57c00);"></div>
+            <div><strong>Olefin</strong> — Melts like wax, light bead</div>
+        </div>
+        <div class="print-key-item">
+            <div class="pk-swatch" style="background: linear-gradient(135deg, #1b5e20, #43a047);"></div>
+            <div><strong>Wool</strong> — Hair smell, crushable ash</div>
+        </div>
+    </div>
 </div>
 
+<div style="text-align: center; margin-top: 40px; padding: 20px; color: #999; font-size: 0.82em;">
+    <p>Burn Test Fiber Identification — Servus Professional Training<br>
+    <span style="opacity: 0.6;">Professional SVG illustrations • Print-ready • Designed for field reference</span></p>
+</div>
+
+</div><!-- end .page-content -->
 </body>
 </html>
