@@ -7,9 +7,10 @@
 
 ## Source Repository
 - **Repo:** `leanddouglas/servus-training`
-- **Live:** `https://leanddouglas.github.io/servus-training/`
-- **Pages:** course_index.html, day1-5/index.html, fiber_identification_printable.html
-- **Extracted from:** All 6 pages (course index + 5 day pages)
+- **GitHub Pages:** `https://leanddouglas.github.io/servus-training/`
+- **Netlify:** (deployed — see site URL after deployment)
+- **Pages:** course_index.html, day1-5/index.html, fiber_identification_printable.html, sop/index.html, burn-test-visual-samples.html
+- **Extracted from:** All pages (course index + 5 day pages + SOP reference + printables)
 
 ---
 
@@ -438,7 +439,100 @@ line-height: 1.7;
 
 ---
 
-## 13. Important Rules for New Courses
+## 13. SOP (Standard Operating Procedures) System
+
+### Overview
+- **14 SOPs** numbered 001–014 across 5 training days
+- **5 Categories:** Forms, Protocols, Decision Trees, Procedures, Checklists
+- **SOP Color:** `#014870` (solid navy header, white text)
+- **Dedicated SOP page:** `sop/index.html` (standalone reference)
+- **SOP card in Training Roadmap** (course_index.html, after Day 5)
+
+### SOP Banner Component (Per Day Page)
+```css
+.sop-system-card { border: 1.5px solid #014870; border-radius: 10px; overflow: hidden; margin-bottom: 24px; background: #f8fafc; }
+.sop-system-card-header { background: #014870; color: white; padding: 10px 18px; display: flex; align-items: center; gap: 10px; }
+.sop-chip { color: #014870; ... } /* Clickable <a href="#sop-XXX"> */
+.sop-chip-num { background: #014870; color: white; ... }
+.sop-section-tag { color: #014870; background: #e8f2f8; border: 1px solid #c5d9e6; ... } /* Discreet inline marker at each SOP location */
+```
+
+### SOP Anchor System
+Each SOP content section has `id="sop-XXX"` for anchor navigation:
+| SOP | Name | Day | Anchor Location |
+|---|---|---|---|
+| SOP-001 | Pre-Inspection Documentation | Day 1 | Pre-Inspection Form heading |
+| SOP-002 | Burn Test Protocol | Day 1 | Burn Test Walkthrough heading |
+| SOP-003 | 8-Step Cleaning Protocol | Day 2 | Module 8 heading |
+| SOP-004 | Rinse & Neutralization | Day 2 | Module 5 heading |
+| SOP-005 | HWE Setup & Operation | Day 3 | Module 1 heading |
+| SOP-006 | Pre-Run Equipment Checklist | Day 3 | Pre-Run Checklist accordion |
+| SOP-007 | Encapsulation (Whittaker) | Day 3 | Whittaker TRIO h3 |
+| SOP-008 | Method Selection Decision Tree | Day 3 | Module 5 heading |
+| SOP-009 | Spot vs Stain Classification | Day 4 | Module 1 heading |
+| SOP-010 | Red Stain Emergency (Red Relief) | Day 4 | Module 4 heading |
+| SOP-011 | Pet Damage Assessment | Day 4 | Module 3 heading |
+| SOP-012 | Equipment Maintenance Schedule | Day 5 | Equipment Maintenance accordion |
+| SOP-013 | Safety & WHMIS Compliance | Day 5 | Module 2 heading |
+| SOP-014 | IICRC S100 Reference Guide | Day 5 | IICRC S100 h3 |
+
+### SOP Page Structure (`sop/index.html`)
+- Uses full `.servus-header` and `.servus-footer` template
+- Stats bar: 14 Total SOPs, 5 Categories, 5 Training Days (orange `#ff9900` numbers)
+- SOPs grouped by type with links to day page anchors (e.g., `../day1/#sop-001`)
+- Each SOP shows: number badge, name, description, day tag, arrow
+
+### For New Courses
+- Number SOPs sequentially (e.g., SOP-015+ for Tile & Grout course)
+- Use same SOP banner, chip, and section tag CSS pattern
+- Create dedicated `sop/index.html` page following same structure
+- Add SOP card to Training Roadmap in course_index.html
+
+---
+
+## 14. SVG Icon Standards
+
+### Design Rules
+- **NO emoji** — all icons must be inline SVG
+- **Style:** Stroke-based, consistent stroke-width (2 or 2.5)
+- **Sizes:** 16–24px depending on context
+- **Colors:** Use brand CSS variables or explicit brand colors
+- **Alignment:** `vertical-align: -2px` to `-4px` with `margin-right: 4px–6px`
+
+### Color Usage in SVG Icons
+| Context | Stroke Color |
+|---|---|
+| Section headings (navy bg) | `var(--servus-navy)` or `#0a4875` |
+| On dark/colored backgrounds | `white` or `rgba(255,255,255,0.7)` |
+| On buttons (orange bg) | `white` |
+| Status: success/correct | `#4caf50` |
+| Status: error/needs work | `#e53935` |
+| Status: warning/review | `#ff9800` |
+| Accent/highlight | `#ff9900` (filled star for awards) |
+| Inside colored containers | `currentColor` (inherits parent color) |
+
+### Common Icon Patterns (Exam Results)
+| Icon | Purpose | Key SVG Element |
+|---|---|---|
+| Grid tiles | Question Map | 4 `<rect>` elements in 2x2 grid |
+| Bar chart | Performance | 3 vertical `<line>` elements |
+| Clipboard | Recommendations | `<path>` clipboard + `<rect>` paper + `<line>` text |
+| Refresh arrows | Retry/Retake | `<polyline>` arrows + `<path>` arc |
+| Warning triangle | Unanswered alert | `<path>` triangle + `<line>` exclamation |
+| Star polygon | Award/perfect | `<polygon points="12 2 15.09 8.26 22 9.27...">` |
+| Check-circle | Good/strong | `<circle>` + `<polyline>` checkmark |
+| X-circle | Needs work | `<circle>` + 2 crossing `<line>` elements |
+| Alert-circle | Review needed | `<circle>` + `<line>` exclamation |
+| Book | Study | `<path>` book spine + page |
+| Flask | Chemistry | `<path>` flask shape |
+| Gear | Methods | `<circle>` center + `<path>` gear teeth |
+| Target | Spotting | 3 concentric `<circle>` elements |
+| Trophy | Professional | `<path>` cup + handles + base |
+| Building blocks | Foundations | 3 `<rect>` elements of increasing height |
+
+---
+
+## 15. Important Rules for New Courses
 
 1. **NEVER add ISSA** — certification not confirmed
 2. **NEVER reference Dry Foam** — not a service Servus offers
@@ -450,7 +544,7 @@ line-height: 1.7;
 
 ---
 
-## 14. How to Create a New Course
+## 16. How to Create a New Course
 
 1. Copy `day1/index.html` as the base template for each day page
 2. Update `<div class="module-label">` with new course day/title
@@ -461,8 +555,11 @@ line-height: 1.7;
 7. Build walkthrough scenarios relevant to the new topic
 8. Add exam section on the final day (copy Day 5 exam structure)
 9. Copy `course_index.html` and update hero stats, day cards, and outcomes
-10. Deploy to GitHub Pages under a new folder in the same repo
-11. Keep ALL branding, colors, fonts, and footer identical
+10. Create SOPs for the new course (see Section 13) — use same banner/chip/tag CSS
+11. Create dedicated `sop/index.html` page and add SOP card to Training Roadmap
+12. **Use inline SVG icons ONLY** — never use emoji (see Section 14)
+13. Deploy to GitHub Pages and/or Netlify
+14. Keep ALL branding, colors, fonts, and footer identical
 
 ---
 
