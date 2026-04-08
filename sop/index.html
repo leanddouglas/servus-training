@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servus Group – Standard Operating Procedures</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #0a4875;
+    --navy-dark: #062d4a;
+    --orange: #ff9900;
+    --light-blue: #D3EEF5;
+    --pale-blue: #F0FCFF;
+    --cloud: #F2F7FC;
+    --off-white: #FAFAFA;
+    --text: #333333;
+    --mid-text: #5a6a7a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--off-white); line-height: 1.6; }
+
+  /* Back nav */
+  .back-nav { background: var(--navy); padding: 12px 40px; display: flex; align-items: center; gap: 8px; }
+  .back-nav a { color: var(--light-blue); text-decoration: none; font-size: 0.88em; font-weight: 500; transition: color 0.2s; }
+  .back-nav a:hover { color: white; }
+
+  /* Header */
+  .sop-header { background: linear-gradient(135deg, var(--navy-dark), var(--navy)); color: white; padding: 48px 40px 40px; text-align: center; }
+  .sop-header h1 { font-size: 1.8em; font-weight: 800; margin-bottom: 6px; }
+  .sop-header .subtitle { font-size: 0.92em; opacity: 0.75; max-width: 640px; margin: 0 auto; line-height: 1.6; }
+  .sop-header .sop-stats { display: flex; justify-content: center; gap: 32px; margin-top: 24px; }
+  .sop-header .sop-stat { text-align: center; }
+  .sop-header .sop-stat-num { font-size: 1.6em; font-weight: 800; color: var(--orange); }
+  .sop-header .sop-stat-label { font-size: 0.72em; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.7; }
+
+  /* Cert strip */
+  .cert-strip { display: flex; align-items: center; justify-content: center; gap: 12px; background: #062d4a; padding: 10px 20px; font-size: 0.78em; color: rgba(255,255,255,0.7); flex-wrap: wrap; }
+  .cert-strip img { height: 22px; filter: brightness(0) invert(1); opacity: 0.6; }
+
+  /* Content */
+  .sop-content { max-width: 820px; margin: 0 auto; padding: 36px 24px 60px; }
+
+  /* Type groups */
+  .sop-type-group { margin-bottom: 32px; }
+  .sop-type-label { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid #dde5ed; }
+  .sop-type-icon { width: 30px; height: 30px; background: var(--navy); border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .sop-type-label h2 { margin: 0; font-size: 0.9em; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.4px; }
+  .sop-type-count { font-size: 0.68em; font-weight: 600; color: var(--mid-text); margin-left: auto; background: var(--cloud); padding: 2px 10px; border-radius: 10px; }
+
+  /* SOP items */
+  .sop-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; }
+  .sop-item { display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: white; border: 1px solid #eaeff4; border-radius: 10px; text-decoration: none; color: inherit; transition: all 0.2s ease; }
+  .sop-item:hover { background: var(--pale-blue); border-color: var(--navy); transform: translateX(3px); }
+  .sop-num { background: var(--navy); color: white; padding: 3px 10px; border-radius: 5px; font-size: 0.75em; font-weight: 800; white-space: nowrap; min-width: 56px; text-align: center; }
+  .sop-info { flex: 1; min-width: 0; }
+  .sop-name { font-size: 0.88em; font-weight: 600; color: var(--text); }
+  .sop-desc { font-size: 0.74em; color: var(--mid-text); margin-top: 1px; }
+  .sop-day-tag { font-size: 0.65em; font-weight: 600; color: var(--mid-text); background: var(--cloud); padding: 2px 8px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; }
+  .sop-arrow { color: #c0c8d0; font-size: 0.8em; flex-shrink: 0; transition: color 0.2s; }
+  .sop-item:hover .sop-arrow { color: var(--navy); }
+
+  /* Footer */
+  .sop-footer { background: #1a1a1a; color: rgba(255,255,255,0.6); padding: 28px 40px; text-align: center; font-size: 0.8em; line-height: 1.7; }
+  .sop-footer strong { color: rgba(255,255,255,0.85); }
+  .sop-footer a { color: var(--light-blue); text-decoration: none; }
+  .sop-footer a:hover { text-decoration: underline; }
+  .footer-certs { display: flex; justify-content: center; gap: 16px; margin-top: 14px; align-items: center; }
+  .footer-certs img { height: 28px; filter: brightness(0) invert(1); opacity: 0.4; }
+  .footer-certs .servus-logo { filter: none; opacity: 0.6; border-radius: 4px; }
+
+  @media (max-width: 768px) {
+    .sop-header { padding: 32px 20px; }
+    .sop-header h1 { font-size: 1.4em; }
+    .sop-header .sop-stats { gap: 20px; }
+    .sop-content { padding: 24px 16px 48px; }
+    .sop-item { flex-wrap: wrap; gap: 8px; }
+    .sop-day-tag { margin-left: 70px; }
+  }
+
+  @media print {
+    .back-nav { display: none; }
+    .sop-header, .cert-strip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .sop-item { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Back nav -->
+<div class="back-nav">
+    <a href="../course_index.html">← Back to Course Hub</a>
+</div>
+
+<!-- Header -->
+<div class="sop-header">
+    <h1>Standard Operating Procedures</h1>
+    <p class="subtitle">14 documented SOPs embedded throughout the 5-day training program. Each procedure follows IICRC S100, WorkSafeBC, and COR standards — defining the Servus operational system.</p>
+    <div class="sop-stats">
+        <div class="sop-stat">
+            <div class="sop-stat-num">14</div>
+            <div class="sop-stat-label">Total SOPs</div>
+        </div>
+        <div class="sop-stat">
+            <div class="sop-stat-num">5</div>
+            <div class="sop-stat-label">Categories</div>
+        </div>
+        <div class="sop-stat">
+            <div class="sop-stat-num">5</div>
+            <div class="sop-stat-label">Training Days</div>
+        </div>
+    </div>
+</div>
+
+<!-- Cert strip -->
+<div class="cert-strip">
+    <img src="https://servusgrouplowermainland.com/wp-content/uploads/2014/07/go2HR-CORLogo-K-300x283.png" alt="COR Certified">
+    <span>IICRC S100 Compliant</span><span>•</span>
+    <span>WorkSafeBC 2026</span><span>•</span>
+    <span>COR Certified</span><span>•</span>
+    <span>CRI Standards</span>
+</div>
+
+<!-- Content -->
+<div class="sop-content">
+
+    <!-- Forms -->
+    <div class="sop-type-group">
+        <div class="sop-type-label">
+            <div class="sop-type-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+            <h2>Forms</h2>
+            <span class="sop-type-count">1 SOP</span>
+        </div>
+        <ul class="sop-list">
+            <li><a href="../day1/#sop-001" class="sop-item">
+                <span class="sop-num">SOP-001</span>
+                <div class="sop-info">
+                    <div class="sop-name">Pre-Inspection & Client Documentation</div>
+                    <div class="sop-desc">Walk-through checklist, condition reporting & photo documentation</div>
+                </div>
+                <span class="sop-day-tag">Day 1</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- Protocols -->
+    <div class="sop-type-group">
+        <div class="sop-type-label">
+            <div class="sop-type-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h2>Protocols</h2>
+            <span class="sop-type-count">4 SOPs</span>
+        </div>
+        <ul class="sop-list">
+            <li><a href="../day1/#sop-002" class="sop-item">
+                <span class="sop-num">SOP-002</span>
+                <div class="sop-info">
+                    <div class="sop-name">Burn Test Fiber Identification Protocol</div>
+                    <div class="sop-desc">Controlled burn test for fiber type identification</div>
+                </div>
+                <span class="sop-day-tag">Day 1</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+            <li><a href="../day3/#sop-007" class="sop-item">
+                <span class="sop-num">SOP-007</span>
+                <div class="sop-info">
+                    <div class="sop-name">Start-Up & Operation Protocol</div>
+                    <div class="sop-desc">Equipment activation sequence & operational parameters</div>
+                </div>
+                <span class="sop-day-tag">Day 3</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+            <li><a href="../day4/#sop-010" class="sop-item">
+                <span class="sop-num">SOP-010</span>
+                <div class="sop-info">
+                    <div class="sop-name">Red Relief Protocol</div>
+                    <div class="sop-desc">Specialized treatment for red dye stain removal</div>
+                </div>
+                <span class="sop-day-tag">Day 4</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+            <li><a href="../day5/#sop-013" class="sop-item">
+                <span class="sop-num">SOP-013</span>
+                <div class="sop-info">
+                    <div class="sop-name">Safety & WHMIS Compliance</div>
+                    <div class="sop-desc">Hazard communication, PPE & chemical handling standards</div>
+                </div>
+                <span class="sop-day-tag">Day 5</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- Decision Trees -->
+    <div class="sop-type-group">
+        <div class="sop-type-label">
+            <div class="sop-type-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="14"/><line x1="12" y1="14" x2="6" y2="18"/><line x1="12" y1="14" x2="18" y2="18"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg></div>
+            <h2>Decision Trees</h2>
+            <span class="sop-type-count">3 SOPs</span>
+        </div>
+        <ul class="sop-list">
+            <li><a href="../day2/#sop-003" class="sop-item">
+                <span class="sop-num">SOP-003</span>
+                <div class="sop-info">
+                    <div class="sop-name">pH & Chemical Selection Guide</div>
+                    <div class="sop-desc">pH-based decision tree for selecting cleaning agents</div>
+                </div>
+                <span class="sop-day-tag">Day 2</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+            <li><a href="../day3/#sop-008" class="sop-item">
+                <span class="sop-num">SOP-008</span>
+                <div class="sop-info">
+                    <div class="sop-name">Cleaning Method Selection Guide</div>
+                    <div class="sop-desc">Method matching based on fiber type, soil level & conditions</div>
+                </div>
+                <span class="sop-day-tag">Day 3</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+            <li><a href="../day4/#sop-009" class="sop-item">
+                <span class="sop-num">SOP-009</span>
+                <div class="sop-info">
+                    <div class="sop-name">Spot vs Stain Identification</div>
+                    <div class="sop-desc">Classification flowchart for removable vs permanent discoloration</div>
+                </div>
+                <span class="sop-day-tag">Day 4</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- Procedures -->
+    <div class="sop-type-group">
+        <div class="sop-type-label">
+            <div class="sop-type-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></div>
+            <h2>Procedures</h2>
+            <span class="sop-type-count">4 SOPs</span>
+        </div>
+        <ul class="sop-list">
+            <li><a href="../day2/#sop-004" class="sop-item">
+                <span class="sop-num">SOP-004</span>
+                <div class="sop-info">
+                    <div class="sop-name">Pre-Treatment Application Procedure</div>
+                    <div class="sop-desc">Dwell time, dilution ratios & pre-spray technique</div>
+                </div>
+                <span class="sop-day-tag">Day 2</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+            <li><a href="../day3/#sop-005" class="sop-item">
+                <span class="sop-num">SOP-005</span>
+                <div class="sop-info">
+                    <div class="sop-name">HWE Extraction Procedure</div>
+                    <div class="sop-desc">Hot water extraction step-by-step operational method</div>
+                </div>
+                <span class="sop-day-tag">Day 3</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+            <li><a href="../day4/#sop-011" class="sop-item">
+                <span class="sop-num">SOP-011</span>
+                <div class="sop-info">
+                    <div class="sop-name">Pet Damage Treatment Procedure</div>
+                    <div class="sop-desc">Enzyme treatment, odor neutralization & urine removal steps</div>
+                </div>
+                <span class="sop-day-tag">Day 4</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+            <li><a href="../day5/#sop-012" class="sop-item">
+                <span class="sop-num">SOP-012</span>
+                <div class="sop-info">
+                    <div class="sop-name">Equipment Maintenance Schedule</div>
+                    <div class="sop-desc">Daily, weekly & monthly maintenance routines for all equipment</div>
+                </div>
+                <span class="sop-day-tag">Day 5</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+        </ul>
+    </div>
+
+    <!-- Checklists -->
+    <div class="sop-type-group">
+        <div class="sop-type-label">
+            <div class="sop-type-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg></div>
+            <h2>Checklists</h2>
+            <span class="sop-type-count">2 SOPs</span>
+        </div>
+        <ul class="sop-list">
+            <li><a href="../day3/#sop-006" class="sop-item">
+                <span class="sop-num">SOP-006</span>
+                <div class="sop-info">
+                    <div class="sop-name">Pre-Run Equipment Checklist</div>
+                    <div class="sop-desc">Pre-job equipment inspection & readiness verification</div>
+                </div>
+                <span class="sop-day-tag">Day 3</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+            <li><a href="../day5/#sop-014" class="sop-item">
+                <span class="sop-num">SOP-014</span>
+                <div class="sop-info">
+                    <div class="sop-name">Post-Job Quality Inspection</div>
+                    <div class="sop-desc">Final walk-through, quality check & client sign-off</div>
+                </div>
+                <span class="sop-day-tag">Day 5</span>
+                <span class="sop-arrow">→</span>
+            </a></li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="sop-footer">
+    <p><strong style="font-size: 1.1em;">Servus Group</strong></p>
+    <p style="margin: 4px 0 10px;">Specialty Cleaning — Professional Carpet Care Certification</p>
+    <p><strong>Contact:</strong> <a href="tel:604-435-1135">604-435-1135</a> | <a href="mailto:info@servusgroup.com">info@servusgroup.com</a></p>
+    <p>160-21900 Westminster Hwy, Richmond BC V6V 2K3 | <a href="https://servusgrouplowermainland.com" target="_blank">servusgrouplowermainland.com</a></p>
+    <div class="footer-certs">
+        <img src="../assets/iicrc-logo.png" alt="IICRC S100 Certified">
+        <img src="../assets/cri-logo.png" alt="CRI Standards">
+        <img src="../assets/servus-logo-white.jpg" alt="Servus Group" class="servus-logo">
+    </div>
+</footer>
+
+</body>
+</html>

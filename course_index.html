@@ -766,29 +766,11 @@
             .day-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
         }
 
-        /* === MASTER SOP INDEX === */
-        .sop-master-section { max-width: 900px; margin: 0 auto 60px; padding: 0 20px; }
-        .sop-master-header { text-align: center; margin-bottom: 36px; }
-        .sop-master-header h2 { font-size: 1.8em; font-weight: 800; color: #0a4875; margin: 0 0 8px; }
-        .sop-master-header .sop-master-sub { font-size: 0.95em; color: #5a6a7a; max-width: 600px; margin: 0 auto; line-height: 1.6; }
-        .sop-type-group { margin-bottom: 28px; }
-        .sop-type-label { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #0a4875; }
-        .sop-type-icon { width: 32px; height: 32px; background: linear-gradient(135deg, #062d4a, #0a4875); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .sop-type-label h3 { margin: 0; font-size: 1em; font-weight: 800; color: #0a4875; text-transform: uppercase; letter-spacing: 0.5px; }
-        .sop-type-count { font-size: 0.7em; font-weight: 600; color: #5a6a7a; margin-left: auto; }
-        .sop-master-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
-        .sop-master-item { display: flex; align-items: center; gap: 12px; padding: 10px 16px; background: #f8fafc; border: 1px solid #e8edf2; border-radius: 10px; transition: all 0.2s ease; }
-        .sop-master-item:hover { background: #eef4fa; border-color: #0a4875; transform: translateX(4px); }
-        .sop-master-num { background: #0a4875; color: white; padding: 3px 10px; border-radius: 6px; font-size: 0.78em; font-weight: 800; white-space: nowrap; min-width: 52px; text-align: center; }
-        .sop-master-name { font-size: 0.88em; font-weight: 600; color: #1a2a3a; }
-        .sop-master-desc { font-size: 0.75em; color: #5a6a7a; margin-left: auto; text-align: right; }
-        @media (max-width: 768px) {
-            .sop-master-item { flex-wrap: wrap; }
-            .sop-master-desc { margin-left: 64px; text-align: left; width: 100%; }
-        }
-        @media print {
-            .sop-master-section { break-inside: avoid; }
-        }
+        /* === SOP ROADMAP CARD === */
+        .day-card.sop-card { border-left: 4px solid #6b8599; }
+        .day-card.sop-card .day-number { background: linear-gradient(135deg, #4a6577, #6b8599); }
+        .day-card.sop-card .dn-label { color: rgba(255,255,255,0.8); }
+        .day-card.sop-card .dn-num { font-size: 0.7em; letter-spacing: 0.5px; }
     </style>
 </head>
 <body>
@@ -819,6 +801,10 @@
             <div class="hero-stat">
                 <div class="stat-number">220+</div>
                 <div class="stat-label">Glossary Terms</div>
+            </div>
+            <div class="hero-stat">
+                <div class="stat-number">14</div>
+                <div class="stat-label">SOPs</div>
             </div>
             <div class="hero-stat">
                 <div class="stat-number">50</div>
@@ -1072,6 +1058,35 @@
             </div>
         </a>
 
+        <!-- SOP REFERENCE -->
+        <a href="sop/" class="day-card sop-card reveal">
+            <div class="day-number">
+                <span class="dn-label">Ref</span>
+                <span class="dn-num">SOP</span>
+            </div>
+            <div class="day-info">
+                <div class="day-title">Standard Operating Procedures</div>
+                <div class="day-subtitle">Complete index of all 14 Servus SOPs organized by type — Forms, Protocols, Decision Trees, Procedures, and Checklists. Each links directly to the relevant training section.</div>
+                <div class="day-modules">
+                    <span class="mod-tag">Forms</span>
+                    <span class="mod-tag">Protocols</span>
+                    <span class="mod-tag">Decision Trees</span>
+                    <span class="mod-tag">Procedures</span>
+                    <span class="mod-tag">Checklists</span>
+                </div>
+            </div>
+            <div class="day-meta">
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+                    14 SOPs
+                </div>
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    5 Categories
+                </div>
+            </div>
+        </a>
+
     </div>
 </section>
 
@@ -1111,6 +1126,15 @@
         </div>
         <div class="feature-item reveal">
             <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6"/><path d="M9 16h6"/></svg>
+            </div>
+            <div>
+                <h4>14 Standard Operating Procedures</h4>
+                <p>Documented SOPs for every core process — from pre-inspection to post-job quality checks.</p>
+            </div>
+        </div>
+        <div class="feature-item reveal">
+            <div class="feature-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
             </div>
             <div>
@@ -1132,8 +1156,8 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
             </div>
             <div>
-                <h4>Product-Specific</h4>
-                <p>Training uses the exact Servus-approved products and equipment you'll use on the job.</p>
+                <h4>Product-Specific Training</h4>
+                <p>Uses the exact Servus-approved products and equipment you'll use on the job.</p>
             </div>
         </div>
         <div class="feature-item reveal">
@@ -1143,6 +1167,15 @@
             <div>
                 <h4>Certification Exam</h4>
                 <p>50-question exam with animated scoring dashboard and study recommendations.</p>
+            </div>
+        </div>
+        <div class="feature-item reveal">
+            <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+                <h4>Pre-Inspection Form</h4>
+                <p>Interactive digital form for on-site walk-through documentation and condition reporting.</p>
             </div>
         </div>
         <div class="feature-item reveal">
@@ -1173,138 +1206,6 @@
     </div>
 </section>
 
-<!-- ===== MASTER SOP INDEX ===== -->
-<section class="sop-master-section" id="sop-index">
-    <div class="sop-master-header">
-        <h2>Servus Standard Operating Procedures</h2>
-        <p class="sop-master-sub">14 documented SOPs embedded throughout the 5-day training program. Each procedure follows industry standards (IICRC S100, WorkSafeBC, COR) and defines the Servus operational system.</p>
-    </div>
-
-    <!-- TYPE: Forms -->
-    <div class="sop-type-group">
-        <div class="sop-type-label">
-            <div class="sop-type-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-            <h3>Forms</h3>
-            <span class="sop-type-count">1 SOP</span>
-        </div>
-        <ul class="sop-master-list">
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-001</span>
-                <span class="sop-master-name">Pre-Inspection &amp; Client Documentation</span>
-                <span class="sop-master-desc">Walk-through checklist, condition reporting &amp; photo documentation</span>
-            </li>
-        </ul>
-    </div>
-
-    <!-- TYPE: Protocols -->
-    <div class="sop-type-group">
-        <div class="sop-type-label">
-            <div class="sop-type-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <h3>Protocols</h3>
-            <span class="sop-type-count">4 SOPs</span>
-        </div>
-        <ul class="sop-master-list">
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-002</span>
-                <span class="sop-master-name">Burn Test Fiber Identification Protocol</span>
-                <span class="sop-master-desc">Controlled burn test for fiber type identification</span>
-            </li>
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-007</span>
-                <span class="sop-master-name">Start-Up &amp; Operation Protocol</span>
-                <span class="sop-master-desc">Equipment activation sequence &amp; operational parameters</span>
-            </li>
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-010</span>
-                <span class="sop-master-name">Red Relief Protocol</span>
-                <span class="sop-master-desc">Specialized treatment for red dye stain removal</span>
-            </li>
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-013</span>
-                <span class="sop-master-name">Safety &amp; WHMIS Compliance</span>
-                <span class="sop-master-desc">Hazard communication, PPE &amp; chemical handling standards</span>
-            </li>
-        </ul>
-    </div>
-
-    <!-- TYPE: Decision Trees -->
-    <div class="sop-type-group">
-        <div class="sop-type-label">
-            <div class="sop-type-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="14"/><line x1="12" y1="14" x2="6" y2="18"/><line x1="12" y1="14" x2="18" y2="18"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg></div>
-            <h3>Decision Trees</h3>
-            <span class="sop-type-count">3 SOPs</span>
-        </div>
-        <ul class="sop-master-list">
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-003</span>
-                <span class="sop-master-name">pH &amp; Chemical Selection Guide</span>
-                <span class="sop-master-desc">pH-based decision tree for selecting cleaning agents</span>
-            </li>
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-008</span>
-                <span class="sop-master-name">Cleaning Method Selection Guide</span>
-                <span class="sop-master-desc">Method matching based on fiber type, soil level &amp; conditions</span>
-            </li>
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-009</span>
-                <span class="sop-master-name">Spot vs Stain Identification</span>
-                <span class="sop-master-desc">Classification flowchart for removable vs permanent discoloration</span>
-            </li>
-        </ul>
-    </div>
-
-    <!-- TYPE: Procedures -->
-    <div class="sop-type-group">
-        <div class="sop-type-label">
-            <div class="sop-type-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></div>
-            <h3>Procedures</h3>
-            <span class="sop-type-count">4 SOPs</span>
-        </div>
-        <ul class="sop-master-list">
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-004</span>
-                <span class="sop-master-name">Pre-Treatment Application Procedure</span>
-                <span class="sop-master-desc">Dwell time, dilution ratios &amp; pre-spray technique</span>
-            </li>
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-005</span>
-                <span class="sop-master-name">HWE Extraction Procedure</span>
-                <span class="sop-master-desc">Hot water extraction step-by-step operational method</span>
-            </li>
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-011</span>
-                <span class="sop-master-name">Pet Damage Treatment Procedure</span>
-                <span class="sop-master-desc">Enzyme treatment, odor neutralization &amp; urine removal steps</span>
-            </li>
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-012</span>
-                <span class="sop-master-name">Equipment Maintenance Schedule</span>
-                <span class="sop-master-desc">Daily, weekly &amp; monthly maintenance routines for all equipment</span>
-            </li>
-        </ul>
-    </div>
-
-    <!-- TYPE: Checklists -->
-    <div class="sop-type-group">
-        <div class="sop-type-label">
-            <div class="sop-type-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg></div>
-            <h3>Checklists</h3>
-            <span class="sop-type-count">2 SOPs</span>
-        </div>
-        <ul class="sop-master-list">
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-006</span>
-                <span class="sop-master-name">Pre-Run Equipment Checklist</span>
-                <span class="sop-master-desc">Pre-job equipment inspection &amp; readiness verification</span>
-            </li>
-            <li class="sop-master-item">
-                <span class="sop-master-num">SOP-014</span>
-                <span class="sop-master-name">Post-Job Quality Inspection</span>
-                <span class="sop-master-desc">Final walk-through, quality check &amp; client sign-off</span>
-            </li>
-        </ul>
-    </div>
-</section>
 
 <!-- ===== FOOTER ===== -->
 <footer class="course-footer">

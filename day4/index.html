@@ -1225,16 +1225,22 @@
             .wt-step-title { font-size: 1.1em; }
         }
 
-        /* === SOP SYSTEM BANNER === */
-        .sop-system-card { border: 2px solid #0a4875; border-radius: 14px; overflow: hidden; margin-bottom: 28px; }
-        .sop-system-card-header { background: linear-gradient(135deg, #062d4a, #0a4875); color: white; padding: 16px 22px; display: flex; align-items: center; gap: 14px; }
-        .sop-system-card-header .sop-icon { width: 36px; height: 36px; background: rgba(255,153,0,0.15); border: 1.5px solid rgba(255,153,0,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .sop-system-card-header h4 { margin: 0; font-size: 0.95em; font-weight: 800; }
-        .sop-system-card-header .sop-sub { font-size: 0.75em; opacity: 0.7; margin-top: 2px; }
-        .sop-system-card-body { padding: 14px 22px; display: flex; gap: 10px; flex-wrap: wrap; background: #f8fafc; }
-        .sop-chip { display: inline-flex; align-items: center; gap: 6px; background: white; border: 1px solid #dde5ed; padding: 5px 12px; border-radius: 8px; font-size: 0.76em; font-weight: 600; color: #0a4875; }
-        .sop-chip-num { background: #0a4875; color: white; padding: 1px 6px; border-radius: 4px; font-size: 0.8em; font-weight: 800; }
+        /* === SOP SYSTEM BANNER (discreet) === */
+        .sop-system-card { border: 1px solid #dde5ed; border-radius: 10px; overflow: hidden; margin-bottom: 24px; background: #f8fafc; }
+        .sop-system-card-header { background: #f0f4f8; color: #3a5068; padding: 10px 18px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #e4eaf0; }
+        .sop-system-card-header .sop-icon { width: 28px; height: 28px; background: rgba(10,72,117,0.08); border: 1px solid rgba(10,72,117,0.12); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .sop-system-card-header h4 { margin: 0; font-size: 0.82em; font-weight: 700; color: #3a5068; }
+        .sop-system-card-header .sop-sub { font-size: 0.7em; opacity: 0.6; margin-top: 1px; }
+        .sop-system-card-body { padding: 10px 18px; display: flex; gap: 8px; flex-wrap: wrap; }
+        .sop-chip { display: inline-flex; align-items: center; gap: 5px; background: white; border: 1px solid #e4eaf0; padding: 4px 10px; border-radius: 6px; font-size: 0.72em; font-weight: 600; color: #3a5068; text-decoration: none; transition: all 0.2s; cursor: pointer; }
+        .sop-chip:hover { border-color: #0a4875; color: #0a4875; background: #eef4fa; }
+        .sop-chip-num { background: #6b8599; color: white; padding: 1px 5px; border-radius: 3px; font-size: 0.78em; font-weight: 700; }
+        .sop-chip:hover .sop-chip-num { background: #0a4875; }
         @media (max-width: 768px) { .sop-system-card-body { flex-direction: column; } }
+
+        /* === SOP SECTION MARKERS === */
+        .sop-section-tag { display: inline-flex; align-items: center; gap: 5px; background: #f0f4f8; border: 1px solid #dde5ed; padding: 3px 10px; border-radius: 5px; font-size: 0.68em; font-weight: 700; color: #6b8599; margin-left: 8px; vertical-align: middle; letter-spacing: 0.3px; }
+        .sop-section-tag svg { opacity: 0.5; }
     </style>
 </head>
 <body>
@@ -1269,23 +1275,23 @@
         <!-- SOP System Banner -->
         <div class="sop-system-card">
             <div class="sop-system-card-header">
-                <div class="sop-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff9900" stroke-width="2" stroke-linecap="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6"/><path d="M9 16h6"/></svg></div>
+                <div class="sop-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b8599" stroke-width="2" stroke-linecap="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6"/><path d="M9 16h6"/></svg></div>
                 <div>
-                    <h4>Servus Standard Operating Procedures &mdash; Day 4</h4>
-                    <div class="sop-sub">This module contains 3 SOPs from the Servus Operational System</div>
+                    <h4>Standard Operating Procedures &mdash; Day 4</h4>
+                    <div class="sop-sub">3 SOPs in this module</div>
                 </div>
             </div>
             <div class="sop-system-card-body">
-                <div class="sop-chip"><span class="sop-chip-num">009</span> Spot vs Stain Identification</div>
-                <div class="sop-chip"><span class="sop-chip-num">010</span> Red Relief Protocol</div>
-                <div class="sop-chip"><span class="sop-chip-num">011</span> Pet Damage Treatment Procedure</div>
+                <a href="#sop-009" class="sop-chip"><span class="sop-chip-num">009</span> Spot vs Stain Identification</a>
+                <a href="#sop-010" class="sop-chip"><span class="sop-chip-num">010</span> Red Relief Protocol</a>
+                <a href="#sop-011" class="sop-chip"><span class="sop-chip-num">011</span> Pet Damage Treatment Procedure</a>
             </div>
         </div>
 
         <!-- ============================================================ -->
         <!-- MODULE 1: Spots vs Stains & The Spotting Sequence -->
         <!-- ============================================================ -->
-        <h2>Module 1: Spots vs Stains &amp; The Spotting Sequence</h2>
+        <h2 id="sop-009">Module 1: Spots vs Stains &amp; The Spotting Sequence <span class="sop-section-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="14"/><line x1="12" y1="14" x2="6" y2="18"/><line x1="12" y1="14" x2="18" y2="18"/></svg>SOP-009</span></h2>
 
         <h3>The Critical Distinction</h3>
         <p>A <span class="glossary-term">spot<span class="tooltip">Foreign substance sitting on the fiber surface</span></span> is a foreign substance sitting ON the fiber surface -- it can usually be removed with the right chemistry and technique.</p>
@@ -1424,7 +1430,7 @@
         <!-- ============================================================ -->
         <!-- MODULE 3: Pet Damage Protocols -->
         <!-- ============================================================ -->
-        <h2>Module 3: Pet Damage Protocols</h2>
+        <h2 id="sop-011">Module 3: Pet Damage Protocols <span class="sop-section-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>SOP-011</span></h2>
 
         <h3>Detection -- Finding Hidden Contamination</h3>
         <p><strong>UV Light (Black Light):</strong> Urine fluoresces under UV -- reveals contamination invisible to the naked eye. Always scan the entire area, not just the reported spot. Multiple hidden deposits are common.</p>
@@ -1495,7 +1501,7 @@
         <!-- ============================================================ -->
         <!-- MODULE 4: Red Stain Removal -- The Red Relief Protocol -->
         <!-- ============================================================ -->
-        <h2>Module 4: Red Stain Removal -- The Red Relief Protocol</h2>
+        <h2 id="sop-010">Module 4: Red Stain Removal — The Red Relief Protocol <span class="sop-section-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>SOP-010</span></h2>
 
         <h3>Why Red Dyes Are the Problem Child</h3>
         <p>Red dyes (anthocyanins in wine, artificial dyes in juice/candy) bond AGGRESSIVELY to fiber molecules. Once set, they become extremely difficult or impossible to remove. Common sources: red wine, Kool-Aid/juice, candy, food coloring, tomato products, barbecue sauce.</p>
