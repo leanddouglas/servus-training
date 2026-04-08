@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burn Test Visual Concepts — Pick Your Favorite</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+    --servus-navy: #0a4875;
+    --servus-blue: #005a87;
+    --servus-accent: #ff9900;
+    --servus-light-blue: #D3EEF5;
+    --servus-pale-blue: #F0FCFF;
+    --servus-cloud-blue: #F2F7FC;
+    --servus-text: #333333;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--servus-text);
+    background: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+.concept-header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #062d4a 0%, #005a87 100%);
+    color: white;
+    border-radius: 16px;
+    margin-bottom: 40px;
+}
+.concept-header h1 { margin: 0 0 8px; font-size: 2em; }
+.concept-header p { opacity: 0.8; margin: 0; }
+.concept-label {
+    background: var(--servus-accent);
+    color: white;
+    display: inline-block;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.1em;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+.concept-desc {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    text-align: center;
+    color: #666;
+    font-size: 0.95em;
+}
+.section-divider {
+    height: 4px;
+    background: var(--servus-accent);
+    border: none;
+    margin: 60px 0;
+    border-radius: 2px;
+}
+
+/* ===== CONCEPT A: SMELL MEMORY CARDS ===== */
+.smell-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.smell-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.smell-card:hover { transform: translateY(-6px); }
+.smell-card-top {
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+.smell-emoji { font-size: 3.5em; margin-bottom: 8px; }
+.smell-name { font-size: 1.4em; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+.smell-tagline { font-size: 1em; font-weight: 600; opacity: 0.9; margin-top: 4px; }
+.smell-card-bottom {
+    background: white;
+    padding: 20px;
+}
+.smell-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 0.85em;
+}
+.smell-icon { font-size: 1.1em; flex-shrink: 0; margin-top: 1px; }
+.smell-label { font-weight: 700; color: var(--servus-navy); min-width: 55px; }
+
+.card-nylon .smell-card-top { background: linear-gradient(135deg, #1565c0, #1976d2); }
+.card-polyester .smell-card-top { background: linear-gradient(135deg, #6a1b9a, #8e24aa); }
+.card-olefin .smell-card-top { background: linear-gradient(135deg, #e65100, #f57c00); }
+.card-wool .smell-card-top { background: linear-gradient(135deg, #2e7d32, #43a047); }
+
+/* ===== CONCEPT B: COMPARISON TABLE ===== */
+.compare-table {
+    max-width: 960px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.compare-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+.compare-table th {
+    padding: 14px 16px;
+    font-size: 0.78em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    color: white;
+    background: var(--servus-navy);
+}
+.compare-table th:first-child { text-align: left; }
+.compare-table td {
+    padding: 16px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    font-size: 0.88em;
+    vertical-align: middle;
+}
+.compare-table td:first-child { text-align: left; font-weight: 700; }
+.compare-table tr:hover { background: var(--servus-pale-blue); }
+.fiber-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85em;
+    color: white;
+}
+.fiber-badge.nylon { background: #1565c0; }
+.fiber-badge.polyester { background: #8e24aa; }
+.fiber-badge.olefin { background: #e65100; }
+.fiber-badge.wool { background: #2e7d32; }
+.obs-emoji { font-size: 1.6em; display: block; margin-bottom: 4px; }
+.obs-text { font-size: 0.82em; color: #555; }
+.compare-table .residue-cell { font-weight: 600; }
+
+/* ===== CONCEPT C: STEP FLOW + DECISION ===== */
+.flow-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+.flow-steps {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+.flow-step {
+    flex: 1;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: relative;
+}
+.flow-step::after {
+    content: "→";
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: var(--servus-accent);
+    font-weight: 800;
+}
+.flow-step:last-child::after { display: none; }
+.step-num {
+    width: 36px;
+    height: 36px;
+    background: var(--servus-navy);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    margin: 0 auto 10px;
+}
+.step-title { font-weight: 700; color: var(--servus-navy); font-size: 0.9em; }
+.step-desc { font-size: 0.8em; color: #666; margin-top: 4px; }
+
+.decision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.decision-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+.decision-header {
+    padding: 16px 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.decision-header .fiber-emoji { font-size: 2em; }
+.decision-header .fiber-title { font-weight: 800; font-size: 1.2em; text-transform: uppercase; }
+.decision-body {
+    background: white;
+    padding: 16px 20px;
+}
+.clue-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.88em;
+}
+.clue-row:last-child { border-bottom: none; }
+.clue-icon { font-size: 1.3em; width: 30px; text-align: center; }
+.clue-label { font-weight: 700; color: var(--servus-navy); width: 70px; }
+.clue-value { color: #444; }
+.memory-tip {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.82em;
+    font-weight: 600;
+}
+
+.card-nylon-d .decision-header { background: linear-gradient(135deg, #1565c0, #1976d2); }
+.card-nylon-d .memory-tip { background: #e3f2fd; color: #1565c0; }
+.card-polyester-d .decision-header { background: linear-gradient(135deg, #6a1b9a, #8e24aa); }
+.card-polyester-d .memory-tip { background: #f3e5f5; color: #6a1b9a; }
+.card-olefin-d .decision-header { background: linear-gradient(135deg, #e65100, #f57c00); }
+.card-olefin-d .memory-tip { background: #fff3e0; color: #e65100; }
+.card-wool-d .decision-header { background: linear-gradient(135deg, #2e7d32, #43a047); }
+.card-wool-d .memory-tip { background: #e8f5e9; color: #2e7d32; }
+
+@media (max-width: 768px) {
+    .smell-grid { grid-template-columns: 1fr 1fr; }
+    .flow-steps { flex-direction: column; }
+    .flow-step::after { display: none; }
+    .decision-grid { grid-template-columns: 1fr; }
+}
+@media print {
+    body { background: white; }
+    .concept-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .smell-card, .decision-card { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="concept-header">
+    <h1>Burn Test Visual Concepts</h1>
+    <p>3 different approaches — pick the one that clicks best for your students</p>
+</div>
+
+<!-- ==================== CONCEPT A ==================== -->
+<div style="text-align: center;">
+    <div class="concept-label">CONCEPT A — "Smell Memory Cards"</div>
+</div>
+<p class="concept-desc">Each fiber gets a <strong>color + emoji + memorable smell tagline</strong>. Students remember "Nylon = celery" or "Polyester = rotten fruit" — the smell is the anchor that sticks in memory. Great for quick field reference.</p>
+
+<div class="smell-grid">
+    <div class="smell-card card-nylon">
+        <div class="smell-card-top">
+            <div class="smell-emoji">🥬</div>
+            <div class="smell-name">Nylon</div>
+            <div class="smell-tagline">"Celery & Sealing Wax"</div>
+        </div>
+        <div class="smell-card-bottom">
+            <div class="smell-row"><span class="smell-icon">🔥</span> <span class="smell-label">Flame:</span> Blue base, orange tip</div>
+            <div class="smell-row"><span class="smell-icon">💨</span> <span class="smell-label">Smoke:</span> White/gray, moderate</div>
+            <div class="smell-row"><span class="smell-icon">👃</span> <span class="smell-label">Smell:</span> Celery or sealing wax</div>
+            <div class="smell-row"><span class="smell-icon">⚫</span> <span class="smell-label">Residue:</span> Hard, round gray/brown bead</div>
+            <div class="smell-row"><span class="smell-icon">⚠️</span> <span class="smell-label">pH:</span> Safe range 2-10</div>
+        </div>
+    </div>
+
+    <div class="smell-card card-polyester">
+        <div class="smell-card-top">
+            <div class="smell-emoji">🍎</div>
+            <div class="smell-name">Polyester</div>
+            <div class="smell-tagline">"Sweet Overripe Fruit"</div>
+        </div>
+        <div class="smell-card-bottom">
+            <div class="smell-row"><span class="smell-icon">🔥</span> <span class="smell-label">Flame:</span> Burns rapidly, sputters</div>
+            <div class="smell-row"><span class="smell-icon">💨</span> <span class="smell-label">Smoke:</span> Heavy black smoke</div>
+            <div class="smell-row"><span class="smell-icon">👃</span> <span class="smell-label">Smell:</span> Sweet, overripe fruit</div>
+            <div class="smell-row"><span class="smell-icon">⚫</span> <span class="smell-label">Residue:</span> Shiny, hard black bead</div>
+            <div class="smell-row"><span class="smell-icon">⚠️</span> <span class="smell-label">pH:</span> Safe range 4-10</div>
+        </div>
+    </div>
+
+    <div class="smell-card card-olefin">
+        <div class="smell-card-top">
+            <div class="smell-emoji">🕯️</div>
+            <div class="smell-name">Olefin</div>
+            <div class="smell-tagline">"Asphalt & Candle Wax"</div>
+        </div>
+        <div class="smell-card-bottom">
+            <div class="smell-row"><span class="smell-icon">🔥</span> <span class="smell-label">Flame:</span> Burns rapidly, melts fast</div>
+            <div class="smell-row"><span class="smell-icon">💨</span> <span class="smell-label">Smoke:</span> Light smoke</div>
+            <div class="smell-row"><span class="smell-icon">👃</span> <span class="smell-label">Smell:</span> Asphalt or burning candles</div>
+            <div class="smell-row"><span class="smell-icon">⚫</span> <span class="smell-label">Residue:</span> Hard, round, light bead</div>
+            <div class="smell-row"><span class="smell-icon">⚠️</span> <span class="smell-label">pH:</span> Safe range 2-12 (bleach-safe)</div>
+        </div>
+    </div>
+
+    <div class="smell-card card-wool">
+        <div class="smell-card-top">
+            <div class="smell-emoji">💇</div>
+            <div class="smell-name">Wool</div>
+            <div class="smell-tagline">"Burning Hair / Feathers"</div>
+        </div>
+        <div class="smell-card-bottom">
+            <div class="smell-row"><span class="smell-icon">🔥</span> <span class="smell-label">Flame:</span> Sizzles, self-extinguishes</div>
+            <div class="smell-row"><span class="smell-icon">💨</span> <span class="smell-label">Smoke:</span> Light gray</div>
+            <div class="smell-row"><span class="smell-icon">👃</span> <span class="smell-label">Smell:</span> Burning hair or feathers</div>
+            <div class="smell-row"><span class="smell-icon">⚫</span> <span class="smell-label">Residue:</span> Black, crumbly ash (crushable)</div>
+            <div class="smell-row"><span class="smell-icon">⚠️</span> <span class="smell-label">pH:</span> Safe range 4-8 ONLY</div>
+        </div>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ==================== CONCEPT B ==================== -->
+<div style="text-align: center;">
+    <div class="concept-label">CONCEPT B — "Side-by-Side Comparison"</div>
+</div>
+<p class="concept-desc">A single table where students compare all 4 fibers at once — <strong>same test, different results</strong>. The brain learns by contrast. When they smell something in the field, they scan across the row and match it. Printable for the van clipboard.</p>
+
+<div class="compare-table">
+<table>
+<tr>
+    <th style="width:15%;">Observation</th>
+    <th style="width:21%;"><span class="fiber-badge nylon">NYLON</span></th>
+    <th style="width:21%;"><span class="fiber-badge polyester">POLYESTER</span></th>
+    <th style="width:21%;"><span class="fiber-badge olefin">OLEFIN</span></th>
+    <th style="width:22%;"><span class="fiber-badge wool">WOOL</span></th>
+</tr>
+<tr>
+    <td>🔥 Flame</td>
+    <td><span class="obs-emoji">🔵🟠</span><span class="obs-text">Blue base, orange tip</span></td>
+    <td><span class="obs-emoji">🔥💥</span><span class="obs-text">Rapid burn, sputters</span></td>
+    <td><span class="obs-emoji">🔥💧</span><span class="obs-text">Rapid melt, drips</span></td>
+    <td><span class="obs-emoji">✨🔥</span><span class="obs-text">Sizzles, self-extinguishes</span></td>
+</tr>
+<tr>
+    <td>💨 Smoke</td>
+    <td><span class="obs-emoji">🌫️</span><span class="obs-text">White/gray, moderate</span></td>
+    <td><span class="obs-emoji">🖤🖤🖤</span><span class="obs-text">Heavy BLACK smoke</span></td>
+    <td><span class="obs-emoji">🌫️</span><span class="obs-text">Light smoke</span></td>
+    <td><span class="obs-emoji">🌫️</span><span class="obs-text">Light gray</span></td>
+</tr>
+<tr>
+    <td>👃 Smell</td>
+    <td><span class="obs-emoji">🥬</span><span class="obs-text"><strong>Celery / sealing wax</strong></span></td>
+    <td><span class="obs-emoji">🍎</span><span class="obs-text"><strong>Sweet overripe fruit</strong></span></td>
+    <td><span class="obs-emoji">🕯️</span><span class="obs-text"><strong>Asphalt / candle wax</strong></span></td>
+    <td><span class="obs-emoji">💇</span><span class="obs-text"><strong>Burning hair / feathers</strong></span></td>
+</tr>
+<tr>
+    <td>⚫ Residue</td>
+    <td class="residue-cell"><span class="obs-emoji">⚪</span><span class="obs-text">Hard, round gray/brown bead</span></td>
+    <td class="residue-cell"><span class="obs-emoji">⚫</span><span class="obs-text">Shiny, hard BLACK bead</span></td>
+    <td class="residue-cell"><span class="obs-emoji">🟤</span><span class="obs-text">Hard, round LIGHT bead</span></td>
+    <td class="residue-cell"><span class="obs-emoji">💨</span><span class="obs-text">Crumbly black ash (crushes to powder)</span></td>
+</tr>
+<tr>
+    <td>⚠️ Safe pH</td>
+    <td><strong style="color:#1565c0;">2-10</strong></td>
+    <td><strong style="color:#8e24aa;">4-10</strong></td>
+    <td><strong style="color:#e65100;">2-12</strong></td>
+    <td><strong style="color:#c62828;">4-8 ONLY ⚠️</strong></td>
+</tr>
+<tr style="background: #fff8e1;">
+    <td>🧠 Memory Trick</td>
+    <td><em>"Nylon = Celery Stick"</em></td>
+    <td><em>"Polyester = Rotten Apple"</em></td>
+    <td><em>"Olefin = Road Candle"</em></td>
+    <td><em>"Wool = Barbershop Floor"</em></td>
+</tr>
+</table>
+</div>
+
+<hr class="section-divider">
+
+<!-- ==================== CONCEPT C ==================== -->
+<div style="text-align: center;">
+    <div class="concept-label">CONCEPT C — "Step Flow + Decision Cards"</div>
+</div>
+<p class="concept-desc">Shows the <strong>process first</strong> (3 steps), then the <strong>diagnosis</strong> (4 result cards). Each card has a bold memory trick at the bottom. Combines the flow of your original with cleaner card layout. Best for students who think in sequences.</p>
+
+<!-- Step Flow -->
+<div class="flow-container">
+    <div class="flow-steps">
+        <div class="flow-step">
+            <div class="step-num">1</div>
+            <div style="font-size: 2em; margin-bottom: 6px;">✂️</div>
+            <div class="step-title">Isolate Sample</div>
+            <div class="step-desc">Pull a small tuft from a hidden area (closet corner, under furniture). Use tweezers — never cut loop pile.</div>
+        </div>
+        <div class="flow-step">
+            <div class="step-num">2</div>
+            <div style="font-size: 2em; margin-bottom: 6px;">🔥</div>
+            <div class="step-title">Ignite & Observe</div>
+            <div class="step-desc">Use odorless butane lighter (never matches). Hold tuft to flame. Watch for: melt vs. sizzle vs. burn.</div>
+        </div>
+        <div class="flow-step">
+            <div class="step-num">3</div>
+            <div style="font-size: 2em; margin-bottom: 6px;">🔍</div>
+            <div class="step-title">Check 4 Pillars</div>
+            <div class="step-desc">Document: <strong>Flame behavior</strong>, <strong>Smoke color</strong>, <strong>Odor</strong>, and <strong>Residue</strong> (ash or bead).</div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 10px 0 24px;">
+        <div style="display: inline-block; background: var(--servus-accent); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 700; font-size: 0.9em;">↓ MATCH YOUR RESULTS ↓</div>
+    </div>
+
+    <!-- Decision Cards -->
+    <div class="decision-grid">
+        <div class="decision-card card-nylon-d">
+            <div class="decision-header">
+                <div class="fiber-emoji">🥬</div>
+                <div>
+                    <div class="fiber-title">Nylon</div>
+                    <div style="opacity:0.8; font-size:0.85em;">Most common residential</div>
+                </div>
+            </div>
+            <div class="decision-body">
+                <div class="clue-row"><span class="clue-icon">🔥</span><span class="clue-label">Flame</span><span class="clue-value">Blue base with orange tip</span></div>
+                <div class="clue-row"><span class="clue-icon">💨</span><span class="clue-label">Smoke</span><span class="clue-value">White/gray, moderate amount</span></div>
+                <div class="clue-row"><span class="clue-icon">👃</span><span class="clue-label">Smell</span><span class="clue-value"><strong>Celery or sealing wax</strong></span></div>
+                <div class="clue-row"><span class="clue-icon">⚫</span><span class="clue-label">Residue</span><span class="clue-value">Hard, round gray/brown bead</span></div>
+                <div class="memory-tip">🧠 Remember: <strong>"Nylon = Celery Stick"</strong> — the unique celery smell is your #1 identifier</div>
+            </div>
+        </div>
+
+        <div class="decision-card card-polyester-d">
+            <div class="decision-header">
+                <div class="fiber-emoji">🍎</div>
+                <div>
+                    <div class="fiber-title">Polyester</div>
+                    <div style="opacity:0.8; font-size:0.85em;">Oil-loving, stain-resistant</div>
+                </div>
+            </div>
+            <div class="decision-body">
+                <div class="clue-row"><span class="clue-icon">🔥</span><span class="clue-label">Flame</span><span class="clue-value">Burns rapidly, sputters</span></div>
+                <div class="clue-row"><span class="clue-icon">💨</span><span class="clue-label">Smoke</span><span class="clue-value"><strong>Heavy BLACK smoke</strong></span></div>
+                <div class="clue-row"><span class="clue-icon">👃</span><span class="clue-label">Smell</span><span class="clue-value"><strong>Sweet, overripe fruit</strong></span></div>
+                <div class="clue-row"><span class="clue-icon">⚫</span><span class="clue-label">Residue</span><span class="clue-value">Shiny, hard BLACK bead</span></div>
+                <div class="memory-tip">🧠 Remember: <strong>"Polyester = Rotten Apple"</strong> — sweet smell + black smoke = polyester every time</div>
+            </div>
+        </div>
+
+        <div class="decision-card card-olefin-d">
+            <div class="decision-header">
+                <div class="fiber-emoji">🕯️</div>
+                <div>
+                    <div class="fiber-title">Olefin</div>
+                    <div style="opacity:0.8; font-size:0.85em;">Solution-dyed, bleach-safe</div>
+                </div>
+            </div>
+            <div class="decision-body">
+                <div class="clue-row"><span class="clue-icon">🔥</span><span class="clue-label">Flame</span><span class="clue-value">Burns rapidly, melts fast</span></div>
+                <div class="clue-row"><span class="clue-icon">💨</span><span class="clue-label">Smoke</span><span class="clue-value">Light smoke</span></div>
+                <div class="clue-row"><span class="clue-icon">👃</span><span class="clue-label">Smell</span><span class="clue-value"><strong>Asphalt or burning candles</strong></span></div>
+                <div class="clue-row"><span class="clue-icon">⚫</span><span class="clue-label">Residue</span><span class="clue-value">Hard, round, light-colored bead</span></div>
+                <div class="memory-tip">🧠 Remember: <strong>"Olefin = Road Candle"</strong> — smells like hot asphalt + candle wax, melts like wax</div>
+            </div>
+        </div>
+
+        <div class="decision-card card-wool-d">
+            <div class="decision-header">
+                <div class="fiber-emoji">💇</div>
+                <div>
+                    <div class="fiber-title">Wool</div>
+                    <div style="opacity:0.8; font-size:0.85em;">Natural protein — pH sensitive!</div>
+                </div>
+            </div>
+            <div class="decision-body">
+                <div class="clue-row"><span class="clue-icon">🔥</span><span class="clue-label">Flame</span><span class="clue-value">Sizzles, self-extinguishes</span></div>
+                <div class="clue-row"><span class="clue-icon">💨</span><span class="clue-label">Smoke</span><span class="clue-value">Light gray smoke</span></div>
+                <div class="clue-row"><span class="clue-icon">👃</span><span class="clue-label">Smell</span><span class="clue-value"><strong>Burning hair / feathers</strong></span></div>
+                <div class="clue-row"><span class="clue-icon">⚫</span><span class="clue-label">Residue</span><span class="clue-value">Black crumbly ash (crushes to powder)</span></div>
+                <div class="memory-tip">🧠 Remember: <strong>"Wool = Barbershop Floor"</strong> — it's hair! Smells like hair because it IS hair (protein fiber)</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="text-align: center; margin-top: 60px; padding: 30px; color: #999; font-size: 0.85em;">
+    <p>These are 3 visual concepts for the Burn Test identification guide.<br>Pick your favorite and we'll integrate it into Day 1.</p>
+</div>
+
+</body>
+</html>
