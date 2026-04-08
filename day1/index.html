@@ -1090,9 +1090,9 @@
 <div style="background: var(--servus-cloud-blue); border: 2px solid var(--servus-blue); border-radius: 12px; padding: 30px; margin: 24px 0;">
 
 <!-- Form Header -->
-<div style="text-align: center; margin-bottom: 24px;">
-    <img src="../assets/servus-cleaning-logo-colour.jpg" alt="Servus Group" style="height: 60px; border-radius: 8px; margin-bottom: 8px;"><br>
-    <strong style="font-size: 1.3em; color: var(--servus-navy);">CARPET CLEANING PRE-INSPECTION FORM</strong>
+<div style="text-align: center; margin-bottom: 24px; background: var(--servus-navy); border-radius: 10px; padding: 20px;">
+    <img src="../assets/servus-logo-onblue.jpg" alt="Servus Group" style="height: 70px; border-radius: 8px; margin-bottom: 10px;"><br>
+    <strong style="font-size: 1.3em; color: white; letter-spacing: 1px;">CARPET CLEANING PRE-INSPECTION FORM</strong>
 </div>
 
 <form id="preinspectionForm" onsubmit="return false;" style="font-size: 0.92em;">
@@ -1191,8 +1191,8 @@
         <label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> Heavy Traffic Soiling</label>
         <label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> <span class="glossary-term">Filtration Lines<span class="tooltip">Dark soil lines along walls and under doors caused by air filtration through carpet. Extremely difficult to remove.</span></span></label>
         <label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> Color Loss/Discoloration</label>
-        <label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> Fading</label>
-        <label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> Abrasion/Shading</label>
+        <label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> <span class="glossary-term">Fading<span class="tooltip">Loss of carpet color caused by prolonged UV sunlight exposure, chemical damage, or ozone. Permanent and cannot be reversed by cleaning. Document location and severity before starting work.</span></span></label>
+        <label style="display:flex;align-items:center;gap:4px;"><input type="checkbox"> <span class="glossary-term">Abrasion/Shading<span class="tooltip">Wear pattern where fiber tips are physically damaged from foot traffic, creating lighter or darker areas depending on viewing angle. Permanent mechanical damage — not a soil issue. Cleaning will not restore abraded fibers.</span></span></label>
     </div>
     <div style="display:flex; gap:16px; margin-top:12px;">
         <div>
@@ -1574,11 +1574,19 @@
                 <div class="g-term-name">Color Unstable <span class="g-term-cat g-cat-test">Test</span></div>
                 <div class="g-term-def">Carpet dye bleeds or transfers during testing — HIGH RISK. Reduce moisture, lower temperature, avoid agitation, use only pH-neutral solutions. Document and inform client of limitations.</div>
             </div>
+            <div class="g-term-item" data-cat="tech" data-search="fading uv sunlight color loss chemical ozone permanent">
+                <div class="g-term-name">Fading <span class="g-term-cat g-cat-tech">Tech</span></div>
+                <div class="g-term-def">Loss of carpet color caused by prolonged UV sunlight exposure, chemical damage, or ozone. Permanent and cannot be reversed by cleaning. Document location and severity before starting work.</div>
+            </div>
+            <div class="g-term-item" data-cat="tech" data-search="abrasion shading wear traffic fiber damage light dark angle permanent">
+                <div class="g-term-name">Abrasion/Shading <span class="g-term-cat g-cat-tech">Tech</span></div>
+                <div class="g-term-def">Wear pattern where fiber tips are physically damaged from foot traffic, creating lighter or darker areas depending on viewing angle. Permanent mechanical damage — not a soil issue. Cleaning will not restore abraded fibers.</div>
+            </div>
         </div>
-        <div class="glossary-panel-footer" id="glossaryCount">54 terms</div>
+        <div class="glossary-panel-footer" id="glossaryCount">56 terms</div>
     </div>
     <button class="glossary-btn" id="glossaryBtnMain" onclick="toggleGlossary()" title="Open Glossary">
-        <span class="badge">54</span>
+        <span class="badge">56</span>
     </button>
 </div>
 
