@@ -95,9 +95,10 @@
         }
 
         .hero-logo {
-            width: 340px;
+            width: 480px;
+            max-width: 90%;
             margin-bottom: 24px;
-            border-radius: 16px;
+            border-radius: 0;
             animation: fadeInDown 0.6s ease-out;
         }
 
@@ -753,8 +754,7 @@
         @media (max-width: 480px) {
             .hero { padding: 40px 16px; min-height: auto; padding-top: 80px; padding-bottom: 100px; }
             .hero h1 { font-size: 1.6em; }
-            .hero .hero-division { font-size: 0.85em; letter-spacing: 4px; }
-            .hero-logo { width: 220px; }
+            .hero-logo { width: 320px; }
             .cert-strip { padding: 14px 16px; gap: 12px; }
             .about-section, .curriculum-section, .features-section { padding: 50px 20px; }
             .outcomes-section { padding: 50px 16px; }
@@ -776,10 +776,8 @@
 <section class="hero">
     <div class="hero-content">
 
-        <img src="assets/servus-logo-white.jpg" alt="Servus Group Logo" class="hero-logo">
-
-        <div class="hero-division">Specialty Cleaning</div>
-        <div class="hero-tagline">"At Your Service"</div>
+        <img src="assets/servus-specialty-cleaning-transparent.png" alt="Servus Group — Specialty Cleaning" class="hero-logo">
+        <div class="hero-tagline">"Clean. Maintain. Enhance."</div>
 
         <div class="hero-title-bar"></div>
 
@@ -801,7 +799,7 @@
             </div>
             <div class="hero-stat">
                 <div class="stat-number">14</div>
-                <div class="stat-label">SOPs</div>
+                <div class="stat-label">FRPs</div>
             </div>
             <div class="hero-stat">
                 <div class="stat-number">50</div>
@@ -1059,11 +1057,11 @@
         <a href="sop/" class="day-card sop-card reveal">
             <div class="day-number">
                 <span class="dn-label">Ref</span>
-                <span class="dn-num">SOP</span>
+                <span class="dn-num">FRP</span>
             </div>
             <div class="day-info">
-                <div class="day-title">Standard Operating Procedures</div>
-                <div class="day-subtitle">Complete index of all 14 Servus SOPs organized by type — Forms, Protocols, Decision Trees, Procedures, and Checklists. Each links directly to the relevant training section.</div>
+                <div class="day-title">Field Reference Points</div>
+                <div class="day-subtitle">Complete index of all 14 Servus FRPs organized by type — Forms, Protocols, Decision Trees, Procedures, and Checklists. Each links directly to the relevant training section.</div>
                 <div class="day-modules">
                     <span class="mod-tag">Forms</span>
                     <span class="mod-tag">Protocols</span>
@@ -1075,11 +1073,68 @@
             <div class="day-meta">
                 <div class="meta-item">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
-                    14 SOPs
+                    14 FRPs
                 </div>
                 <div class="meta-item">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     5 Categories
+                </div>
+            </div>
+        </a>
+
+        <!-- SOP OPERATIONS: RESIDENTIAL -->
+        <a href="sop-operations/residential.html" class="day-card sop-card reveal">
+            <div class="day-number" style="background: linear-gradient(135deg, #ff9900, #e68a00);">
+                <span class="dn-label">SOP</span>
+                <span class="dn-num" style="color: #0a4875;">RES</span>
+            </div>
+            <div class="day-info">
+                <div class="day-title">Residential Carpet Cleaning SOP</div>
+                <div class="day-subtitle">Complete standard operating procedure for residential carpet cleaning — from dispatch and client greeting through extraction, quality inspection, and close-out.</div>
+                <div class="day-modules">
+                    <span class="mod-tag">Workflow</span>
+                    <span class="mod-tag">Roles</span>
+                    <span class="mod-tag">Safety</span>
+                    <span class="mod-tag">Quality Checks</span>
+                    <span class="mod-tag">KPIs</span>
+                </div>
+            </div>
+            <div class="day-meta">
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    11 Steps
+                </div>
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    12 Sections
+                </div>
+            </div>
+        </a>
+
+        <!-- SOP OPERATIONS: COMMERCIAL -->
+        <a href="sop-operations/commercial.html" class="day-card sop-card reveal">
+            <div class="day-number" style="background: linear-gradient(135deg, #ff9900, #e68a00);">
+                <span class="dn-label">SOP</span>
+                <span class="dn-num" style="color: #0a4875;">COM</span>
+            </div>
+            <div class="day-info">
+                <div class="day-title">Commercial Carpet &amp; Emergency SOPs</div>
+                <div class="day-subtitle">Two operational SOPs: Commercial Carpet Maintenance Program (recurring maintenance &amp; deep cleaning) and Spot &amp; Stain Emergency Response (rapid triage &amp; treatment).</div>
+                <div class="day-modules">
+                    <span class="mod-tag">Commercial</span>
+                    <span class="mod-tag">Emergency</span>
+                    <span class="mod-tag">Whittaker TRIO</span>
+                    <span class="mod-tag">Spot Treatment</span>
+                </div>
+            </div>
+            <div class="day-meta">
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    2 SOPs
+                </div>
+                <div class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    24 Sections
                 </div>
             </div>
         </a>
@@ -1124,8 +1179,8 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6"/><path d="M9 16h6"/></svg>
             </div>
             <div>
-                <h4>14 Standard Operating Procedures</h4>
-                <p>Documented SOPs for every core process — from pre-inspection to post-job quality checks.</p>
+                <h4>14 Field Reference Points</h4>
+                <p>Documented FRPs for every core process — from pre-inspection to post-job quality checks.</p>
             </div>
         </div>
         <div class="feature-item reveal">
@@ -1204,15 +1259,15 @@
 
 <!-- ===== FOOTER ===== -->
 <footer class="course-footer">
-    <p><strong style="font-size: 1.2em; color: rgba(255,255,255,0.9);">Servus Group</strong></p>
-    <p style="margin: 4px 0 12px;">Specialty Cleaning &mdash; Professional Carpet Care Certification</p>
+    <img src="assets/servus-specialty-cleaning-transparent.png" alt="Servus Group — Specialty Cleaning" style="height: 60px; margin-bottom: 8px;">
+    <p style="margin: 4px 0 12px;">Professional Carpet Care Certification</p>
     <p style="margin: 4px 0;"><strong>Contact:</strong> <a href="tel:604-435-1135">604-435-1135</a> | <a href="mailto:info@servusgroup.com">info@servusgroup.com</a></p>
     <p style="margin: 4px 0;">160-21900 Westminster Hwy, Richmond BC V6V 2K3 | <a href="https://servusgrouplowermainland.com" target="_blank">servusgrouplowermainland.com</a></p>
     <div class="footer-certs">
         <img src="https://servusgrouplowermainland.com/wp-content/uploads/2014/07/go2HR-CORLogo-K-300x283.png" alt="COR Certified">
         <img src="assets/iicrc-logo.png" alt="IICRC S100 Certified">
         <img src="assets/cri-logo.png" alt="CRI - Carpet &amp; Rug Institute">
-        <img src="assets/servus-logo-white.jpg" alt="Servus Group" class="servus-logo">
+
     </div>
     <p style="font-size: 0.8em; max-width: 700px; margin: 10px auto 0; line-height: 1.4; opacity: 0.5;">This material is for Servus Group staff training and certification purposes only. All equipment and chemicals referenced are approved for use by Servus Group and comply with applicable safety standards (WHMIS, WorkSafeBC). Product recommendations and protocols reflect Servus Group&rsquo;s best practices and may vary based on site-specific conditions. Always consult equipment manuals and chemical Safety Data Sheets (SDS) before use.</p>
     <p style="margin-top: 14px; font-size: 0.75em; opacity: 0.4;">&copy; 2026 Servus Group. Developed by <strong>Douglas da Silva</strong></p>

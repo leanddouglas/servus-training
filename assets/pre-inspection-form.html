@@ -1,0 +1,711 @@
+<!-- Servus Pre-Inspection Form v1.0 | For Skedulo Plus integration | Field names below -->
+<!-- customer_name, date, address, phone, technician -->
+<!-- area_living, area_bedroom, area_family, area_study, area_dining, area_stairs, area_hallway, area_other -->
+<!-- fiber_type, carpet_style, construction, backing, padding, carpet_age -->
+<!-- condition_open_seams, condition_buckling, condition_delamination, condition_stairs_loose, condition_traffic, condition_filtration, condition_color_loss, condition_fading, condition_abrasion, general_appearance, condition_other -->
+<!-- odor_pet, odor_smoke, odor_musty, odor_food, odor_other, stain_urine, stain_red, stain_tannin, stain_rust, stain_ink, stain_oil, stain_hair_dye, stain_nail_polish, stain_furniture, stain_dispersed_dye, stain_other -->
+<!-- test_color_stable, test_color_unstable, test_ph, test_fiber_id, previous_cleaning, prev_home_spotters, prev_home_deodorizers -->
+<!-- cleaning_method, aftercare_protector, aftercare_warranty, aftercare_odor, aftercare_deodorizer -->
+<!-- limitations, customer_signature_date -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servus Carpet Cleaning Pre-Inspection Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #1a1a1a;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Header */
+        .form-header {
+            text-align: center;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #062d4a, #0a4875, #005a87);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .form-header img {
+            height: 70px;
+            margin-bottom: 10px;
+        }
+
+        .form-header .form-title {
+            font-size: 1.3em;
+            color: white;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        /* Section cards */
+        .form-section {
+            background: #ffffff;
+            border: 1px solid #e0e4e8;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 16px;
+            border-left: 4px solid #0a4875;
+        }
+
+        .form-section.border-orange { border-left-color: #ff9900; }
+        .form-section.border-navy { border-left-color: #0a4875; }
+        .form-section.border-blue { border-left-color: #005a87; }
+        .form-section.border-red { border-left-color: #dc3545; }
+        .form-section.border-green { border-left-color: #28a745; }
+        .form-section.border-blue-mid { border-left-color: #006ba1; }
+
+        .section-title {
+            font-size: 0.95em;
+            font-weight: 700;
+            color: #0a4875;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e8ecf0;
+        }
+
+        .section-title.orange { color: #cc7a00; }
+        .section-title.navy { color: #0a4875; }
+        .section-title.blue { color: #005a87; }
+        .section-title.red { color: #dc3545; }
+        .section-title.green { color: #28a745; }
+        .section-title.blue-mid { color: #006ba1; }
+
+        /* Grid layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px 20px;
+        }
+
+        .grid-2-unequal {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 12px 20px;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* Form fields */
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .field-group label {
+            font-size: 0.8em;
+            font-weight: 600;
+            color: #4a5568;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .field-group input[type="text"],
+        .field-group input[type="date"],
+        .field-group input[type="tel"] {
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            padding: 7px 10px;
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            background: #fafbfc;
+            transition: border-color 0.2s;
+        }
+
+        .field-group input:focus {
+            outline: none;
+            border-color: #0a4875;
+            background: #fff;
+            box-shadow: 0 0 0 2px rgba(10, 72, 117, 0.1);
+        }
+
+        textarea {
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            padding: 7px 10px;
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            background: #fafbfc;
+            width: 100%;
+            resize: vertical;
+            min-height: 60px;
+            transition: border-color 0.2s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #0a4875;
+            background: #fff;
+            box-shadow: 0 0 0 2px rgba(10, 72, 117, 0.1);
+        }
+
+        /* Checkboxes and radios */
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12.5px;
+            color: #2d3748;
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"],
+        .radio-group input[type="radio"] {
+            width: 15px;
+            height: 15px;
+            accent-color: #0a4875;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 6px;
+        }
+
+        .checkbox-grid label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12.5px;
+            color: #2d3748;
+            cursor: pointer;
+        }
+
+        .checkbox-grid input[type="checkbox"] {
+            width: 15px;
+            height: 15px;
+            accent-color: #0a4875;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        /* Subsection labels */
+        .sub-label {
+            font-size: 0.82em;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 6px;
+            margin-top: 4px;
+        }
+
+        /* Inline input next to checkbox */
+        .inline-other {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .inline-other input[type="text"] {
+            border: none;
+            border-bottom: 1px solid #d1d5db;
+            border-radius: 0;
+            padding: 2px 6px;
+            font-size: 12.5px;
+            font-family: 'Inter', sans-serif;
+            flex: 1;
+            background: transparent;
+        }
+
+        .inline-other input[type="text"]:focus {
+            outline: none;
+            border-bottom-color: #0a4875;
+            box-shadow: none;
+        }
+
+        /* Radio inline row */
+        .radio-inline {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .radio-inline label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12.5px;
+            color: #2d3748;
+            cursor: pointer;
+        }
+
+        .radio-inline input[type="radio"] {
+            width: 15px;
+            height: 15px;
+            accent-color: #0a4875;
+            cursor: pointer;
+        }
+
+        /* Signature area */
+        .signature-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .signature-line {
+            border-bottom: 1.5px solid #1a1a1a;
+            min-height: 36px;
+            position: relative;
+        }
+
+        .signature-line span {
+            position: absolute;
+            bottom: -18px;
+            left: 0;
+            font-size: 0.75em;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        /* Authorization text */
+        .auth-text {
+            font-size: 12px;
+            color: #4a5568;
+            line-height: 1.6;
+            margin-top: 10px;
+            padding: 10px 14px;
+            background: #f7f9fb;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Footer */
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #e0e4e8;
+            color: #6b7280;
+            font-size: 0.78em;
+            line-height: 1.7;
+        }
+
+        /* Buttons */
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 28px;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-print {
+            background: #0a4875;
+            color: #ffffff;
+        }
+
+        .btn-print:hover {
+            background: #083c63;
+        }
+
+        .btn-clear {
+            background: #e5e7eb;
+            color: #374151;
+        }
+
+        .btn-clear:hover {
+            background: #d1d5db;
+        }
+
+        /* Compact spacing helper */
+        .mt-8 { margin-top: 8px; }
+        .mt-12 { margin-top: 12px; }
+        .mb-6 { margin-bottom: 6px; }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+                font-size: 11px;
+            }
+
+            .form-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+                border-radius: 0;
+            }
+
+            .form-section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                margin-bottom: 10px;
+                padding: 12px 14px;
+            }
+
+            .form-header {
+                padding: 14px;
+                margin-bottom: 16px;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .button-row {
+                display: none !important;
+            }
+
+            .field-group input[type="text"],
+            .field-group input[type="date"],
+            .field-group input[type="tel"],
+            textarea {
+                border: none;
+                border-bottom: 1px solid #999;
+                border-radius: 0;
+                background: transparent;
+                padding: 4px 2px;
+            }
+
+            .form-footer {
+                margin-top: 12px;
+                padding-top: 10px;
+            }
+
+            @page {
+                margin: 12mm 10mm;
+                size: A4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="preInspectionForm" autocomplete="off">
+
+            <!-- Header -->
+            <div class="form-header">
+                <img src="servus-specialty-cleaning-transparent.png" alt="Servus Group -- Specialty Cleaning"><br>
+                <strong class="form-title">CARPET CLEANING PRE-INSPECTION FORM</strong>
+            </div>
+
+            <!-- 1. Client Information -->
+            <div class="form-section border-orange">
+                <div class="section-title orange">1. Client Information</div>
+                <div class="grid-2">
+                    <div class="field-group">
+                        <label for="customer_name">Customer Name</label>
+                        <input type="text" id="customer_name" name="customer_name">
+                    </div>
+                    <div class="field-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="field-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address">
+                    </div>
+                    <div class="field-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="field-group">
+                        <label for="technician">Technician</label>
+                        <input type="text" id="technician" name="technician">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Carpet Area(s) to Be Cleaned -->
+            <div class="form-section border-navy">
+                <div class="section-title navy">2. Carpet Area(s) to Be Cleaned</div>
+                <div class="checkbox-grid">
+                    <label><input type="checkbox" name="area_living" value="1"> Living Room</label>
+                    <label><input type="checkbox" name="area_bedroom" value="1"> Bedroom</label>
+                    <label><input type="checkbox" name="area_family" value="1"> Family Room</label>
+                    <label><input type="checkbox" name="area_study" value="1"> Study/Office</label>
+                    <label><input type="checkbox" name="area_dining" value="1"> Dining Room</label>
+                    <label><input type="checkbox" name="area_stairs" value="1"> Stairs</label>
+                    <label><input type="checkbox" name="area_hallway" value="1"> Hallway</label>
+                </div>
+                <div class="inline-other mt-8">
+                    <label style="font-size: 12.5px; color: #2d3748; font-weight: 500; white-space: nowrap;">Other:</label>
+                    <input type="text" name="area_other" style="width: 100%;">
+                </div>
+            </div>
+
+            <!-- 3. Carpet Identification -->
+            <div class="form-section border-blue">
+                <div class="section-title blue">3. Carpet Identification</div>
+                <div class="grid-3">
+                    <!-- Fiber Type -->
+                    <div>
+                        <div class="sub-label">Fiber Type</div>
+                        <div class="radio-group">
+                            <label><input type="radio" name="fiber_type" value="nylon"> Nylon</label>
+                            <label><input type="radio" name="fiber_type" value="polyester"> Polyester</label>
+                            <label><input type="radio" name="fiber_type" value="olefin"> Olefin/Polypropylene</label>
+                            <label><input type="radio" name="fiber_type" value="wool"> Wool</label>
+                            <label><input type="radio" name="fiber_type" value="triexta"> Triexta (PTT)</label>
+                            <label><input type="radio" name="fiber_type" value="natural_silk"> Natural/Silk</label>
+                            <label><input type="radio" name="fiber_type" value="unknown"> Unknown -- Requires burn test</label>
+                        </div>
+                    </div>
+                    <!-- Carpet Style -->
+                    <div>
+                        <div class="sub-label">Carpet Style</div>
+                        <div class="radio-group">
+                            <label><input type="radio" name="carpet_style" value="cut_pile"> Cut Pile</label>
+                            <label><input type="radio" name="carpet_style" value="berber"> Berber (Level Loop)</label>
+                            <label><input type="radio" name="carpet_style" value="frieze"> Frieze</label>
+                            <label><input type="radio" name="carpet_style" value="shag"> Shag</label>
+                            <label><input type="radio" name="carpet_style" value="multi_level_loop"> Multi-Level Loop</label>
+                            <label><input type="radio" name="carpet_style" value="velvet_plush"> Velvet Plush</label>
+                            <label><input type="radio" name="carpet_style" value="commercial"> Commercial (Glue-down)</label>
+                        </div>
+                    </div>
+                    <!-- Construction / Backing / Padding -->
+                    <div>
+                        <div class="sub-label">Construction</div>
+                        <div class="radio-group mb-6">
+                            <label><input type="radio" name="construction" value="tufted"> Tufted</label>
+                            <label><input type="radio" name="construction" value="woven"> Woven</label>
+                        </div>
+                        <div class="sub-label">Backing</div>
+                        <div class="radio-group mb-6">
+                            <label><input type="radio" name="backing" value="synthetic"> Synthetic</label>
+                            <label><input type="radio" name="backing" value="natural_jute"> Natural (Jute)</label>
+                        </div>
+                        <div class="sub-label">Padding</div>
+                        <div class="radio-group">
+                            <label><input type="radio" name="padding" value="rebond"> Rebond</label>
+                            <label><input type="radio" name="padding" value="attached_cushion"> Attached Cushion</label>
+                            <label><input type="radio" name="padding" value="felt"> Felt</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-group mt-12" style="max-width: 300px;">
+                    <label for="carpet_age">Estimated Age of Carpet</label>
+                    <input type="text" id="carpet_age" name="carpet_age">
+                </div>
+            </div>
+
+            <!-- 4. Pre-Existing Conditions -->
+            <div class="form-section border-red">
+                <div class="section-title red">4. Pre-Existing Conditions (Document before cleaning!)</div>
+                <div class="checkbox-grid">
+                    <label><input type="checkbox" name="condition_open_seams" value="1"> Open Seams</label>
+                    <label><input type="checkbox" name="condition_buckling" value="1"> Carpet Buckling</label>
+                    <label><input type="checkbox" name="condition_delamination" value="1"> Delamination</label>
+                    <label><input type="checkbox" name="condition_stairs_loose" value="1"> Stair Carpet Loose</label>
+                    <label><input type="checkbox" name="condition_traffic" value="1"> Heavy Traffic Soiling</label>
+                    <label><input type="checkbox" name="condition_filtration" value="1"> Filtration Lines</label>
+                    <label><input type="checkbox" name="condition_color_loss" value="1"> Color Loss/Discoloration</label>
+                    <label><input type="checkbox" name="condition_fading" value="1"> Fading</label>
+                    <label><input type="checkbox" name="condition_abrasion" value="1"> Abrasion/Shading</label>
+                </div>
+                <div class="mt-12">
+                    <div class="sub-label">General Appearance</div>
+                    <div class="radio-inline">
+                        <label><input type="radio" name="general_appearance" value="good"> Good</label>
+                        <label><input type="radio" name="general_appearance" value="fair"> Fair</label>
+                        <label><input type="radio" name="general_appearance" value="poor"> Poor</label>
+                    </div>
+                </div>
+                <div class="field-group mt-8">
+                    <label for="condition_other">Other Conditions</label>
+                    <input type="text" id="condition_other" name="condition_other">
+                </div>
+            </div>
+
+            <!-- 5. Odors & Stain Identification -->
+            <div class="form-section border-orange">
+                <div class="section-title orange">5. Odors &amp; Stain Identification</div>
+                <div class="grid-2">
+                    <!-- Odors Present -->
+                    <div>
+                        <div class="sub-label">Odors Present</div>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="odor_pet" value="1"> Pet</label>
+                            <label><input type="checkbox" name="odor_smoke" value="1"> Smoke</label>
+                            <label><input type="checkbox" name="odor_musty" value="1"> Musty/Mildew</label>
+                            <label><input type="checkbox" name="odor_food" value="1"> Food</label>
+                        </div>
+                        <div class="inline-other mt-8">
+                            <label style="font-size: 12.5px; color: #2d3748; font-weight: 500; white-space: nowrap;">Other:</label>
+                            <input type="text" name="odor_other">
+                        </div>
+                    </div>
+                    <!-- Stains Identified -->
+                    <div>
+                        <div class="sub-label">Stains Identified</div>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="stain_urine" value="1"> Urine/Pet</label>
+                            <label><input type="checkbox" name="stain_red" value="1"> Red/Juice/Kool-Aid</label>
+                            <label><input type="checkbox" name="stain_tannin" value="1"> Tannin (Coffee/Tea)</label>
+                            <label><input type="checkbox" name="stain_rust" value="1"> Rust</label>
+                            <label><input type="checkbox" name="stain_ink" value="1"> Ink</label>
+                            <label><input type="checkbox" name="stain_oil" value="1"> Oil-Based</label>
+                            <label><input type="checkbox" name="stain_hair_dye" value="1"> Hair Dye</label>
+                            <label><input type="checkbox" name="stain_nail_polish" value="1"> Nail Polish</label>
+                            <label><input type="checkbox" name="stain_furniture" value="1"> Furniture Finish</label>
+                            <label><input type="checkbox" name="stain_dispersed_dye" value="1"> Dispersed Dye</label>
+                        </div>
+                        <div class="inline-other mt-8">
+                            <label style="font-size: 12.5px; color: #2d3748; font-weight: 500; white-space: nowrap;">Other:</label>
+                            <input type="text" name="stain_other">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Testing & Previous Cleaning -->
+            <div class="form-section border-green">
+                <div class="section-title green">6. Testing &amp; Previous Cleaning</div>
+                <div class="grid-2">
+                    <!-- Carpet Test Results -->
+                    <div>
+                        <div class="sub-label">Carpet Test Results</div>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="test_color_stable" value="1"> Color Stable</label>
+                            <label><input type="checkbox" name="test_color_unstable" value="1"> Color Unstable</label>
+                            <label><input type="checkbox" name="test_ph" value="1"> pH Tested</label>
+                            <label><input type="checkbox" name="test_fiber_id" value="1"> Fiber ID Confirmed</label>
+                        </div>
+                    </div>
+                    <!-- Previous Cleaning -->
+                    <div>
+                        <div class="sub-label">Previous Cleaning</div>
+                        <div class="radio-group">
+                            <label><input type="radio" name="previous_cleaning" value="none"> No prior cleaning</label>
+                            <label><input type="radio" name="previous_cleaning" value="professional"> Yes -- Professional</label>
+                            <label><input type="radio" name="previous_cleaning" value="diy"> Yes -- DIY/Rental</label>
+                        </div>
+                        <div class="checkbox-group mt-8">
+                            <label><input type="checkbox" name="prev_home_spotters" value="1"> Home spotters used</label>
+                            <label><input type="checkbox" name="prev_home_deodorizers" value="1"> Home deodorizers used</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Recommended Cleaning Method & After Care -->
+            <div class="form-section border-blue-mid">
+                <div class="section-title blue-mid">7. Recommended Cleaning Method &amp; After Care</div>
+                <div class="grid-2">
+                    <!-- Cleaning Method -->
+                    <div>
+                        <div class="sub-label">Cleaning Method</div>
+                        <div class="radio-group">
+                            <label><input type="radio" name="cleaning_method" value="hwe"> HWE (Hot Water Extraction)</label>
+                            <label><input type="radio" name="cleaning_method" value="encapsulation"> Encapsulation</label>
+                            <label><input type="radio" name="cleaning_method" value="bonnet"> Bonnet/Pad</label>
+                            <label><input type="radio" name="cleaning_method" value="combination"> Combination</label>
+                        </div>
+                    </div>
+                    <!-- After Care Treatments -->
+                    <div>
+                        <div class="sub-label">After Care Treatments</div>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="aftercare_protector" value="1"> Carpet Protector</label>
+                            <label><input type="checkbox" name="aftercare_warranty" value="1"> Carpet Protector Warranty</label>
+                            <label><input type="checkbox" name="aftercare_odor" value="1"> Odor Neutralizer</label>
+                            <label><input type="checkbox" name="aftercare_deodorizer" value="1"> Deodorizer Treatment</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Limitations & Client Authorization -->
+            <div class="form-section border-navy">
+                <div class="section-title navy">8. Limitations &amp; Client Authorization</div>
+                <div class="field-group">
+                    <label for="limitations">Limitations Noted</label>
+                    <textarea id="limitations" name="limitations" rows="3"></textarea>
+                </div>
+                <div class="auth-text">
+                    I am aware of the above limitations regarding the carpet noted. I authorize Servus Group to clean my carpet subject to the above limitations.
+                </div>
+                <div class="signature-row">
+                    <div>
+                        <div class="signature-line">
+                            <span>Customer Signature</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="signature-line">
+                            <input type="text" name="customer_signature_date" placeholder="" style="border: none; border-bottom: 1.5px solid #1a1a1a; border-radius: 0; width: 100%; padding: 4px 2px; font-size: 13px; font-family: 'Inter', sans-serif; background: transparent; outline: none;">
+                            <span>Date</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="form-footer">
+                Servus Group | 604-435-1135 | info@servusgroup.com | 160-21900 Westminster Hwy, Richmond BC V6V 2K3<br>
+                Form Version 1.0 -- April 2026
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-row">
+                <button type="button" class="btn btn-print" onclick="window.print()">Print Form</button>
+                <button type="button" class="btn btn-clear" onclick="document.getElementById('preInspectionForm').reset()">Clear Form</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

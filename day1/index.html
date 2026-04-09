@@ -87,9 +87,10 @@
     z-index: 2;
   }
   .servus-header .hero-logo {
-    width: 340px;
+    width: 480px;
+    max-width: 90%;
     margin-bottom: 24px;
-    border-radius: 16px;
+    border-radius: 0;
   }
   .servus-header .hero-division {
     font-size: 1.15em;
@@ -797,7 +798,7 @@
 
   @media (max-width: 768px) {
     .servus-header { padding: 50px 20px 40px; }
-    .servus-header .hero-logo { width: 220px; }
+    .servus-header .hero-logo { width: 320px; }
     .servus-header h2 { font-size: 1.3em; }
     .wt-choices { flex-direction: column; }
     .wt-step-title { font-size: 1.1em; }
@@ -891,6 +892,34 @@
     .mermaid, table, .servus-callout, .cheat-sheet, .walkthrough-container { page-break-inside: avoid; }
     .cert-strip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .glossary-widget { display: none; }
+
+    /* Form-only print mode */
+    body.printing-form > *:not(.content),
+    body.printing-form .content > *:not(.form-print-wrapper),
+    body.printing-form .servus-header,
+    body.printing-form .cert-strip,
+    body.printing-form .servus-footer,
+    body.printing-form .page-nav,
+    body.printing-form .glossary-widget,
+    body.printing-form .back-link,
+    body.printing-form [style*="background-color: #0a4875"] {
+      display: none !important;
+    }
+    body.printing-form .form-print-wrapper {
+      border: none !important;
+      margin: 0 !important;
+      padding: 10px !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body.printing-form .form-print-wrapper button {
+      display: none !important;
+    }
+    body.printing-form .content {
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+    }
   }
   /* === SOP SYSTEM BANNER === */
   .sop-system-card { border: 1.5px solid #014870; border-radius: 10px; overflow: hidden; margin-bottom: 24px; background: #f8fafc; }
@@ -943,9 +972,8 @@
 
 <!-- ==================== HEADER ==================== -->
 <div class="servus-header">
-  <img src="../assets/servus-logo-white.jpg" alt="Servus Logo" class="hero-logo">
-  <div class="hero-division">Specialty Cleaning</div>
-  <div class="hero-tagline">"At Your Service"</div>
+  <img src="../assets/servus-specialty-cleaning-transparent.png" alt="Servus Group — Specialty Cleaning" class="hero-logo">
+  <div class="hero-tagline">"Clean. Maintain. Enhance."</div>
   <div class="accent-bar"></div>
   <h2>Introduction to Professional Carpet Cleaning</h2>
   <div class="module-label">Day 1: Fiber Identification</div>
@@ -971,8 +999,8 @@
     <div class="sop-system-card-header">
         <div class="sop-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6"/><path d="M9 16h6"/></svg></div>
         <div>
-            <h4>Standard Operating Procedures &mdash; Day 1</h4>
-            <div class="sop-sub">2 SOPs in this module</div>
+            <h4>Field Reference Points &mdash; Day 1</h4>
+            <div class="sop-sub">2 FRPs in this module</div>
         </div>
     </div>
     <div class="sop-system-card-body">
@@ -1167,7 +1195,7 @@
 
 <!-- ==================== BURN TEST WALKTHROUGH ==================== -->
 <hr>
-<h2 class="section-title" id="sop-002">Module 11: Interactive Burn Test Decision Walkthrough <span class="sop-section-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>SOP-002</span></h2>
+<h2 class="section-title" id="sop-002">Module 11: Interactive Burn Test Decision Walkthrough <span class="sop-section-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>FRP-002</span></h2>
 <p style="font-size:0.9em;color:#666;margin-bottom:8px;">Walk through the fiber identification process step by step. At each stage, observe the burn test result and answer the question &mdash; the walkthrough will guide you to the correct fiber identification. This is how you'll think on the job.</p>
 
 <div class="walkthrough-container">
@@ -1175,14 +1203,14 @@
         <h3 id="wtHeaderTitle"></h3>
         <span class="wt-step-counter" id="stepCounter">Step 1</span>
     </div>
-    <div class="wt-breadcrumb" id="breadcrumb"></div>
+    <div class="wt-breadcrumb" id="breadcrumb" style="display:none;"></div>
     <div class="wt-history" id="history"></div>
     <div class="wt-step-area" id="stepArea"></div>
 </div>
 
 <!-- ==================== MODULE: PRE-INSPECTION FORM ==================== -->
 
-<h2 class="section-title" id="sop-001">Pre-Inspection Form &mdash; Field Documentation <span class="sop-section-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>SOP-001</span></h2>
+<h2 class="section-title" id="sop-001">Pre-Inspection Form &mdash; Field Documentation <span class="sop-section-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>FRP-001</span></h2>
 
 <p>Professional pre-inspection is the <strong>first step of every carpet cleaning job</strong>. Before any equipment is unloaded, you walk the space with the client, document conditions, identify fiber types, flag stains, and set realistic expectations. This protects both you and the client.</p>
 
@@ -1194,11 +1222,11 @@
 <h3>Interactive Pre-Inspection Form</h3>
 <p>Practice filling out a pre-inspection form below. In the field, you will complete this form with the client present before starting any work.</p>
 
-<div style="background: var(--servus-cloud-blue); border: 2px solid var(--servus-blue); border-radius: 12px; padding: 30px; margin: 24px 0;">
+<div class="form-print-wrapper" style="background: var(--servus-cloud-blue); border: 2px solid var(--servus-blue); border-radius: 12px; padding: 30px; margin: 24px 0;">
 
 <!-- Form Header -->
 <div style="text-align: center; margin-bottom: 24px; background: var(--servus-navy); border-radius: 10px; padding: 20px;">
-    <img src="../assets/servus-logo-onblue.jpg" alt="Servus Group" style="height: 70px; border-radius: 8px; margin-bottom: 10px;"><br>
+    <img src="../assets/servus-specialty-cleaning-transparent.png" alt="Servus Group — Specialty Cleaning" style="height: 70px; margin-bottom: 10px;"><br>
     <strong style="font-size: 1.3em; color: white; letter-spacing: 1px;">CARPET CLEANING PRE-INSPECTION FORM</strong>
 </div>
 
@@ -1414,7 +1442,7 @@
 
 <!-- Print Button -->
 <div style="text-align: center; margin-top: 16px;">
-    <button type="button" onclick="window.print()" style="background: var(--servus-navy); color: white; border: none; padding: 12px 32px; border-radius: 8px; font-size: 1em; font-family: inherit; cursor: pointer; font-weight: 600;">
+    <button type="button" onclick="printForm()" style="background: var(--servus-navy); color: white; border: none; padding: 12px 32px; border-radius: 8px; font-size: 1em; font-family: inherit; cursor: pointer; font-weight: 600;">
         Print This Form
     </button>
 </div>
@@ -1711,15 +1739,15 @@
 
 <!-- ==================== FOOTER ==================== -->
 <div class="servus-footer">
-    <strong style="font-size: 1.1em;">Servus Group</strong>
-    <p style="color: #ccc; margin: 4px 0 12px;">Specialty Cleaning &mdash; Professional Carpet Care Certification</p>
+    <img src="../assets/servus-specialty-cleaning-transparent.png" alt="Servus Group — Specialty Cleaning" style="height: 60px; margin-bottom: 8px;">
+    <p style="color: #ccc; margin: 4px 0 12px;">Professional Carpet Care Certification</p>
     <p style="color: #ccc; margin: 4px 0;"><strong>Contact:</strong> <a href="tel:604-435-1135" style="color: var(--servus-accent);">604-435-1135</a> | <a href="mailto:info@servusgroup.com" style="color: var(--servus-accent);">info@servusgroup.com</a></p>
     <p style="color: #ccc; margin: 4px 0;">160-21900 Westminster Hwy, Richmond BC V6V 2K3 | <a href="https://servusgrouplowermainland.com" target="_blank" style="color: var(--servus-accent);">servusgrouplowermainland.com</a></p>
     <div class="footer-certs">
         <img src="https://servusgrouplowermainland.com/wp-content/uploads/2014/07/go2HR-CORLogo-K-300x283.png" alt="COR Certified" style="filter: brightness(0) invert(1); opacity: 0.7; height: 40px;">
         <img src="../assets/iicrc-logo.png" alt="IICRC S100 Certified" style="filter: brightness(0) invert(1); opacity: 0.8; height: 38px;">
         <img src="../assets/cri-logo.png" alt="CRI - Carpet &amp; Rug Institute" style="filter: brightness(0) invert(1); opacity: 0.8; height: 38px;">
-        <img src="../assets/servus-logo-white.jpg" alt="Servus Group" style="height: 40px; border-radius: 6px;">
+
     </div>
     <div class="compliance-text" style="font-size: 0.7em; max-width: 700px; margin: 10px auto 0; line-height: 1.4; opacity: 0.6;">This material is for Servus Group staff training and certification purposes only. All equipment and chemicals referenced are approved for use by Servus Group and comply with applicable safety standards (WHMIS, WorkSafeBC). Product recommendations and protocols reflect Servus Group&rsquo;s best practices and may vary based on site-specific conditions. Always consult equipment manuals and chemical Safety Data Sheets (SDS) before use.</div>
 </div>
@@ -2003,7 +2031,9 @@
             bcHTML += '<span class="wt-crumb ' + cls + '">' + crumbContent + '</span>';
             if (!isLast) bcHTML += '<span class="wt-crumb-arrow">&#8594;</span>';
         });
-        document.getElementById('breadcrumb').innerHTML = bcHTML;
+        var bcEl = document.getElementById('breadcrumb');
+        bcEl.innerHTML = bcHTML;
+        bcEl.style.display = stepPath.length > 1 ? 'flex' : 'none';
 
         // Render history
         var histHTML = '';
@@ -2135,6 +2165,19 @@
             glossTitle.innerHTML = getSvgIcon('book', 16) + ' Glossary';
         }
     });
+</script>
+
+<script>
+function printForm() {
+    document.body.classList.add('printing-form');
+    window.print();
+    window.onafterprint = function() {
+        document.body.classList.remove('printing-form');
+    };
+    setTimeout(function() {
+        document.body.classList.remove('printing-form');
+    }, 5000);
+}
 </script>
 </body>
 </html>

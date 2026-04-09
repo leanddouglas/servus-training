@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servus Group – Commercial Carpet Cleaning SOPs</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* ========================================
+     SERVUS GROUP BRAND DESIGN SYSTEM
+     ========================================
+     Primary Navy:    #0a4875
+     Secondary Blue:  #005a87 / #006ba1
+     Accent Orange:   #ff9900
+     Light Blue BG:   #D3EEF5
+     Dark Text:       #333333
+     Footer Dark:     #313131
+     Font:            Myriad Variable Concept / Inter
+  ======================================== */
+
+  :root {
+    --servus-navy: hsl(205, 78%, 19%);
+    --servus-navy-dark: #004085;
+    --servus-blue: #005a87;
+    --servus-blue-mid: #006ba1;
+    --servus-accent: hwb(39 4% 3% / 0.991);
+    --servus-light-blue: #D3EEF5;
+    --servus-pale-blue: #F0FCFF;
+    --servus-cloud-blue: #F2F7FC;
+    --servus-off-white: #FAFAFA;
+    --servus-dark: #313131;
+    --servus-text: #333333;
+    --servus-text-mid: #393939;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Myriad Variable Concept', 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--servus-text);
+    padding: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+  }
+
+  /* === HEADER (Hero Style) === */
+  .servus-header {
+    position: relative;
+    background: linear-gradient(135deg, #062d4a 0%, #0a4875 50%, #005a87 100%);
+    color: white;
+    padding: 80px 40px 60px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .servus-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900'%3E%3Cdefs%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 60 0 L 0 0 0 60' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='1440' height='900' fill='url(%23grid)'/%3E%3C/svg%3E");
+    z-index: 0;
+    pointer-events: none;
+  }
+  .servus-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, #ffffff 0%, transparent 100%);
+    z-index: 1;
+  }
+  .servus-header > * {
+    position: relative;
+    z-index: 2;
+  }
+  .servus-header .hero-logo {
+    width: 480px;
+    max-width: 90%;
+    margin-bottom: 24px;
+    border-radius: 0;
+  }
+  .servus-header .hero-division {
+    font-size: 1.15em;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  .servus-header .hero-tagline {
+    font-size: 1.35em;
+    color: var(--servus-accent);
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 28px;
+  }
+  .servus-header .accent-bar {
+    width: 80px;
+    height: 4px;
+    background: var(--servus-accent);
+    margin: 0 auto 28px;
+    border-radius: 2px;
+  }
+  .servus-header h2 {
+    font-size: 1.8em;
+    font-weight: 300;
+    margin-top: 0;
+    color: white;
+    margin-bottom: 10px;
+  }
+  .servus-header .module-label {
+    font-size: 1.2em;
+    color: rgba(255,255,255,0.85);
+    margin-top: 5px;
+    font-weight: 500;
+    line-height: 1.8;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  /* === CERT STRIP === */
+  .cert-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #062d4a;
+    padding: 10px 20px;
+    font-size: 0.82em;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    flex-wrap: wrap;
+  }
+  .cert-strip img {
+    height: 24px;
+    filter: brightness(0) invert(1);
+    opacity: 0.6;
+  }
+
+  /* === SOP Content Styles === */
+  .sop-content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 36px 24px 60px;
+  }
+
+  /* SOP Selector */
+  .sop-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .sop-selector-card {
+    padding: 16px 20px;
+    background: white;
+    border: 2px solid #e8edf2;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+    text-align: center;
+  }
+  .sop-selector-card:hover, .sop-selector-card.active {
+    border-color: #0a4875;
+    background: var(--servus-pale-blue);
+  }
+  .sop-selector-id {
+    font-size: 0.72em;
+    font-weight: 700;
+    color: #ff9900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .sop-selector-title {
+    font-size: 0.95em;
+    font-weight: 700;
+    color: #0a4875;
+  }
+
+  /* SOP Divider */
+  .sop-divider {
+    margin: 50px 0;
+    text-align: center;
+  }
+  .sop-divider hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #ff9900, transparent);
+  }
+
+  /* SOP Meta Info */
+  .sop-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--servus-cloud-blue);
+    border-radius: 10px;
+    border-left: 4px solid var(--servus-accent);
+    flex-wrap: wrap;
+  }
+  .sop-meta-item {
+    flex: 1;
+    min-width: 150px;
+  }
+  .sop-meta-label {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #5a6a7a;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .sop-meta-value {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--servus-text);
+  }
+
+  /* Accordion Sections */
+  .sop-section {
+    margin-bottom: 8px;
+    border: 1px solid #e8edf2;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .sop-section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #0a4875, #005a87);
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+    border-left: 4px solid #ff9900;
+  }
+  .sop-section-header:hover {
+    background: linear-gradient(135deg, #083d65, #004a75);
+  }
+  .sop-section-header .section-number {
+    background: rgba(255,255,255,0.15);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .sop-section-header h3 {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 600;
+    flex: 1;
+  }
+  .sop-section-header .section-toggle {
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .sop-section-header.active .section-toggle {
+    transform: rotate(180deg);
+  }
+  .sop-section-body {
+    display: none;
+    padding: 20px 24px;
+    background: white;
+    font-size: 0.93em;
+    line-height: 1.7;
+  }
+  .sop-section-body.open {
+    display: block;
+  }
+
+  /* Role badges */
+  .role-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 0.78em;
+    font-weight: 600;
+    margin-right: 6px;
+  }
+  .role-leader {
+    background: #0a4875;
+    color: white;
+  }
+  .role-member {
+    background: #D3EEF5;
+    color: #0a4875;
+  }
+
+  /* Workflow steps */
+  .workflow-step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeff4;
+  }
+  .workflow-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .step-number {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #ff9900, #e68a00);
+    color: #0a4875;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.9em;
+    flex-shrink: 0;
+  }
+  .step-content {
+    flex: 1;
+  }
+  .step-content h4 {
+    margin: 0 0 6px;
+    font-size: 0.95em;
+    color: #0a4875;
+  }
+  .step-content p {
+    margin: 0 0 6px;
+    font-size: 0.9em;
+    color: #555;
+  }
+  .step-roles {
+    margin-top: 8px;
+  }
+  .step-roles p {
+    margin: 2px 0;
+    font-size: 0.85em;
+  }
+
+  /* Callout boxes within SOP sections */
+  .sop-callout {
+    background: #FFF8E7;
+    border-left: 4px solid #ff9900;
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 12px 0;
+    font-size: 0.9em;
+  }
+  .sop-callout.safety {
+    background: #FFF0F0;
+    border-left-color: #dc3545;
+  }
+  .sop-callout.tip {
+    background: #F0FFF0;
+    border-left-color: #28a745;
+  }
+
+  /* KPI grid */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+  }
+  .kpi-card {
+    background: var(--servus-cloud-blue);
+    padding: 14px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .kpi-value {
+    font-size: 1.3em;
+    font-weight: 800;
+    color: #ff9900;
+  }
+  .kpi-label {
+    font-size: 0.78em;
+    color: #5a6a7a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  /* Tables */
+  .sop-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.9em;
+  }
+  .sop-table th {
+    background: #0a4875;
+    color: white;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .sop-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #eaeff4;
+    color: #444;
+  }
+  .sop-table tr:last-child td {
+    border-bottom: none;
+  }
+  .sop-table tr:hover td {
+    background: var(--servus-pale-blue);
+  }
+
+  /* Unordered lists in SOP sections */
+  .sop-section-body ul {
+    margin: 8px 0;
+    padding-left: 20px;
+  }
+  .sop-section-body ul li {
+    margin-bottom: 6px;
+    color: #444;
+    font-size: 0.93em;
+  }
+
+  /* Ordered lists in SOP sections */
+  .sop-section-body ol {
+    margin: 8px 0;
+    padding-left: 20px;
+  }
+  .sop-section-body ol li {
+    margin-bottom: 6px;
+    color: #444;
+    font-size: 0.93em;
+  }
+
+  /* Reference links */
+  .ref-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+  }
+  .ref-list li {
+    margin-bottom: 8px;
+  }
+  .ref-list a {
+    color: #0a4875;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.93em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+  .ref-list a:hover {
+    color: #ff9900;
+    text-decoration: underline;
+  }
+
+  /* Page navigation */
+  .page-nav {
+    background: #f0f4f8;
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .page-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95em;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+  }
+  .nav-prev {
+    background: white;
+    color: #0a4875;
+    border: 2px solid #0a4875;
+  }
+  .nav-prev:hover {
+    background: #0a4875;
+    color: white;
+  }
+  .nav-next {
+    background: linear-gradient(135deg, #ff9900, #e68a00);
+    color: #0a4875;
+    border: 2px solid transparent;
+    font-weight: 800;
+  }
+  .nav-next:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255,153,0,0.4);
+  }
+
+  /* === FOOTER === */
+  .servus-footer {
+    background: linear-gradient(135deg, var(--servus-dark) 0%, #1a1a2e 100%);
+    color: #ccc;
+    padding: 30px 40px;
+    font-size: 0.88em;
+    text-align: center;
+    position: relative;
+    margin-top: 40px;
+  }
+  .servus-footer strong {
+    color: white;
+  }
+  .servus-footer a {
+    color: var(--servus-accent);
+    text-decoration: none;
+  }
+  .servus-footer a:hover {
+    text-decoration: underline;
+  }
+  .servus-footer .footer-certs {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .servus-footer .footer-certs img {
+    height: 35px;
+    opacity: 0.7;
+  }
+  .servus-footer .compliance-text {
+    margin-top: 14px;
+    font-size: 0.9em;
+    color: #999;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    .servus-header { padding: 50px 20px 40px; }
+    .servus-header .hero-logo { width: 320px; }
+    .servus-header h2 { font-size: 1.3em; }
+    .sop-content { padding: 24px 16px 48px; }
+    .sop-meta { gap: 12px; }
+    .sop-selector { grid-template-columns: 1fr; }
+    .workflow-step { flex-direction: column; gap: 8px; }
+    .kpi-grid { grid-template-columns: 1fr 1fr; }
+    .page-nav { padding: 10px 16px; gap: 8px; }
+    .page-nav-btn { padding: 10px 18px; font-size: 0.85em; }
+    .servus-footer { padding: 24px 20px; }
+  }
+  @media print {
+    .page-nav { display: none; }
+    .servus-header, .cert-strip, .servus-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV BAR -->
+<div style="background-color: #0a4875; padding: 12px 40px; display: flex; align-items: center; justify-content: space-between;">
+    <a href="../course_index.html" style="color: #D3EEF5; text-decoration: none; font-size: 0.88em; font-weight: 500;">&larr; Back to Course Hub</a>
+    <a href="residential.html" style="color: #D3EEF5; text-decoration: none; font-size: 0.88em; font-weight: 500;">&larr; Residential SOP</a>
+</div>
+
+<!-- HEADER -->
+<div class="servus-header">
+    <img src="../assets/servus-specialty-cleaning-transparent.png" alt="Servus Group — Specialty Cleaning" class="hero-logo">
+    <div class="hero-tagline">"Clean. Maintain. Enhance."</div>
+    <div class="accent-bar"></div>
+    <h2>Standard Operating Procedures</h2>
+    <div class="module-label">Commercial Carpet Operations</div>
+</div>
+
+<!-- CERT STRIP -->
+<div class="cert-strip">
+    <img src="https://servusgrouplowermainland.com/wp-content/uploads/2014/07/go2HR-CORLogo-K-300x283.png" alt="COR Certified">
+    <span>IICRC S100 Compliant</span>
+    <span>&bull;</span>
+    <span>WorkSafeBC 2026</span>
+    <span>&bull;</span>
+    <span>COR Certified</span>
+    <span>&bull;</span>
+    <span>CRI Standards</span>
+</div>
+
+<!-- SOP CONTENT -->
+<div class="sop-content">
+
+    <!-- SOP SELECTOR -->
+    <div class="sop-selector">
+        <a href="#sop-commercial" class="sop-selector-card active">
+            <div class="sop-selector-id">SOP-COM-001</div>
+            <div class="sop-selector-title">Commercial Carpet Maintenance Program</div>
+        </a>
+        <a href="#sop-emergency" class="sop-selector-card">
+            <div class="sop-selector-id">SOP-COM-002</div>
+            <div class="sop-selector-title">Spot &amp; Stain Emergency Response</div>
+        </a>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SOP 1: COMMERCIAL CARPET MAINTENANCE PROGRAM (SOP-COM-001)   -->
+    <!-- ============================================================ -->
+    <div id="sop-commercial">
+
+    <!-- SOP META INFO -->
+    <div class="sop-meta">
+        <div class="sop-meta-item">
+            <div class="sop-meta-label">SOP ID</div>
+            <div class="sop-meta-value">SOP-COM-001</div>
+        </div>
+        <div class="sop-meta-item">
+            <div class="sop-meta-label">Version</div>
+            <div class="sop-meta-value">1.0</div>
+        </div>
+        <div class="sop-meta-item">
+            <div class="sop-meta-label">Effective</div>
+            <div class="sop-meta-value">April 2026</div>
+        </div>
+        <div class="sop-meta-item">
+            <div class="sop-meta-label">Review Cycle</div>
+            <div class="sop-meta-value">Annual</div>
+        </div>
+        <div class="sop-meta-item">
+            <div class="sop-meta-label">Applies To</div>
+            <div class="sop-meta-value">Commercial Cleaning Crews</div>
+        </div>
+    </div>
+
+    <!-- SECTION 1: PURPOSE -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">01</span>
+            <h3>Purpose</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <p>This SOP defines the standard workflow for recurring commercial carpet maintenance programs. It covers both interim maintenance cleaning (Whittaker TRIO / encapsulation) and scheduled deep cleaning (HWE), ensuring consistent service across multi-area commercial facilities.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 2: SCOPE -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">02</span>
+            <h3>Scope</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <p>Applies to:</p>
+            <ul>
+                <li>Office buildings, medical/dental offices, retail spaces, educational facilities</li>
+                <li>Recurring maintenance contracts (weekly, bi-weekly, monthly, quarterly)</li>
+                <li>Both interim maintenance and deep extraction cleaning</li>
+                <li>Excludes: one-time residential jobs (see Residential SOP), emergency water damage, specialty restoration</li>
+            </ul>
+
+            <p style="margin-top: 16px; font-weight: 600; color: #0a4875;">Key Definitions:</p>
+            <ul>
+                <li><strong>Interim Maintenance</strong> &mdash; Low-moisture cleaning using Whittaker TRIO (encapsulation) for regular upkeep</li>
+                <li><strong>Deep Clean (HWE)</strong> &mdash; Full hot water extraction for quarterly/semi-annual deep cleaning</li>
+                <li><strong>Traffic Lanes</strong> &mdash; High-use areas requiring more frequent cleaning attention</li>
+                <li><strong>Maintenance Schedule</strong> &mdash; Client-specific cleaning frequency plan (varies by contract)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 3: WORKFLOW STEPS -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">03</span>
+            <h3>Workflow Steps</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+
+            <!-- Step 1 -->
+            <div class="workflow-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>Schedule &amp; Access Coordination</h4>
+                    <p>Review maintenance schedule in CRM &mdash; confirm cleaning type (interim vs deep).</p>
+                    <p>Coordinate building access (key fob, security code, building manager contact).</p>
+                    <p>Confirm after-hours procedures if applicable (alarm codes, lock-up protocol).</p>
+                    <p>Check client's area map for priority zones and access restrictions.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Confirms schedule, coordinates building access, reviews priorities</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Verifies equipment is appropriate for cleaning type (TRIO vs truckmount)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="workflow-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>Site Arrival &amp; Security</h4>
+                    <p>Sign in at building security/front desk (if applicable).</p>
+                    <p>Follow building-specific access protocols (elevators, restricted areas).</p>
+                    <p>Set up cleaning signage: "Cleaning in Progress" barriers at work areas.</p>
+                    <p>After-hours: verify alarm system is set to "cleaning mode" or disabled per protocol.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Handles security sign-in, confirms access protocol</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Sets up signage and barriers</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="workflow-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>Area Assessment</h4>
+                    <p>Walk all scheduled areas &mdash; note soil levels, new stains, damage since last visit.</p>
+                    <p>Compare against cleaning map/log from previous visit.</p>
+                    <p>Photograph any new damage or concerns for documentation.</p>
+                    <p>Determine if scheduled cleaning type is sufficient or if escalation is needed.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Assesses all areas, documents changes, decides on cleaning escalation</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Assists with photo documentation</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4A -->
+            <div class="workflow-step">
+                <div class="step-number">4A</div>
+                <div class="step-content">
+                    <h4>Interim Maintenance Cleaning (Whittaker TRIO)</h4>
+                    <p>Pre-vacuum all scheduled areas.</p>
+                    <p>Apply encapsulation solution per manufacturer specs.</p>
+                    <p>Run Whittaker TRIO in overlapping passes &mdash; ensure full coverage.</p>
+                    <p>Focus extra passes on traffic lanes and soiled areas.</p>
+                    <p>No rinse/extraction required &mdash; carpet is walk-ready immediately.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Monitors coverage quality, checks results</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Operates TRIO, performs pre-vacuum</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4B -->
+            <div class="workflow-step">
+                <div class="step-number">4B</div>
+                <div class="step-content">
+                    <h4>Deep Clean &mdash; HWE Extraction</h4>
+                    <p>Follow Steps 4&ndash;7 from Residential SOP (SOP-RES-001) with these commercial modifications:</p>
+                    <p>Use commercial-grade pre-spray concentrations (typically stronger than residential).</p>
+                    <p>Work in sections &mdash; complete one area fully before moving to next.</p>
+                    <p>Coordinate with building schedule to allow drying time before occupancy.</p>
+                    <p>Place air movers in completed areas immediately.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Manages section sequencing, coordinates with building contact for drying</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Performs extraction, moves air movers to completed sections</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="workflow-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h4>Multi-Area Tracking</h4>
+                    <p>Check off each area on the cleaning map as completed.</p>
+                    <p>Note any areas skipped (locked offices, occupied rooms) &mdash; document reason.</p>
+                    <p>Log soil level and treatment for each area.</p>
+                    <p>If recurring issues appear in same zones &rarr; flag for client discussion.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Maintains area tracking log, flags recurring issues</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Reports completed areas to Crew Leader</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="workflow-step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h4>Quality Verification</h4>
+                    <p>Spot-check completed areas under good lighting.</p>
+                    <p>For interim cleaning: verify no visible residue, carpet has uniform appearance.</p>
+                    <p>For deep clean: check for wand marks, remaining stains, over-wetting.</p>
+                    <p>Take "after" photos of key areas (lobby, main corridors, conference rooms).</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Performs quality spot-checks, approves completed areas</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Re-treats any flagged areas</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="workflow-step">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <h4>Building Close-Out</h4>
+                    <p>Remove all equipment, signage, and barriers.</p>
+                    <p>Ensure doors are locked, alarms are reset (after-hours protocol).</p>
+                    <p>Sign out at security/front desk if applicable.</p>
+                    <p>Leave area as found &mdash; move furniture back if repositioned.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Verifies building is secured, signs out</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Removes all equipment and signage</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 8 -->
+            <div class="workflow-step">
+                <div class="step-number">8</div>
+                <div class="step-content">
+                    <h4>Documentation &amp; Reporting</h4>
+                    <p>Complete maintenance visit log in CRM.</p>
+                    <p>Upload photos (before/after for notable areas).</p>
+                    <p>Note any areas requiring follow-up or escalation.</p>
+                    <p>Update cleaning map with current soil assessments.</p>
+                    <p>Submit maintenance report to building manager (per contract terms &mdash; weekly/monthly summary).</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Completes all CRM documentation, submits reports</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Assists with photo uploads</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 9 -->
+            <div class="workflow-step">
+                <div class="step-number">9</div>
+                <div class="step-content">
+                    <h4>Next Visit Preparation</h4>
+                    <p>Review upcoming schedule &mdash; note any special requests or contract changes.</p>
+                    <p>Flag equipment needs (replacement pads for TRIO, chemical stock).</p>
+                    <p>Communicate any building access changes to team.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Reviews next visit plan, communicates changes</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Prepares equipment and supplies for next scheduled visit</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SECTION 4: ROLES & RESPONSIBILITIES -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">04</span>
+            <h3>Roles &amp; Responsibilities</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <table class="sop-table">
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Key Responsibilities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Crew Leader</strong></td>
+                        <td>Building access coordination, area assessment, quality verification, CRM documentation, client/building manager communication</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Crew Member</strong></td>
+                        <td>Equipment operation (TRIO/HWE), pre-vacuum, area completion, equipment maintenance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Account Manager</strong></td>
+                        <td>Contract management, maintenance schedule setup, client relationship, issue escalation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dispatch / Office</strong></td>
+                        <td>Schedule coordination, access credential management, report distribution</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SECTION 5: SAFETY -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">05</span>
+            <h3>Safety</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <ul>
+                <li>Follow all building-specific safety protocols (fire exits, evacuation routes)</li>
+                <li>Wet floor signage mandatory at all cleaning areas and pathways</li>
+                <li>After-hours: carry personal safety device, maintain contact with Office</li>
+                <li>Power cord management: tape down all cords crossing walkways</li>
+                <li>Chemical storage: never leave chemicals unattended in public areas</li>
+                <li>Emergency: know building emergency contact and nearest AED/first-aid location</li>
+            </ul>
+            <div class="sop-callout safety">
+                <strong>After-hours solo work requires check-in with Office every 2 hours.</strong> If contact is lost, Office initiates safety protocol.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 6: SYSTEMS & TOOLS -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">06</span>
+            <h3>Systems &amp; Tools</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <ul>
+                <li><strong>CRM/Scheduling:</strong> Maintenance schedules, visit logs, client history, reporting</li>
+                <li><strong>Building Access:</strong> Key fobs, security codes, building manager contacts (stored securely in CRM)</li>
+                <li><strong>Equipment &mdash; Interim:</strong> Whittaker TRIO, CRI-approved vacuum, encapsulation solution</li>
+                <li><strong>Equipment &mdash; Deep Clean:</strong> Truckmount/portable extractor, pre-spray, air movers</li>
+                <li><strong>Documentation:</strong> Area cleaning maps, photo capture, maintenance reports</li>
+                <li><strong>Communication:</strong> Building manager contact, security desk, team chat</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 7: COMMUNICATION -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">07</span>
+            <h3>Communication</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <div style="overflow-x: auto;">
+                <table class="sop-table">
+                    <thead>
+                        <tr>
+                            <th>When</th>
+                            <th>Who</th>
+                            <th>What</th>
+                            <th>How</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Schedule setup</td>
+                            <td>Account Mgr &rarr; Building Mgr</td>
+                            <td>Maintenance plan confirmation</td>
+                            <td>Email</td>
+                        </tr>
+                        <tr>
+                            <td>Day before visit</td>
+                            <td>Office &rarr; Building Mgr</td>
+                            <td>Visit reminder + access confirmation</td>
+                            <td>Email</td>
+                        </tr>
+                        <tr>
+                            <td>On arrival</td>
+                            <td>Crew Leader &rarr; Security/Front Desk</td>
+                            <td>Sign-in, access confirmation</td>
+                            <td>In person</td>
+                        </tr>
+                        <tr>
+                            <td>During cleaning</td>
+                            <td>Crew Leader &rarr; Office</td>
+                            <td>Progress updates, issues</td>
+                            <td>Phone/text</td>
+                        </tr>
+                        <tr>
+                            <td>After-hours</td>
+                            <td>Crew Leader &rarr; Office</td>
+                            <td>Check-in every 2 hours</td>
+                            <td>Phone/text</td>
+                        </tr>
+                        <tr>
+                            <td>Post-visit</td>
+                            <td>Crew Leader &rarr; Building Mgr</td>
+                            <td>Visit completion notification</td>
+                            <td>Email/text</td>
+                        </tr>
+                        <tr>
+                            <td>Monthly</td>
+                            <td>Account Mgr &rarr; Client</td>
+                            <td>Maintenance summary report</td>
+                            <td>Email</td>
+                        </tr>
+                        <tr>
+                            <td>Issue found</td>
+                            <td>Crew Leader &rarr; Account Mgr</td>
+                            <td>Escalation (damage, recurring stains)</td>
+                            <td>Phone/email</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 8: QUALITY CHECKS -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">08</span>
+            <h3>Quality Checks</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <ul>
+                <li>Pre-vacuum completed before all wet cleaning</li>
+                <li>Interim cleaning: uniform appearance, no visible residue</li>
+                <li>Deep clean: no wand marks, proper extraction, no over-wetting</li>
+                <li>All scheduled areas cleaned (or skipped areas documented with reason)</li>
+                <li>Traffic lanes show visible improvement</li>
+                <li>Before/after photos for notable areas (lobby, main corridors)</li>
+                <li>Area tracking log complete and accurate</li>
+                <li>Building secured and alarm reset (after-hours)</li>
+                <li>Maintenance report filed within 24 hours</li>
+                <li>Equipment cleaned and restocked for next visit</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 9: EXCEPTIONS & ESCALATION -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">09</span>
+            <h3>Exceptions &amp; Escalation</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <ul>
+                <li><strong>Locked/occupied area:</strong> Document as skipped, reschedule with building manager.</li>
+                <li><strong>Soil level beyond maintenance cleaning:</strong> Flag for deep clean upgrade, notify Account Manager.</li>
+                <li><strong>New damage discovered:</strong> Photo-document, report to Account Manager &rarr; building manager within 24 hours.</li>
+                <li><strong>Equipment failure:</strong> Complete what's possible with backup equipment, reschedule remaining areas.</li>
+                <li><strong>Building emergency (fire alarm, evacuation):</strong> Follow building emergency protocol, evacuate with all personnel, contact Office.</li>
+                <li><strong>Access denied/security issue:</strong> Do not force entry, contact building manager and Office, document incident.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 10: CLOSE-OUT -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">10</span>
+            <h3>Close-Out</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <ol>
+                <li>Complete area tracking log &mdash; all zones accounted for</li>
+                <li>Upload photos to CRM (minimum: before/after of main areas)</li>
+                <li>Note exceptions, skipped areas, and follow-up items</li>
+                <li>Submit visit report (CRM auto-generates for contract clients)</li>
+                <li>Verify building security and lock-up procedures completed</li>
+                <li>Equipment cleaned, TRIO pads replaced/rotated, chemicals restocked</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- SECTION 11: KPIs / SUCCESS METRICS -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">11</span>
+            <h3>KPIs / Success Metrics</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value">&gt; 95%</div>
+                    <div class="kpi-label">Schedule Adherence</div>
+                    <p style="font-size: 0.75em; color: #777; margin-top: 4px;">Visits completed as scheduled</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">&gt; 90%</div>
+                    <div class="kpi-label">Area Completion Rate</div>
+                    <p style="font-size: 0.75em; color: #777; margin-top: 4px;">Scheduled areas cleaned per visit</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">&gt; 90%</div>
+                    <div class="kpi-label">Client Retention Rate</div>
+                    <p style="font-size: 0.75em; color: #777; margin-top: 4px;">Annual contract renewals</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">100%</div>
+                    <div class="kpi-label">Report Timeliness</div>
+                    <p style="font-size: 0.75em; color: #777; margin-top: 4px;">Submitted within 24 hours</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">Tracked</div>
+                    <div class="kpi-label">Soil Level Trend</div>
+                    <p style="font-size: 0.75em; color: #777; margin-top: 4px;">Quarterly &mdash; expect improving or stable</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">&lt; 48 hrs</div>
+                    <div class="kpi-label">Issue Resolution Time</div>
+                    <p style="font-size: 0.75em; color: #777; margin-top: 4px;">Target resolution window</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 12: REFERENCE -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">12</span>
+            <h3>Reference</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <ul class="ref-list">
+                <li>
+                    <a href="residential.html">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        SOP-RES-001: Residential Carpet Cleaning SOP
+                    </a>
+                </li>
+                <li>
+                    <a href="../day2/#sop-004">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        FRP-004: Pre-Treatment Application Procedure
+                    </a>
+                </li>
+                <li>
+                    <a href="../day3/#sop-005">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        FRP-005: HWE Extraction Procedure
+                    </a>
+                </li>
+                <li>
+                    <a href="../day3/#sop-006">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        FRP-006: Pre-Run Equipment Checklist
+                    </a>
+                </li>
+                <li>
+                    <a href="../sop/">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"/></svg>
+                        Full FRP Reference Library
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    </div><!-- end #sop-commercial -->
+
+    <!-- ============================================================ -->
+    <!-- DIVIDER BETWEEN SOPs                                         -->
+    <!-- ============================================================ -->
+    <div class="sop-divider">
+        <hr>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SOP 2: SPOT & STAIN EMERGENCY RESPONSE (SOP-COM-002)         -->
+    <!-- ============================================================ -->
+    <div id="sop-emergency">
+
+    <!-- SOP META INFO -->
+    <div class="sop-meta">
+        <div class="sop-meta-item">
+            <div class="sop-meta-label">SOP ID</div>
+            <div class="sop-meta-value">SOP-COM-002</div>
+        </div>
+        <div class="sop-meta-item">
+            <div class="sop-meta-label">Version</div>
+            <div class="sop-meta-value">1.0</div>
+        </div>
+        <div class="sop-meta-item">
+            <div class="sop-meta-label">Effective</div>
+            <div class="sop-meta-value">April 2026</div>
+        </div>
+        <div class="sop-meta-item">
+            <div class="sop-meta-label">Review Cycle</div>
+            <div class="sop-meta-value">Annual</div>
+        </div>
+        <div class="sop-meta-item">
+            <div class="sop-meta-label">Applies To</div>
+            <div class="sop-meta-value">All Carpet Cleaning Crews</div>
+        </div>
+    </div>
+
+    <!-- SECTION 1: PURPOSE -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">01</span>
+            <h3>Purpose</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <p>This SOP defines the standard workflow for emergency and add-on spot/stain treatment calls. It covers rapid-response triage, treatment selection, client communication, and documentation for both standalone emergency calls and add-on treatments during scheduled service.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 2: SCOPE -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">02</span>
+            <h3>Scope</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <p>Applies to:</p>
+            <ul>
+                <li>Emergency stain calls (client requests urgent treatment within 24&ndash;48 hours)</li>
+                <li>Add-on spot treatments during scheduled residential or commercial service</li>
+                <li>Common scenarios: red wine spills, coffee, pet accidents, ink, food stains, tracked-in mud, blood</li>
+                <li>Excludes: flood/water damage (separate water damage SOP), permanent dye stains (set expectations), structural stains (mold, smoke damage &mdash; requires specialty treatment)</li>
+            </ul>
+
+            <p style="margin-top: 16px; font-weight: 600; color: #0a4875;">Key Definitions:</p>
+            <ul>
+                <li><strong>Spot</strong> &mdash; Surface-level discoloration that can typically be removed with proper treatment</li>
+                <li><strong>Stain</strong> &mdash; Permanent or set-in discoloration that may only be improved, not fully removed</li>
+                <li><strong>Emergency Call</strong> &mdash; Client requests treatment within 24&ndash;48 hours of incident</li>
+                <li><strong>Add-On Treatment</strong> &mdash; Spot treatment performed during an already-scheduled service visit</li>
+                <li><strong>Triage</strong> &mdash; Initial assessment to determine treatment approach and set expectations</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 3: WORKFLOW STEPS -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">03</span>
+            <h3>Workflow Steps</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+
+            <!-- Step 1 -->
+            <div class="workflow-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>Call Intake &amp; Triage</h4>
+                    <p>Gather information: what was spilled, when it happened, what surface (carpet type if known), what the client has already done.</p>
+                    <p>Critical: Has the client attempted DIY treatment? (Some home products cause permanent damage.)</p>
+                    <p>Classify urgency: same-day response vs next-business-day.</p>
+                    <p>For add-on treatments: assess during pre-inspection walk-through.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader / Office</span> Collects spill details, classifies urgency, schedules response</p>
+                    </div>
+                    <div class="sop-callout tip">
+                        <strong>Important:</strong> "The sooner we treat it, the better the outcome. Fresh stains have significantly higher removal rates."
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="workflow-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>Arrival &amp; Initial Assessment</h4>
+                    <p>Identify the stain type using FRP-009 (Spot vs Stain Identification).</p>
+                    <p>Assess carpet fiber type (check label or use identification techniques from FRP-002).</p>
+                    <p>Document with photos: size of affected area, color, current condition.</p>
+                    <p>Test an inconspicuous area before applying any treatment.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Identifies stain type and fiber type, selects treatment approach</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Documents stain with photos, prepares testing area</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="workflow-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>Client Expectation Setting</h4>
+                    <p>Be honest about likely outcomes BEFORE starting treatment.</p>
+                    <p>Use clear language:</p>
+                    <ul>
+                        <li>"This is a spot &mdash; I'm confident we can remove it completely"</li>
+                        <li>"This appears to be a permanent stain &mdash; we can improve it significantly but some discoloration may remain"</li>
+                        <li>"The previous DIY treatment has set this in &mdash; we'll do our best but results may be limited"</li>
+                    </ul>
+                    <p>Get verbal acknowledgment before proceeding.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Communicates expectations clearly, gets client acknowledgment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="workflow-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>Treatment Selection</h4>
+                    <p>Select treatment based on stain type and fiber type (reference FRP-009 and FRP-003):</p>
+                    <ul>
+                        <li><strong>Protein stains</strong> (blood, food, dairy): Enzyme-based cleaner, cool/warm water &mdash; NEVER hot (sets protein)</li>
+                        <li><strong>Tannin stains</strong> (coffee, tea, wine): Oxidizing agent or tannin-specific spotter</li>
+                        <li><strong>Oil/grease stains</strong> (cooking oil, cosmetics): Solvent-based spotter, work from edges inward</li>
+                        <li><strong>Dye stains</strong> (red wine, fruit juice, ink): Red Relief protocol (FRP-010) for red dyes; specific spotters for ink</li>
+                        <li><strong>Pet stains</strong> (urine, feces, vomit): Enzyme treatment per FRP-011, check for padding contamination</li>
+                        <li><strong>Unknown stains:</strong> Start with mildest treatment, escalate as needed</li>
+                    </ul>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Selects and prepares treatment chemicals</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Assists with chemical mixing per label instructions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="workflow-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h4>Treatment Execution</h4>
+                    <p>Apply treatment following the specific protocol for the stain type.</p>
+                    <p>Always work from the outside of the stain inward (prevents spreading).</p>
+                    <p>Blot &mdash; never rub or scrub (fiber damage risk).</p>
+                    <p>Allow proper dwell time for chemical to work.</p>
+                    <p>For stubborn stains: repeat treatment up to 3 times before escalating.</p>
+                    <p>Rinse treatment area thoroughly after each application.</p>
+                    <p>Extract with HWE if available, or blot with clean white cloth.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Applies and monitors treatment, decides on repeat applications</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Assists with extraction and cleanup</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="workflow-step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h4>Post-Treatment Assessment</h4>
+                    <p>Evaluate results against initial photos.</p>
+                    <p>If stain remains after 3 treatment attempts:</p>
+                    <ul>
+                        <li>Assess if further treatment could damage the fiber</li>
+                        <li>Consider leaving remaining treatment for a follow-up visit (some stains continue to release over 24h)</li>
+                        <li>Document final result with photos</li>
+                    </ul>
+                    <p>Apply Scotchgard to treated area if client has protector service.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Evaluates results, decides on follow-up treatment</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Takes after photos, applies protector if applicable</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="workflow-step">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <h4>Client Communication &amp; Sign-Off</h4>
+                    <p>Show client the results, comparing before/after.</p>
+                    <p>Explain what was done and any ongoing care instructions:</p>
+                    <ul>
+                        <li>"Blot any new spills immediately &mdash; don't rub"</li>
+                        <li>"This treated area may re-appear slightly as it dries &mdash; this is normal and will fade"</li>
+                        <li>"If the stain reappears after drying, call us for a free re-treatment under warranty"</li>
+                    </ul>
+                    <p>For stains that couldn't be fully removed: explain why and offer options (re-treatment, re-dyeing referral).</p>
+                    <p>Collect sign-off.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Communicates results, provides care instructions, collects sign-off</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 8 -->
+            <div class="workflow-step">
+                <div class="step-number">8</div>
+                <div class="step-content">
+                    <h4>Documentation &amp; Follow-Up</h4>
+                    <p>Update CRM with: stain type, treatment used, results achieved, photos (before/after).</p>
+                    <p>Flag any stains that may need follow-up treatment.</p>
+                    <p>For warranty claims: set 7-day follow-up reminder in CRM.</p>
+                    <p>For commercial clients: include in maintenance report.</p>
+                    <div class="step-roles">
+                        <p><span class="role-badge role-leader">Crew Leader</span> Completes all documentation, sets follow-up reminders</p>
+                        <p><span class="role-badge role-member">Crew Member</span> Assists with CRM photo uploads</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SECTION 4: ROLES & RESPONSIBILITIES -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">04</span>
+            <h3>Roles &amp; Responsibilities</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <table class="sop-table">
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Key Responsibilities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Crew Leader</strong></td>
+                        <td>Stain identification, treatment selection, client communication, quality decisions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Crew Member</strong></td>
+                        <td>Documentation, chemical preparation, extraction assistance, equipment handling</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Office / Dispatch</strong></td>
+                        <td>Call intake, urgency triage, scheduling, follow-up reminders</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SECTION 5: SAFETY -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">05</span>
+            <h3>Safety</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <ul>
+                <li>Always wear chemical-resistant gloves when handling spotting agents</li>
+                <li>Eye protection required when mixing or applying solvent-based products</li>
+                <li>Ensure adequate ventilation when using solvent-based spotters in enclosed spaces</li>
+                <li>Never mix different chemical products &mdash; rinse thoroughly between applications</li>
+                <li>Check SDS for all chemicals used &mdash; know the first aid procedures</li>
+                <li>Bio-hazard protocol for bodily fluids: gloves + face protection, dispose of contaminated materials properly</li>
+            </ul>
+            <div class="sop-callout safety">
+                <strong>If a client or crew member experiences a chemical reaction</strong> (skin irritation, breathing difficulty), flush the area, move to fresh air, and call 911 if symptoms persist.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 6: SYSTEMS & TOOLS -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">06</span>
+            <h3>Systems &amp; Tools</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <ul>
+                <li><strong>Spotter Kit:</strong> Multi-chemical spot treatment kit with applicators</li>
+                <li><strong>Chemicals:</strong> Enzyme cleaner, oxidizing agent, tannin spotter, solvent spotter, Red Relief solution</li>
+                <li><strong>Equipment:</strong> Portable extractor (for standalone calls), white cotton cloths, spray bottles</li>
+                <li><strong>Documentation:</strong> Phone camera for before/after, CRM mobile app</li>
+                <li><strong>Reference:</strong> FRP-009 (Spot vs Stain ID), FRP-010 (Red Relief), FRP-011 (Pet Treatment), FRP-003 (pH Guide)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 7: COMMUNICATION -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">07</span>
+            <h3>Communication</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <div style="overflow-x: auto;">
+                <table class="sop-table">
+                    <thead>
+                        <tr>
+                            <th>When</th>
+                            <th>Who</th>
+                            <th>What</th>
+                            <th>How</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Call intake</td>
+                            <td>Client &rarr; Office</td>
+                            <td>Stain details and urgency</td>
+                            <td>Phone</td>
+                        </tr>
+                        <tr>
+                            <td>Dispatch</td>
+                            <td>Office &rarr; Crew Leader</td>
+                            <td>Job details, spill info</td>
+                            <td>CRM/text</td>
+                        </tr>
+                        <tr>
+                            <td>On arrival</td>
+                            <td>Crew Leader &rarr; Client</td>
+                            <td>Assessment and expectations</td>
+                            <td>In person</td>
+                        </tr>
+                        <tr>
+                            <td>During treatment</td>
+                            <td>Crew Leader &rarr; Client</td>
+                            <td>Progress updates if lengthy</td>
+                            <td>In person</td>
+                        </tr>
+                        <tr>
+                            <td>After treatment</td>
+                            <td>Crew Leader &rarr; Client</td>
+                            <td>Results, care instructions</td>
+                            <td>In person</td>
+                        </tr>
+                        <tr>
+                            <td>7-day follow-up</td>
+                            <td>Office &rarr; Client</td>
+                            <td>Check if stain reappeared</td>
+                            <td>Phone/text</td>
+                        </tr>
+                        <tr>
+                            <td>If warranty re-treat</td>
+                            <td>Office &rarr; Crew Leader</td>
+                            <td>Schedule re-treatment visit</td>
+                            <td>CRM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 8: QUALITY CHECKS -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">08</span>
+            <h3>Quality Checks</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <ul>
+                <li>Stain type correctly identified before treatment</li>
+                <li>Fiber type confirmed (to avoid chemical damage)</li>
+                <li>Inconspicuous area tested before full treatment</li>
+                <li>Client expectations set BEFORE treatment begins</li>
+                <li>Treatment applied from outside inward (no spreading)</li>
+                <li>Maximum 3 attempts before escalation decision</li>
+                <li>Before/after photos captured and uploaded</li>
+                <li>Client sign-off collected</li>
+                <li>Follow-up reminder set (if applicable)</li>
+                <li>CRM updated with full treatment details</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 9: EXCEPTIONS & ESCALATION -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">09</span>
+            <h3>Exceptions &amp; Escalation</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <ul>
+                <li><strong>Unknown substance:</strong> Do not treat. Take samples/photos, consult with supervisor or chemical supplier. Safety first.</li>
+                <li><strong>Previous DIY treatment caused damage:</strong> Document the damage, explain to client that prior treatment has limited what's achievable. Proceed with best available treatment.</li>
+                <li><strong>Stain reappears after treatment:</strong> Schedule warranty re-treatment (free within 7 days per Servus policy). May require sub-surface treatment.</li>
+                <li><strong>Fiber damage risk:</strong> If treatment could damage the fiber (e.g., bleach on wool), STOP. Explain to client, offer alternatives (professional re-dyeing, patching referral).</li>
+                <li><strong>Bio-hazard contamination:</strong> If contamination has reached carpet padding or subfloor, recommend full extraction/replacement. Do not attempt surface-only treatment for deep contamination.</li>
+                <li><strong>Client insists on treatment you advise against:</strong> Document the client's request and your recommendation in writing. Proceed only if no safety risk. If safety risk exists, refuse and explain why.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTION 10: CLOSE-OUT -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">10</span>
+            <h3>Close-Out</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <ol>
+                <li>Before/after photos uploaded to CRM</li>
+                <li>Treatment details logged (chemical used, method, number of applications)</li>
+                <li>Results documented (full removal, partial improvement, no change)</li>
+                <li>Care instructions provided to client (verbal + written card)</li>
+                <li>Follow-up reminder set if needed (7-day warranty check)</li>
+                <li>Equipment cleaned, spotter kit restocked</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- SECTION 11: KPIs / SUCCESS METRICS -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">11</span>
+            <h3>KPIs / Success Metrics</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value">&gt; 80%</div>
+                    <div class="kpi-label">Stain Removal Success</div>
+                    <p style="font-size: 0.75em; color: #777; margin-top: 4px;">Full or significant improvement</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">&lt; 4 hrs</div>
+                    <div class="kpi-label">Response Time</div>
+                    <p style="font-size: 0.75em; color: #777; margin-top: 4px;">Emergency calls during business hours</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">&gt; 4.5 / 5.0</div>
+                    <div class="kpi-label">Client Satisfaction</div>
+                    <p style="font-size: 0.75em; color: #777; margin-top: 4px;">Post-treatment survey average</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">100%</div>
+                    <div class="kpi-label">Photo Documentation</div>
+                    <p style="font-size: 0.75em; color: #777; margin-top: 4px;">Before + after for every treatment</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">&lt; 15%</div>
+                    <div class="kpi-label">Warranty Re-Treatment</div>
+                    <p style="font-size: 0.75em; color: #777; margin-top: 4px;">Low reappearance rate</p>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">&gt; 85%</div>
+                    <div class="kpi-label">First-Visit Resolution</div>
+                    <p style="font-size: 0.75em; color: #777; margin-top: 4px;">Resolved without return visit</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 12: REFERENCE -->
+    <div class="sop-section">
+        <div class="sop-section-header active">
+            <span class="section-number">12</span>
+            <h3>Reference</h3>
+            <svg class="section-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="sop-section-body open">
+            <ul class="ref-list">
+                <li>
+                    <a href="../day1/#sop-002">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        FRP-002: Burn Test Fiber ID Protocol
+                    </a>
+                </li>
+                <li>
+                    <a href="../day2/#sop-003">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        FRP-003: pH &amp; Chemical Selection Guide
+                    </a>
+                </li>
+                <li>
+                    <a href="../day4/#sop-009">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        FRP-009: Spot vs Stain Identification
+                    </a>
+                </li>
+                <li>
+                    <a href="../day4/#sop-010">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        FRP-010: Red Relief Protocol
+                    </a>
+                </li>
+                <li>
+                    <a href="../day4/#sop-011">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        FRP-011: Pet Damage Treatment
+                    </a>
+                </li>
+                <li>
+                    <a href="residential.html">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        SOP-RES-001: Residential Carpet Cleaning SOP
+                    </a>
+                </li>
+                <li>
+                    <a href="../sop/">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"/></svg>
+                        Full FRP Reference Library
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    </div><!-- end #sop-emergency -->
+
+</div><!-- end .sop-content -->
+
+<!-- PAGE NAV -->
+<div class="page-nav">
+    <a href="residential.html" class="page-nav-btn nav-prev">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Residential SOP
+    </a>
+    <a href="../course_index.html" class="page-nav-btn nav-next">
+        Course Hub
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+</div>
+
+<!-- FOOTER -->
+<div class="servus-footer">
+    <img src="../assets/servus-specialty-cleaning-transparent.png" alt="Servus Group — Specialty Cleaning" style="height: 60px; margin-bottom: 8px;">
+    <p style="color: #ccc; margin: 4px 0 12px;">Professional Carpet Care Certification</p>
+    <p style="color: #ccc; margin: 4px 0;"><strong>Contact:</strong> <a href="tel:604-435-1135" style="color: var(--servus-accent);">604-435-1135</a> | <a href="mailto:info@servusgroup.com" style="color: var(--servus-accent);">info@servusgroup.com</a></p>
+    <p style="color: #ccc; margin: 4px 0;">160-21900 Westminster Hwy, Richmond BC V6V 2K3 | <a href="https://servusgrouplowermainland.com" target="_blank" style="color: var(--servus-accent);">servusgrouplowermainland.com</a></p>
+    <div class="footer-certs">
+        <img src="https://servusgrouplowermainland.com/wp-content/uploads/2014/07/go2HR-CORLogo-K-300x283.png" alt="COR Certified" style="filter: brightness(0) invert(1); opacity: 0.7; height: 40px;">
+        <img src="../assets/iicrc-logo.png" alt="IICRC S100 Certified" style="filter: brightness(0) invert(1); opacity: 0.8; height: 38px;">
+        <img src="../assets/cri-logo.png" alt="CRI - Carpet &amp; Rug Institute" style="filter: brightness(0) invert(1); opacity: 0.8; height: 38px;">
+
+    </div>
+    <div class="compliance-text" style="font-size: 0.7em; max-width: 700px; margin: 10px auto 0; line-height: 1.4; opacity: 0.6;">This material is for Servus Group staff training and certification purposes only. All equipment and chemicals referenced are approved for use by Servus Group and comply with applicable safety standards (WHMIS, WorkSafeBC). Product recommendations and protocols reflect Servus Group&rsquo;s best practices and may vary based on site-specific conditions. Always consult equipment manuals and chemical Safety Data Sheets (SDS) before use.</div>
+    <p style="margin-top: 12px; font-size: 0.75em; color: #666;">&copy; 2026 Servus Group. Developed by <strong style="font-size: 1em;">Douglas da Silva</strong></p>
+</div>
+
+<!-- ACCORDION TOGGLE SCRIPT -->
+<script>
+document.querySelectorAll('.sop-section-header').forEach(header => {
+    header.addEventListener('click', () => {
+        header.classList.toggle('active');
+        const body = header.nextElementSibling;
+        body.classList.toggle('open');
+    });
+});
+</script>
+
+</body>
+</html>
